@@ -105,6 +105,7 @@
 .navbar-brand {
     padding-left: 30px;
 }
+
 .navitem {
     margin-left: 8px;
     color: white;
@@ -128,7 +129,7 @@
     background-image: url('../images/background.png');
     background-repeat: no-repeat;
     background-position: bottom right;
-    padding-top: 130px;
+    padding-top: 140px;
     color: white;
 }
 
@@ -165,3 +166,16 @@
     padding-top: 50px;
 }
 
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #F9F2FA;
+    padding-top: 50px;
+    padding-bottom: 20px;
+ }
+
+
+.footer-copyright {
+    padding-left: 15px;
+}

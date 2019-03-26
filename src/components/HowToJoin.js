@@ -115,8 +115,7 @@ class HowToJoin extends Component {
 
         return (
             <div className="section how-to-join" id="how-to-join">
-                <h4 className="text-center">How to Join</h4>
-                {/* <img src={step1} alt=""/> */}
+                <h4 className="text-center"><b>How to Join</b></h4>
                 <br></br>
                 <Carousel
                 activeIndex={activeIndex}
@@ -135,3 +134,4 @@ class HowToJoin extends Component {
 }
 
 export default HowToJoin;
+
