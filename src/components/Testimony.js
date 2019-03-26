@@ -104,7 +104,7 @@ class Testimony extends Component {
         });
 
         return (
-            <div className="section testimony">
+            <div className="section testimony" id="testimony">
                 <h4 className="text-center">Testimony</h4>
                 <br></br>
                 <Carousel

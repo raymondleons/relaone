@@ -7,11 +7,11 @@ import '../assets/css/_style.scss'
 class ContactUs extends Component {
   render() {
     return (
-      <div className="contact-us section">
+      <div className="contact-us section" id="contact-us">
         <Container>
           <Row>
-              <Col md="4"></Col>
-              <Col md="4">
+              <Col sm="0" md="3" lg="4"></Col>
+              <Col sm="12" md="6" lg="4">
                 <h2 className="mb-5">Contact Us</h2>
                 <FormGroup>
                     <Input

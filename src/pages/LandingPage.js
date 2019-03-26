@@ -8,13 +8,13 @@ import NavBar from '../layout/NavBar';
 class LandingPage extends Component {
   render() {
     return (
-      <div>
-        <NavBar/>
-        <Intro/>
-        <HowToJoin/>
-        <Testimony/>
-        <ContactUs/>
-      </div>
+        <div className="landing-page">
+          <NavBar/>
+          <Intro/>
+          <HowToJoin/>
+          <Testimony/>
+          <ContactUs/>
+        </div>      
     )
   }
 }

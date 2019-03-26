@@ -35,16 +35,16 @@ class NavBar extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                 <NavItem>
-                    <NavLink>Home</NavLink>
+                    <NavLink href="#intro">Home</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink>How to Join</NavLink>
+                    <NavLink href="#how-to-join">How to Join</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink>Testimony</NavLink>
+                    <NavLink href="#testimony">Testimony</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink>Contact Us</NavLink>
+                    <NavLink href="#contact-us">Contact Us</NavLink>
                 </NavItem>
                 <NavItem>
                     <NavLink>Join Now!</NavLink>
