@@ -7,7 +7,7 @@ import '../assets/css/_style.scss';
 class Intro extends Component {
   render() {
     return (
-      <div className="section intro" id="intro">
+      <div className="section intro" id="intro" name="intro">
           <Container>
             <Row>
                 <Col sm="0" md="1" lg="1"></Col>
@@ -29,3 +29,4 @@ class Intro extends Component {
 }
 
 export default Intro;
+

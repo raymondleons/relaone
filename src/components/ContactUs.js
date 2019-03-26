@@ -7,7 +7,7 @@ import '../assets/css/_style.scss'
 class ContactUs extends Component {
   render() {
     return (
-      <div className="contact-us section" id="contact-us">
+      <div className="contact-us" id="contact-us" name="contact-us">
         <Container>
           <Row>
               <Col sm="0" md="3" lg="4"></Col>
@@ -33,3 +33,4 @@ class ContactUs extends Component {
 }
 
 export default ContactUs;
+

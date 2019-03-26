@@ -102,13 +102,25 @@
     z-index: 9999;
 }
 
+.navbar-brand {
+    padding-left: 30px;
+}
+.navitem {
+    margin-left: 8px;
+    color: white;
+}
+
+.navitem:hover {
+    text-decoration: underline;
+}
+
 .login-button {
     margin-top: -8px;
     color: white;
 }
 
 .section {
-    padding-top: 100px;
+    padding-top: 150px;
 }
 
 .intro {
@@ -116,7 +128,7 @@
     background-image: url('../images/background.png');
     background-repeat: no-repeat;
     background-position: bottom right;
-    padding-top: 100px;
+    padding-top: 130px;
     color: white;
 }
 
@@ -138,7 +150,7 @@
 }
 
 .testimony {
-    padding-bottom: 75px;
+    padding-bottom: 150px;
     background-color: #F9F2FA;
 }
 
@@ -150,5 +162,6 @@
     background-size: cover;
     color: white;
     padding-bottom: 150px;
+    padding-top: 50px;
 }
 
