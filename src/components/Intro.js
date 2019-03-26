@@ -7,7 +7,7 @@ import '../assets/css/_style.scss';
 class Intro extends Component {
   render() {
     return (
-      <div className="section intro" id="intro">
+      <div className="section intro" id="intro" name="intro">
           <Container>
             <Row>
                 <Col sm="0" md="1" lg="1"></Col>
@@ -18,7 +18,7 @@ class Intro extends Component {
                     <Button color="warning">Get it on Playstore</Button>
                 </Col>
                 <Col sm="0" md="1" lg="1"></Col>
-                <Col sm="12" md="4" lg="4">
+                <Col sm="12" md="5" lg="4">
                     <img src={phone} alt="RelaOne Application" className="intro-image"/>
                 </Col>
             </Row>
@@ -29,3 +29,4 @@ class Intro extends Component {
 }
 
 export default Intro;
+

@@ -1,3 +1,97 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .intro-text {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .how-to-join-image {
+        width: 100px;
+        float: right;
+    }
+
+    .testimony-image {
+        width: 100px;
+        float: right;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .intro-text {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    
+    .how-to-join-image {
+        width: 100px;
+        float: right;
+    }
+
+    .testimony-image {
+        width: 100px;
+        float: right;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .intro-text {
+        padding-top: 40px;
+        padding-bottom: 0px;
+    }
+
+    .intro-text h1 {font-size: 33px;}
+
+    .how-to-join-image {
+        width: 100px;
+    }
+
+    .testimony-image {
+        width: 100px;
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .intro-text {
+        padding-top: 40px;
+        padding-bottom: 0px;
+    }
+
+    .how-to-join-image {
+        width: 150px;
+    }
+
+    .testimony-image {
+        width: 130px;
+    }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .intro-text {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .how-to-join-image {
+        width: 150px;
+    }
+
+    .testimony-image {
+        width: 130px;
+    }
+}
+
+.app {
+    scroll-behavior: smooth;
+}
+
+.landing-page {
+    scroll-behavior: smooth;
+}
+
 .navbar {
     background-color: #0052cc;
     color: white;
@@ -8,13 +102,25 @@
     z-index: 9999;
 }
 
+.navbar-brand {
+    padding-left: 30px;
+}
+.navitem {
+    margin-left: 8px;
+    color: white;
+}
+
+.navitem:hover {
+    text-decoration: underline;
+}
+
 .login-button {
     margin-top: -8px;
     color: white;
 }
 
 .section {
-    padding-top: 50px;
+    padding-top: 150px;
 }
 
 .intro {
@@ -22,13 +128,8 @@
     background-image: url('../images/background.png');
     background-repeat: no-repeat;
     background-position: bottom right;
-    padding-top: 100px;
+    padding-top: 130px;
     color: white;
-}
-
-.intro-text {
-    padding-top: 100px;
-    padding-bottom: 100px;
 }
 
 .intro button {
@@ -36,7 +137,7 @@
 }
 
 .intro-image {
-    width: 95%;
+    width: 100%;
     float: bottom;
 }
 
@@ -45,23 +146,22 @@
 }
 
 .how-to-join-image {
-    width: 150px;
     padding-bottom: 75px;
 }
 
 .testimony {
-    padding-bottom: 75px;
+    padding-bottom: 150px;
     background-color: #F9F2FA;
 }
 
 .testimony-image {
     border-radius: 50%;
-    width: 130px;
 }
 .contact-us {
     background-image: url("../images/bg-contactus.jpg");
     background-size: cover;
     color: white;
     padding-bottom: 150px;
+    padding-top: 50px;
 }
 
