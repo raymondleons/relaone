@@ -1,37 +1,30 @@
 import React, { Component } from 'react'
-import { Button, Form, FormGroup, Label, Input, FormText, Container } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
+import FormOrganizationProfile from '../components/FormOrganizationProfile';
+import bluelogo from '../assets/images/blue-logo.png'
+import '../assets/css/_style.scss'
+import ProfileBadge from '../components/ProfileBadge';
 
 class UpdateOrganizationProfile extends Component {
   render() {
     return (
-      <Container>
-        <Form>
-        <FormGroup>
-          <Label for="exampleName">Name</Label>
-          <Input className="form-control" type="text" name="name" id="exampleName" placeholder="Organization Name" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleUsername">Username</Label>
-          <Input type="text" name="name" id="exampleName" placeholder="Username" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleEmail">Email</Label>
-          <Input type="email" name="email" id="exampleEmail" placeholder="email@example.com" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="examplePhone">Phone Number</Label>
-          <Input type="text" name="phone" id="examplePhone" placeholder="Phone number" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleFile">Photo</Label>
-          <Input type="file" name="file" id="exampleFile" />
-          <FormText color="muted">
-            Please upload your organization photo or logo.
-          </FormText>
-        </FormGroup>
-        <Button>Save</Button>
-      </Form>
-      </Container>
+      <div className="update-organization-profile">
+        <Container>
+          <Row>
+            <div className="update-profile-header">
+              <img src={bluelogo} alt='BPBD'></img>
+            </div>
+          </Row>
+          <Row>
+            <Col md="3">
+              <ProfileBadge></ProfileBadge>
+            </Col>
+            <Col md="9">
+              <FormOrganizationProfile/>  
+            </Col>
+          </Row>
+        </Container>      
+      </div>
     )
   }
 }
