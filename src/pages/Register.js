@@ -33,9 +33,9 @@ export default class Example extends React.Component {
         </div>
         <Row>
           <Col md={6}>
-            <img className="wdt" src={Img} alt=""/>
+            <img className="width" src={Img} alt=""/>
           </Col>
-          <Col md={6}>
+          <Col md={6} className="right">
             <Nav tabs>
               <NavItem className="nav-item">
                 <NavLink
@@ -57,32 +57,32 @@ export default class Example extends React.Component {
             <TabContent activeTab={this.state.activeTab}>
               <TabPane tabId="1">
                 <Row className="box">
-                  <Form>
+                  <Form className="width">
                     <Row form>
                       <Col md={6}>
                         <FormGroup>
                           <Label >First Name</Label>
-                          <Input className="inputborder" type="text" name="firstname" id="firstname" placeholder="Your First Name" />
+                          <Input className="input-border" type="text" name="firstname" id="firstname" placeholder="Your First Name" />
                         </FormGroup>
                       </Col>
                       <Col md={6}>
                         <FormGroup>
                           <Label >Last Name</Label>
-                          <Input className="inputborder" type="text" name="lastname" id="lastname" placeholder="Your Last Name" />
+                          <Input className="input-border" type="text" name="lastname" id="lastname" placeholder="Your Last Name" />
                         </FormGroup>
                       </Col>
                     </Row>
                     <FormGroup>
                       <Label >Username</Label>
-                      <Input  className="inputborder" type="text" name="username" id="username" placeholder="Your Username" />
+                      <Input  className="input-border" type="text" name="username" id="username" placeholder="Your Username" />
                     </FormGroup>
                     <FormGroup>
                       <Label >Email</Label>
-                      <Input type="email" name="email" id="email" placeholder="Your Email" />
+                      <Input className="input-border" type="email" name="email" id="email" placeholder="Your Email" />
                     </FormGroup>
                     <FormGroup>
                       <Label >Password</Label>
-                      <Input type="password" name="password" id="password" placeholder="Your Password" />
+                      <Input className="input-border" type="password" name="password" id="password" placeholder="Your Password" />
                     </FormGroup>
                     <Button color="primary">Submit</Button>
                     <FormText color="muted">
@@ -93,36 +93,36 @@ export default class Example extends React.Component {
               </TabPane>
               <TabPane tabId="2">
                 <Row className="box">
-                <Form>
-                  <FormGroup>
-                    <Label >Name</Label>
-                    <Input className="inputborder" type="text" name="name" id="name" placeholder="Your Name" />
-                  </FormGroup>
-                  <FormGroup>
-                    <Label >Organization Name</Label>
-                    <Input type="text" name="organizationname" id="organizationname" placeholder="Your Organization" />
-                  </FormGroup>
-                  <FormGroup>
-                    <Label>Contact</Label>
-                    <Input type="number" name="number" id="number" placeholder="Your Number" />
-                  </FormGroup>
-                  <FormGroup>
-                    <Label >Email</Label>
-                    <Input type="email" name="email" id="email" placeholder="Your Email" />
-                  </FormGroup>
-                  <FormGroup>
-                    <Label >Password</Label>
-                    <Input type="password" name="password" id="password" placeholder="Your Password" />
-                  </FormGroup>
-                  <FormGroup>
-                    <Label>Address</Label>
-                    <Input type="text" name="address" id="address" placeholder="1234 Main St"/>
-                  </FormGroup>
-                  <Button color="primary">SIGN UP</Button>
-                  <FormText color="muted">
-                    Already have an account? Login here.
-                  </FormText>
-                </Form>
+                  <Form>
+                    <FormGroup className="form-group2">
+                      <Label >Name</Label>
+                      <Input className="input-border form-control2" type="text" name="name" id="name" placeholder="Your Name" />
+                    </FormGroup>
+                    <FormGroup className="form-group2">
+                      <Label >Organization Name</Label>
+                      <Input className="input-border form-control2" type="text" name="organizationname" id="organizationname" placeholder="Your Organization" />
+                    </FormGroup>
+                    <FormGroup className="form-group2">
+                      <Label>Contact</Label>
+                      <Input className="input-border form-control2" type="number" name="number" id="number" placeholder="Your Number" />
+                    </FormGroup>
+                    <FormGroup className="form-group2">
+                      <Label >Email</Label>
+                      <Input className="input-border form-control2" type="email" name="email" id="email" placeholder="Your Email" />
+                    </FormGroup>
+                    <FormGroup className="form-group2">
+                      <Label >Password</Label>
+                      <Input className="input-border form-control2" type="password" name="password" id="password" placeholder="Your Password" />
+                    </FormGroup>
+                    <FormGroup className="form-group2">
+                      <Label>Address</Label>
+                      <Input className="input-border form-control2" type="text" name="address" id="address" placeholder="1234 Main St"/>
+                    </FormGroup>
+                    <Button color="primary">SIGN UP</Button>
+                    <FormText color="muted">
+                      Already have an account? Login here.
+                    </FormText>
+                  </Form>
                 </Row>
               </TabPane>
             </TabContent>
