@@ -38,7 +38,6 @@ class NavBar extends Component {
                 <NavItem className="navitem">
                     <NavLink>
                         <Link
-                            activeClass="active"
                             to="intro"
                             spy={true}
                             smooth={true}
@@ -50,7 +49,6 @@ class NavBar extends Component {
                 <NavItem className="navitem">
                     <NavLink>
                         <Link
-                            activeClass="active"
                             to="how-to-join"
                             spy={true}
                             smooth={true}
@@ -62,7 +60,6 @@ class NavBar extends Component {
                 <NavItem className="navitem">
                     <NavLink>
                         <Link
-                            activeClass="active"
                             to="testimony"
                             spy={true}
                             smooth={true}
@@ -74,7 +71,6 @@ class NavBar extends Component {
                 <NavItem className="navitem">
                     <NavLink>
                         <Link
-                            activeClass="active"
                             to="contact-us"
                             spy={true}
                             smooth={true}

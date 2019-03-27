@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import '../assets/css/_style.scss';
 import bluelogo from '../assets/images/blue-logo.png';
+import { Link, animateScroll as scroll } from "react-scroll";
 import {
     Container,
     Row,
-    Col
+    Col,
+    Button
   } from 'reactstrap';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebookF, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons' 
+
+library.add(faFacebookF, faTwitter, faInstagram); 
 
 class Footer extends Component {
   render() {
@@ -14,15 +21,24 @@ class Footer extends Component {
          <Container>
              <Row>
                 <Col lg="3"><div><img src={bluelogo} alt="RelaOne Logo"></img></div></Col>
-                <Col lg="5"></Col>
-                <Col lg="4"><div><p>Find us on : Facebook Twitter Instagram</p></div></Col>
+                <Col lg="4"></Col>
+                <Col lg="5">
+                  <div>
+                    <p >Find us on : 
+                      <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'facebook-f']}/> 
+                      <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'twitter']}/> 
+                      <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'instagram']}/>
+                      <Button className="footer-socmed-icon" color="primary">Get it on Playstore</Button>
+                    </p>
+                  </div>
+                </Col>
             </Row>
             <Row>
               <Col lg="4">
                 <br></br>
                 <p>RelaOne is a service to facilitate both for volunteer and organization to meet needs related to voluntary activity</p>
                 <br></br>
-                <p>Indonesia</p>
+                <p>Nongsa, Batam, Indonesia</p>
               </Col>
               <Col lg="2"></Col>
               <Col lg="2">
@@ -32,11 +48,23 @@ class Footer extends Component {
               </Col>
               <Col lg="2">
                 <p><b>LEARN MORE</b></p>
-                <p>How to Join</p>
+                <Link
+                    to="how-to-join"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration= {500}
+                >How to Join</Link>
               </Col>
               <Col lg="2">
                 <p><b>CONNECT</b></p>
-                <p>Contact Us</p>
+                <Link
+                    to="contact-us"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration= {500}
+                >Contact Us</Link>
               </Col>
             </Row>
              <hr></hr>
