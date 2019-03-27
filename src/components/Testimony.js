@@ -105,7 +105,7 @@ class Testimony extends Component {
 
         return (
             <div className="section testimony" id="testimony">
-                <h4 className="text-center">Testimony</h4>
+                <h4 className="text-center"><b>Testimony</b></h4>
                 <br></br>
                 <Carousel
                 activeIndex={activeIndex}
@@ -124,3 +124,4 @@ class Testimony extends Component {
 }
 
 export default Testimony;
+
