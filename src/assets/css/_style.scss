@@ -14,6 +14,9 @@
         width: 100px;
         float: right;
     }
+    .wdt {
+        display: none;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -183,4 +186,11 @@
     padding-left: 15px;
 }
 
+.logo{
+ width:200px;
+ margin:auto;
+}
 
+.wdt{
+    width:100%;
+}

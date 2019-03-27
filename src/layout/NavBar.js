@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../assets/css/_style.scss';
 import logo from '../assets/images/logo.png';
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
+import { Link as Links} from 'react-router-dom';
 import {
     Collapse,
     Navbar,
@@ -80,7 +81,9 @@ class NavBar extends Component {
                     </NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink>Join Now!</NavLink>
+                    <NavLink>
+                        <Links to="/Register">Join</Links>
+                    </NavLink>
                 </NavItem>
                 <NavItem>
                     <NavLink><Button className="login-button" color="warning"><b>Login</b></Button></NavLink>
