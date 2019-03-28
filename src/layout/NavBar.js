@@ -82,11 +82,11 @@ class NavBar extends Component {
                 </NavItem>
                 <NavItem>
                     <NavLink>
-                        <Links to="/Register">Join</Links>
+                        <Links to="/register">Join</Links>
                     </NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink><Button className="login-button" color="warning"><b>Login</b></Button></NavLink>
+                    <NavLink><Links to="/login"><Button className="login-button bold-text" color="warning">Login</Button></Links></NavLink>
                 </NavItem>
                 </Nav>
             </Collapse>
