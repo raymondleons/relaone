@@ -203,6 +203,7 @@
 
 .profile-badge {
     background-color: white;
+    margin-bottom: 30px;
     padding-top: 10px;
     padding-bottom: 5px;
     padding-left: 10px;
@@ -212,9 +213,27 @@
 .organization-picture {
     width: 80px;
     border-radius: 50%;
+    margin-right: 10px;
 }
 
 .profile-name {
-    padding-top: 30px;
+    padding-top: 15px;
 }
 
+.logo-center {
+    width:177px;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+.update-success-content {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 80px;
+    box-shadow: 1px 1px 10px 1px #888888;
+    text-align: center;    
+}
+
+.icon-success {
+    width: 200px;
+}

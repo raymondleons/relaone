@@ -16,10 +16,10 @@ class UpdateOrganizationProfile extends Component {
             </div>
           </Row>
           <Row>
-            <Col md="3">
+            <Col sm="12" md="4">
               <ProfileBadge></ProfileBadge>
             </Col>
-            <Col md="9">
+            <Col sm="12" md="8">
               <FormOrganizationProfile/>  
             </Col>
           </Row>

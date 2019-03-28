@@ -19,11 +19,11 @@ class ProfileBadge extends Component {
     return (
       <div className="profile-badge">
         <Row>
-          <Col md="4">
+          <Col xs="3" sm="3" md="4">
             <img className="organization-picture" src={this.state.photo} alt={this.state.name}></img>
           </Col>
-          <Col md="8">
-            <p><b>{this.state.name}</b><br></br>Verified</p>
+          <Col xs="9" sm="9" md="8">
+            <p className="profile-name"><b>{this.state.name}</b><br></br>Verified</p>
           </Col>
         </Row>
       </div>

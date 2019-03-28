@@ -12,7 +12,7 @@ class Intro extends Component {
             <Row>
                 <Col sm="0" md="1" lg="1"></Col>
                 <Col sm="12" md="5" lg="5" className="intro-text">
-                    <h1><b>What is RelaOne?</b></h1>
+                    <h2><b>What is RelaOne?</b></h2>
                     <h5><b>RelaOne</b> is an application that makes it easy to find activities that best suit the interests and abilities of volunteers.</h5>
                     <h5><b>RelaOne for Organization</b> is a services for organization or community that facilitate the seach of volunteers.</h5>
                     <Button color="warning">Get it on Playstore</Button>
