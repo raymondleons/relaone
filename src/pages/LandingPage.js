@@ -8,8 +8,11 @@ import Testimony from '../components/Testimony';
 import NavBar from '../layout/NavBar';
 import Footer from '../layout/Footer';
 import Register from './Register'
+import Login from './LoginPage.js'
 
 class LandingPage extends Component {
+
+
   render() {
     return (
       <Router>
@@ -24,6 +27,7 @@ class LandingPage extends Component {
                 </div>  
         )} />
         <Route path='/Register' component={Register} exact />
+        <Route path='/Login' component={Login} exact />
       </Router>    
     )
   }
