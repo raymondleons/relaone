@@ -93,9 +93,7 @@ class Testimony extends Component {
                   <Col xs="8" sm="8" md="6">
                     <p><b>{item.name}</b></p>
                     <p>{item.title}</p>
-                    <br></br>
                     <p>{item.caption}</p>
-                    <br></br>
                   </Col>
                 </Row>
               </Container>
