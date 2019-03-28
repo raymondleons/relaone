@@ -16,7 +16,7 @@ export default class LoginPage extends Component {
         <div className=" my-4 logo">
           <img src={Logo} alt=""/>
         </div>
-          <div className="container">
+          <div className="containers">
               <div className="row">
                 <div className="col-sm-8.5">
                     <img className="images" src={Img} alt=""/>
