@@ -31,3 +31,4 @@ class RegisterSuccess extends Component {
 }
 
 export default RegisterSuccess;
+
