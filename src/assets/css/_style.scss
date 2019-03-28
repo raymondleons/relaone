@@ -24,8 +24,20 @@ body {
         width: 100px;
         float: right;
     }
+
     .wdt {
         display: none;
+    }
+
+    .organization-picture {
+        width: 80px;
+        border-radius: 50%;
+        margin-left: 10px;
+    }
+
+    .profile-name {
+        padding-top: 15px;
+        padding-left: 20px;
     }
 }
 
@@ -45,6 +57,17 @@ body {
         width: 100px;
         float: right;
     }
+
+    .organization-picture {
+        width: 80px;
+        border-radius: 50%;
+        margin-left: 10px;
+    }
+
+    .profile-name {
+        padding-top: 15px;
+        padding-left: 15px;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -63,6 +86,17 @@ body {
     .testimony-image {
         width: 100px;
     }
+
+    .organization-picture {
+        width: 80px;
+        border-radius: 50%;
+        margin-left: 0px;
+    }
+
+    .profile-name {
+        padding-top: 15px;
+        padding-left: 15px;
+    }
 } 
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -79,6 +113,17 @@ body {
     .testimony-image {
         width: 130px;
     }
+
+    .organization-picture {
+        width: 80px;
+        border-radius: 50%;
+        margin-left: 0px;
+    }
+
+    .profile-name {
+        padding-top: 15px;
+        padding-left: 0px;
+    }
 } 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -94,6 +139,12 @@ body {
 
     .testimony-image {
         width: 130px;
+    }
+
+    .organization-picture {
+        width: 80px;
+        border-radius: 50%;
+        margin-left: 10px;
     }
 }
 
@@ -225,6 +276,7 @@ body {
 .form-organization-profile {
     background-color: white;
     padding: 30px;
+    padding-bottom: 70px;
     margin-bottom: 40px;
     box-shadow: 1px 1px 10px 1px #888888;
 }
@@ -236,16 +288,6 @@ body {
     padding-bottom: 5px;
     padding-left: 10px;
     box-shadow: 1px 1px 10px 1px #888888;
-}
-
-.organization-picture {
-    width: 80px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.profile-name {
-    padding-top: 15px;
 }
 
 .logo-center {
