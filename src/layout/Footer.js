@@ -41,12 +41,12 @@ class Footer extends Component {
               </Col>
               <Col lg="2"></Col>
               <Col lg="2" className="footer-content">
-                <p><b>TAKE ACTION</b></p>
+                <p className="bold-text">TAKE ACTION</p>
                 <p>Join Event</p>
                 <p>Find Volunteer</p>
               </Col>
               <Col lg="2" className="footer-content">
-                <p><b>LEARN MORE</b></p>
+                <p className="bold-text">LEARN MORE</p>
                 <Link
                     to="how-to-join"
                     spy={true}
@@ -56,7 +56,7 @@ class Footer extends Component {
                 >How to Join</Link>
               </Col>
               <Col lg="2" className="footer-content">
-                <p><b>CONNECT</b></p>
+                <p className="bold-text">CONNECT</p>
                 <Link
                     to="contact-us"
                     spy={true}
