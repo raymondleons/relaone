@@ -9,6 +9,7 @@ import NavBar from '../layout/NavBar';
 import Footer from '../layout/Footer';
 import Register from './Register'
 import Login from './LoginPage.js'
+import TermsandConditions from './TermsandConditions'
 
 class LandingPage extends Component {
 
@@ -28,7 +29,8 @@ class LandingPage extends Component {
         )} />
         <Route path='/Register' component={Register} exact />
         <Route path='/Login' component={Login} exact />
-      </Router>    
+        <Route path='/TermsandConditions' component={TermsandConditions} exact />
+      </Router>
     )
   }
 }

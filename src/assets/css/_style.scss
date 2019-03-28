@@ -59,6 +59,9 @@ body {
         width: 100px;
         float: right;
     }
+    .modal-dialog {
+        max-width: 80%;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -270,9 +273,7 @@ body {
     padding:15px;
    
 }
-.right{
-    border:1px solid black;
-}
+
 .form-row{
     margin-left:0;
     margin-right:0;
@@ -298,6 +299,7 @@ body {
 {
     margin-bottom:0px;
 }
+
 
 // SCSS Raymond 
 

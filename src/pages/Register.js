@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, FormGroup, Label, Input, FormText, TabContent, TabPane, Nav, NavItem, NavLink, Button, Row, Col } from 'reactstrap';
+import {Link} from 'react-router-dom'
 import classnames from 'classnames';
 import '../assets/css/_style.scss';
 import Img from '../assets/images/image1.png'
@@ -16,6 +17,7 @@ export default class Example extends React.Component {
       activeTab: '1'
     };
   }
+
 
   toggle(tab) {
     if (this.state.activeTab !== tab) {
@@ -95,10 +97,6 @@ export default class Example extends React.Component {
                 <Row className="box">
                   <Form>
                     <FormGroup className="form-group2">
-                      <Label >Name</Label>
-                      <Input className="input-border form-control2" type="text" name="name" id="name" placeholder="Your Name" />
-                    </FormGroup>
-                    <FormGroup className="form-group2">
                       <Label >Organization Name</Label>
                       <Input className="input-border form-control2" type="text" name="organizationname" id="organizationname" placeholder="Your Organization" />
                     </FormGroup>
@@ -114,10 +112,9 @@ export default class Example extends React.Component {
                       <Label >Password</Label>
                       <Input className="input-border form-control2" type="password" name="password" id="password" placeholder="Your Password" />
                     </FormGroup>
-                    <FormGroup className="form-group2">
-                      <Label>Address</Label>
-                      <Input className="input-border form-control2" type="text" name="address" id="address" placeholder="1234 Main St"/>
-                    </FormGroup>
+                    <FormText color="muted">
+                    Creating an account means you’re okay with our <Link to='TermsandConditions' target="_blank">Terms and Conditons</Link>
+                    </FormText>
                     <Button color="primary">SIGN UP</Button>
                     <FormText color="muted">
                       Already have an account? Login here.
