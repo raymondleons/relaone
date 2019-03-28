@@ -1,3 +1,13 @@
+@font-face {
+    font-family:MavenPro-Medium;
+    src:url(../fonts/MavenPro-Medium.ttf)
+   }
+
+body {
+    background-color: #F6F8F7;  
+    font-family:MavenPro-Medium,sans-serif;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .intro-text {
@@ -103,6 +113,7 @@
     top: 0;
     width: 100%;
     z-index: 9999;
+    
 }
 
 .navbar-brand {
@@ -111,6 +122,10 @@
 
 .navitem {
     margin-left: 8px;
+    color: white;
+}
+
+.navitem a{
     color: white;
 }
 
@@ -194,3 +209,56 @@
 .wdt{
     width:100%;
 }
+
+// SCSS Raymond 
+
+.containers {
+    position: relative;
+    top: -60px;
+    max-width: 980px;
+    margin: 0 auto;
+    height: 470px;
+    border: 1px solid #ddd;
+    -webkit-box-shadow: 0 1px 7px 0 rgba(0,0,0,.14);
+    box-shadow: 0 1px 7px 0 rgba(0,0,0,.14);
+    background-color: #fff;
+    margin-top: 90px;
+}
+
+.images {
+    width: 97%;
+}
+
+h3 {
+    font-weight: 600;
+    padding-top: 30px;
+    padding-left: 10px;
+}
+
+p.title {
+    color:#0065ff;
+    font-size: 19px;
+    padding-top: 40px;
+    padding-left: 10px;
+    margin-bottom: 10px
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 1px 120px;
+    margin-left: 10px;
+    margin-top: -5px;    
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #0065ff;
+  }
+
+.text {
+    text-align: center;
+    padding-top: 50px;
+}
+
+button {
+    float: right;
+}
+
