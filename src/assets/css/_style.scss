@@ -15,6 +15,15 @@ body {
         padding-bottom: 100px;
     }
 
+    .intro-text h1 { 
+        font-size: 48px;
+        font-weight: bold; 
+    }
+
+    .bold-text {
+        font-weight: bold;
+    }
+
     .how-to-join-image {
         width: 100px;
         float: right;
@@ -24,6 +33,7 @@ body {
         width: 100px;
         float: right;
     }
+
     .wdt {
         display: none;
     }
@@ -36,6 +46,11 @@ body {
         padding-bottom: 100px;
     }
     
+    .intro-text h1 { 
+        font-size: 48px;
+        font-weight: bold; 
+    }
+
     .how-to-join-image {
         width: 100px;
         float: right;
@@ -50,11 +65,16 @@ body {
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     .intro-text {
-        padding-top: 40px;
-        padding-bottom: 0px;
+        padding-top: 0px;
+        padding-bottom: 40px;
     }
 
-    .intro-text h1 {font-size: 33px;}
+    .intro-text h1 {
+        font-size: 27px;
+        font-weight: bold; 
+    }
+
+    .intro-text p {font-size: 15px;}
 
     .how-to-join-image {
         width: 100px;
@@ -72,6 +92,11 @@ body {
         padding-bottom: 0px;
     }
 
+    .intro-text h1 { 
+        font-size: 48px;
+        font-weight: bold; 
+     }
+
     .how-to-join-image {
         width: 150px;
     }
@@ -87,6 +112,11 @@ body {
         padding-top: 100px;
         padding-bottom: 100px;
     }
+
+    .intro-text h1 { 
+        font-size: 48px;
+        font-weight: bold; 
+     }
 
     .how-to-join-image {
         width: 150px;
@@ -151,8 +181,9 @@ body {
     color: white;
 }
 
-.intro button {
-    color: white;
+.intro-button {
+    width: 170px;
+    float: left;
 }
 
 .intro-image {
@@ -169,7 +200,7 @@ body {
 }
 
 .testimony {
-    padding-bottom: 150px;
+    padding-bottom: 200px;
     background-color: #F9F2FA;
 }
 
@@ -197,8 +228,22 @@ body {
     margin-left: 30px;
 }
 
+.footer-button {
+    height: 50px;
+    margin-left: 30px;
+}
+
+.footer-content {
+    padding-top: 30px;
+}
+
+.footer-content-all{
+    border-bottom: solid #E8D8D1 1px;
+}
+
 .footer-copyright {
     padding-left: 15px;
+    padding-top: 15px;
 }
 
 .logo{
