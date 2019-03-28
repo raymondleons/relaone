@@ -33,20 +33,18 @@ class Footer extends Component {
                   </div>
                 </Col>
             </Row>
-            <Row>
-              <Col lg="4">
-                <br></br>
+            <Row className="footer-content-all">
+              <Col lg="4" className="footer-content">
                 <p>RelaOne is a service to facilitate both for volunteer and organization to meet needs related to voluntary activity</p>
-                <br></br>
                 <p>Nongsa, Batam, Indonesia</p>
               </Col>
               <Col lg="2"></Col>
-              <Col lg="2">
+              <Col lg="2" className="footer-content">
                 <p><b>TAKE ACTION</b></p>
                 <p>Join Event</p>
                 <p>Find Volunteer</p>
               </Col>
-              <Col lg="2">
+              <Col lg="2" className="footer-content">
                 <p><b>LEARN MORE</b></p>
                 <Link
                     to="how-to-join"
@@ -56,7 +54,7 @@ class Footer extends Component {
                     duration= {500}
                 >How to Join</Link>
               </Col>
-              <Col lg="2">
+              <Col lg="2" className="footer-content">
                 <p><b>CONNECT</b></p>
                 <Link
                     to="contact-us"
@@ -67,7 +65,6 @@ class Footer extends Component {
                 >Contact Us</Link>
               </Col>
             </Row>
-             <hr></hr>
              <Row>
                <p className="footer-copyright">Copyright © 2019 RelaOne All Rights Reserved</p>
              </Row>
