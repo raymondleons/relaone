@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../assets/css/_style.scss';
 import bluelogo from '../assets/images/blue-logo.png';
 import { Link, animateScroll as scroll } from "react-scroll";
+import playstorebutton from '../assets/images/get-it-on-the-google-play-store-button.png';
 import {
     Container,
     Row,
@@ -28,7 +29,7 @@ class Footer extends Component {
                       <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'facebook-f']}/> 
                       <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'twitter']}/> 
                       <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'instagram']}/>
-                      <Button className="footer-socmed-icon" color="primary">Get it on Playstore</Button>
+                      <a><img className="footer-button" src={playstorebutton} alt="get it on playstore"/></a>
                     </p>
                   </div>
                 </Col>
