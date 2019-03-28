@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import FormOrganizationProfile from '../components/FormOrganizationProfile';
-import bluelogo from '../assets/images/blue-logo.png'
-import '../assets/css/_style.scss'
-import ProfileBadge from '../components/ProfileBadge';
+import '../assets/css/_style.scss';
+import ProfileBadge from '../layout/ProfileBadge';
+import Header from '../layout/Header';
 
 class UpdateOrganizationProfile extends Component {
   render() {
@@ -11,9 +11,7 @@ class UpdateOrganizationProfile extends Component {
       <div className="update-organization-profile">
         <Container>
           <Row>
-            <div className="update-profile-header">
-              <img src={bluelogo} alt='BPBD'></img>
-            </div>
+            <Header/>
           </Row>
           <Row>
             <Col sm="12" md="4">
