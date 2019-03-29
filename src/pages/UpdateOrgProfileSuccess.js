@@ -33,3 +33,4 @@ class UpdateOrgProfileSuccess extends Component {
 }
 
 export default UpdateOrgProfileSuccess;
+
