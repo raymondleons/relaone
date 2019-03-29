@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
-import '../assets/css/_style.scss'
+import '../assets/css/_style.scss';
+import noevent from '../assets/images/noevent.png'
 
 class FormOrganizationProfile extends Component {
   render() {
@@ -21,7 +22,7 @@ class FormOrganizationProfile extends Component {
             <Button color="primary">Create Event</Button>
         </div>
         <div className="no-event">
-            {/* <img src={} alt="create event"/> */}
+            <img src={noevent} alt="no event" className="no-event-icon"/>
             <h3>You have no event yet.</h3>
             <p>Please create an voluntary event to find volunteers.</p>
         </div>
