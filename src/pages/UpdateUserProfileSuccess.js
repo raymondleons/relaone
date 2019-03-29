@@ -4,7 +4,7 @@ import bluelogo from '../assets/images/blue-logo.png';
 import updatesuccess from '../assets/images/update-profile-success.png';
 import '../assets/css/_style.scss'
 
-class UpdateOrgProfileSuccess extends Component {
+class UpdateUserProfileSuccess extends Component {
   render() {
     return (
       <div className="update-organization-profile">
@@ -20,7 +20,7 @@ class UpdateOrgProfileSuccess extends Component {
                 <div className="update-success-content">
                   <img src={updatesuccess} alt="wait for verification" className="icon-success"></img>
                   <h3 className="bold-text">Thank you for updating your profile.</h3>
-                  <p>Your profile will be reviewed by our team.</p>
+                  <p>Complete profile will make it easier for Organization to review your profile</p>
                   <Button color="primary">Dashboard</Button>
                 </div>
               </Col>
@@ -31,4 +31,4 @@ class UpdateOrgProfileSuccess extends Component {
   }
 }
 
-export default UpdateOrgProfileSuccess;
+export default UpdateUserProfileSuccess;
