@@ -29,7 +29,7 @@ export default class LoginPage extends Component {
                     <input type="text" id="password" name="password"></input>
                     <div className="mt-3 ml-2">
                       <a href="#">Lupa kata kunci?</a>
-                      <Button color="primary">Login</Button>{' '}
+                      <Button style={{float:"right"}} color="primary">Login</Button>{' '}
                     </div>
                     <div>
                       <p className="text">Belum punya akun? Silahkan daftar <a href="/register">disini</a></p>
