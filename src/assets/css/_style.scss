@@ -325,6 +325,13 @@ body {
     box-shadow: 1px 1px 10px 1px #888888;
 }
 
+.form-update-profile {
+    background-color: white;
+    padding: 30px;
+    padding-bottom: 70px;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 10px 1px #888888;
+}
 .profile-badge {
     background-color: white;
     margin-bottom: 30px;
@@ -386,6 +393,10 @@ h3 {
     padding-left: 10px;
 }
 
+h3.title {
+    padding-top: 0px;
+}
+
 p.title {
     color:#0065ff;
     font-size: 19px;
@@ -394,7 +405,7 @@ p.title {
     margin-bottom: 10px
 }
 
-input[type=text] {
+input[type=texts] {
     width: 100%;
     padding: 1px 120px;
     margin-left: 10px;
