@@ -19,10 +19,9 @@ class UpdateOrgProfileSuccess extends Component {
               <Col md="8">
                 <div className="update-success-content">
                   <img src={updatesuccess} alt="wait for verification" className="icon-success"></img>
-                  <h3><b>Thank you for updating your profile.</b></h3>
+                  <h3 className="bold-text">Thank you for updating your profile.</h3>
                   <p>Your profile will be reviewed by our team.</p>
-                  <br></br>
-                  <Button className="text-center" color="primary">Dashboard</Button>
+                  <Button color="primary">Dashboard</Button>
                 </div>
               </Col>
             </Row>
