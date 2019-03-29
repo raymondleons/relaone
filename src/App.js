@@ -4,6 +4,7 @@ import UpdateOrganizationProfile from './pages/UpdateOrganizationProfile';
 import './assets/css/_style.scss';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import UpdateOrgProfileSuccess from './pages/UpdateOrgProfileSuccess';
+import UpdateProfile from './pages/UpdateProfile'
 
 class App extends Component {
   render() {
@@ -13,7 +14,8 @@ class App extends Component {
           <Route path="/" exact component={LandingPage}/>
           <Route path="/organization/update-profile" exact component={UpdateOrganizationProfile}/>
           <Route path="/organization/update-profile/success" exact component={UpdateOrgProfileSuccess}/>
-        </div>
+          <Route path="/users/update-profile" exact component={UpdateProfile}/>
+       </div>
       </Router>
     );
   }
