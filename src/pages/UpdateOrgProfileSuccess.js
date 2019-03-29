@@ -22,7 +22,7 @@ class UpdateOrgProfileSuccess extends Component {
                   <h3><b>Thank you for updating your profile.</b></h3>
                   <p>Your profile will be reviewed by our team.</p>
                   <br></br>
-                  <Button color="primary">Dashboard</Button>
+                  <Button className="text-center" color="primary">Dashboard</Button>
                 </div>
               </Col>
             </Row>
