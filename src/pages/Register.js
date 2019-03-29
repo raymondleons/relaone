@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import '../assets/css/_style.scss';
 import Img from '../assets/images/image1.png'
 import Logo from '../assets/images/blue-logo.png'
+import { Link as Links} from 'react-router-dom';
 
 
 export default class Example extends React.Component {
@@ -29,7 +30,7 @@ export default class Example extends React.Component {
     return (
       <div className="container">
         <div className=" my-4 logo" >
-            <img className="" src={Logo} alt=""/>
+        <Links to="/"><img className="" src={Logo} alt=""/></Links>
         </div>
         <Row>
           <Col md={6}>
