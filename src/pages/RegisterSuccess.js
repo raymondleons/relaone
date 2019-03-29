@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
 import bluelogo from '../assets/images/blue-logo.png';
-import registersuccess from '../assets/images/register-success.png';
+import inbox from '../assets/images/inbox.png';
 import '../assets/css/_style.scss'
 
 class RegisterSuccess extends Component {
@@ -18,7 +18,7 @@ class RegisterSuccess extends Component {
               <Col md="2"></Col>
               <Col md="8">
                 <div className="register-success-content">
-                  <img src={registersuccess} alt="check your email" className="icon-success"></img>
+                  <img src={inbox} alt="check your email" className="icon-success"></img>
                   <h3>Thank you for registering.</h3>
                   <p>Please check your inbox and click the link emailed to you.</p>
                 </div>
