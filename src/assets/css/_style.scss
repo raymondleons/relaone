@@ -360,6 +360,41 @@ body {
     width: 200px;
 }
 
+.organization-dashboard {
+    background-color: white;
+    padding: 30px;
+    padding-bottom: 70px;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 10px 1px #888888;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+.event-count {
+    text-align: right;
+    font-size: small;
+}
+
+.event-action {
+    padding-top: 10px;
+    text-align: right;
+}
+
+.event-action a {
+    padding-right: 10px;  
+}
+
+.no-event {
+    text-align: center;
+}
+
 .logo{
  width:200px;
  margin:auto;
