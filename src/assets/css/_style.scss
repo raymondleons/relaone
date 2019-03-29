@@ -15,6 +15,15 @@ body {
         padding-bottom: 100px;
     }
 
+    .intro-text h1 { 
+        font-size: 48px;
+        font-weight: bold; 
+    }
+
+    .bold-text {
+        font-weight: bold;
+    }
+
     .how-to-join-image {
         width: 100px;
         float: right;
@@ -24,8 +33,20 @@ body {
         width: 100px;
         float: right;
     }
+
     .wdt {
         display: none;
+    }
+
+    .organization-picture {
+        width: 80px;
+        border-radius: 50%;
+        margin-left: 10px;
+    }
+
+    .profile-name {
+        padding-top: 15px;
+        padding-left: 20px;
     }
 }
 
@@ -36,6 +57,11 @@ body {
         padding-bottom: 100px;
     }
     
+    .intro-text h1 { 
+        font-size: 48px;
+        font-weight: bold; 
+    }
+
     .how-to-join-image {
         width: 100px;
         float: right;
@@ -44,17 +70,33 @@ body {
     .testimony-image {
         width: 100px;
         float: right;
+    }
+
+    .organization-picture {
+        width: 80px;
+        border-radius: 50%;
+        margin-left: 10px;
+    }
+
+    .profile-name {
+        padding-top: 15px;
+        padding-left: 15px;
     }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     .intro-text {
-        padding-top: 40px;
-        padding-bottom: 0px;
+        padding-top: 0px;
+        padding-bottom: 40px;
     }
 
-    .intro-text h1 {font-size: 33px;}
+    .intro-text h1 {
+        font-size: 27px;
+        font-weight: bold; 
+    }
+
+    .intro-text p {font-size: 15px;}
 
     .how-to-join-image {
         width: 100px;
@@ -62,6 +104,17 @@ body {
 
     .testimony-image {
         width: 100px;
+    }
+
+    .organization-picture {
+        width: 80px;
+        border-radius: 50%;
+        margin-left: 0px;
+    }
+
+    .profile-name {
+        padding-top: 15px;
+        padding-left: 15px;
     }
 } 
 
@@ -72,12 +125,28 @@ body {
         padding-bottom: 0px;
     }
 
+    .intro-text h1 { 
+        font-size: 48px;
+        font-weight: bold; 
+     }
+
     .how-to-join-image {
         width: 150px;
     }
 
     .testimony-image {
         width: 130px;
+    }
+
+    .organization-picture {
+        width: 80px;
+        border-radius: 50%;
+        margin-left: 0px;
+    }
+
+    .profile-name {
+        padding-top: 15px;
+        padding-left: 0px;
     }
 } 
 
@@ -88,12 +157,23 @@ body {
         padding-bottom: 100px;
     }
 
+    .intro-text h1 { 
+        font-size: 48px;
+        font-weight: bold; 
+     }
+
     .how-to-join-image {
         width: 150px;
     }
 
     .testimony-image {
         width: 130px;
+    }
+
+    .organization-picture {
+        width: 80px;
+        border-radius: 50%;
+        margin-left: 10px;
     }
 }
 
@@ -120,7 +200,7 @@ body {
     padding-left: 30px;
 }
 
-.navitem {
+.navitem a {
     margin-left: 8px;
     color: white;
 }
@@ -131,6 +211,9 @@ body {
 
 .navitem:hover {
     text-decoration: underline;
+}
+.nav-link a {
+    color: white;
 }
 
 .login-button {
@@ -151,8 +234,9 @@ body {
     color: white;
 }
 
-.intro button {
-    color: white;
+.intro-button {
+    width: 170px;
+    float: left;
 }
 
 .intro-image {
@@ -169,7 +253,7 @@ body {
 }
 
 .testimony {
-    padding-bottom: 150px;
+    padding-bottom: 200px;
     background-color: #F9F2FA;
 }
 
@@ -197,8 +281,75 @@ body {
     margin-left: 30px;
 }
 
+.footer-button {
+    height: 50px;
+    margin-left: 30px;
+}
+
+.footer-content {
+    padding-top: 30px;
+}
+
+.footer-content-all{
+    border-bottom: solid #E8D8D1 1px;
+}
+
 .footer-copyright {
     padding-left: 15px;
+    padding-top: 15px;
+}
+
+.update-organization-profile {
+    background-color: #F9F2FA;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header-logo {
+    width: 177px;
+    margin-left: 15px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.form-organization-profile {
+    background-color: white;
+    padding: 30px;
+    padding-bottom: 70px;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 10px 1px #888888;
+}
+
+.profile-badge {
+    background-color: white;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    box-shadow: 1px 1px 10px 1px #888888;
+}
+
+.logo-center {
+    width:177px;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+.update-success-content {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 80px;
+    box-shadow: 1px 1px 10px 1px #888888;
+    text-align: center;    
+}
+
+.icon-success {
+    width: 200px;
 }
 
 .register-success {

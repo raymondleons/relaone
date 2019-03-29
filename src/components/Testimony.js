@@ -91,11 +91,9 @@ class Testimony extends Component {
                     <img src={item.src} alt={item.altText} className="testimony-image"/>
                   </Col>
                   <Col xs="8" sm="8" md="6">
-                    <p><b>{item.name}</b></p>
+                    <p><span className="bold-text">{item.name}</span></p>
                     <p>{item.title}</p>
-                    <br></br>
                     <p>{item.caption}</p>
-                    <br></br>
                   </Col>
                 </Row>
               </Container>
@@ -105,7 +103,7 @@ class Testimony extends Component {
 
         return (
             <div className="section testimony" id="testimony">
-                <h4 className="text-center"><b>Testimony</b></h4>
+                <h4 className="text-center bold-text">Testimony</h4>
                 <br></br>
                 <Carousel
                 activeIndex={activeIndex}

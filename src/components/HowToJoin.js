@@ -102,7 +102,7 @@ class HowToJoin extends Component {
                     <img src={item.src} alt={item.altText} className="how-to-join-image" />
                   </Col>
                   <Col xs="8" sm="8" md="6">
-                    <p><b>{item.title}</b></p>
+                    <p><span className="bold-text">{item.title}</span></p>
                     <br></br>
                     <p>{item.caption}</p>
                     <br></br>
@@ -115,7 +115,7 @@ class HowToJoin extends Component {
 
         return (
             <div className="section how-to-join" id="how-to-join">
-                <h4 className="text-center"><b>How to Join</b></h4>
+                <h4 className="text-center bold-text">How to Join</h4>
                 <br></br>
                 <Carousel
                 activeIndex={activeIndex}
