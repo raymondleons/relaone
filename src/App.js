@@ -10,6 +10,7 @@ import RegisterSuccess from './pages/RegisterSuccess';
 import OrganizationDashboardPage from './pages/OrganizationDashboardPage';
 import CreateEventPage from './pages/CreateEventPage';
 import ArticleListPage from './pages/ArticleListPage';
+import ForgotPassword from './pages/ForgotPassword';
 
 class App extends Component {
   render() {
@@ -26,6 +27,8 @@ class App extends Component {
           <Route path="/organization/dashboard" exact component={OrganizationDashboardPage}/>
           <Route path="/create-event" exact component={CreateEventPage}/>
           <Route path="/article" exact component={ArticleListPage}/>
+          <Route path="/forgot-password" exact component={ForgotPassword}/>
+
         </div>
       </Router>
     );
