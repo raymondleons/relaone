@@ -9,6 +9,7 @@ import UpdateProfile from './pages/UpdateProfile'
 import RegisterSuccess from './pages/RegisterSuccess';
 import OrganizationDashboardPage from './pages/OrganizationDashboardPage';
 import CreateEventPage from './pages/CreateEventPage';
+import ArticleListPage from './pages/ArticleListPage';
 
 class App extends Component {
   render() {
@@ -24,7 +25,7 @@ class App extends Component {
           
           <Route path="/organization/dashboard" exact component={OrganizationDashboardPage}/>
           <Route path="/create-event" exact component={CreateEventPage}/>
-
+          <Route path="/article" exact component={ArticleListPage}/>
         </div>
       </Router>
     );
