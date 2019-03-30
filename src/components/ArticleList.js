@@ -8,8 +8,8 @@ import palu from '../assets/images/palu.jpg';
 class ArticleList extends Component {
   render() {
     return (
-      <div class="article-list">
-        <div class="content-title">
+      <div className="article-list">
+        <div className="content-title">
             <h3 className="bold-text">Article</h3>
         </div>
         <div>
