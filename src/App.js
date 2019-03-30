@@ -7,6 +7,8 @@ import UpdateOrgProfileSuccess from './pages/UpdateOrgProfileSuccess';
 import UpdateProfile from './pages/UpdateProfile'
 import RegisterSuccess from './pages/RegisterSuccess';
 import OrganizationDashboardPage from './pages/OrganizationDashboardPage';
+import DashboardPage from './pages/DashboardPage'
+
 
 class App extends Component {
   render() {
@@ -18,13 +20,14 @@ class App extends Component {
           <Route path="/organization/update-profile" exact component={UpdateOrganizationProfile}/>
           <Route path="/organization/update-profile/success" exact component={UpdateOrgProfileSuccess}/>
           <Route path="/users/update-profile" exact component={UpdateProfile}/>
-          
           <Route path="/organization/dashboard" exact component={OrganizationDashboardPage}/>
+          <Route path="/dashboard" exact component={DashboardPage}/>
         </div>
       </Router>
     );
   }
 }
+
 
 export default App;
 
