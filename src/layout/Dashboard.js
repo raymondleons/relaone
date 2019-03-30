@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import Event from '../assets/images/event/banjir.jpg'
 import Rekomendasi from '../assets/images/recomendation.svg'
+import Post from '../assets/images/event/post.jpg'
 
 
 export default class Dashboard extends Component {
@@ -29,6 +30,33 @@ export default class Dashboard extends Component {
               <p style={style.desc}>Rekomendasi</p>
               <Button color="primary" style={{float:"right", marginTop:"-30px"}}>Join Now</Button>
             </div>
+        </div>
+        <div>
+            <h5>List Article</h5>
+        </div>
+        <div className="col-md-4">
+          <div className="form-event">
+            <img src={Post} style={style.post} alt=""/>
+            <h5 style={{fontSize:"15px", paddingTop:"10px", textAlign:"center"}}>Cara Menghindari Gempa Dengan Aman</h5>
+            <p style={{fontSize:"12px", paddingTop:"7px"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae, architecto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod aliquam molestiae enim optio rerum? Incidunt animi dolores totam provident numquam.</p>
+            <Button color="primary" style={{marginLeft:"10px"}}>Read more</Button>
+          </div>
+        </div>
+        <div className="col-md-4" style={{float:"right", marginTop:"-577px", marginRight:"230px"}}>
+          <div className="form-event">
+            <img src={Post} style={style.post} alt=""/>
+            <h5 style={{fontSize:"15px", paddingTop:"10px", textAlign:"center"}}>Cara Menghindari Gempa Dengan Aman</h5>
+            <p style={{fontSize:"12px", paddingTop:"7px"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae, architecto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod aliquam molestiae enim optio rerum? Incidunt animi dolores totam provident numquam.</p>
+            <Button color="primary" style={{marginLeft:"10px"}}>Read more</Button>
+          </div>
+        </div>
+        <div className="col-md-4" style={{float:"right", marginTop:"-577px", marginRight:"14px"}}>
+          <div className="form-event">
+            <img src={Post} style={style.post} alt=""/>
+            <h5 style={{fontSize:"15px", paddingTop:"10px", textAlign:"center"}}>Cara Menghindari Gempa Dengan Aman</h5>
+            <p style={{fontSize:"12px", paddingTop:"7px"}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae, architecto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod aliquam molestiae enim optio rerum? Incidunt animi dolores totam provident numquam.</p>
+            <Button color="primary" style={{marginLeft:"10px"}}>Read more</Button>
+          </div>
         </div>
       </div>
     )
@@ -58,6 +86,11 @@ const style = {
     color: "gray",
     marginTop:"-1px",
     marginRight:"-300px",
+  },
+  post: {
+    marginLeft:"-9px",
+    width:"150px",
+    boxShadow:"1px 1px 10px 1px #888888"
   }
 }
 
