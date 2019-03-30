@@ -400,8 +400,6 @@ body {
     width: 100%;
 }
 
-
-
 .event-count {
     text-align: right;
     font-size: small;
@@ -434,6 +432,14 @@ body {
 }
 
 .article-list {
+    background-color: white;
+    padding: 30px;
+    padding-bottom: 70px;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 10px 1px #888888;
+}
+
+.event {
     background-color: white;
     padding: 30px;
     padding-bottom: 70px;

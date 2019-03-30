@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Container, Row, Col, CardDeck, Card, CardImg, CardBody, CardTitle, CardText} from 'reactstrap';
 import Dotdotdot from 'react-dotdotdot';
 import volunteer from '../assets/images/volunteer.jpg';
+import ringoffire from '../assets/images/ringoffire.jpg';
+import palu from '../assets/images/palu.jpg';
 
 class ArticleList extends Component {
   render() {
@@ -11,7 +13,6 @@ class ArticleList extends Component {
             <h3 className="bold-text">Article</h3>
         </div>
         <div>
-            <CardDeck className="article-deck">
                 <Card className="article-card">
                     <Row>
                         <Col md="4">
@@ -50,13 +51,68 @@ Sometimes the best way to find an opportunity is to simply poke around and see w
 
 5. KNOW WHO’S OUT THERE
 Ask people about their experiences volunteering (you can search LinkedIn to see which of your contacts is volunteering). Why do they volunteer? Where? How often? What makes it worthwhile for them? Can you tag along with them or see what they are working on? Tapping into your network will you give the knowledge you need to find a volunteer opportunity you’ll love.</Dotdotdot></CardText>
-                                <CardText className="text-muted">Created by fastcompany.com</CardText>
+                                <CardText className="text-muted">Created by Allison Jones</CardText>
                             </CardBody>
                         
                         </Col>
                     </Row>
                 </Card>
-            </CardDeck>
+
+                <Card className="article-card">
+                    <Row>
+                        <Col md="4">
+                            <CardImg className="article-image" src={ringoffire} alt="article-1"></CardImg>
+                        </Col>
+                        <Col md="8">
+                            <CardBody>
+                                <CardTitle><h4>Ring of fire: Why Indonesia has so many earthquakes</h4></CardTitle>
+                                <CardText><Dotdotdot clamp={3}>Indonesia has a deadly and unlucky history with earthquakes. It is frequently hit, the latest tremor coming 14 years after a 9.1-9.3 magnitude quake off Sumatra prompted a tsunami that left hundreds of thousands of people dead across the Indian Ocean. The southeast Asian country suffers so much because of its position on a large grid of tectonic plates, on which all the Earth's countries and seas sit. 
+                                Indonesia is at the meeting point of three major continental plates - the Pacific, the Eurasian and the Indo-Australian plates - and the much smaller Philippine plate.
+
+It also falls on the "Ring of fire", a horseshoe-shaped area around the edges of the Pacific Ocean, from Australia to the Andes, along which 90% of all earthquakes occur.
+
+Indonesia's location makes it particularly vulnerable to earth tremors.
+The Earth's plates grind against each other all the time. Sometimes they get stuck and pressure builds - an earthquake is the sudden and violent release of this pressure.
+
+The archipelago has also been created by its location on the ring, with many of the country's 17,000 islands forged out of the tectonic and volcanic forces pushing up land, frequently resulting in eruptions or magma and ash.
+
+There are huge swathes of Indonesia where there is always a volcano nearby or on the horizon, and the area is famed for the size of earlier volcanic blasts, with Krakatoa among recent historical incidences.
+
+An example of earthquakes occurring close to a volcano happened in August when a series of quakes rocked the island of Lombok, which owes its existence to Mt Rinjani and its ancient predecessors.
+
+Its place at the conjunction of four plates, plus tendency for people to live in low-lying areas close to the coast, makes Indonesia's islands particularly at risk from tsunamis.
+
+The huge waves are generated, like the ones on Boxing Day in 2004 and the ones that killed 20,000+ people in Japan in 2011, when the movement of the earth's plates displaces huge volumes of water.
+
+The recent quake in Sulawesi caused huge damage because the quake hit close to a high population centre in Palu, and the town was then struck again by a wall of water funnelled down a bay to the sea-level town.
+
+Japan, Turkey, Mexico, Pakistan, Nepal, the Philippines, India and El Salvador are also among the countries most vulnerable to earthquakes.</Dotdotdot></CardText>
+                                <CardText className="text-muted">Created by Philip Whiteside</CardText>
+                            </CardBody>
+                        
+                        </Col>
+                    </Row>
+                </Card>
+
+                <Card className="article-card">
+                    <Row>
+                        <Col md="4">
+                            <CardImg className="article-image" src={palu} alt="article-1"></CardImg>
+                        </Col>
+                        <Col md="8">
+                            <CardBody>
+                                <CardTitle><h4>3 Things Volunteers Must Prepare in Disaster-hit Palu, Donggala</h4></CardTitle>
+                                <CardText><Dotdotdot clamp={3}>Many disaster reliefs, either foreign or domestic, are currently making their way to Palu in Central Sulawesi, which mostly takes form in humanitarian aid from government agencies and non-governmental organizations (NGO). 
+                                Humas Basarnas personnel carry a recovered body in Palu, September 30, 2018 in this picture obtained from social media. 2018. HUMAS BASARNAS/via REUTERS
+
+To help assist these relief efforts, Indonesia’s Health Ministry through its Director General of Disease Prevention and Control Anung Sugihantono shared three crucial elements that need to be considered by teams and individuals that are tasked in disaster-stricken Central Sulawesi. 
+</Dotdotdot></CardText>
+                                <CardText className="text-muted">Created by Mitra Tarigan</CardText>
+                            </CardBody>
+                        
+                        </Col>
+                    </Row>
+                </Card>
         </div>
       </div>
     )
