@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Col, Row, Card, CardImg, CardBody,
   CardTitle, CardSubtitle, Button } from 'reactstrap'
+import {Link} from 'react-router-dom'
 import test from '../assets/images/bg-contactus.jpg'
 
 export default class UserEvent extends Component {
@@ -21,7 +22,9 @@ export default class UserEvent extends Component {
                 <CardSubtitle>Due Date : 12345678</CardSubtitle>
                 <Row>
                   <Col sm={6}>
-                    <Button block color='primary'>More Details</Button>
+                    <Button block color='primary'>
+                      <Link to='/usereventdetailspage'> More Details</Link>
+                    </Button>
                   </Col>
                   <Col sm={6}>
                     <Button block color='primary'>Join Now!</Button>
