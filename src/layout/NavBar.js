@@ -82,7 +82,7 @@ class NavBar extends Component {
                 </NavItem>
                 <NavItem>
                     <NavLink>
-                        <Links to="/usereventpage">Join</Links>
+                        <Links to="/register">Join</Links>
                     </NavLink>
                 </NavItem>
                 <NavItem>

@@ -96,7 +96,7 @@ export default class Example extends React.Component {
                     <FormText >
                       Creating an account means you’re okay with our <Link to='/TermsandConditions'>Terms and Conditons</Link>
                     </FormText>
-                    <Button color="primary button-right mt-3 ">Sign Up</Button>
+                    <Button color="primary button-right mt-3 ">Sign Up!</Button>
                     <FormText className=" clear text-center mtop">
                       Already have an account? <Link to='/Login'>Login here.</Link>
                     </FormText>
