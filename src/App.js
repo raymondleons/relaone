@@ -17,7 +17,7 @@ import ArticleDetailPage from './pages/ArticleDetailPage';
 import TermsandConditions from './pages/TermsandConditions'
 import UserEvent from './pages/UserEvent'
 import UserEventDetails from './pages/UserEventDetails'
-import UserCertification from './pages/UserCertification'
+import UserCertificationPage from './pages/UserCertificationPage'
 import UserEventPage from './pages/UserEventPage'
 import Register from './pages/Register'
 import UserEventDetailsPage from './pages/UserEventDetailsPage'
@@ -47,7 +47,7 @@ class App extends Component {
           <Route path='/UserEventPage' component={UserEventPage} exact />
           <Route path='/UserEventDetails' component={UserEventDetails} exact />        
           <Route path='/UserEventDetailsPage' component={UserEventDetailsPage} exact />
-          <Route path='/UserCertification' component={UserCertification} exact />  
+          <Route path='/UserCertificationPage' component={UserCertificationPage} exact />  
           <Route path='/Login' component={Login} exact />
         </div>
       </Router>
