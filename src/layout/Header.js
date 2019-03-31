@@ -8,7 +8,7 @@ class Header extends Component {
     return (
         <div className="header">
             <div>
-                <img className="header-logo" src={bluelogo} alt='RelaOne logo'></img>
+            <Links to="/"><img className="header-logo" src={bluelogo} alt='RelaOne logo'></img></Links>
             </div>
             <div>
             <Links to="/"><Button className="logout" outline color="primary">Log Out</Button></Links>
