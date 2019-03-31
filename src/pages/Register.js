@@ -12,6 +12,10 @@ import Logo from '../assets/images/blue-logo.png'
 
 export default class Example extends React.Component {
 
+  componentDidMount(){
+    document.title= "Register - RelaOne"
+}
+
   constructor(props) {
     super(props);
 
@@ -90,11 +94,11 @@ export default class Example extends React.Component {
                       <Input className="input-border" type="password" name="password" id="password" placeholder="Your Password" />
                     </FormGroup>
                     <FormText >
-                      Creating an account means you’re okay with our <Link to='TermsandConditions' target="_blank">Terms and Conditons</Link>
+                      Creating an account means you’re okay with our <Link to='/TermsandConditions'>Terms and Conditons</Link>
                     </FormText>
                     <Button color="primary button-right mt-3 ">Sign Up</Button>
                     <FormText className=" clear text-center mtop">
-                      Already have an account? <Link to='/Login' target="_blank">Login here.</Link>
+                      Already have an account? <Link to='/Login'>Login here.</Link>
                     </FormText>
                   </Form>
                 </Row>
@@ -123,7 +127,7 @@ export default class Example extends React.Component {
                     </FormText>
                     <Button color="primary button-right mt-3">Sign Up</Button>
                     <FormText className=" clear text-center mtop">
-                      Already have an account? <Link to='/Login' target="_blank">Login here.</Link>
+                      Already have an account? <Link to='/Login'>Login here.</Link>
                     </FormText>
                   </Form>
                 </Row>
