@@ -11,7 +11,9 @@ import OrganizationDashboardPage from './pages/OrganizationDashboardPage';
 import DashboardPage from './pages/DashboardPage'
 import EventListPage from './pages/EventListPage';
 import CreateEventPage from './pages/CreateEventPage';
+import ArticleListPage from './pages/ArticleListPage';
 import ForgotPassword from './pages/ForgotPassword';
+import ArticleDetailPage from './pages/ArticleDetailPage';
 
 class App extends Component {
   render() {
@@ -28,8 +30,9 @@ class App extends Component {
           <Route path="/dashboard" exact component={DashboardPage}/>
           <Route path="/event" exact component={EventListPage}/>
           <Route path="/create-event" exact component={CreateEventPage}/>
+          <Route path="/article" exact component={ArticleListPage}/>
           <Route path="/forgot-password" exact component={ForgotPassword}/>
-
+          <Route path="/article/detail" exact component={ArticleDetailPage}/>
         </div>
       </Router>
     );
