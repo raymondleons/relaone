@@ -8,6 +8,7 @@ import UpdateUserProfileSuccess from './pages/UpdateUserProfileSuccess';
 import UpdateProfile from './pages/UpdateProfile'
 import RegisterSuccess from './pages/RegisterSuccess';
 import OrganizationDashboardPage from './pages/OrganizationDashboardPage';
+import DashboardPage from './pages/DashboardPage'
 import EventListPage from './pages/EventListPage';
 import CreateEventPage from './pages/CreateEventPage';
 import ArticleListPage from './pages/ArticleListPage';
@@ -26,6 +27,7 @@ class App extends Component {
           <Route path="/user/update-profile/success" exact component={UpdateUserProfileSuccess}/>
           <Route path="/users/update-profile" exact component={UpdateProfile}/>
           <Route path="/organization/dashboard" exact component={OrganizationDashboardPage}/>
+          <Route path="/dashboard" exact component={DashboardPage}/>
           <Route path="/event" exact component={EventListPage}/>
           <Route path="/create-event" exact component={CreateEventPage}/>
           <Route path="/article" exact component={ArticleListPage}/>
@@ -36,6 +38,7 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;
 

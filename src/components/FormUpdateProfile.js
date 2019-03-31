@@ -3,6 +3,11 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import '../assets/css/_style.scss'
 
 class FormUpdateProfile extends Component {
+
+    ComponentDidMount = (
+        document.title = "Update Profile - Users"
+    )
+
   render() {
     return (
       <div className="form-update-profile">
