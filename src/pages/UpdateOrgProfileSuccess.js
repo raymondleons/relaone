@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
 import bluelogo from '../assets/images/blue-logo.png';
-import inbox from '../assets/images/inbox.png';
+import updatesuccess from '../assets/images/update-profile-success.png';
 import '../assets/css/_style.scss'
 
-class RegisterSuccess extends Component {
+class UpdateOrgProfileSuccess extends Component {
   render() {
     return (
-      <div className="register-success">
+      <div className="update-organization-profile">
         <Container>
             <Row>
                 <div className="logo-center">
@@ -17,10 +17,11 @@ class RegisterSuccess extends Component {
             <Row>
               <Col md="2"></Col>
               <Col md="8">
-                <div className="register-success-content">
-                  <img src={inbox} alt="check your email" className="icon-success"></img>
-                  <h3>Thank you for registering.</h3>
-                  <p>Please check your inbox and click the link emailed to you.</p>
+                <div className="update-success-content">
+                  <img src={updatesuccess} alt="wait for verification" className="icon-success"></img>
+                  <h3 className="bold-text">Thank you for updating your profile.</h3>
+                  <p>Your profile will be reviewed by our team.</p>
+                  <Button color="primary">Dashboard</Button>
                 </div>
               </Col>
             </Row>
@@ -30,5 +31,4 @@ class RegisterSuccess extends Component {
   }
 }
 
-export default RegisterSuccess;
-
+export default UpdateOrgProfileSuccess;

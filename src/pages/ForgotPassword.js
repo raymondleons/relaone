@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
 import bluelogo from '../assets/images/blue-logo.png';
-import inbox from '../assets/images/inbox.png';
+import lock from '../assets/images/lock.png';
 import '../assets/css/_style.scss'
 
-class RegisterSuccess extends Component {
+class ForgotPassword extends Component {
   render() {
     return (
       <div className="register-success">
@@ -18,9 +18,11 @@ class RegisterSuccess extends Component {
               <Col md="2"></Col>
               <Col md="8">
                 <div className="register-success-content">
-                  <img src={inbox} alt="check your email" className="icon-success"></img>
-                  <h3>Thank you for registering.</h3>
-                  <p>Please check your inbox and click the link emailed to you.</p>
+                  <img src={lock} alt="check your email" className="icon-success"></img>
+                  <h3>Forgot your password?</h3>
+                  <p>Enter your email address below and we will get you back on track.</p>
+                  <input type="email" placeholder="user@example.com"></input> 
+                  <Button className="forgetpassword-button" color="primary">Send</Button>
                 </div>
               </Col>
             </Row>
@@ -30,5 +32,5 @@ class RegisterSuccess extends Component {
   }
 }
 
-export default RegisterSuccess;
+export default ForgotPassword;
 
