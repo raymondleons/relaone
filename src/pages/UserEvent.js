@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Col, Row, Card, CardImg, CardText, CardBody,
+import {Col, Row, Card, CardImg, CardBody,
   CardTitle, CardSubtitle, Button } from 'reactstrap'
 import test from '../assets/images/bg-contactus.jpg'
 
@@ -8,19 +8,93 @@ export default class UserEvent extends Component {
     return (
       <div>
         <Row>
-          <Col sm={3}>
-            <p>nav</p>
+          <Col sm={6}>
+          <Card className="mbot">
+              <CardImg top width="100%" src={test} alt="Card image cap" />
+              <CardBody>
+                <CardTitle>Nama Event</CardTitle>
+                <hr />
+                <CardSubtitle>Oleh: Nama Org PT.blabla</CardSubtitle>
+                <CardSubtitle>Location, Batam, blablabla</CardSubtitle>
+                <CardSubtitle>Periode: 4 jam</CardSubtitle>
+                <hr />
+                <CardSubtitle>Due Date : 12345678</CardSubtitle>
+                <Row>
+                  <Col sm={6}>
+                    <Button block color='primary'>More Details</Button>
+                  </Col>
+                  <Col sm={6}>
+                    <Button block color='primary'>Join Now!</Button>
+                  </Col>
+                </Row>
+              </CardBody>
+            </Card>
           </Col>
-          <Col className="padd" sm={9}>
-          <Card>
-            <CardImg top width="100%" src={test} alt="Card image cap" />
-            <CardBody>
-              <CardTitle>Nama Event</CardTitle>
-              <CardSubtitle>Location, Batam, blablabla</CardSubtitle>
-              <CardSubtitle>Oleh: Nama Org PT.blabla</CardSubtitle>
-              <Button>Join</Button>
-            </CardBody>
-          </Card>
+          <Col sm={6}>
+          <Card className="mbot">
+              <CardImg top width="100%" src={test} alt="Card image cap" />
+              <CardBody>
+                <CardTitle>Nama Event</CardTitle>
+                <hr />
+                <CardSubtitle>Oleh: Nama Org PT.blabla</CardSubtitle>
+                <CardSubtitle>Location, Batam, blablabla</CardSubtitle>
+                <CardSubtitle>Periode: 4 jam</CardSubtitle>
+                <hr />
+                <CardSubtitle>Due Date : 12345678</CardSubtitle>
+                <Row>
+                  <Col sm={6}>
+                    <Button block color='primary'>More Details</Button>
+                  </Col>
+                  <Col sm={6}>
+                    <Button block color='primary'>Join Now!</Button>
+                  </Col>
+                </Row>
+              </CardBody>
+            </Card>
+          </Col>
+          <Col sm={6}>
+          <Card className="mbot">
+              <CardImg top width="100%" src={test} alt="Card image cap" />
+              <CardBody>
+                <CardTitle>Nama Event</CardTitle>
+                <hr />
+                <CardSubtitle>Oleh: Nama Org PT.blabla</CardSubtitle>
+                <CardSubtitle>Location, Batam, blablabla</CardSubtitle>
+                <CardSubtitle>Periode: 4 jam</CardSubtitle>
+                <hr />
+                <CardSubtitle>Due Date : 12345678</CardSubtitle>
+                <Row>
+                  <Col sm={6}>
+                    <Button block color='primary'>More Details</Button>
+                  </Col>
+                  <Col sm={6}>
+                    <Button block color='primary'>Join Now!</Button>
+                  </Col>
+                </Row>
+              </CardBody>
+            </Card>
+          </Col>
+          <Col sm={6}>
+            <Card className="mbot">
+              <CardImg top width="100%" src={test} alt="Card image cap" />
+              <CardBody>
+                <CardTitle>Nama Event</CardTitle>
+                <hr />
+                <CardSubtitle>Oleh: Nama Org PT.blabla</CardSubtitle>
+                <CardSubtitle>Location, Batam, blablabla</CardSubtitle>
+                <CardSubtitle>Periode: 4 jam</CardSubtitle>
+                <hr />
+                <CardSubtitle>Due Date : 12345678</CardSubtitle>
+                <Row>
+                  <Col sm={6}>
+                    <Button block color='primary'>More Details</Button>
+                  </Col>
+                  <Col sm={6}>
+                    <Button block color='primary'>Join Now!</Button>
+                  </Col>
+                </Row>
+              </CardBody>
+            </Card>
           </Col>
         </Row>
       </div>

@@ -13,6 +13,7 @@ import TermsandConditions from './TermsandConditions'
 import UserEvent from './UserEvent'
 import UserEventDetails from './UserEventDetails'
 import UserCertification from './UserCertification'
+import UserEventPage from './UserEventPage'
 
 class LandingPage extends Component {
 
@@ -36,6 +37,7 @@ class LandingPage extends Component {
         <Route path='/UserEvent' component={UserEvent} exact />
         <Route path='/UserEventDetails' component={UserEventDetails} exact />
         <Route path='/UserCertification' component={UserCertification} exact />
+        <Route path='/UserEventPage' component={UserEventPage} exact />
       </Router>
     )
   }
