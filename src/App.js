@@ -20,6 +20,8 @@ import UserEventDetails from './pages/UserEventDetails'
 import UserCertification from './pages/UserCertification'
 import UserEventPage from './pages/UserEventPage'
 import Register from './pages/Register'
+import UserEventDetailsPage from './pages/UserEventDetailsPage'
+import Login from './pages/LoginPage'
 
 class App extends Component {
   render() {
@@ -40,11 +42,13 @@ class App extends Component {
           <Route path="/forgot-password" exact component={ForgotPassword}/>
           <Route path="/article/detail" exact component={ArticleDetailPage}/>
           <Route path='/Register' component={Register} exact />
-        <Route path='/TermsandConditions' component={TermsandConditions} exact />
-        <Route path='/UserEvent' component={UserEvent} exact />
-        <Route path='/UserEventDetails' component={UserEventDetails} exact />
-        <Route path='/UserCertification' component={UserCertification} exact />
-        <Route path='/UserEventPage' component={UserEventPage} exact />
+          <Route path='/TermsandConditions' component={TermsandConditions} exact />
+          <Route path='/UserEvent' component={UserEvent} exact />
+          <Route path='/UserEventDetails' component={UserEventDetails} exact />
+          <Route path='/UserCertification' component={UserCertification} exact />
+          <Route path='/UserEventPage' component={UserEventPage} exact />
+          <Route path='/UserEventDetailsPage' component={UserEventDetailsPage} exact />
+          <Route path='/Login' component={Login} exact />
         </div>
       </Router>
     );

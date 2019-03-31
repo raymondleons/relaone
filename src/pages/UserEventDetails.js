@@ -7,10 +7,6 @@ export default class UserEventDetails extends Component {
   render() {
     return (
       <div>
-        <Row>
-          <Col sm={3}>
-          </Col>
-          <Col className="padd" sm={9}>
           <Card>
             <CardImg top width="100%" src={test} alt="Card image cap" />
             <CardBody>
@@ -21,8 +17,6 @@ export default class UserEventDetails extends Component {
               <Button>Join</Button>
             </CardBody>
           </Card>
-          </Col>
-        </Row>
       </div>
     )
   }
