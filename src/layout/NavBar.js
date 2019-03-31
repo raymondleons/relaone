@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 import '../assets/css/_style.scss';
 import logo from '../assets/images/logo.png';
 import { Link } from "react-scroll";

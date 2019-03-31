@@ -1,28 +1,28 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { UncontrolledCollapse } from 'reactstrap';
 
 class OrganizationSideBar extends Component {
   render() {
     return (
-        <aside className="left-panel">
-            <nav className="navbar">
-                <ul className="navbar-nav">
-                
-                <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i className="fa fa-dashboard"></i> <span className="menu-title">Dashboard</span>
-                    </a>
-                    <div className="dropdown-menu">
-                    <Link className="dropdown-item" to="/event">Event</Link>
-                    <Link className="dropdown-item" to="/article">Article</Link>
-                    <Link className="dropdown-item" to="/article/detail">Article Detail</Link>
-                    </div>
-                </li>
-                </ul>
-            </nav>
-            </aside>
+      <div className="side-bar">
+        <div className="side-bar-list">
+          <div className="side-bar-item">Event</div>
+          <div className="side-bar-item" id="volunteer">Volunteer</div>
+            <UncontrolledCollapse toggler="#volunteer">
+              <div className="side-bar-item">Registered</div>
+              <div className="side-bar-item">Accepted</div>
+              <div className="side-bar-item">Rejected</div>
+            </UncontrolledCollapse>
+          <div className="side-bar-item" id="setting">Setting</div>
+            <UncontrolledCollapse toggler="#setting">
+              <div className="side-bar-item">Edit Profile</div>
+            </UncontrolledCollapse>
+        </div>
+        
+      </div>
     )
   }
 }
 
 export default OrganizationSideBar;
+
