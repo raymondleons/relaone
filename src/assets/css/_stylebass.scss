@@ -26,7 +26,7 @@ body {
  .width{
      width:100%;
      background-size: cover;
-     height:450px;;
+     height:100%;
  }
  
  .input-border {
@@ -49,23 +49,43 @@ body {
  }
  .form-group{
      line-height: 0.5;
-     margin-bottom:25px;
+  
  }
  
  .form-control
  {
-     font-size: 1vw;
+    
      color:e0e0e0;
-     margin-top:10px;
+  
  }
  
- .label
- {
-     margin-bottom:0px;
- }
+ 
  
  .whitebg
  {
    background-color: white;
-   border:2px solid grey;
+   box-shadow: 0 1px 7px 0 rgba(0,0,0,.14);
+ }
+
+ .nopadding
+ {
+   padding-left:0px;
+   padding-right:0px;
+ }
+ .right{
+   padding: 20px;
+ }
+ .button-right{
+float: right;
+
+ }
+
+ .clear
+ {
+   clear:both;
+ }
+
+ .mtop
+ {
+   margin-top: 70px;
  }

@@ -37,7 +37,7 @@ export default class Example extends React.Component {
         <Link to="/"><img className="" src={Logo} alt=""/></Link>
         </div>
         <Row className="whitebg">
-          <Col md={6}>
+          <Col md={6} className="nopadding">
             <img className="width" src={Img} alt=""/>
           </Col>
           <Col md={6} className="right">
@@ -62,7 +62,7 @@ export default class Example extends React.Component {
             <TabContent activeTab={this.state.activeTab}>
               <TabPane tabId="1">
                 <Row className="box">
-                  <Form className="width">
+                  <Form className="">
                     <Row form>
                       <Col md={6}>
                         <FormGroup>
@@ -89,9 +89,12 @@ export default class Example extends React.Component {
                       <Label >Password</Label>
                       <Input className="input-border" type="password" name="password" id="password" placeholder="Your Password" />
                     </FormGroup>
-                    <Button color="primary">Sign Up</Button>
-                    <FormText color="muted">
-                      Already have an account? Login here.
+                    <FormText >
+                      Creating an account means you’re okay with our <Link to='TermsandConditions' target="_blank">Terms and Conditons</Link>
+                    </FormText>
+                    <Button color="primary button-right mt-3 ">Sign Up</Button>
+                    <FormText className=" clear text-center mtop">
+                      Already have an account? <Link to='/Login' target="_blank">Login here.</Link>
                     </FormText>
                   </Form>
                 </Row>
@@ -115,12 +118,12 @@ export default class Example extends React.Component {
                       <Label >Password</Label>
                       <Input className="input-border form-control2" type="password" name="password" id="password" placeholder="Your Password" />
                     </FormGroup>
-                    <FormText color="muted">
-                    Creating an account means you’re okay with our <Link to='TermsandConditions' target="_blank">Terms and Conditons</Link>
+                    <FormText>
+                      Creating an account means you’re okay with our <Link to='TermsandConditions' target="_blank">Terms and Conditons</Link>
                     </FormText>
-                    <Button color="primary">Sign Up</Button>
-                    <FormText color="muted">
-                      Already have an account? Login here.
+                    <Button color="primary button-right mt-3">Sign Up</Button>
+                    <FormText className=" clear text-center mtop">
+                      Already have an account? <Link to='/Login' target="_blank">Login here.</Link>
                     </FormText>
                   </Form>
                 </Row>
