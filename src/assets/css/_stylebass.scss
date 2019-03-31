@@ -1,0 +1,64 @@
+@font-face {
+  font-family:MavenPro-Medium;
+  src:url(../fonts/MavenPro-Medium.ttf)
+ }
+
+body {
+  background-color: #F6F8F7;  
+  font-family:MavenPro-Medium,sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+  .width {
+    display: none;
+  }
+}
+
+
+.logo{
+  width:200px;
+  margin:auto;
+ }
+ 
+ .width{
+     width:100%;
+     background-size: cover;
+     height:450px;;
+ }
+ 
+ .input-border {
+     border: none;
+   border-bottom: 1px solid #0065FF;
+   border-radius:0px;
+   width:100%;
+ }
+ 
+ 
+ .box{
+     padding:15px;
+    
+ }
+ .padd{
+     padding:60px;
+ }
+ .form-row{
+     margin-left:0;
+     margin-right:0;
+ }
+ .form-group{
+     line-height: 0.5;
+     margin-bottom:25px;
+ }
+ 
+ .form-control
+ {
+     font-size: 1vw;
+     color:e0e0e0;
+     margin-top:10px;
+ }
+ 
+ .label
+ {
+     margin-bottom:0px;
+ }
+ 
