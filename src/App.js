@@ -25,7 +25,7 @@ class App extends Component {
           <Route path="/organization/update-profile" exact component={UpdateOrganizationProfile}/>
           <Route path="/organization/update-profile/success" exact component={UpdateOrgProfileSuccess}/>
           <Route path="/user/update-profile/success" exact component={UpdateUserProfileSuccess}/>
-          <Route path="/users/update-profile" exact component={UpdateProfile}/>
+          <Route path="/user/update-profile" exact component={UpdateProfile}/>
           <Route path="/organization/dashboard" exact component={OrganizationDashboardPage}/>
           <Route path="/dashboard" exact component={DashboardPage}/>
           <Route path="/event" exact component={EventListPage}/>
