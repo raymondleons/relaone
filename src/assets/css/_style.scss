@@ -431,6 +431,14 @@ body {
     box-shadow: 1px 1px 10px 1px #888888;
 }
 
+.article-list {
+    background-color: white;
+    padding: 30px;
+    padding-bottom: 70px;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 10px 1px #888888;
+}
+
 .event {
     background-color: white;
     padding: 30px;
@@ -439,8 +447,31 @@ body {
     box-shadow: 1px 1px 10px 1px #888888;
 }
 
+.article-card {
+    margin-top: 30px;
+}
+
+.article-image {
+    object-fit: cover;
+    height: 100%;
+}
+
 .forgetpassword-button {
     margin-left: 10px;
+}
+
+.article-detail {
+    background-color: white;
+    padding: 30px;
+    padding-bottom: 70px;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 10px 1px #888888;
+}
+
+.article-detail-image {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 .logo{

@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import OrganizationDashboard from '../components/OrganizationDashboard';
 import '../assets/css/_style.scss';
 import ProfileBadge from '../layout/ProfileBadge';
 import Header from '../layout/Header';
-import OrganizationSideBar from '../layout/OrganizationSideBar';
+import ArticleDetail from '../components/ArticleDetail';
 
-class OrganizationDashboardPage extends Component {
+class ArticleDetailPage extends Component {
   render() {
     return (
-      <div className="update-organization-profile">
+      <div className="create-event">
         <Container>
           <Row>
             <Header/>
@@ -17,10 +16,9 @@ class OrganizationDashboardPage extends Component {
           <Row>
             <Col sm="12" md="4">
               <ProfileBadge></ProfileBadge>
-              <OrganizationSideBar/>
             </Col>
             <Col sm="12" md="8">
-              <OrganizationDashboard/>  
+              <ArticleDetail/>
             </Col>
           </Row>
         </Container>      
@@ -29,5 +27,5 @@ class OrganizationDashboardPage extends Component {
   }
 }
 
-export default OrganizationDashboardPage;
+export default ArticleDetailPage;
 
