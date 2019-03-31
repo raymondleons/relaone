@@ -2,10 +2,12 @@ import React from 'react';
 import { Form, FormGroup, Label, Input, FormText, TabContent, TabPane, Nav, NavItem, NavLink, Button, Row, Col } from 'reactstrap';
 import {Link} from 'react-router-dom'
 import classnames from 'classnames';
-import '../assets/css/_style.scss';
+
+import '../assets/css/_stylebass.scss';
 import Img from '../assets/images/image1.png'
 import Logo from '../assets/images/blue-logo.png'
-import { Link as Links} from 'react-router-dom';
+
+
 
 
 export default class Example extends React.Component {
@@ -30,11 +32,11 @@ export default class Example extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container2">
         <div className=" my-4 logo" >
-        <Links to="/"><img className="" src={Logo} alt=""/></Links>
+        <Link to="/"><img className="" src={Logo} alt=""/></Link>
         </div>
-        <Row>
+        <Row className="whitebg">
           <Col md={6}>
             <img className="width" src={Img} alt=""/>
           </Col>
@@ -87,7 +89,7 @@ export default class Example extends React.Component {
                       <Label >Password</Label>
                       <Input className="input-border" type="password" name="password" id="password" placeholder="Your Password" />
                     </FormGroup>
-                    <Button color="primary">Submit</Button>
+                    <Button color="primary">Sign Up</Button>
                     <FormText color="muted">
                       Already have an account? Login here.
                     </FormText>
@@ -116,7 +118,7 @@ export default class Example extends React.Component {
                     <FormText color="muted">
                     Creating an account means you’re okay with our <Link to='TermsandConditions' target="_blank">Terms and Conditons</Link>
                     </FormText>
-                    <Button color="primary">SIGN UP</Button>
+                    <Button color="primary">Sign Up</Button>
                     <FormText color="muted">
                       Already have an account? Login here.
                     </FormText>

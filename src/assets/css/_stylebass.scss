@@ -19,7 +19,10 @@ body {
   width:200px;
   margin:auto;
  }
- 
+ .container2{
+   width:70%;
+   margin:auto;
+ }
  .width{
      width:100%;
      background-size: cover;
@@ -32,7 +35,6 @@ body {
    border-radius:0px;
    width:100%;
  }
- 
  
  .box{
      padding:15px;
@@ -62,3 +64,8 @@ body {
      margin-bottom:0px;
  }
  
+ .whitebg
+ {
+   background-color: white;
+   border:2px solid grey;
+ }
