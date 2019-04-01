@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
 import bluelogo from '../assets/images/blue-logo.png';
 import inbox from '../assets/images/inbox.png';
-import '../assets/css/_style.scss'
+import '../assets/css/_style2.scss'
 
 class RegisterSuccess extends Component {
   render() {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
+import '../assets/css/_style2.scss'
 
 import Logo from '../assets/images/blue-logo.png'
 

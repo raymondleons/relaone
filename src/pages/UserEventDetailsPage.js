@@ -3,6 +3,7 @@ import {Row, Col, Container} from 'reactstrap'
 import Header from '../layout/Header'
 import ProfileBadge from '../layout/ProfileBadge'
 import UserEventDetails from './UserEventDetails'
+import '../assets/css/_style2.scss'
 
 export default class UserEventDetailsPage extends Component {
   render() {
