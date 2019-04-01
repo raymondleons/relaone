@@ -24,7 +24,7 @@ export default class UserCertification extends Component {
                 <CardTitle>Organisasi A</CardTitle>
                 <CardText>nama event</CardText>
                 <Button color="primary">
-                  <Link to='/UserCertificationDetailsPage'>Details</Link>
+                  <Link to='/user/certification/details'>Details</Link>
                 </Button>
               </Card>
             </Col>
