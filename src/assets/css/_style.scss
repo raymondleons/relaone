@@ -33,11 +33,7 @@ body {
         width: 100px;
         float: right;
     }
-
-    .wdt {
-        display: none;
-    }
-
+  
     .organization-picture {
         width: 80px;
         border-radius: 50%;
@@ -71,7 +67,9 @@ body {
         width: 100px;
         float: right;
     }
-
+    .modal-dialog {
+        max-width: 80%;
+    }
     .organization-picture {
         width: 80px;
         border-radius: 50%;
