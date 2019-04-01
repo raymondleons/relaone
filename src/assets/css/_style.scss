@@ -564,3 +564,24 @@ input[type=texts] {
 .text-rekomendasi {
     float: left;
 }
+
+.list-event {
+    background-color: white;
+    padding: 30px;
+    padding-bottom: 70px;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 10px 1px #888888;
+}
+
+.input-search {
+    padding-top:10px;
+}
+
+.input-search input {
+    background: #F8F8F8;
+    margin-left: 10px;
+}
+
+.input-search button {
+    float:right;
+}
