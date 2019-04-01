@@ -41,14 +41,12 @@ class App extends Component {
           <Route path="/article" exact component={ArticleListPage}/>
           <Route path="/forgot-password" exact component={ForgotPassword}/>
           <Route path="/article/detail" exact component={ArticleDetailPage}/>
-          <Route path='/Register' component={Register} exact />
-          <Route path='/TermsandConditions' component={TermsandConditions} exact />
-          <Route path='/UserEvent' component={UserEvent} exact />
-          <Route path='/UserEventPage' component={UserEventPage} exact />
-          <Route path='/UserEventDetails' component={UserEventDetails} exact />        
-          <Route path='/UserEventDetailsPage' component={UserEventDetailsPage} exact />
-          <Route path='/UserCertification' component={UserCertification} exact />  
-          <Route path='/Login' component={Login} exact />
+          <Route path='/register' component={Register} exact />
+          <Route path='/terms' component={TermsandConditions} exact />
+          <Route path='/user/event' component={UserEventPage} exact />     
+          <Route path='/user/event/details' component={UserEventDetailsPage} exact />
+          <Route path='/user/certification' component={UserCertification} exact />  
+          <Route path='/login' component={Login} exact />
         </div>
       </Router>
     );
