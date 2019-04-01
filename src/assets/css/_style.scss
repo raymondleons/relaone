@@ -420,7 +420,7 @@ body {
 }
 
 .no-event-icon {
-    width: 200px;
+    width: 150px;
 }
 
 .form-create-event {
@@ -472,6 +472,41 @@ body {
     width: 100%;
     margin-top: 10px;
     margin-bottom: 30px;
+}
+
+.side-bar {
+    background-color: white;
+    box-shadow: 1px 1px 10px 1px #888888;
+    margin-bottom: 30px;
+}
+
+.side-bar-list {
+    list-style: none;
+}
+
+.side-bar-item {
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.side-bar-item:hover {
+    background-color: #F9F2FA;
+    border-left: solid 3px blue;
+}
+
+.side-bar-item:active {
+    border-left: solid 3px blue;
+}
+
+.side-bar-subitem {
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.side-bar-subitem:hover {
+    background-color: #F9F2FA;
 }
 
 .logo{
