@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Row, Col, Container} from 'reactstrap'
+import '../assets/css/_style2.scss';
 import Header from '../layout/Header'
 import ProfileBadge from '../layout/ProfileBadge'
 import UserCertificationDetails from './UserCertificationDetails'
