@@ -1,0 +1,109 @@
+@font-face {
+  font-family:MavenPro-Medium;
+  src:url(../fonts/MavenPro-Medium.ttf)
+ }
+
+body {
+  background-color: #F6F8F7;  
+  font-family:MavenPro-Medium,sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+  .width {
+    display: none;
+  }
+}
+
+
+.logo{
+  width:200px;
+  margin:auto;
+ }
+ .container2{
+   width:70%;
+   margin:auto;
+ }
+ .width{
+     width:100%;
+     background-size: cover;
+     height:100%;
+ }
+ 
+ .input-border {
+     border: none;
+   border-bottom: 1px solid #0065FF;
+   border-radius:0px;
+   width:100%;
+ }
+ 
+ .box{
+     padding:15px;
+    
+ }
+ .mbot{
+  margin-bottom: 10px;
+  box-shadow:1px 1px 10px 1px #888888;
+ }
+ .form-row{
+     margin-left:0;
+     margin-right:0;
+ }
+ .form-group{
+     line-height: 0.5;
+  
+ }
+ 
+ .form-control
+ {
+    
+     color:e0e0e0;
+  
+ }
+ 
+ 
+ 
+ .whitebg
+ {
+   background-color: white;
+   box-shadow: 0 1px 7px 0 rgba(0,0,0,.14);
+ }
+
+ .nopadding
+ {
+   padding-left:0px;
+   padding-right:0px;
+ }
+ .right{
+   padding: 20px;
+ }
+ .button-right{
+float: right;
+
+ }
+
+ .clear
+ {
+   clear:both;
+ }
+
+ .mtop
+ {
+   margin-top: 70px;
+ }
+
+ .logoevent
+ {
+   width: 70px;
+   height: 70px;
+   
+  
+ }
+ .imgg{
+   max-width:auto;
+   max-height: auto;
+ object-fit: contain;
+ }
+
+ .preview{
+  height:100px; 
+ }
