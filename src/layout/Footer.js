@@ -21,15 +21,25 @@ class Footer extends Component {
       <div className="footer">
          <Container>
              <Row>
-                <Col lg="3"><div><img src={bluelogo} alt="RelaOne Logo"></img></div></Col>
+                <Col lg="3">
+                    <img src={bluelogo} alt = "RelaOne Logo"/> 
+                </Col>
                 <Col lg="4"></Col>
                 <Col lg="5">
                   <div>
                     <p >Find us on : 
-                      <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'facebook-f']}/> 
-                      <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'twitter']}/> 
-                      <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'instagram']}/>
-                      <a><img className="footer-button" src={playstorebutton} alt="get it on playstore"/></a>
+                      <a href = "https://www.facebook.com/" target = "_blank"> 
+                        <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'facebook-f']}/>
+                      </a>
+                      <a href = "https://www.twitter.com/" target = "_blank">
+                        <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'twitter']}/>
+                      </a>
+                      <a href = "https://www.instagram.com/" target = "_blank"> 
+                        <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'instagram']}/>
+                      </a>
+                      <a href = "https://play.google.com/store" target = "_blank"> 
+                        <img className="footer-button" src={playstorebutton} alt="get it on playstore"/>
+                      </a>
                     </p>
                   </div>
                 </Col>

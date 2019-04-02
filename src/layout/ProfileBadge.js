@@ -32,3 +32,4 @@ class ProfileBadge extends Component {
 }
 
 export default ProfileBadge;
+
