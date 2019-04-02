@@ -33,11 +33,7 @@ body {
         width: 100px;
         float: right;
     }
-
-    .wdt {
-        display: none;
-    }
-
+  
     .organization-picture {
         width: 80px;
         border-radius: 50%;
@@ -71,7 +67,9 @@ body {
         width: 100px;
         float: right;
     }
-
+    .modal-dialog {
+        max-width: 80%;
+    }
     .organization-picture {
         width: 80px;
         border-radius: 50%;
@@ -547,6 +545,10 @@ h3.title {
     padding-top: 0px;
 }
 
+.content h5 {
+    padding-top: 30px;
+}
+
 p.title {
     color:#0065ff;
     font-size: 19px;
@@ -569,4 +571,31 @@ input[type=texts] {
     text-align: center;
     padding-top: 50px;
 }
+
+.form-event {
+    background-color: white;
+    padding: 30px;
+    padding-top: 25px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 10px 1px #888888;
+    border-radius: 8px 8px 8px 8px;
+}
+
+.event-detail {
+    background-color: white;
+    padding: 30px;
+    padding-bottom: 70px;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 10px 1px #888888;
+}
+
+.rekomendasi {
+    width: 20px;
+}
+
+.text-rekomendasi {
+    float: left;
+}
+
 
