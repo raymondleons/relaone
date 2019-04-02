@@ -14,6 +14,15 @@ import CreateEventPage from './pages/CreateEventPage';
 import ArticleListPage from './pages/ArticleListPage';
 import ForgotPassword from './pages/ForgotPassword';
 import ArticleDetailPage from './pages/ArticleDetailPage';
+import TermsandConditions from './pages/TermsandConditions'
+import UserEvent from './pages/UserEvent'
+import UserEventDetails from './pages/UserEventDetails'
+import UserCertificationPage from './pages/UserCertificationPage'
+import UserCertificationDetailsPage from './pages/UserCertificationDetailsPage'
+import UserEventPage from './pages/UserEventPage'
+import Register from './pages/Register'
+import UserEventDetailsPage from './pages/UserEventDetailsPage'
+import Login from './pages/LoginPage'
 
 class App extends Component {
   render() {
@@ -25,7 +34,7 @@ class App extends Component {
           <Route path="/organization/update-profile" exact component={UpdateOrganizationProfile}/>
           <Route path="/organization/update-profile/success" exact component={UpdateOrgProfileSuccess}/>
           <Route path="/user/update-profile/success" exact component={UpdateUserProfileSuccess}/>
-          <Route path="/users/update-profile" exact component={UpdateProfile}/>
+          <Route path="/user/update-profile" exact component={UpdateProfile}/>
           <Route path="/organization/dashboard" exact component={OrganizationDashboardPage}/>
           <Route path="/dashboard" exact component={DashboardPage}/>
           <Route path="/event" exact component={EventListPage}/>
@@ -33,6 +42,13 @@ class App extends Component {
           <Route path="/article" exact component={ArticleListPage}/>
           <Route path="/forgot-password" exact component={ForgotPassword}/>
           <Route path="/article/detail" exact component={ArticleDetailPage}/>
+          <Route path='/register' component={Register} exact />
+          <Route path='/terms' component={TermsandConditions} exact />
+          <Route path='/user/event' component={UserEventPage} exact />
+          <Route path='/user/event/details' component={UserEventDetailsPage} exact />
+          <Route path='/user/certification' component={UserCertificationPage} exact /> 
+          <Route path='/user/certification/details' component={UserCertificationDetailsPage} exact />  
+          <Route path='/login' component={Login} exact />
         </div>
       </Router>
     );
