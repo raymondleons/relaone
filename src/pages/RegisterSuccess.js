@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
 import bluelogo from '../assets/images/blue-logo.png';
 import inbox from '../assets/images/inbox.png';
-import '../assets/css/_style.scss'
+import '../assets/css/_style.scss';
+import { Link as Links} from 'react-router-dom';
 
 class RegisterSuccess extends Component {
   render() {
@@ -11,7 +12,9 @@ class RegisterSuccess extends Component {
         <Container>
             <Row>
                 <div className="logo-center">
+                  <Links to="/">
                     <img src={bluelogo} alt="RelaOne Logo"></img>
+                  </Links>
                 </div>
             </Row>
             <Row>
