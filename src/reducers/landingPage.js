@@ -68,7 +68,9 @@ const initialState={
           altText: 'person 3',
           caption: '"As an activist in one of the disaster communities, I feel greatly helped by the RelaOne application. We can easily select and recruit prospective volunteers according to their qualifications."'
         }
-        ]
+        ],
+    footerDesc: 'RelaOne is a service to facilitate both for volunteer and organization to meet needs related to voluntary activity.',
+    footerLocation: 'Nongsa, Batam, Indonesia'
 }
 
 const landingPage=(state=initialState, action) => {
