@@ -3,10 +3,9 @@ import {Row, Col, Container} from 'reactstrap'
 import '../assets/css/_style2.scss';
 import Header from '../layout/Header'
 import ProfileBadge from '../layout/ProfileBadge'
-import UserEventDetails from './UserEventDetails'
-import '../assets/css/_style2.scss'
+import UserCertificationDetails from './UserCertificationDetails'
 
-export default class UserEventDetailsPage extends Component {
+export default class UserCertificationDetailsPage extends Component {
   render() {
     return (
       <div className="create-event">
@@ -19,7 +18,7 @@ export default class UserEventDetailsPage extends Component {
               <ProfileBadge></ProfileBadge>
             </Col>
             <Col sm="12" md="8">
-              <UserEventDetails />
+              <UserCertificationDetails />
             </Col>
           </Row>
         </Container>      

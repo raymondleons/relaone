@@ -3,7 +3,7 @@ import { Form, FormGroup, Label, Input, FormText, TabContent, TabPane, Nav, NavI
 import {Link} from 'react-router-dom'
 import classnames from 'classnames';
 
-import '../assets/css/_stylebass.scss';
+import '../assets/css/_style2.scss';
 import Img from '../assets/images/image1.png'
 import Logo from '../assets/images/blue-logo.png'
 

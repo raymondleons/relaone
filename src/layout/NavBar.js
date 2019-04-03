@@ -32,7 +32,7 @@ class NavBar extends Component {
         return (
         <div>
             <Navbar dark expand="md" className="navbar">
-            <NavbarBrand className="navbar-brand"><img src={logo} alt="relaone logo"/></NavbarBrand>
+            <NavbarBrand className="navbar-brand"><Links to="/"><img src={logo} alt="relaone logo"/></Links></NavbarBrand>
             <NavbarToggler onClick={this.toggle}/>
             <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>

@@ -3,7 +3,7 @@ import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button, ListGroup, ListGroupItem, Badge} from 'reactstrap'
 import test from '../assets/images/bg-contactus.jpg'
 import Logo from '../assets/images/organization1.png'
-import '../assets/css/_stylebass.scss'
+import '../assets/css/_style2.scss'
 
 export default class UserEventDetails extends Component {
   render() {

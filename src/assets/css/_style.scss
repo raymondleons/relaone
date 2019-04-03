@@ -187,7 +187,7 @@ body {
     background-color: #0052cc;
     color: white;
     font-weight: bold;
-    position: fixed;
+    position: fixed !important;
     top: 0;
     width: 100%;
     z-index: 9999;
@@ -200,7 +200,7 @@ body {
 
 .navitem a {
     margin-left: 8px;
-    color: white;
+    color: white !important;
 }
 
 .navitem a{
@@ -277,6 +277,7 @@ body {
 
 .footer-socmed-icon {
     margin-left: 30px;
+    color: grey;
 }
 
 .footer-button {
@@ -418,7 +419,7 @@ body {
 }
 
 .no-event-icon {
-    width: 200px;
+    width: 150px;
 }
 
 .form-create-event {
@@ -427,6 +428,11 @@ body {
     padding-bottom: 70px;
     margin-bottom: 40px;
     box-shadow: 1px 1px 10px 1px #888888;
+}
+
+.create-event-button {
+    color: white !important;
+    font-weight: bold;
 }
 
 .article-list {
@@ -472,6 +478,53 @@ body {
     margin-bottom: 30px;
 }
 
+.side-bar {
+    background-color: white;
+    box-shadow: 1px 1px 10px 1px #888888;
+    margin-bottom: 30px;
+}
+
+.side-bar-list {
+    list-style: none;
+}
+
+.side-bar-item {
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.side-bar-item:hover {
+    background-color: #F9F2FA;
+    border-left: solid 3px blue;
+}
+
+.side-bar-item:active {
+    border-left: solid 3px blue;
+}
+
+.side-bar-subitem {
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.side-bar-subitem:hover {
+    background-color: #F9F2FA;
+}
+
+.button-text {
+    color: white !important;
+}
+
+.logo{
+ width:200px;
+ margin:auto;
+}
+
+.wdt{
+    width:100%;
+}
 
 // SCSS Raymond 
 
@@ -502,6 +555,10 @@ h3.title {
     padding-top: 0px;
 }
 
+.content h5 {
+    padding-top: 30px;
+}
+
 p.title {
     color:#0065ff;
     font-size: 19px;
@@ -523,4 +580,51 @@ input[type=texts] {
 .text {
     text-align: center;
     padding-top: 50px;
+}
+
+.form-event {
+    background-color: white;
+    padding: 30px;
+    padding-top: 25px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 10px 1px #888888;
+    border-radius: 8px 8px 8px 8px;
+}
+
+.event-detail {
+    background-color: white;
+    padding: 30px;
+    padding-bottom: 70px;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 10px 1px #888888;
+}
+
+.rekomendasi {
+    width: 20px;
+}
+
+.text-rekomendasi {
+    float: left;
+}
+
+.list-event {
+    background-color: white;
+    padding: 30px;
+    padding-bottom: 70px;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 10px 1px #888888;
+}
+
+.input-search {
+    padding-top:10px;
+}
+
+.input-search input {
+    background: #F8F8F8;
+    margin-left: 10px;
+}
+
+.input-search button {
+    float:right;
 }
