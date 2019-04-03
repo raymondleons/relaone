@@ -4,6 +4,7 @@ import '../assets/css/_style2.scss';
 import Header from '../layout/Header'
 import ProfileBadge from '../layout/ProfileBadge'
 import UserEvent from './UserEvent'
+import '../assets/css/_style2.scss'
 
 export default class UserEventPage extends Component {
   render() {
