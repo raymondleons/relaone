@@ -4,6 +4,7 @@ import { Container, Row, Col, Button } from 'reactstrap';
 import phone from '../assets/images/phone.png';
 import playstorebutton from '../assets/images/get-it-on-the-google-play-store-button.png';
 import '../assets/css/_style.scss';
+import { connect } from 'react-redux';
 
 class Intro extends Component {
   render() {
@@ -13,9 +14,9 @@ class Intro extends Component {
             <Row>
                 <Col sm="0" md="1" lg="1"></Col>
                 <Col sm="12" md="5" lg="5" className="intro-text">
-                    <h1>What is RelaOne?</h1>
-                    <h5><span className="bold-text">RelaOne</span> is an application that makes it easy to find activities that best suit the interests and abilities of volunteers.</h5>
-                    <h5><span className="bold-text">RelaOne for Organization</span> is a services for organization or community that facilitate the seach of volunteers.</h5>
+                    <h1>{this.props.introTitle}</h1>
+                    <h5><span className="bold-text">{this.props.relaOne}</span> {this.props.introParagraph1}</h5>
+                    <h5><span className="bold-text">{this.props.relaOneOrganization}</span> {this.props.introParagraph2}</h5>
                       <a href = "https://play.google.com/store" target = "_blank"> 
                       <img className="intro-button" src={playstorebutton} alt="get it on playstore"/>
                     </a>
@@ -31,5 +32,17 @@ class Intro extends Component {
   }
 }
 
-export default Intro;
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    introTitle: state.landingPage.introTitle,
+    relaOne: state.landingPage.relaOne,
+    relaOneOrganization: state.landingPage.relaOneOrganization,
+    introParagraph1: state.landingPage.introParagraph1,
+    introParagraph2: state.landingPage.introParagraph2
+  }
+}
+
+export default connect(mapStateToProps)(Intro);
+
 
