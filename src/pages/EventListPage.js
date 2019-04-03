@@ -4,6 +4,8 @@ import '../assets/css/_style.scss';
 import ProfileBadge from '../layout/ProfileBadge';
 import Header from '../layout/Header';
 import EventList from '../components/EventList';
+import OrganizationDashboardPage from './OrganizationDashboardPage';
+import OrganizationSideBar from '../layout/OrganizationSideBar';
 
 class EventListPage extends Component {
   render() {
@@ -16,6 +18,7 @@ class EventListPage extends Component {
           <Row>
             <Col sm="12" md="4">
               <ProfileBadge></ProfileBadge>
+              <OrganizationSideBar/>
             </Col>
             <Col sm="12" md="8">
                 <EventList/>
