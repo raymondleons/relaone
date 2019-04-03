@@ -16,14 +16,11 @@ import ForgotPassword from './pages/ForgotPassword';
 import ArticleDetailPage from './pages/ArticleDetailPage';
 import ListPendaftarEvent from './pages/ListPendaftarEvent'
 import TermsandConditions from './pages/TermsandConditions'
-import UserEvent from './pages/UserEvent'
-import UserEventDetails from './pages/UserEventDetails'
 import UserCertificationPage from './pages/UserCertificationPage'
 import UserCertificationDetailsPage from './pages/UserCertificationDetailsPage'
 import UserEventPage from './pages/UserEventPage'
 import Register from './pages/Register'
 import UserEventDetailsPage from './pages/UserEventDetailsPage'
-import UserCertification from './pages/UserCertification'
 import Login from './pages/LoginPage'
 
 class App extends Component {
