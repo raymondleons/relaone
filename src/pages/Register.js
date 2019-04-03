@@ -2,13 +2,9 @@ import React from 'react';
 import { Form, FormGroup, Label, Input, FormText, TabContent, TabPane, Nav, NavItem, NavLink, Button, Row, Col } from 'reactstrap';
 import {Link} from 'react-router-dom'
 import classnames from 'classnames';
-
 import '../assets/css/_style2.scss';
 import Img from '../assets/images/image1.png'
 import Logo from '../assets/images/blue-logo.png'
-
-
-
 
 export default class Example extends React.Component {
 
@@ -67,20 +63,10 @@ export default class Example extends React.Component {
               <TabPane tabId="1">
                 <Row className="box">
                   <Form className="">
-                    <Row form>
-                      <Col md={6}>
-                        <FormGroup>
-                          <Label >First Name</Label>
-                          <Input className="input-border" type="text" name="firstname" id="firstname" placeholder="Your First Name" />
-                        </FormGroup>
-                      </Col>
-                      <Col md={6}>
-                        <FormGroup>
-                          <Label >Last Name</Label>
-                          <Input className="input-border" type="text" name="lastname" id="lastname" placeholder="Your Last Name" />
-                        </FormGroup>
-                      </Col>
-                    </Row>
+                  <FormGroup>
+                      <Label >Full Name</Label>
+                      <Input  className="input-border" type="text" name="fullname" id="fullname" placeholder="Your Fullname" />
+                    </FormGroup>
                     <FormGroup>
                       <Label >Username</Label>
                       <Input  className="input-border" type="text" name="username" id="username" placeholder="Your Username" />
@@ -111,8 +97,8 @@ export default class Example extends React.Component {
                       <Input className="input-border form-control2" type="text" name="organizationname" id="organizationname" placeholder="Your Organization" />
                     </FormGroup>
                     <FormGroup className="form-group2">
-                      <Label>Contact</Label>
-                      <Input className="input-border form-control2" type="number" name="number" id="number" placeholder="Your Number" />
+                      <Label>Phone Number</Label>
+                      <Input className="input-border form-control2" type="text" pattern="[0-9]{9-10}" name="phoneNumber" id="phoneNumber" placeholder="Your Number" />
                     </FormGroup>
                     <FormGroup className="form-group2">
                       <Label >Email</Label>
