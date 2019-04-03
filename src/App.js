@@ -23,6 +23,7 @@ import UserCertificationDetailsPage from './pages/UserCertificationDetailsPage'
 import UserEventPage from './pages/UserEventPage'
 import Register from './pages/Register'
 import UserEventDetailsPage from './pages/UserEventDetailsPage'
+import UserCertification from './pages/UserCertification'
 import Login from './pages/LoginPage'
 
 class App extends Component {
@@ -43,13 +44,11 @@ class App extends Component {
           <Route path="/article" exact component={ArticleListPage}/>
           <Route path="/forgot-password" exact component={ForgotPassword}/>
           <Route path="/article/detail" exact component={ArticleDetailPage}/>
-          <Route path="/event/list-register" exact component={ListPendaftarEvent} />
           <Route path='/register' component={Register} exact />
           <Route path='/terms' component={TermsandConditions} exact />
-          <Route path='/user/event' component={UserEventPage} exact />
+          <Route path='/user/event' component={UserEventPage} exact />     
           <Route path='/user/event/details' component={UserEventDetailsPage} exact />
-          <Route path='/user/certification' component={UserCertificationPage} exact /> 
-          <Route path='/user/certification/details' component={UserCertificationDetailsPage} exact />  
+          <Route path='/user/certification' component={UserCertification} exact />  
           <Route path='/login' component={Login} exact />
         </div>
       </Router>

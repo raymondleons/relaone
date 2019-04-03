@@ -5,6 +5,7 @@ import test from '../assets/images/certemplate.jpg'
 import Logo from '../assets/images/organization1.png'
 import '../assets/css/_style2.scss'
 
+import '../assets/css/_style2.scss'
 
 export default class UserCertificationDetails extends Component {
   render() {
