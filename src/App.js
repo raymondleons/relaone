@@ -17,6 +17,7 @@ import ArticleDetailPage from './pages/ArticleDetailPage';
 import ListPendaftarEventOrganisasi from './pages/ListPendaftarEventOrganisasi'
 import DisplayProfileUser from './pages/ProfilePage'
 import DashboardNotVerify from './pages/Dashboards'
+import ListPendaftarEvent from './pages/ListPendaftarEvent'
 import TermsandConditions from './pages/TermsandConditions'
 import UserEvent from './pages/UserEvent'
 import UserEventDetails from './pages/UserEventDetails'
@@ -48,6 +49,7 @@ class App extends Component {
           <Route path="/organization/event/list/register" exact component={ListPendaftarEventOrganisasi} />
           <Route path="/user/profile/" exact component={DisplayProfileUser} />
           <Route path="/dashboards" exact component={DashboardNotVerify} />
+          <Route path="/event/list-register" exact component={ListPendaftarEvent} />
           <Route path='/register' component={Register} exact />
           <Route path='/terms' component={TermsandConditions} exact />
           <Route path='/user/event' component={UserEventPage} exact />
