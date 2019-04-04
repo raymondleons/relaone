@@ -27,6 +27,7 @@ import UserEventPage from './pages/UserEventPage'
 import Register from './pages/Register'
 import UserEventDetailsPage from './pages/UserEventDetailsPage'
 import Login from './pages/LoginPage'
+import VerifiedAccount from './pages/VerifiedAccount'
 
 class App extends Component {
   render() {
@@ -57,6 +58,7 @@ class App extends Component {
           <Route path='/user/certification' component={UserCertificationPage} exact /> 
           <Route path='/user/certification/details' component={UserCertificationDetailsPage} exact />  
           <Route path='/login' component={Login} exact />
+          <Route path="/account-verified" exact component={VerifiedAccount}/>
         </div>
       </Router>
     );
