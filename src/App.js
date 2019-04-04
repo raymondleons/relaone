@@ -14,6 +14,7 @@ import CreateEventPage from './pages/CreateEventPage';
 import ArticleListPage from './pages/ArticleListPage';
 import ForgotPassword from './pages/ForgotPassword';
 import ArticleDetailPage from './pages/ArticleDetailPage';
+import ListPendaftarEvent from './pages/ListPendaftarEvent'
 import TermsandConditions from './pages/TermsandConditions'
 import UserEvent from './pages/UserEvent'
 import UserEventDetails from './pages/UserEventDetails'
@@ -43,6 +44,7 @@ class App extends Component {
           <Route path="/article" exact component={ArticleListPage}/>
           <Route path="/forgot-password" exact component={ForgotPassword}/>
           <Route path="/article/detail" exact component={ArticleDetailPage}/>
+          <Route path="/event/list-register" exact component={ListPendaftarEvent} />
           <Route path='/register' component={Register} exact />
           <Route path='/terms' component={TermsandConditions} exact />
           <Route path='/user/event' component={UserEventPage} exact />
