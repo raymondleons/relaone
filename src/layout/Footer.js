@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import '../assets/css/_style.scss';
 import bluelogo from '../assets/images/blue-logo.png';
 import { Link, animateScroll as scroll } from "react-scroll";
@@ -46,8 +47,8 @@ class Footer extends Component {
             </Row>
             <Row className="footer-content-all">
               <Col lg="4" className="footer-content">
-                <p>RelaOne is a service to facilitate both for volunteer and organization to meet needs related to voluntary activity</p>
-                <p>Nongsa, Batam, Indonesia</p>
+                <p>{this.props.footerDesc}</p>
+                <p>{this.props.footerLocation}</p>
               </Col>
               <Col lg="2"></Col>
               <Col lg="2" className="footer-content">
@@ -85,5 +86,13 @@ class Footer extends Component {
   }
 }
 
-export default Footer;
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    footerDesc: state.landingPage.footerDesc,
+    footerLocation: state.landingPage.footerLocation
+  }
+}
+
+export default connect(mapStateToProps)(Footer);
 
