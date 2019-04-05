@@ -16,6 +16,9 @@ import CreateEventPage from './pages/CreateEventPage';
 import ArticleListPage from './pages/ArticleListPage';
 import ForgotPassword from './pages/ForgotPassword';
 import ArticleDetailPage from './pages/ArticleDetailPage';
+import ListPendaftarEventOrganisasi from './pages/ListPendaftarEventOrganisasi'
+import DisplayProfileUser from './pages/ProfilePage'
+import DashboardNotVerify from './pages/Dashboards'
 import ListPendaftarEvent from './pages/ListPendaftarEvent'
 import TermsandConditions from './pages/TermsandConditions'
 import UserEvent from './pages/UserEvent'
@@ -26,6 +29,7 @@ import UserEventPage from './pages/UserEventPage'
 import Register from './pages/Register'
 import UserEventDetailsPage from './pages/UserEventDetailsPage'
 import Login from './pages/LoginPage'
+import VerifiedAccount from './pages/VerifiedAccount'
 
 class App extends Component {
   render() {
@@ -46,6 +50,9 @@ class App extends Component {
             <Route path="/article" exact component={ArticleListPage}/>
             <Route path="/forgot-password" exact component={ForgotPassword}/>
             <Route path="/article/detail" exact component={ArticleDetailPage}/>
+            <Route path="/organization/event/list/register" exact component={ListPendaftarEventOrganisasi} />
+            <Route path="/user/profile/" exact component={DisplayProfileUser} />
+            <Route path="/dashboards" exact component={DashboardNotVerify} />
             <Route path="/event/list-register" exact component={ListPendaftarEvent} />
             <Route path='/register' component={Register} exact />
             <Route path='/terms' component={TermsandConditions} exact />
@@ -54,9 +61,10 @@ class App extends Component {
             <Route path='/user/certification' component={UserCertificationPage} exact /> 
             <Route path='/user/certification/details' component={UserCertificationDetailsPage} exact />  
             <Route path='/login' component={Login} exact />
+            <Route path="/account-verified" exact component={VerifiedAccount}/>
           </div>
         </Router>
-      </Provider>
+        </Provider>
     );
   }
 }
