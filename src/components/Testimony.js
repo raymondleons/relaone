@@ -1,8 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import '../assets/css/_style.scss';
-import person1 from '../assets/images/person1.jpg';
-import person2 from '../assets/images/person2.jpeg';
-import person3 from '../assets/images/person3.jpg';
 import {
     Container,
     Row,
@@ -10,33 +8,8 @@ import {
     Carousel,
     CarouselItem,
     CarouselControl,
-    CarouselIndicators,
-    
+    CarouselIndicators
   } from 'reactstrap';
-
-const items = [
-{
-  src: person1,
-  name : 'Heri S',
-  title : 'Volunteer',
-  altText: 'person 1',
-  caption: '"As an activist in one of the disaster communities, I feel greatly helped by the RelaOne application. We can easily select and recruit prospective volunteers according to their qualifications."'
-},
-{
-  src: person2,
-  name : 'Maria Binar C',
-  title : 'Volunteer',
-  altText: 'person 2',
-  caption: '"As an activist in one of the disaster communities, I feel greatly helped by the RelaOne application. We can easily select and recruit prospective volunteers according to their qualifications."'
-},
-{
-  src: person3,
-  name : 'Raymond',
-  title : 'Volunteer',
-  altText: 'person 3',
-  caption: '"As an activist in one of the disaster communities, I feel greatly helped by the RelaOne application. We can easily select and recruit prospective volunteers according to their qualifications."'
-}
-];
 
 class Testimony extends Component {
     constructor(props) {
@@ -59,13 +32,13 @@ class Testimony extends Component {
 
     next() {
     if (this.animating) return;
-    const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
+    const nextIndex = this.props.activeIndex === this.props.testimony.length - 1 ? 0 : this.props.activeIndex + 1;
     this.setState({ activeIndex: nextIndex });
     }
 
     previous() {
     if (this.animating) return;
-    const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
+    const nextIndex = this.props.activeIndex === 0 ? this.props.testimony.length - 1 : this.props.activeIndex - 1;
     this.setState({ activeIndex: nextIndex });
     }
 
@@ -75,9 +48,9 @@ class Testimony extends Component {
     }
 
     render() {
-        const { activeIndex } = this.state;
+        const { activeIndex } = { activeIndex: this.props.activeIndex };
 
-        const slides = items.map((item) => {
+        const slides = this.props.testimony.map((item) => {
           return (
             <CarouselItem
               onExiting={this.onExiting}
@@ -110,7 +83,7 @@ class Testimony extends Component {
                 next={this.next}
                 previous={this.previous}
                 >
-                    <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+                    <CarouselIndicators items={this.props.testimony} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
                     {slides}
                     <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
                     <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
@@ -121,5 +94,14 @@ class Testimony extends Component {
     }
 }
 
-export default Testimony;
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    testimony: state.landingPage.testimony,
+    activeIndex: state.landingPage.activeIndex
+  }
+}
+
+export default connect(mapStateToProps)(Testimony);
+
 

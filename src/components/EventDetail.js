@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { Card, Row, Col, CardImg, CardBody, CardTitle, CardText, CardSubtitle, Button } from 'reactstrap'
+import { Card, Row, Col, CardImg, CardBody, CardTitle, CardText, Pagination, PaginationItem, PaginationLink, Button } from 'reactstrap'
 import Banjir from '../assets/images/event/banjir.jpg'
-import Rekomendasi from '../assets/images/recomendation.svg'
 
 export default class EventDetail extends Component {
   render() {
@@ -55,6 +54,48 @@ export default class EventDetail extends Component {
               </Col>
           </Row>
           </div>
+          <div>
+          <br></br>
+          <Pagination aria-label="Page navigation example">
+      <PaginationItem>
+          <PaginationLink first href="#" />
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink previous href="#" />
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink href="#">
+            1
+          </PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink href="#">
+            2
+          </PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink href="#">
+            3
+          </PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink href="#">
+            4
+          </PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink href="#">
+            5
+          </PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink next href="#" />
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink last href="#" />
+        </PaginationItem>
+      </Pagination>
+      </div>
       </div>
     )
   }
