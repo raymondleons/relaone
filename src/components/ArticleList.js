@@ -5,10 +5,6 @@ import Dotdotdot from 'react-dotdotdot';
 import { getArticle } from '../actions' ;
 
 class ArticleList extends Component {
-  delete = id => {
-    console.log(id)
-    this.props.delArticle(id)
-  }
 
   componentDidMount(){
     this.props.getArticle();

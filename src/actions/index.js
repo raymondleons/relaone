@@ -1,19 +1,5 @@
 import axios from 'axios';
-import { ADD_EVENT, GET_ARTICLE } from './type';
-import { DEL_ARTICLE } from './type';
-
-export const addEvent = () => {
-    return {
-        type: ADD_EVENT
-    }
-}
-
-export const delArticle = id => {
-    return {
-        type: DEL_ARTICLE,
-        payload: id
-    }
-}
+import { GET_ARTICLE } from './type';
 
 export const getArticle = () => {
     return dispatch => {
@@ -29,8 +15,5 @@ export const getArticle = () => {
             })
         })
     }
-   
-    // {
-    //     type: GET_ARTICLE
-    // }
 }
+
