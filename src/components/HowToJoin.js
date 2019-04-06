@@ -1,10 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import '../assets/css/_style.scss';
-import step1 from '../assets/images/step1.png';
-import step2 from '../assets/images/step2.png';
-import step3 from '../assets/images/step3.png';
-import step4 from '../assets/images/step4.png';
-import step5 from '../assets/images/step5.png';
 import {
     Container,
     Row,
@@ -15,43 +11,10 @@ import {
     CarouselIndicators
   } from 'reactstrap';
 
-const items = [
-{
-  src : step1,
-  title : 'Register',
-  altText: 'step 1',
-  caption: 'Join RelaOne to be part of volunteer activities. Sign Up!'
-},
-{
-  src: step2,
-  title : 'Complete your profile',
-  altText: 'step 2',
-  caption: 'Complete your profile to find activity that suit you best.'
-},
-{
-  src: step3,
-  title : 'Find activity',
-  altText: 'step 3',
-  caption: 'RelaOne will recommend activity that suit your profile. Want more? You can find other activities!'
-},
-{
-  src: step4,
-  title : 'Join',
-  altText: 'step 4',
-  caption: 'Just click "Join" and fill some requirements, and you have got chance to contribute'
-},
-{
-  src: step5,
-  title : 'Wait and ready to go!',
-  altText: 'step 5',
-  caption: 'While waiting confirmation from organization. you can find information related to volunteering!'
-}
-];
-
 class HowToJoin extends Component {
     constructor(props) {
         super(props);
-        this.state = { activeIndex: 0 };
+        // this.state = { activeIndex: 0 };
         this.next = this.next.bind(this);
         this.previous = this.previous.bind(this);
         this.goToIndex = this.goToIndex.bind(this);
@@ -69,13 +32,13 @@ class HowToJoin extends Component {
 
     next() {
     if (this.animating) return;
-    const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
+    const nextIndex = this.props.activeIndex === this.props.howToJoin.length - 1 ? 0 : this.props.activeIndex + 1;
     this.setState({ activeIndex: nextIndex });
     }
 
     previous() {
     if (this.animating) return;
-    const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
+    const nextIndex = this.props.activeIndex === 0 ? this.props.howToJoin.length - 1 : this.props.activeIndex - 1;
     this.setState({ activeIndex: nextIndex });
     }
 
@@ -86,9 +49,9 @@ class HowToJoin extends Component {
 
     render() {
 
-        const { activeIndex } = this.state;
+        const { activeIndex } = { activeIndex: this.props.activeIndex };
 
-        const slides = items.map((item) => {
+        const slides = this.props.howToJoin.map((item) => {
           return (
             <CarouselItem
               onExiting={this.onExiting}
@@ -122,7 +85,7 @@ class HowToJoin extends Component {
                 next={this.next}
                 previous={this.previous}
                 >
-                    <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+                    <CarouselIndicators items={this.props.howToJoin} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
                     {slides}
                     <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
                     <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
@@ -133,5 +96,13 @@ class HowToJoin extends Component {
     }
 }
 
-export default HowToJoin;
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    howToJoin: state.landingPage.howToJoin,
+    activeIndex: state.landingPage.activeIndex
+  }
+}
+
+export default connect(mapStateToProps)(HowToJoin);
 

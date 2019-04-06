@@ -5,7 +5,7 @@ import updatesuccess from '../assets/images/update-profile-success.png';
 import '../assets/css/_style.scss';
 import { Link as Links } from 'react-router-dom';
 
-class UpdateUserProfileSuccess extends Component {
+class UpdateOrgProfileSuccess extends Component {
   render() {
     return (
       <div className="update-organization-profile">
@@ -22,13 +22,9 @@ class UpdateUserProfileSuccess extends Component {
               <Col md="8">
                 <div className="update-success-content">
                   <img src={updatesuccess} alt="wait for verification" className="icon-success"></img>
-                  <h3 className="bold-text">Thank you for updating your profile.</h3>
-                  <p>Complete profile will make it easier for Organization to review your profile</p>
-                  <Button color="primary">
-                    <Links className="button-text" to="/dashboard">
-                      Dashboard
-                    </Links>
-                  </Button>
+                  <h3 className="bold-text">Congrats! Your account has been verified</h3>
+                  <p>Let's start your voluntary journey now.</p>
+                  <Button color="primary"><Links className="button-text" to="/dashboard">Dashboard</Links></Button>
                 </div>
               </Col>
             </Row>
@@ -38,4 +34,5 @@ class UpdateUserProfileSuccess extends Component {
   }
 }
 
-export default UpdateUserProfileSuccess;
+export default UpdateOrgProfileSuccess;
+

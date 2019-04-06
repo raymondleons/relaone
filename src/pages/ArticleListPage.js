@@ -4,6 +4,7 @@ import '../assets/css/_style.scss';
 import ProfileBadge from '../layout/ProfileBadge';
 import Header from '../layout/Header';
 import ArticleList from '../components/ArticleList';
+import UserSideBar from '../layout/UserSideBar';
 
 class ArticleListPage extends Component {
   render() {
@@ -16,6 +17,7 @@ class ArticleListPage extends Component {
           <Row>
             <Col sm="12" md="4">
               <ProfileBadge></ProfileBadge>
+              <UserSideBar/>
             </Col>
             <Col sm="12" md="8">
               <ArticleList/>

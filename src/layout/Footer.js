@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import '../assets/css/_style.scss';
 import bluelogo from '../assets/images/blue-logo.png';
 import { Link, animateScroll as scroll } from "react-scroll";
@@ -21,23 +22,33 @@ class Footer extends Component {
       <div className="footer">
          <Container>
              <Row>
-                <Col lg="3"><div><img src={bluelogo} alt="RelaOne Logo"></img></div></Col>
+                <Col lg="3">
+                    <img src={bluelogo} alt = "RelaOne Logo"/> 
+                </Col>
                 <Col lg="4"></Col>
                 <Col lg="5">
                   <div>
                     <p >Find us on : 
-                      <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'facebook-f']}/> 
-                      <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'twitter']}/> 
-                      <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'instagram']}/>
-                      <a><img className="footer-button" src={playstorebutton} alt="get it on playstore"/></a>
+                      <a href = "https://www.facebook.com/" target = "_blank"> 
+                        <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'facebook-f']}/>
+                      </a>
+                      <a href = "https://www.twitter.com/" target = "_blank">
+                        <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'twitter']}/>
+                      </a>
+                      <a href = "https://www.instagram.com/" target = "_blank"> 
+                        <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'instagram']}/>
+                      </a>
+                      <a href = "https://play.google.com/store" target = "_blank"> 
+                        <img className="footer-button" src={playstorebutton} alt="get it on playstore"/>
+                      </a>
                     </p>
                   </div>
                 </Col>
             </Row>
             <Row className="footer-content-all">
               <Col lg="4" className="footer-content">
-                <p>RelaOne is a service to facilitate both for volunteer and organization to meet needs related to voluntary activity</p>
-                <p>Nongsa, Batam, Indonesia</p>
+                <p>{this.props.footerDesc}</p>
+                <p>{this.props.footerLocation}</p>
               </Col>
               <Col lg="2"></Col>
               <Col lg="2" className="footer-content">
@@ -75,5 +86,13 @@ class Footer extends Component {
   }
 }
 
-export default Footer;
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    footerDesc: state.landingPage.footerDesc,
+    footerLocation: state.landingPage.footerLocation
+  }
+}
+
+export default connect(mapStateToProps)(Footer);
 

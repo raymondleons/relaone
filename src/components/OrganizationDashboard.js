@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import '../assets/css/_style.scss';
-import noevent from '../assets/images/noevent.png'
+import noevent from '../assets/images/noevent.png';
+import { Link } from 'react-router-dom';
 
 class FormOrganizationProfile extends Component {
   render() {
@@ -19,7 +20,7 @@ class FormOrganizationProfile extends Component {
         <div className="event-action">
             <a>Select All</a>
             <a>Delete</a>
-            <Button color="primary">Create Event</Button>
+            <Button color="primary"><Link to="/create-event" className="create-event-button">Create Event</Link></Button>
         </div>
         <div className="no-event">
             <img src={noevent} alt="no event" className="no-event-icon"/>

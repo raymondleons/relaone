@@ -187,7 +187,7 @@ body {
     background-color: #0052cc;
     color: white;
     font-weight: bold;
-    position: fixed;
+    position: fixed !important;
     top: 0;
     width: 100%;
     z-index: 9999;
@@ -200,7 +200,7 @@ body {
 
 .navitem a {
     margin-left: 8px;
-    color: white;
+    color: white !important;
 }
 
 .navitem a{
@@ -277,6 +277,7 @@ body {
 
 .footer-socmed-icon {
     margin-left: 30px;
+    color: grey;
 }
 
 .footer-button {
@@ -429,6 +430,11 @@ body {
     box-shadow: 1px 1px 10px 1px #888888;
 }
 
+.create-event-button {
+    color: white !important;
+    font-weight: bold;
+}
+
 .article-list {
     background-color: white;
     padding: 30px;
@@ -505,6 +511,10 @@ body {
 
 .side-bar-subitem:hover {
     background-color: #F9F2FA;
+}
+
+.button-text {
+    color: white !important;
 }
 
 .logo{
@@ -598,4 +608,28 @@ input[type=texts] {
     float: left;
 }
 
+.profile-detail {
+
+}
+
+.list-event {
+    background-color: white;
+    padding: 30px;
+    padding-bottom: 70px;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 10px 1px #888888;
+}
+
+.input-search {
+    padding-top:10px;
+}
+
+.input-search input {
+    background: #F8F8F8;
+    margin-left: 10px;
+}
+
+.input-search button {
+    float:right;
+}
 
