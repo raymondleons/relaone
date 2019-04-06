@@ -28,13 +28,13 @@ class FormOrganizationProfile extends Component {
                 <Label for="examplePhone">Phone Number</Label>
                 <Input type="text" name="phone" id="examplePhone" placeholder="Phone number" />
             </FormGroup>
-            <FormGroup>
+            {/* <FormGroup>
                 <Label for="exampleFile">Photo</Label>
                 <Input type="file" name="file" id="exampleFile" />
                 <FormText color="muted">
                     Please upload your organization photo or logo.
                 </FormText>
-            </FormGroup>
+            </FormGroup> */}
             <Button color="primary">Save</Button>
         </Form>
       </div>

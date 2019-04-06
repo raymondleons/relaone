@@ -2,14 +2,28 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import '../assets/css/_style.scss';
-import { getSkillset } from '../actions/organizationActions';
+import { getSkillset, addEvent } from '../actions/organizationActions';
 
 class CreateEvent extends Component {
+    state = {
+        title : "",
+        description : "",
+        deadline : "",
+        location : "",
+        quotaMax : "",
+        skillset : []
+    }
 
     componentDidMount(){
       this.props.getSkillset();
     }
   
+    onChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
   render() {
     const skillsets = this.props.skillsets
     const displaySkillset = skillsets.length ? (
@@ -19,7 +33,7 @@ class CreateEvent extends Component {
         )
       })
     ) : (
-        <div>no skills needed</div>
+        <div>Loading skill-set list</div>
     );
 
     return (
@@ -31,15 +45,19 @@ class CreateEvent extends Component {
         <Form>
             <FormGroup>
                 <Label for="exampleTitle">Event title</Label>
-                <Input className="form-control" type="text" name="title" id="exampleTitle" placeholder="" />
+                <Input onChange={this.onChange} className="form-control" type="text" name="title" id="exampleTitle" placeholder="" />
             </FormGroup>
             <FormGroup>
                 <Label for="exampleDescripion">Description</Label>
-                <Input type="textarea" name="description" id="exampleDescription" placeholder="" />
+                <Input onChange={this.onChange} type="textarea" name="description" id="exampleDescription" placeholder="" />
+            </FormGroup>
+            <FormGroup>
+                <Label for="exampleLocation">Location</Label>
+                <Input onChange={this.onChange} className="form-control" type="text" name="location" id="exampleLocation" placeholder="" />
             </FormGroup>
             <FormGroup>
                 <Label for="exampleMaxQuota">Maximum Quota</Label>
-                <Input className="form-control" type="text" name="maxQuota" id="exampleMaxQuota" placeholder="" />
+                <Input onChange={this.onChange} className="form-control" type="text" name="quotaMax" id="exampleMaxQuota" placeholder="" />
             </FormGroup>
             <FormGroup>
                 <Label for="exampleSkillSet">Skill Set</Label><br></br>
@@ -47,15 +65,15 @@ class CreateEvent extends Component {
             </FormGroup>
             <FormGroup>
                 <Label for="exampleDeadline">Deadline</Label>
-                <Input type="date" name="deadline" id="exampleDeadline" placeholder="" />
+                <Input onChange={this.onChange} type="date" name="deadline" id="exampleDeadline" placeholder="" />
             </FormGroup>
-            <FormGroup>
+            {/* <FormGroup>
                 <Label for="exampleFile">Photo</Label>
                 <Input type="file" name="file" id="exampleFile" />
                 <FormText color="muted">
                     Please upload photo or poster related to your event.
                 </FormText>
-            </FormGroup>
+            </FormGroup> */}
             <Button color="primary">Submit</Button>
         </Form>
       </div>
