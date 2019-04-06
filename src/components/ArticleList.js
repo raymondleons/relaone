@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Row, Col, Card, CardImg, CardBody, CardTitle, CardText} from 'reactstrap';
 import Dotdotdot from 'react-dotdotdot';
-import { getArticle } from '../actions' ;
+import { getArticle } from '../actions/userActions' ;
 
 class ArticleList extends Component {
 
