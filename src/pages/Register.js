@@ -56,7 +56,6 @@ class Register extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="container2">
         <div className=" my-4 logo" >
@@ -127,11 +126,11 @@ class Register extends React.Component {
                       <Input 
                         onChange={this.onChange}
                         value={this.state.password}
-                      className="input-border" 
-                      type="password" 
-                      name="password" 
-                      id="password" 
-                      placeholder="Your Password" />
+                        className="input-border" 
+                        type="password" 
+                        name="password" 
+                        id="password" 
+                        placeholder="Your Password" />
                     </FormGroup>
                     <FormText >
                       Creating an account means you’re okay with our <Link to='/terms'>Terms and Conditons</Link>
@@ -193,7 +192,7 @@ const mapDispatchToProps = dispatch => {
           console.log(res);
           localStorage.setItem("token", res.data.token);
           dispatch(signup(fullname, username, email, password));
-          this.props.history.push('/user/event');
+          this.props.history.push('/register/success');
         })
         .catch(err => {
           console.log(err.response);
