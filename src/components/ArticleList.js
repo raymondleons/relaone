@@ -18,7 +18,7 @@ class ArticleList extends Component {
                 <Card className="article-card" key={article._id}>
                     <Row>
                         <Col md="4">
-                            <CardImg className="article-image" src={article.image} alt={article._id}></CardImg>
+                            <CardImg className="article-image" src={article.photo} alt={article._id}></CardImg>
                         </Col>
                         <Col md="8">
                             <CardBody>
