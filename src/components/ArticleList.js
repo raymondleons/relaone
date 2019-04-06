@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Row, Col, CardDeck, Card, CardImg, CardBody, CardTitle, CardText} from 'reactstrap';
+import { Row, Col, Card, CardImg, CardBody, CardTitle, CardText} from 'reactstrap';
 import Dotdotdot from 'react-dotdotdot';
-import { delArticle } from '../actions';
 import { getArticle } from '../actions' ;
 
 class ArticleList extends Component {
@@ -30,7 +29,6 @@ class ArticleList extends Component {
                                 <CardTitle><h4>{article.title}</h4></CardTitle>
                                 <CardText><Dotdotdot clamp={3}>{article.description}</Dotdotdot></CardText>
                                 <CardText className="text-muted">Created by {article.author}</CardText>
-                                <button onClick={() => this.delete(article.id)}>delete</button>
                             </CardBody>
                         </Col>
                     </Row>
@@ -62,9 +60,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getArticle: () => {
-      dispatch(getArticle())
-    }
+    getArticle: () => { dispatch(getArticle()) }
   }
 }
 
