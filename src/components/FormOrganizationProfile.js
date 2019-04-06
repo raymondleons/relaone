@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import '../assets/css/_style.scss'
+import '../assets/css/_style.scss';
 
 class FormOrganizationProfile extends Component {
+
   render() {
     return (
       <div className="form-organization-profile">

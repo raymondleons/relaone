@@ -1,9 +1,27 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import '../assets/css/_style.scss'
+import '../assets/css/_style.scss';
+import { getSkillset } from '../actions/organizationActions';
 
 class CreateEvent extends Component {
+
+    componentDidMount(){
+      this.props.getSkillset();
+    }
+  
   render() {
+    const skillsets = this.props.skillsets
+    const displaySkillset = skillsets.length ? (
+      skillsets.map(skillset => {
+        return (
+            <div><label><input type="checkbox" name="skillSet" key={skillset._id} value={skillset._id}/> {skillset.name}</label><br></br></div>
+        )
+      })
+    ) : (
+        <div>no skills needed</div>
+    );
+
     return (
       <div className="form-create-event">
         <div>
@@ -25,12 +43,7 @@ class CreateEvent extends Component {
             </FormGroup>
             <FormGroup>
                 <Label for="exampleSkillSet">Skill Set</Label><br></br>
-                <input type="checkbox" name="skillSet" value="education"/> Education <br></br>
-                <input type="checkbox" name="skillSet" value="teamwork"/> Team Work <br></br>
-                <input type="checkbox" name="skillSet" value="education"/> Counseling <br></br>
-                <input type="checkbox" name="skillSet" value="teamwork"/> Teaching <br></br>
-                <input type="checkbox" name="skillSet" value="education"/> Madical Aid <br></br>
-                <input type="checkbox" name="skillSet" value="teamwork"/> Disaster Relief <br></br>
+                {displaySkillset}
             </FormGroup>
             <FormGroup>
                 <Label for="exampleDeadline">Deadline</Label>
@@ -50,5 +63,17 @@ class CreateEvent extends Component {
   }
 }
 
-export default CreateEvent;
+const mapStateToProps = state => {
+    return {
+        skillsets: state.skillset.skillsets
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        getSkillset: () => { dispatch(getSkillset())}
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateEvent);
 
