@@ -4,6 +4,7 @@ import '../assets/css/_style2.scss';
 import Header from '../layout/Header'
 import ProfileBadge from '../layout/ProfileBadge'
 import UserCertificationDetails from './UserCertificationDetails'
+import UserSideBar from '../layout/UserSideBar'
 
 export default class UserCertificationDetailsPage extends Component {
   render() {
@@ -16,6 +17,7 @@ export default class UserCertificationDetailsPage extends Component {
           <Row>
             <Col sm="12" md="4">
               <ProfileBadge></ProfileBadge>
+              <UserSideBar />
             </Col>
             <Col sm="12" md="8">
               <UserCertificationDetails />

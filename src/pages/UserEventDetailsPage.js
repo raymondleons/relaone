@@ -3,7 +3,9 @@ import {Row, Col, Container} from 'reactstrap'
 import '../assets/css/_style2.scss';
 import Header from '../layout/Header'
 import ProfileBadge from '../layout/ProfileBadge'
+import UserSideBar from '../layout/UserSideBar'
 import UserEventDetails from './UserEventDetails'
+import '../assets/css/_style2.scss'
 
 export default class UserEventDetailsPage extends Component {
   render() {
@@ -16,6 +18,7 @@ export default class UserEventDetailsPage extends Component {
           <Row>
             <Col sm="12" md="4">
               <ProfileBadge></ProfileBadge>
+              <UserSideBar />
             </Col>
             <Col sm="12" md="8">
               <UserEventDetails />
