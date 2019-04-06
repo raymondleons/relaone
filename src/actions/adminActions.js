@@ -20,20 +20,3 @@ export const signIn = (username, password) => {
       });
   };
 };
-
-export const signUp = (name, username, email, password) => {
-  return {
-    type: "SIGN_UP",
-    name,
-    username,
-    email,
-    password
-  };
-};
-
-export const delClass = id => {
-  return {
-    type: "DELETE_CLASS",
-    id
-  };
-};
