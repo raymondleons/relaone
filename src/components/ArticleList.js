@@ -24,7 +24,7 @@ class ArticleList extends Component {
                             <CardBody>
                                 <CardTitle><h4>{article.title}</h4></CardTitle>
                                 <CardText><Dotdotdot clamp={3}>{article.description}</Dotdotdot></CardText>
-                                <CardText className="text-muted">Created by {article.createdBy}</CardText>
+                                <CardText className="text-muted">Created by {article.createdBy.name}</CardText>
                             </CardBody>
                         </Col>
                     </Row>
