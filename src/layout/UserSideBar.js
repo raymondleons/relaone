@@ -28,6 +28,7 @@ class OrganizationSideBar extends Component {
             </UncontrolledCollapse>
 
         </div>
+        <div className="side-bar-item"><Links to="/user/certification">Certificate</Links></div>
         
       </div>
     )

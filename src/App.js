@@ -21,8 +21,6 @@ import DisplayProfileUser from './pages/ProfilePage'
 import DashboardNotVerify from './pages/Dashboards'
 import ListPendaftarEvent from './pages/ListPendaftarEvent'
 import TermsandConditions from './pages/TermsandConditions'
-import UserEvent from './pages/UserEvent'
-import UserEventDetails from './pages/UserEventDetails'
 import UserCertificationPage from './pages/UserCertificationPage'
 import UserCertificationDetailsPage from './pages/UserCertificationDetailsPage'
 import UserEventPage from './pages/UserEventPage'
@@ -55,6 +53,7 @@ class App extends Component {
             <Route path="/dashboards" exact component={DashboardNotVerify} />
             <Route path="/event/list-register" exact component={ListPendaftarEvent} />
             <Route path='/register' component={Register} exact />
+            <Route path='register/success' exact component={RegisterSuccess} />
             <Route path='/terms' component={TermsandConditions} exact />
             <Route path='/user/event' component={UserEventPage} exact />
             <Route path='/user/event/details' component={UserEventDetailsPage} exact />
