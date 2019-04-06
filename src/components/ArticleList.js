@@ -2,25 +2,35 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Container, Row, Col, CardDeck, Card, CardImg, CardBody, CardTitle, CardText} from 'reactstrap';
 import Dotdotdot from 'react-dotdotdot';
+import { delArticle } from '../actions';
+import { getArticle } from '../actions' ;
 
 class ArticleList extends Component {
-    
+  delete = id => {
+    console.log(id)
+    this.props.delArticle(id)
+  }
+
+  componentDidMount(){
+    this.props.getArticle();
+  }
+
   render() {
-      const articles = this.props.article
+      const articles = this.props.articles
       const displayArticle = articles.length ? (
         articles.map(article => {
-            console.log('hello')
               return (
-                <Card className="article-card" key={article.id}>
+                <Card className="article-card" key={article._id}>
                     <Row>
                         <Col md="4">
-                            <CardImg className="article-image" src={article.image} alt={article.id}></CardImg>
+                            <CardImg className="article-image" src={article.image} alt={article._id}></CardImg>
                         </Col>
                         <Col md="8">
                             <CardBody>
-                                <CardTitle><h4>{article.title}}</h4></CardTitle>
-                                <CardText><Dotdotdot clamp={3}>{article.body}</Dotdotdot></CardText>
+                                <CardTitle><h4>{article.title}</h4></CardTitle>
+                                <CardText><Dotdotdot clamp={3}>{article.description}</Dotdotdot></CardText>
                                 <CardText className="text-muted">Created by {article.author}</CardText>
+                                <button onClick={() => this.delete(article.id)}>delete</button>
                             </CardBody>
                         </Col>
                     </Row>
@@ -28,7 +38,7 @@ class ArticleList extends Component {
               )
           })
       ) : (
-          <div>No article to show</div>
+          <div>wait a moment...</div>
       );
 
     return (
@@ -46,10 +56,18 @@ class ArticleList extends Component {
 
 const mapStateToProps = state => {
     return {
-        article: state.article.article
+        articles: state.article.articles
     }
 }
 
-export default connect(mapStateToProps)(ArticleList);
+const mapDispatchToProps = dispatch => {
+  return {
+    getArticle: () => {
+      dispatch(getArticle())
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ArticleList);
 
 

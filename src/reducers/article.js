@@ -1,8 +1,10 @@
 import volunteer from '../assets/images/volunteer.jpg';
 import ringoffire from '../assets/images/ringoffire.jpg';
 import palu from '../assets/images/palu.jpg';
+import { DEL_ARTICLE, GET_ARTICLE } from '../actions/type';
 
 const initialState={
+    articles: [],
     article: [
         {
             id: '1',
@@ -30,6 +32,18 @@ const initialState={
 
 const article=(state=initialState, action) => {
     switch (action.type) {
+        case DEL_ARTICLE:
+        return {
+            ...state,
+            article: state.article.filter(art => art.id != action.payload)
+        }
+        case GET_ARTICLE:
+        console.log('hello')
+        return {
+            ...state,
+            articles: action.payload
+            
+        }
         default:
             return state;
     }
