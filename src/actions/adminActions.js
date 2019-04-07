@@ -2,7 +2,7 @@ import axios from "axios";
 export const signIn = (username, password) => {
   return dispatch => {
     axios
-      .post("https://relaonebinar.herokuapp.com/api/member/login", {
+      .post("https://relaonebinar.herokuapp.com/api/admin/login", {
         username: username,
         password: password
       })

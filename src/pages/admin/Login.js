@@ -4,32 +4,37 @@ import { Link, withRouter} from "react-router-dom";
 import { connect } from 'react-redux';
 import { signIn } from '../../actions/adminActions';
 import axios from 'axios'
+import LoginPage from "../LoginPage";
 
 class SignInAdmin extends Component {
-  constructor(props) {
-    super(props)
-  
-    this.state = {
-       username: '',
-       password: ''
-    }
-  }
-  
-  onChange = e => this.setState({ [e.target.name]: e.target.value });
 
-  onSubmit = e => {
-    e.preventDefault();
-    this.props.signIn(this.state.username, this.state.password)
-    this.setState({
-      username: "",
-      password: ""
-    });
-  }
+  componentDidMount(){
+    document.title= "AdminPanel - RelaOne"
+}
+constructor(props) {
+  super(props)
 
-  componentDidUpdate() {
-    console.log(this.props.role)
-    this.props.role === 'member' && this.props.history.push('/dashboard')
+  this.state = {
+     username: '',
+     password: ''
   }
+}
+
+onChange = e => this.setState({ [e.target.name]: e.target.value });
+
+onSubmit = e => {
+  e.preventDefault();
+  this.props.signIn(this.state.username, this.state.password)
+  this.setState({
+    username: "",
+    password: ""
+  });
+}
+
+componentDidUpdate() {
+  console.log(this.props.role)
+  this.props.role === 'admin' && this.props.history.push('/admin')
+}
 
   render() {
 
@@ -91,7 +96,7 @@ const mapDispatchToProps = dispatch => {
   return{
     signIn: (username, password) => {
       axios
-        .post("https://relaonebinar.herokuapp.com/api/member/login", {
+        .post("https://relaonebinar.herokuapp.com/api/admin/login", {
           'username':username,
           'password':password
         })
@@ -108,4 +113,7 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SignInAdmin)) ;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SignInAdmin);

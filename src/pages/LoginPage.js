@@ -38,6 +38,7 @@ onSubmit = e => {
 componentDidUpdate() {
   console.log(this.props.role)
   this.props.role === 'member' && this.props.history.push('/dashboard')
+  this.props.role == 'organization' && this.props.history.push('/organization')
 }
 
   render() {
