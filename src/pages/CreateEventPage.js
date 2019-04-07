@@ -4,6 +4,7 @@ import '../assets/css/_style.scss';
 import ProfileBadge from '../layout/ProfileBadge';
 import Header from '../layout/Header';
 import CreateEvent from '../components/CreateEvent';
+import OrganizationSideBar from '../layout/OrganizationSideBar';
 
 class UpdateOrganizationProfile extends Component {
   render() {
@@ -16,6 +17,7 @@ class UpdateOrganizationProfile extends Component {
           <Row>
             <Col sm="12" md="4">
               <ProfileBadge></ProfileBadge>
+              <OrganizationSideBar/>
             </Col>
             <Col sm="12" md="8">
                 <CreateEvent/>

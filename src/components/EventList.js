@@ -1,9 +1,37 @@
 import React, { Component } from 'react';
-import { Table, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { connect } from 'react-redux';
+import { Table } from 'reactstrap';
 import '../assets/css/_style.scss'
+import { getEvent } from '../actions/organizationActions';
 
 class EventList extends Component {
+
+    componentDidMount(){
+        this.props.getEvent();
+    }
+
+
   render() {
+      const events = this.props.events
+      
+
+      const displayEvent = events.length ? (
+          events.map(event => {
+              return(
+                  <tr>
+                    {/* <th scope="row">1</th> */}
+                    <td key={event._id}>{event.title}</td>
+                    <td key={event._id}>{event.location}</td>
+                    <td key={event._id}>{event.quotaMax}</td>
+                    <td key={event._id}>{event.deadline}</td>
+                    <td key={event._id}><a>x</a></td>
+                </tr>
+              )
+          })
+      ) : (
+          <tr>Create more event</tr>
+      );
+
     return (
       <div className="event">
         <div className="content-title">
@@ -13,43 +41,15 @@ class EventList extends Component {
             <Table responsive>
                 <thead>
                     <tr>
-                        <th>#</th>
                         <th>Title</th>
                         <th>Location</th>
                         <th>Quota</th>
                         <th>Deadline</th>
-                        <th>Required skill-set</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Lombok Earthquake</td>
-                        <td>Lombok</td>
-                        <td>45</td>
-                        <td>8 August 2018</td>
-                        <td>Counseling</td>
-                        <td><a>Details</a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Sunda Strait Tsunami</td>
-                        <td>Banten</td>
-                        <td>30</td>
-                        <td>26 December 2018</td>
-                        <td>Medical Aid</td>
-                        <td><a>Details</a></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Sentani Flash Flood</td>
-                        <td>Sentani, Papua</td>
-                        <td>25</td>
-                        <td>21 March 2019</td>
-                        <td>Medical Aid</td>
-                        <td><a>Details</a></td>
-                    </tr>
+                    {displayEvent}
                 </tbody>
             </Table>
         </div>
@@ -58,5 +58,19 @@ class EventList extends Component {
   }
 }
 
-export default EventList;
+const mapStateToProps = state => {
+    return {
+        events: state.event.events
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        getEvent: () => { dispatch(getEvent())}
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EventList);
+
+
 
