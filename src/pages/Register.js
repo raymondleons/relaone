@@ -46,6 +46,7 @@ class Register extends React.Component {
     });
   };
 
+  
 
   toggle(tab) {
     if (this.state.activeTab !== tab) {
@@ -182,21 +183,21 @@ const mapDispatchToProps = dispatch => {
   return {
     signup: (fullname, username, email, password) => {
       axios
-        .post("https://relaonebinar.herokuapp.com/api/member/signup", {
-          fullname,
-          username,
-          email,
-          password
-        })
-        .then(res => {
-          console.log(res);
-          localStorage.setItem("token", res.data.token);
-          dispatch(signup(fullname, username, email, password));
-          this.props.history.push('/register/success');
-        })
-        .catch(err => {
-          console.log(err.response);
-        });
+      .post("https://relaonebinar.herokuapp.com/api/member/signup", {
+        fullname,
+        username,
+        email,
+        password
+      })
+      .then(res => {
+        console.log(res);
+        
+        dispatch(signup(fullname, username, email, password));
+        this.props.history.push('/dashboard');
+      })
+      .catch(err => {
+        console.log(err.response);
+      });
     }
   };
 };

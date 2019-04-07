@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
-<<<<<<< HEAD
-import '../assets/css/_style2.scss';
-=======
 import '../assets/css/_style2.scss'
 
->>>>>>> 9c11f96be08b61bff1494939e60ffe20110c2603
 import Logo from '../assets/images/blue-logo.png'
 
 export default class TermsandConditions extends Component {

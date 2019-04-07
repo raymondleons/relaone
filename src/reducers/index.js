@@ -10,9 +10,4 @@ export default combineReducers({
     skillset: skillset,
     auth: authReducer
 
-<<<<<<< HEAD
-
-
-=======
 });
->>>>>>> 9c11f96be08b61bff1494939e60ffe20110c2603

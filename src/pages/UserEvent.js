@@ -2,11 +2,7 @@ import React, { Component } from 'react'
 import {Col, Row, Card, CardImg, CardBody,
   CardTitle, CardSubtitle, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 import {Link} from 'react-router-dom'
-<<<<<<< HEAD
-import '../assets/css/_style2.scss';
-=======
 import '../assets/css/_style2.scss'
->>>>>>> 9c11f96be08b61bff1494939e60ffe20110c2603
 import test from '../assets/images/bg-contactus.jpg'
 
 export default class UserEvent extends Component {
