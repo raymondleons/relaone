@@ -33,7 +33,6 @@ export const getEvent = () => {
 
 export const addEvent = (title, description, deadline, location, quotaMax, skillSet) => {
     return dispatch => {
-        console.log(title)
         axios ({
             url: 'https://relaonebinar.herokuapp.com/api/organization/event',
             method: 'post',
@@ -50,7 +49,6 @@ export const addEvent = (title, description, deadline, location, quotaMax, skill
             }
         })
             .then(res => {
-                console.log(res)
                 dispatch({
                 type: ADD_EVENT
                 })
@@ -67,7 +65,6 @@ export const getProfile = () => {
             headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU0NTMxODg1LCJleHAiOjE1NTUxMzY2ODV9.T_OuGDlVGX4grnzoS8XSB__KoxjlMkl7m3XQUa52ufA"}
         })
         .then(res => {
-            console.log(res.data.data.confirmed)
             dispatch ({
                 type: GET_PROFILE,
                 organizationName: res.data.data.organizationName,

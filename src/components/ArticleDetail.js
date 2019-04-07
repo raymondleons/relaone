@@ -10,7 +10,6 @@ class ArticleDetail extends Component {
   }
 
   render() {
-    console.log(this.props.articles)
     const articles = this.props.articles ? (
         <div className="article-detail">
           <h1 className="bold-text">{this.props.articles.title}</h1>
