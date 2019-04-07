@@ -191,13 +191,10 @@ const mapDispatchToProps = dispatch => {
       })
       .then(res => {
         console.log(res);
-        
+        localStorage.setItem("token", res.data.token);
         dispatch(signup(fullname, username, email, password));
-        this.props.history.push('/dashboard');
+        this.props.history.push('/register/success');
       })
-      .catch(err => {
-        console.log(err.response);
-      });
     }
   };
 };

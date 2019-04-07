@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_ARTICLE } from './type';
+import { GET_ARTICLE, GET_USEREVENT } from './type';
 
 export const getArticle = () => {
     return dispatch => {
@@ -14,6 +14,21 @@ export const getArticle = () => {
             })
         })
     }
+}
+
+export const getEvent = () => {
+  return dispatch => {
+      axios.get('https://relaonebinar.herokuapp.com/api/organization/event',
+      {
+          headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU0NTMxODg1LCJleHAiOjE1NTUxMzY2ODV9.T_OuGDlVGX4grnzoS8XSB__KoxjlMkl7m3XQUa52ufA"}
+      })
+      .then(res => {
+          dispatch ({
+              type: GET_USEREVENT,
+              payload: res.data.data
+          })
+      })
+  }
 }
 
 export const signIn = (username, password) => {
@@ -49,9 +64,13 @@ export const signup = (fullname, username, email, password) => {
         password
       })
       .then(res => {
+        console.log(res);
         dispatch({
           type: "SIGN_UP",
-      
+          fullname,
+          username,
+          email,
+          password
         });
       })
       .catch(err => {

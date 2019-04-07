@@ -4,6 +4,7 @@
 //actions for user
 export const DEL_ARTICLE = 'DEL_ARTICLE';
 export const GET_ARTICLE = 'GET_ARTICLE';
+export const GET_USEREVENT = 'GET_USEREVENT';
 
 //actions for organization
 export const ADD_EVENT = 'ADD_EVENT';

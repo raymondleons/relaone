@@ -8,12 +8,16 @@ body {
   font-family:MavenPro-Medium,sans-serif;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .width {
     display: none;
   }
 }
-
+@media only screen and (min-width: 768px) {
+  .modal-dialog{
+    width:40%;
+  }
+}
 
 .logo{
   width:200px;
@@ -42,7 +46,7 @@ body {
  }
  .mbot{
   margin-bottom: 10px;
-  box-shadow:1px 1px 10px 1px #888888;
+  
  }
 
  form{
@@ -69,7 +73,7 @@ body {
  .whitebg
  {
    background-color: white;
-   box-shadow: 0 1px 7px 0 rgba(0,0,0,.14);
+   box-shadow:1px 1px 10px 1px #888888;
  }
 
  .nopadding
@@ -111,3 +115,11 @@ float: right;
  .preview{
   height:100px; 
  }
+
+ .nav-tabs  .nav-link.active{
+   color:#0065ff;
+ }
+ .heigth{
+   height: 200px;
+ }
+
