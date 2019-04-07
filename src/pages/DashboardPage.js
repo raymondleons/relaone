@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import '../assets/css/_style.scss';
 import Header from '../layout/Header'
 import ProfileBadge from '../layout/ProfileBadge'
-import SideNavBar from '../layout/SideNavBar'
+import SideNavBar from '../layout/UserSideBar'
 import Dashboard from '../layout/Dashboard'
 
 export default class DashboardPage extends Component {
