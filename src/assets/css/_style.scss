@@ -614,6 +614,10 @@ input[type=texts] {
     float: left;
 }
 
+.profile-detail {
+
+}
+
 .list-event {
     background-color: white;
     padding: 30px;
@@ -621,6 +625,7 @@ input[type=texts] {
     margin-bottom: 40px;
     box-shadow: 1px 1px 10px 1px #888888;
 }
+
 
 .input-search {
     padding-top:10px;
@@ -635,3 +640,6 @@ input[type=texts] {
     float:right;
 }
 
+.box.row {
+    padding-top:50px
+}
