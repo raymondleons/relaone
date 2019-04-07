@@ -48,7 +48,7 @@ class App extends Component {
             <Route path="/create-event" exact component={CreateEventPage}/>
             <Route path="/article" exact component={ArticleListPage}/>
             <Route path="/forgot-password" exact component={ForgotPassword}/>
-            <Route path="/article/detail" exact component={ArticleDetailPage}/>
+            <Route path="/article/detail/:article_id" exact component={ArticleDetailPage}/>
             <Route path="/organization/event/list/register" exact component={ListPendaftarEventOrganisasi} />
             <Route path="/user/profile/" exact component={DisplayProfileUser} />
             <Route path="/dashboards" exact component={DashboardNotVerify} />

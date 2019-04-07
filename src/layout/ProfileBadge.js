@@ -1,35 +1,52 @@
-import React, { Component } from 'react'
-import orgprofpic from '../assets/images/organization1.png'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import orgprofpic from '../assets/images/organization1.png';
 import {
   Row,
   Col
 } from 'reactstrap';
+import { getProfile } from '../actions/organizationActions';
 
 class ProfileBadge extends Component {
-    state = {
-        photo : orgprofpic,
-        name : 'BPBD',
-        verified : true
-    }
-  
-    isVerified = () => this.state.varified ?
-      <p>Verified</p> : <p></p>
+
+  componentDidMount(){
+    this.props.getProfile();
+  }
 
   render() {
+    const verified = this.props.confirmed;
+    const verifiedFunction= verified ?
+      (<p>verified</p>) : (<p>not verified</p>)
+
+
     return (
-      <div className="profile-badge">
-        <Row>
-          <Col xs="3" sm="3" md="4">
-            <img className="organization-picture" src={this.state.photo} alt={this.state.name}></img>
-          </Col>
-          <Col xs="9" sm="9" md="8">
-            <p className="profile-name"><b>{this.state.name}</b><br></br>Verified</p>
-          </Col>
-        </Row>
-      </div>
+        <div className="profile-badge">
+          <Row>
+            <Col xs="3" sm="3" md="4">
+              <img className="organization-picture" src={this.props.photo} alt={this.props.organizationName}></img>
+            </Col>
+            <Col xs="9" sm="9" md="8">
+              <p className="profile-name"><b>{this.props.organizationName}</b><br></br>{verifiedFunction}</p>
+            </Col>
+          </Row>
+        </div>
     )
   }
 }
 
-export default ProfileBadge;
+const mapStateToProps = state => {
+  return {
+    organizationName: state.orgProfile.organizationName,
+    photo: state.orgProfile.photo,
+    confirmed: state.orgProfile.confirmed
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getProfile: () => { dispatch(getProfile()) }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileBadge);
 
