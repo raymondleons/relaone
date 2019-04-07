@@ -2,15 +2,15 @@ import React from 'react';
 import { Form, FormGroup, Label, Input, FormText, TabContent, TabPane, Nav, NavItem, NavLink, Button, Row, Col } from 'reactstrap';
 import {Link} from 'react-router-dom'
 import classnames from 'classnames';
-
 import '../assets/css/_style2.scss';
 import Img from '../assets/images/image1.png'
 import Logo from '../assets/images/blue-logo.png'
+import { signup } from "../actions/memberActions";
+import axios from 'axios'
+import { connect } from "react-redux";
 
 
-
-
-export default class Example extends React.Component {
+class Register extends React.Component {
 
   componentDidMount(){
     document.title= "Register - RelaOne"
@@ -21,9 +21,30 @@ export default class Example extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      activeTab: '1'
+      activeTab: '1',
+      email: '',
+      fullname: '',
+      username: '',
+      password: ''
     };
   }
+  onChange = e => this.setState({ [e.target.name]: e.target.value });
+
+  onSubmit = e => {
+    e.preventDefault();
+    this.props.signup(
+      this.state.fullname,
+      this.state.username,
+      this.state.email,
+      this.state.password
+    );
+    this.setState({
+      email: '',
+      fullname: '',
+      username: '',
+      password: ''
+    });
+  };
 
 
   toggle(tab) {
@@ -66,35 +87,53 @@ export default class Example extends React.Component {
             <TabContent activeTab={this.state.activeTab}>
               <TabPane tabId="1">
                 <Row className="box">
-                  <Form className="">
-                    <Row form>
-                      <Col md={6}>
-                        <FormGroup>
-                          <Label >First Name</Label>
-                          <Input className="input-border" type="text" name="firstname" id="firstname" placeholder="Your First Name" />
-                        </FormGroup>
-                      </Col>
-                      <Col md={6}>
-                        <FormGroup>
-                          <Label >Last Name</Label>
-                          <Input className="input-border" type="text" name="lastname" id="lastname" placeholder="Your Last Name" />
-                        </FormGroup>
-                      </Col>
-                    </Row>
+                  <Form className="" onSubmit={this.onSubmit}>
+                  <FormGroup>
+                      <Label >Full Name</Label>
+                      <Input 
+                        onChange={this.onChange}
+                        value={this.state.fullname}
+                        className="input-border" 
+                        type="text" 
+                        name="fullname" 
+                        id="fullname" 
+                        placeholder="Your Fullname" />
+                    </FormGroup>
                     <FormGroup>
                       <Label >Username</Label>
-                      <Input  className="input-border" type="text" name="username" id="username" placeholder="Your Username" />
+                      <Input 
+                        onChange={this.onChange}
+                        value={this.state.username}
+                        className="input-border"
+                        type="text" 
+                        name="username" 
+                        id="username" 
+                        placeholder="Your Username" />
                     </FormGroup>
                     <FormGroup>
                       <Label >Email</Label>
-                      <Input className="input-border" type="email" name="email" id="email" placeholder="Your Email" />
+                      <Input 
+                        onChange={this.onChange}
+                        value={this.state.email}
+                        className="input-border" 
+                        type="email" 
+                        name="email" 
+                        id="email" 
+                        placeholder="Your Email" />
                     </FormGroup>
                     <FormGroup>
                       <Label >Password</Label>
-                      <Input className="input-border" type="password" name="password" id="password" placeholder="Your Password" />
+                      <Input 
+                        onChange={this.onChange}
+                        value={this.state.password}
+                        className="input-border" 
+                        type="password" 
+                        name="password" 
+                        id="password" 
+                        placeholder="Your Password" />
                     </FormGroup>
                     <FormText >
-                      Creating an account means you’re okay with our <Link to='/TermsandConditions'>Terms and Conditons</Link>
+                      Creating an account means you’re okay with our <Link to='/terms'>Terms and Conditons</Link>
                     </FormText>
                     <Button color="primary button-right mt-3 ">Sign Up!</Button>
                     <FormText className=" clear text-center mtop">
@@ -111,8 +150,8 @@ export default class Example extends React.Component {
                       <Input className="input-border form-control2" type="text" name="organizationname" id="organizationname" placeholder="Your Organization" />
                     </FormGroup>
                     <FormGroup className="form-group2">
-                      <Label>Contact</Label>
-                      <Input className="input-border form-control2" type="number" name="number" id="number" placeholder="Your Number" />
+                      <Label>Phone Number</Label>
+                      <Input className="input-border form-control2" type="text" pattern="[0-9]{9-10}" name="phoneNumber" id="phoneNumber" placeholder="Your Number" />
                     </FormGroup>
                     <FormGroup className="form-group2">
                       <Label >Email</Label>
@@ -139,3 +178,30 @@ export default class Example extends React.Component {
     );
   }
 }
+const mapDispatchToProps = dispatch => {
+  return {
+    signup: (fullname, username, email, password) => {
+      axios
+        .post("https://relaonebinar.herokuapp.com/api/member/signup", {
+          fullname,
+          username,
+          email,
+          password
+        })
+        .then(res => {
+          console.log(res);
+          localStorage.setItem("token", res.data.token);
+          dispatch(signup(fullname, username, email, password));
+          this.props.history.push('/register/success');
+        })
+        .catch(err => {
+          console.log(err.response);
+        });
+    }
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Register);

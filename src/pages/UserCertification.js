@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
 import { Card, Button, CardTitle, CardText, Row, Col, CardImg } from 'reactstrap';
+<<<<<<< HEAD
 import '../assets/css/_style2.scss';
 import test from '../assets/images/person1.jpg'
 import test2 from '../assets/images/certemplate.jpg'
 import {Link} from 'react-router-dom'
+=======
+import {Link} from 'react-router-dom'
+import '../assets/css/_style2.scss'
+import test2 from '../assets/images/bg-contactus.jpg'
+>>>>>>> 9c11f96be08b61bff1494939e60ffe20110c2603
 
 export default class UserCertification extends Component {
   render() {
@@ -24,7 +30,7 @@ export default class UserCertification extends Component {
                 <CardTitle>Organisasi A</CardTitle>
                 <CardText>nama event</CardText>
                 <Button color="primary">
-                  <Link to='/UserCertificationDetailsPage'>Details</Link>
+                  <Link to='/user/certification/details'>Details</Link>
                 </Button>
               </Card>
             </Col>

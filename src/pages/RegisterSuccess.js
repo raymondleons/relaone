@@ -2,8 +2,13 @@ import React, { Component } from 'react';
 import { Container, Row, Col, Button } from 'reactstrap';
 import bluelogo from '../assets/images/blue-logo.png';
 import inbox from '../assets/images/inbox.png';
+<<<<<<< HEAD
 import '../assets/css/_style.scss';
 import { Link as Links} from 'react-router-dom';
+=======
+import { Link as Links} from 'react-router-dom';
+import '../assets/css/_style2.scss'
+>>>>>>> 9c11f96be08b61bff1494939e60ffe20110c2603
 
 class RegisterSuccess extends Component {
   render() {

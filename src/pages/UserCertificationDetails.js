@@ -1,10 +1,18 @@
 import React, { Component } from 'react'
+<<<<<<< HEAD
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button, ListGroup, ListGroupItem, Badge} from 'reactstrap'
+=======
+import { Card, CardImg, CardBody,
+  CardTitle, CardSubtitle, Button} from 'reactstrap'
+>>>>>>> 9c11f96be08b61bff1494939e60ffe20110c2603
 import test from '../assets/images/certemplate.jpg'
-import Logo from '../assets/images/organization1.png'
 import '../assets/css/_style2.scss'
 
+<<<<<<< HEAD
+=======
+import '../assets/css/_style2.scss'
+>>>>>>> 9c11f96be08b61bff1494939e60ffe20110c2603
 
 export default class UserCertificationDetails extends Component {
   render() {
