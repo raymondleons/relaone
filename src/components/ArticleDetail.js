@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getArticle } from '../actions/memberActions' ;
+import { withRouter } from 'react-router-dom';
 
 class ArticleDetail extends Component {
 
@@ -34,11 +35,9 @@ class ArticleDetail extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state)
-  console.log(ownProps)
-  // let id = ownProps.match.params.article_id;
+  let id = ownProps.match.params.article_id;
   return {
-    articles: state.article.articles.find(article => article._id === '5caa01316358ec0017823990')
+    articles: state.article.articles.find(article => article._id === id)
   }
 }
 
@@ -48,6 +47,6 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArticleDetail);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ArticleDetail));
 
 
