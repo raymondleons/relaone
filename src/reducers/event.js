@@ -1,4 +1,4 @@
-import { GET_EVENT, ADD_EVENT } from '../actions/type';
+import { GET_EVENT, ADD_EVENT, DEL_EVENT } from '../actions/type';
 
 const initialState={
     events: []
@@ -14,6 +14,11 @@ const event=(state=initialState, action) => {
         return {
             ...state,
             events: action.payload
+        }
+        case DEL_EVENT:
+        return {
+            ...state,
+            events: [...state.events.filter(event => event.id !== action.id)]
         }
         default:
             return state;
