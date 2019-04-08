@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap';
 import '../assets/css/_style.scss';
 import Header from '../layout/Header'
-import ProfileBadge from '../layout/ProfileBadge'
-import UserSidebar from '../layout/UserSideBar'
+import ProfileBadge from '../layout/UserProfileBadge'
+import UserSideBar from '../layout/UserSideBar'
 import Dashboard from '../layout/Dashboard'
 
 export default class DashboardPage extends Component {
@@ -17,7 +17,7 @@ export default class DashboardPage extends Component {
       <Row>
             <Col sm="12" md="4">
               <ProfileBadge></ProfileBadge>
-              <UserSidebar></UserSidebar>
+              <UserSideBar></UserSideBar>
             </Col>
             <Col sm="12" md="8">
               <Dashboard/>
