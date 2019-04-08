@@ -34,8 +34,14 @@ class EventList extends Component {
 
     return (
       <div className="event">
-        <div className="content-title">
-            <h3 className="title bold-text">Event</h3>
+        <div className="content-title content-header">
+            <div>
+                <h3 className="title bold-text">Event</h3>
+            </div>
+            <div className="event-count">
+                <h4>{this.props.events.length}</h4>
+                <p>EVENT FOUND</p>
+            </div>
         </div>
         <div>
             <Table responsive>
