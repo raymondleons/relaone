@@ -109,3 +109,61 @@ float: right;
  .preview{
   height:100px; 
  }
+
+//  Css Admin
+
+$orange: #f07b3f;
+$blue: #4f9da6;
+$darkblue: #233142;
+$light: #fafafa;
+$red: #ff5959;
+$dimlight: rgba(
+  $color: #ffffff,
+  $alpha: 0.8
+);
+
+.auth-container {
+  position: relative;
+  min-height: 100vh;
+  padding: 20vh 0;
+  background-position: bottom right;
+  background-size: 40%;
+
+  .auth-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    z-index: -1;
+    background-color: $blue;
+    -webkit-clip-path: ellipse(88% 76% at 50% 23%);
+    clip-path: ellipse(88% 76% at 50% 23%);
+  }
+
+  .auth-page {
+    width: 500px;
+    border-radius: 3px;
+    min-height: 50vh;
+    background-color: $light;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba($color: $darkblue, $alpha: 0.2);
+
+    .auth-page-content {
+      padding: 1em 0;
+      min-width: 400px;
+    }
+  }
+}
+
+.auth-banner.mentor {
+  background-color: $orange;
+}
+
+.auth-admin {
+  background: none;
+  background-color: $blue;
+}
