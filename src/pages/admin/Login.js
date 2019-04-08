@@ -4,6 +4,7 @@ import { Link, withRouter} from "react-router-dom";
 import { connect } from 'react-redux';
 import { signIn } from '../../actions/adminActions';
 import axios from 'axios'
+import '../../assets/css/_style.scss'
 import LoginPage from "../LoginPage";
 
 class SignInAdmin extends Component {
@@ -33,7 +34,7 @@ onSubmit = e => {
 
 componentDidUpdate() {
   console.log(this.props.role)
-  this.props.role === 'admin' && this.props.history.push('/admin')
+  this.props.role === 'admin' && this.props.history.push('/admin/dashboard')
 }
 
   render() {
@@ -71,12 +72,6 @@ componentDidUpdate() {
               </FormGroup>
               <div className="text-center">
                 <Button color="primary">Sign In</Button>
-                <p className="mt-3">
-                  Doesn't have an account?{" "}
-                  <Link to="/signup">
-                    Sign Up
-                  </Link>{" "}
-                </p>
               </div>
             </Form>
           </div>

@@ -4,6 +4,7 @@ import article from './article';
 import skillset from './skillset';
 import event from './event';
 import orgProfile from './orgProfile';
+import userProfile from './userProfile'
 import authReducer from './authReducer'
 
 export default combineReducers({
@@ -12,6 +13,7 @@ export default combineReducers({
     skillset: skillset,
     event: event,
     orgProfile: orgProfile,
+    userProfile: userProfile,
     auth: authReducer
 
 });
