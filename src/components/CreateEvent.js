@@ -11,7 +11,7 @@ class CreateEvent extends Component {
         description : "",
         deadline : "",
         location : "",
-        quotaMax : "",
+        quotaMax : "", 
         skillset : [],
         redirect : false
     }
