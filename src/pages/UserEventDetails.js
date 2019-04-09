@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button, ListGroup, ListGroupItem, Badge} from 'reactstrap'
-import Logo from '../assets/images/organization1.png'
+  CardTitle, CardSubtitle, Button, ListGroup, ListGroupItem} from 'reactstrap'
 import '../assets/css/_style2.scss'
 import { connect } from 'react-redux';
 import { getEvent } from '../actions/memberActions' ;
@@ -13,36 +12,49 @@ class UserEventDetails extends Component {
   } 
 
   render() {
+    // const skillsets = this.props.events.skillsets
+    // const displaySkillset = skillsets.length ?(
+    //   skillsets.map(skillset => {
+    //     return(
+    //       <ListGroupItem className="">{}</ListGroupItem>
+                
+    //     )
+    //   })
+    // ):(
+    //   <p>loading...:)</p>
+    // )
+
+
+
     const events = this.props.events ? (
-    
           <Card className="whitebg pt-3">
             <CardBody>
-              <CardTitle>{this.props.event.title}</CardTitle>
+              <CardTitle>{this.props.events.title}</CardTitle>
               <hr/ >
               <div className="d-flex my-1">
-                <CardSubtitle className="mr-auto p-2">Total join {this.props.event.quota}/{this.props.event.quotaMax}</CardSubtitle>
-                <CardSubtitle className="p-2">Due date join until {this.props.event.deadline}</CardSubtitle>
+                <CardSubtitle className="mr-auto p-2">Total join {this.props.events.quota}/{this.props.events.quotaMax}</CardSubtitle>
+                <CardSubtitle className="p-2">Due date join until {this.props.events.deadline}</CardSubtitle>
                 <Button color='primary' className="p-1">Join</Button>
               </div>
-              <CardImg top width="100%" src={this.props.event.photo} alt="Card image cap" />
+              <CardImg top width="100%" src={this.props.events.photo} alt="Card image cap" />
               <div className="d-flex align-items-center">
                 <div className="logoevent">
-                  <CardImg className="imgg" src={Logo} alt="Card image cap" />
+                  <CardImg className="imgg" src={this.props.events.organization.photo} alt="Card image cap" />
                 </div>
-                <CardSubtitle className="p-2">Oleh: Nama Org PT.blabla</CardSubtitle>
+                <CardSubtitle className="p-2">{this.props.events.organization.organizationName}</CardSubtitle>
                 <Button color='primary' className=" ml-auto p-2">Share</Button>
               </div>
               <hr />
-              <CardSubtitle> time desc: acara ini akan berlangsung selama 1 abad</CardSubtitle>
-              <CardSubtitle className="">Location, Batam, blablabla</CardSubtitle>
+              
+              <CardSubtitle className="">Location: {this.props.events.location}</CardSubtitle>
               <hr />
-              <CardText>Description: untuk mengenang jasa para pahlawan yang telah gugur, marilah kita: mengheningkan cipta</CardText>
-              <CardText>task desc: memanjat pohon, memanjat sosial, dll</CardText>
+              <CardText>Description: {this.props.events.description}</CardText>
               <ListGroup>
-                <CardText>Tenaga yang dibutuhkan</CardText>
-                <ListGroupItem className="justify-content-between">jaga anak <Badge pill>14</Badge></ListGroupItem>
-                <ListGroupItem className="justify-content-between">jaga jarak<Badge pill>2</Badge></ListGroupItem>
-                <ListGroupItem className="justify-content-between">jaga jaga <Badge pill>1</Badge></ListGroupItem>
+                <CardText>Required Skillset :</CardText>
+                
+                <ListGroupItem className="justify-content-between">jaga anak </ListGroupItem>
+                <ListGroupItem className="justify-content-between">jaga jarak</ListGroupItem>
+                <ListGroupItem className="justify-content-between">jaga jaga </ListGroupItem>
               </ListGroup>
               <div className="d-flex justify-content-center align-items-center my-3">
                 <Button color='primary' className="mx-5">JOIN</Button>

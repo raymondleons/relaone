@@ -17,7 +17,7 @@ class OrganizationSideBar extends Component {
         
 
           <div className="side-bar-item"><Links to="/article">Article</Links></div>
-
+          <div className="side-bar-item"><Links to="/user/certification">Certificate</Links></div>
           <div className="side-bar-item" id="setting">Setting</div>
             <UncontrolledCollapse toggler="#setting">
               <div className="side-bar-subitem">
@@ -28,7 +28,7 @@ class OrganizationSideBar extends Component {
             </UncontrolledCollapse>
 
         </div>
-        <div className="side-bar-item"><Links to="/user/certification">Certificate</Links></div>
+        
         
       </div>
     )

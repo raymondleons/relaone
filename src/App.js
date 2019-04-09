@@ -57,7 +57,7 @@ class App extends Component {
             <Route path='/register/success' exact component={RegisterSuccess} />
             <Route path='/terms' component={TermsandConditions} exact />
             <Route path='/user/event' component={UserEventPage} exact />
-            <Route path='/user/event/details' component={UserEventDetailsPage} exact />
+            <Route path='/user/event/details/:event_id' component={UserEventDetailsPage} exact />
             <Route path='/user/certification' component={UserCertificationPage} exact /> 
             <Route path='/user/certification/details' component={UserCertificationDetailsPage} exact />  
             <Route path='/login' component={Login} exact />

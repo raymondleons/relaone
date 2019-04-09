@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {Link} from 'react-router-dom'
 import orgprofpic from '../assets/images/organization1.png';
 import {
   Row,
@@ -26,7 +27,7 @@ class ProfileBadge extends Component {
               <img className="organization-picture" src={this.props.photo} alt={this.props.fullname}></img>
             </Col>
             <Col xs="9" sm="9" md="8">
-              <p className="profile-name"><b>{this.props.fullname}</b><br></br>{verifiedFunction}</p>
+              <p className="profile-name"><Link to="/user/profile"><b>{this.props.fullname}</b></Link><br></br>{verifiedFunction}</p>
             </Col>
           </Row>
         </div>

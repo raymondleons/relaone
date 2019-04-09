@@ -103,15 +103,17 @@ float: right;
 
  .logoevent
  {
-   width: 70px;
-   height: 70px;
+   width:70px;
+   height:60px;
+   
+   border:1px solid black;
    
   
  }
  .imgg{
-   max-width:auto;
-   max-height: auto;
- object-fit: contain;
+  
+//  border-radius: 50%;
+//  border:2px solid black;
  }
 
  .preview{
