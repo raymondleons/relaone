@@ -67,19 +67,19 @@ class CreateEvent extends Component {
         <Form onSubmit={this.onSubmit}>
             <FormGroup>
                 <Label for="exampleTitle">Event title</Label>
-                <Input onChange={this.onChange} value={this.state.title} className="form-control" type="text" name="title" id="exampleTitle" placeholder="" />
+                <Input required onChange={this.onChange} value={this.state.title} className="form-control" type="text" name="title" id="exampleTitle" placeholder="" />
             </FormGroup>
             <FormGroup>
                 <Label for="exampleDescripion">Description</Label>
-                <Input onChange={this.onChange} value={this.state.description} type="textarea" name="description" id="exampleDescription" placeholder="" />
+                <Input required onChange={this.onChange} value={this.state.description} type="textarea" name="description" id="exampleDescription" placeholder="" />
             </FormGroup>
             <FormGroup>
                 <Label for="exampleLocation">Location</Label>
-                <Input onChange={this.onChange} value={this.state.location} className="form-control" type="text" name="location" id="exampleLocation" placeholder="" />
+                <Input required onChange={this.onChange} value={this.state.location} className="form-control" type="text" name="location" id="exampleLocation" placeholder="" />
             </FormGroup>
             <FormGroup>
                 <Label for="exampleMaxQuota">Maximum Quota</Label>
-                <Input onChange={this.onChange} value={this.state.quotaMax} className="form-control" type="text" name="quotaMax" id="exampleMaxQuota" placeholder="" />
+                <Input required onChange={this.onChange} value={this.state.quotaMax} className="form-control" type="text" name="quotaMax" id="exampleMaxQuota" placeholder="" />
             </FormGroup>
             <FormGroup>
                 <Label for="exampleSkillSet">Skill Set</Label><br></br>
@@ -87,7 +87,7 @@ class CreateEvent extends Component {
             </FormGroup>
             <FormGroup>
                 <Label for="exampleDeadline">Deadline</Label>
-                <Input onChange={this.onChange} value={this.state.deadline} type="date" name="deadline" id="exampleDeadline" placeholder="" />
+                <Input required onChange={this.onChange} value={this.state.deadline} type="date" name="deadline" id="exampleDeadline" placeholder="" />
             </FormGroup>
             {/* <FormGroup>
                 <Label for="exampleFile">Photo</Label>
