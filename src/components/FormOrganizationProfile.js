@@ -2,22 +2,34 @@ import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import '../assets/css/_style.scss';
 import { connect } from 'react-redux';
-import { getProfile } from '../actions/organizationActions';
+import { getProfile, editProfile } from '../actions/organizationActions';
 
 class FormOrganizationProfile extends Component {
 
-  state = {
-    organizationName: this.props.organizationName,
-    photo: this.props.photo,
-    confirmed: this.props.confirmed,
-    username: this.props.username,
-    email: this.props.email,
-    phoneNumber: this.props.phoneNumber
+  constructor(props) {
+    super(props);
+    this.state = {
+      organizationName : props.organizationName,
+      username : props.username,
+      email : props.email,
+      phoneNumber : props.phoneNumber,
+      photo : props.photo
+    }
   }
 
-  componentDidMount(){
+  componentWillMount(){
     this.props.getProfile();
   }
+
+  // componentWillReceiveProps(props){
+  //   this.setState({
+  //     organizationName : props.organizationName,
+  //     username : props.username,
+  //     email : props.email,
+  //     phoneNumber : props.phoneNumber,
+  //     photo : props.photo
+  // })
+  // }
 
   onChange = (e) => {
     this.setState({
@@ -28,17 +40,10 @@ class FormOrganizationProfile extends Component {
   onSubmit = (e) => {
     e.preventDefault();
     this.props.editProfile(this.state.organizationName, this.state.username, this.state.email, this.state.phoneNumber, this.state.photo);
-    this.setState({
-        organizationName : "",
-        username : "",
-        email : "",
-        phoneNumber : "",
-        photo : ""
-    });
 }
 
   render() {
-    console.log(this.state)
+    console.log(this.state.organizationName)
     return (
       <div className="form-organization-profile">
         <div>
@@ -48,19 +53,19 @@ class FormOrganizationProfile extends Component {
         <Form onSubmit={this.onSubmit}>
             <FormGroup>
                 <Label for="exampleName">Name</Label>
-                <Input onChange={this.onChange} className="form-control" type="text" name="name" id="exampleName"/>
+                <Input defaultValue={this.state.organizationName} onChange={this.onChange} className="form-control" type="text" name="name" id="exampleName"/>
             </FormGroup>
             <FormGroup>
                 <Label for="exampleUsername">Username</Label>
-                <Input onChange={this.onChange} value={this.state.username} type="text" name="name" id="exampleName" />
+                <Input defaultValue={this.state.username} onChange={this.onChange} type="text" name="name" id="exampleName" />
             </FormGroup>
             <FormGroup>
                 <Label for="exampleEmail">Email</Label>
-                <Input onChange={this.onChange} value={this.state.email} type="email" name="email" id="exampleEmail"/>
+                <Input defaultValue={this.state.email} onChange={this.onChange} type="email" name="email" id="exampleEmail"/>
             </FormGroup>
             <FormGroup>
                 <Label for="examplePhone">Phone Number</Label>
-                <Input onChange={this.onChange} value={this.state.phoneNumber} type="text" name="phone" id="examplePhone"/>
+                <Input defaultValue={this.state.phoneNumber} onChange={this.onChange} type="text" name="phone" id="examplePhone"/>
             </FormGroup>
             <FormGroup>
                 <Label for="exampleFile">Photo</Label>
@@ -84,17 +89,17 @@ const mapStateToProps = state =>{
     phoneNumber : state.orgProfile.phoneNumber,
     photo: state.orgProfile.photo,
     confirmed: state.orgProfile.confirmed
-
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     getProfile: () => { dispatch(getProfile()) },
-    // addEvent: (organizationName, username, email, phoneNumber, photo) => { dispatch(addEvent(organizationName, username, email, phoneNumber, photo))}
+    editProfile: (organizationName, username, email, phoneNumber, photo) => { dispatch(editProfile(organizationName, username, email, phoneNumber, photo))}
 
   }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormOrganizationProfile);
+
 
