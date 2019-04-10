@@ -25,7 +25,7 @@ export default class ContentPage extends Component {
                         <div className="col-xs-12 col-md col-lg-6 col-xl-3">
                             <div className="card-box noradius noborder bg-default">
                                 <i className="fa fa-file-text-o float-right text-white"></i>
-                                <h6 className="text-white text-unpercase m-b-20">Users</h6>
+                                <h6 className="text-white text-unpercase m-b-20">USERS</h6>
                                 <h1 className="m-b-20 text-white counter">2</h1>
                                 <span className="text-white">15 New Orders</span>
                             </div>
@@ -33,23 +33,23 @@ export default class ContentPage extends Component {
                         <div className="col-xs-12 col-md col-lg-6 col-xl-3">
                             <div className="card-box noradius noborder bg-warning">
                                 <i className="fa fa-file-text-o float-right text-white"></i>
-                                <h6 className="text-white text-unpercase m-b-20">Organization</h6>
+                                <h6 className="text-white text-unpercase m-b-20">ORGANIZATION</h6>
                                 <h1 className="m-b-20 text-white counter">50</h1>
                                 <span className="text-white">15 New Org.</span>
                             </div>
                         </div>
                         <div className="col-xs-12 col-md col-lg-6 col-xl-3">
-                            <div className="card-box noradius noborder bg-default">
+                            <div className="card-box noradius noborder bg-info">
                                 <i className="fa fa-file-text-o float-right text-white"></i>
-                                <h6 className="text-white text-unpercase m-b-20">Event</h6>
+                                <h6 className="text-white text-unpercase m-b-20">EVENT</h6>
                                 <h1 className="m-b-20 text-white counter">20</h1>
                                 <span className="text-white">15 New Event</span>
                             </div>
                         </div>
                         <div className="col-xs-12 col-md col-lg-6 col-xl-3">
-                            <div className="card-box noradius noborder bg-default">
+                            <div className="card-box noradius noborder bg-danger">
                                 <i className="fa fa-file-text-o float-right text-white"></i>
-                                <h6 className="text-white text-unpercase m-b-20">Article</h6>
+                                <h6 className="text-white text-unpercase m-b-20">ARTICLE</h6>
                                 <h1 className="m-b-20 text-white counter">1,234</h1>
                                 <span className="text-white">15 New Article</span>
                             </div>
