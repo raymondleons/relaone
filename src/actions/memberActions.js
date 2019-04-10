@@ -95,7 +95,7 @@ export const signup = (fullname, username, email, password) => {
           email,
           password
         });
-      })
+      }) 
       .catch(err => {
         console.log(err.response);
       });

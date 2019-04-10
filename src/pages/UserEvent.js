@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import {Col, Row, Card, CardImg, CardBody,
-  CardTitle, CardSubtitle, Button, Spinner} from 'reactstrap'
+import {Col, Row, Card, CardImg, CardBody, CardTitle, CardSubtitle, Button, Spinner} from 'reactstrap'
 import {Link} from 'react-router-dom'
 import '../assets/css/_style2.scss'
 import { getEvent } from '../actions/memberActions' ;
@@ -18,48 +17,52 @@ class UserEvent extends Component {
       events.map(event => {
         return (
           <Col sm={6} key={event._id}>
-          <Card className="mbot">
-          <CardImg className="heigth" src={event.photo} alt="Event Image" />
-          <CardBody>
-            <CardTitle><Link to={'/user/event/details/' + event._id}>{event.title}</Link></CardTitle>
-              <hr />
-              <div className="d-flex align-items-center">
-                <div className="logoevent">
-                  <CardImg className="imgg" src={event.organization.photo} alt="Card image cap" />
+            <Card className="mbot">
+            <Link to={'/user/event/details/' + event._id}>
+              <CardImg className="heigth" src={event.photo} alt="No Photos" />
+            </Link>
+            <CardBody>
+              <CardTitle><Link to={'/user/event/details/' + event._id}>{event.title}</Link></CardTitle>
+                <hr />
+                <div className="d-flex align-items-center">
+                  <div className="logoevent">
+                    <CardImg className="imgg" src={event.organization.photo} alt="No Photos" />
+                  </div>
+                  <CardSubtitle className="p-2">{event.organization.organizationName}</CardSubtitle>
                 </div>
-                <CardSubtitle className="p-2">{event.organization.organizationName}</CardSubtitle>
-              </div>
                 <hr />
                 <Row>
                   <Col sm={6}>
                     <CardSubtitle>Due: {event.deadline}</CardSubtitle>
+                  </Col>
+                  <Col sm={6}>
                     <CardSubtitle>Location: {event.location}</CardSubtitle>
                     <Link to={'/user/event/details/' + event._id}> More Details...</Link>
                   </Col>
-                  <Col sm={6}>
-                  <Button block color="primary" >Join Now!</Button>
-                  </Col>
                 </Row>
+                <Button block color="primary" >Join Now!</Button>
               </CardBody>
             </Card>
           </Col>
-      )
-    })
-) : (
-  <Spinner type="grow" color="primary" />
-);
+        )
+      })
+    ) : (
+      <div>
+        <Spinner type="grow" color="primary" />
+        <Spinner type="grow" color="primary" />
+        <Spinner type="grow" color="primary" />
+      </div>  
+    );
 
-
-      return(
-        <div className="article-list">
-          <div className="content-title">
-              <h3 className="bold-text">Event</h3>
-          </div>
-          <Row className="pt-3">
-            {displayEvent}
-          </Row>
+    return(
+      <div className="article-list">
+        <div className="content-title">
+          <h3 className="bold-text">Event</h3>
         </div>
-      
+        <Row className="pt-3">
+          {displayEvent}
+        </Row>
+      </div>  
     )
   }
 }

@@ -15,7 +15,7 @@ const initialState={
     idCard: '',
 }
 
-const orgProfile=(state=initialState, action) => {
+const userProfile=(state=initialState, action) => {
     switch (action.type) {
         case GET_PROFILE:
             return {
@@ -35,4 +35,4 @@ const orgProfile=(state=initialState, action) => {
     }
 }
 
-export default orgProfile
+export default userProfile
