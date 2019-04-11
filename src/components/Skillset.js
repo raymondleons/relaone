@@ -8,14 +8,46 @@ import { FormGroup, Label } from 'reactstrap';
 class Skillset extends Component {
 
     state = {
-        checked: false
+        selected : [],
+        skillsets : [
+            {
+                id : 1,
+                name : 'Medic',
+                status : false
+            },
+            {
+                id : 2,
+                name : 'Medic',
+                status : false
+            },
+            {
+                id : 3,
+                name : 'Medic',
+                status : false
+            },
+            {
+                id : 4,
+                name : 'Medic',
+                status : false
+            }
+        ]
     }   
 
+
     handleCheck = (e) => {
-        this.setState({
-            checked: !this.state.checked
-        })
-        console.log(e.target.value)
+        const id = (e.target.value)
+        const skillsetss = this.state.skillsets
+        const skill = skillsetss.filter(skills => skills.id == id)
+        skill[0].status=!(skill[0].status)
+        if (skill[0].status == true) {
+            this.setState({
+                selected: [...this.state.selected, skill[0].id]
+            });
+        } else {
+            this.setState({
+                selected: this.state.selected.filter(x => x !== skill[0].id)
+            })
+        }
     }
 
     componentDidMount(){
@@ -25,10 +57,7 @@ class Skillset extends Component {
     
 
   render() {
-      console.log(this.state)
-
-    
-
+    console.log(this.state)
     const skillsets = this.props.skillsets
     const displaySkillset = skillsets.length ? (
       skillsets.map(skillset => {
@@ -40,11 +69,22 @@ class Skillset extends Component {
         <div>Loading skill-set list</div>
     );
 
+
+    const displaySkillsetHC = this.state.skillsets.length ? (
+        this.state.skillsets.map(skillset => {
+          return (
+              <div><label><input onChange={this.handleCheck} type="checkbox" name="skillSet" key={skillset.id} value={skillset.id}/> {skillset.name}</label><br></br></div>
+          )
+        })
+      ) : (
+          <div>Loading skill-set list</div>
+      );
+
     return (
       <div>
             <FormGroup>
                 <Label for="exampleSkillSet">Skill Set</Label><br></br>
-                {displaySkillset}
+                {displaySkillsetHC}
             </FormGroup>
       </div>
     )

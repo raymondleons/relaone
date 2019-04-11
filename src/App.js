@@ -41,7 +41,7 @@ class App extends Component {
           <div className="App">
             <Route path="/" exact component={LandingPage}/>
             <Route path="/register-success" exact component={RegisterSuccess}/>
-            <Route path="/organization/update-profile" exact component={UpdateOrganizationProfile}/>
+            <Route path="/organization/update-profile" exact component={UpdateOrganizationProfile}/>        
             <Route path="/organization/update-profile/success" exact component={UpdateOrgProfileSuccess}/>
             <Route path="/user/update-profile/success" exact component={UpdateUserProfileSuccess}/>
             <Route path="/user/update-profile" exact component={UpdateProfile}/>
