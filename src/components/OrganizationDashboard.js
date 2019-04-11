@@ -18,8 +18,6 @@ class FormOrganizationProfile extends Component {
             </div>
         </div>
         <div className="event-action">
-            <a>Select All</a>
-            <a>Delete</a>
             <Button color="primary"><Link to="/create-event" className="create-event-button">Create Event</Link></Button>
         </div>
         <div className="no-event">

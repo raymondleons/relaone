@@ -28,8 +28,7 @@ import {Link} from 'react-router-dom'
                 <Card>
                     <CardTitle><h5>Nama: {this.props.fullname}</h5></CardTitle>
                     <CardTitle><h5>Email: {this.props.email}</h5></CardTitle>
-                    <CardTitle><h5>Password: {this.props.password}</h5></CardTitle>
-                    <CardTitle><h5>Username: ********</h5></CardTitle>
+                    <CardTitle><h5>Username:{this.props.username}</h5></CardTitle>
                     <CardTitle><h5>Kontak Person: {this.props.phoneNumber}</h5></CardTitle>
                     <CardTitle><h5>Alamat: {this.props.address}</h5></CardTitle>
                     <CardTitle><h5>No. KTP: {this.props.idCard}</h5></CardTitle>

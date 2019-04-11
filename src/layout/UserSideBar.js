@@ -7,28 +7,32 @@ class OrganizationSideBar extends Component {
     return (
       <div className="side-bar">
         <div className="side-bar-list">
-          <div className="side-bar-item"><Links to="/dashboard">Dashboard</Links></div>
+          <div className="side-bar-item"><Links className="side-bar-link" to="/dashboard">Dashboard</Links></div>
 
           <div className="side-bar-item" id="event">Event</div>
             <UncontrolledCollapse toggler="#event">
-              <div className="side-bar-subitem"><Links to="/user/event">Browse</Links></div>
+              <div className="side-bar-subitem"><Links className="side-bar-link" to="/user/event">Browse</Links></div>
               <div className="side-bar-subitem">Registered</div>
             </UncontrolledCollapse>
         
 
-          <div className="side-bar-item"><Links to="/article">Article</Links></div>
-          <div className="side-bar-item"><Links to="/user/certification">Certificate</Links></div>
+          <div className="side-bar-item"><Links className="side-bar-link" to="/article">Article</Links></div>
+
           <div className="side-bar-item" id="setting">Setting</div>
             <UncontrolledCollapse toggler="#setting">
               <div className="side-bar-subitem">
-                <Links to="/user/update-profile">
+                <Links className="side-bar-link" to="/user/update-profile">
                   Edit Profile
                 </Links>
               </div>
             </UncontrolledCollapse>
 
         </div>
+<<<<<<< HEAD
         
+=======
+        <div className="side-bar-item"><Links className="side-bar-link" to="/user/certification">Certificate</Links></div>
+>>>>>>> 8999aca0223cb4d315b6edb9d78e14964181dec1
         
       </div>
     )
