@@ -17,6 +17,7 @@ class EventList extends Component {
     }
 
     delete = (id) => {
+        console.log(id)
         this.props.delEvent(id)
     }
 

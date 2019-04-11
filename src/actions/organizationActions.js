@@ -61,10 +61,13 @@ export const addEvent = (title, description, deadline, location, quotaMax, skill
 export const delEvent = (id) => {
     return dispatch => {
         axios({
-            url: 'https://relaonebinar.herokuapp.com/api/organization/event/${id}',
+            url: 'https://relaonebinar.herokuapp.com/api/organization/event',
             method: 'delete',
             headers: {
                 'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU0NTMxODg1LCJleHAiOjE1NTUxMzY2ODV9.T_OuGDlVGX4grnzoS8XSB__KoxjlMkl7m3XQUa52ufA'
+            },
+            data: {
+                id
             }
             })
             .then(res => {
