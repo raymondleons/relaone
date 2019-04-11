@@ -25,7 +25,7 @@ import {Link} from 'react-router-dom'
                 </Card>
             </Col>
             <Col md="8">
-                <Card>
+                
                     <CardTitle><h5>Nama: {this.props.fullname}</h5></CardTitle>
                     <CardTitle><h5>Email: {this.props.email}</h5></CardTitle>
                     <CardTitle><h5>Username:{this.props.username}</h5></CardTitle>
@@ -33,8 +33,8 @@ import {Link} from 'react-router-dom'
                     <CardTitle><h5>Alamat: {this.props.address}</h5></CardTitle>
                     <CardTitle><h5>No. KTP: {this.props.idCard}</h5></CardTitle>
                     <CardTitle><h5>Bio: {this.props.bio}</h5></CardTitle>
-                    <Link to="/user/update-profile"><Button color="primary">Edit Profile</Button></Link>
-                </Card>
+                    <Link to="/user/profile/update"><Button color="primary">Edit Profile</Button></Link>
+                
             </Col>
         </Row>
       </div>

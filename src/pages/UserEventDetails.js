@@ -17,7 +17,6 @@ class UserEventDetails extends Component {
     //   skillsets.map(skillset => {
     //     return(
     //       <ListGroupItem className="">{}</ListGroupItem>
-                
     //     )
     //   })
     // ):(
@@ -25,7 +24,7 @@ class UserEventDetails extends Component {
     // )
 
     const events = this.props.events ? (
-      <Card className="whitebg pt-3">
+      <Card className="whitebg">
         <CardBody>
           <CardTitle>{this.props.events.title}</CardTitle>
           <hr/ >
@@ -40,10 +39,9 @@ class UserEventDetails extends Component {
               <CardImg className="imgg" src={this.props.events.organization.photo} alt="Card image cap" />
             </div>
             <CardSubtitle className="p-2">{this.props.events.organization.organizationName}</CardSubtitle>
-            <Button color='primary' className=" ml-auto p-2">Share</Button>
           </div>
           <hr />      
-          <CardSubtitle className="">Location: {this.props.events.location}</CardSubtitle>
+          <p className="">Location: {this.props.events.location}</p>
           <hr />
           <CardText>Description: {this.props.events.description}</CardText>
           <ListGroup>

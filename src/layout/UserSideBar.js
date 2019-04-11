@@ -21,7 +21,7 @@ class OrganizationSideBar extends Component {
           <div className="side-bar-item" id="setting">Setting</div>
             <UncontrolledCollapse toggler="#setting">
               <div className="side-bar-subitem">
-                <Links className="side-bar-link" to="/user/update-profile">
+                <Links className="side-bar-link" to="/user/profile/update">
                   Edit Profile
                 </Links>
               </div>
