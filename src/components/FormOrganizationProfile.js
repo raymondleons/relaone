@@ -21,15 +21,15 @@ class FormOrganizationProfile extends Component {
     this.props.getProfile();
   }
 
-  // componentWillReceiveProps(props){
-  //   this.setState({
-  //     organizationName : props.organizationName,
-  //     username : props.username,
-  //     email : props.email,
-  //     phoneNumber : props.phoneNumber,
-  //     photo : props.photo
-  // })
-  // }
+  componentWillReceiveProps(props){
+    this.setState({
+      organizationName : props.organizationName,
+      username : props.username,
+      email : props.email,
+      phoneNumber : props.phoneNumber,
+      photo : props.photo
+  })
+  }
 
   onChange = (e) => {
     this.setState({
@@ -43,7 +43,7 @@ class FormOrganizationProfile extends Component {
 }
 
   render() {
-    console.log(this.state.organizationName)
+    console.log(this.state.photo)
     return (
       <div className="form-organization-profile">
         <div>
@@ -69,7 +69,7 @@ class FormOrganizationProfile extends Component {
             </FormGroup>
             <FormGroup>
                 <Label for="exampleFile">Photo</Label>
-                <Input onChange={this.onChange} type="file" name="file" id="exampleFile" />
+                <Input defaultValue={this.state.photo} onChange={this.onChange} type="file" name="file" id="exampleFile" />
                 <FormText color="muted">
                     Please upload your organization photo or logo.
                 </FormText>

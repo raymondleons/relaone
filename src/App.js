@@ -30,6 +30,7 @@ import Login from './pages/LoginPage'
 import VerifiedAccount from './pages/VerifiedAccount'
 import LoginAdmin from './pages/admin/Login'
 import Skillset from './components/Skillset'
+import OrganizationProfilePage from './pages/OrganizationProfilePage'
 
 class App extends Component {
   render() {
@@ -65,6 +66,7 @@ class App extends Component {
             <Route path="/account-verified" exact component={VerifiedAccount}/>
             <Route path="/admin/login" exact component={LoginAdmin} />
             <Route path="/skillset" exact component={Skillset} />
+            <Route path="/organization/profile" exact component={OrganizationProfilePage} />
           </div>
         </Router>
         </Provider>

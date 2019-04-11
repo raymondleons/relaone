@@ -92,7 +92,10 @@ export const getProfile = () => {
                 type: GET_PROFILE,
                 organizationName: res.data.data.organizationName,
                 photo: res.data.data.photo,
-                confirmed: res.data.data.confirmed
+                confirmed: res.data.data.confirmed,
+                username: res.data.data.username,
+                email: res.data.data.email,
+                phoneNumber: res.data.data.phoneNumber
             })
         })
     }
@@ -103,8 +106,9 @@ export const editProfile = (organizationName, username, email, phoneNumber, phot
         axios ({
             url: 'https://relaonebinar.herokuapp.com/api/organization/event',
             method: 'put',
-            headers: {
-                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU0NTMxODg1LCJleHAiOjE1NTUxMzY2ODV9.T_OuGDlVGX4grnzoS8XSB__KoxjlMkl7m3XQUa52ufA'
+            headers: { 
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU0OTUyODU4LCJleHAiOjE1NTU1NTc2NTh9.hjnTlrfcJYsD7EiiGHKvVgxJ7YGi8LNC4iJzXll-ljA',
+                'Content-Type' : 'multipart/form-data'
             },
             data: {
                 organizationName, 
@@ -116,7 +120,13 @@ export const editProfile = (organizationName, username, email, phoneNumber, phot
         })
             .then(res => {
                 dispatch({
-                type: EDIT_PROFILE
+                type: EDIT_PROFILE,
+                organizationName: res.data.data.organizationName,
+                photo: res.data.data.photo,
+                confirmed: res.data.data.confirmed,
+                username: res.data.data.username,
+                email: res.data.data.email,
+                phoneNumber: res.data.data.phoneNumber
                 })
               }
             )

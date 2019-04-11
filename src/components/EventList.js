@@ -17,7 +17,6 @@ class EventList extends Component {
     }
 
     delete = (id) => {
-        console.log(id)
         this.props.delEvent(id)
     }
 
@@ -30,7 +29,6 @@ class EventList extends Component {
           events.map(({_id, title, location, quotaMax, deadline, skillSet}, i) => {
               return(
                   <tr>
-                    {/* <th scope="row">1</th> */}
                     <td key={_id}>{title}</td>
                     <td key={_id}>{location}</td>
                     <td key={_id}>{quotaMax}</td>
