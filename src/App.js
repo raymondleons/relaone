@@ -29,7 +29,6 @@ import UserEventDetailsPage from './pages/UserEventDetailsPage'
 import Login from './pages/LoginPage'
 import VerifiedAccount from './pages/VerifiedAccount'
 import LoginAdmin from './pages/admin/Login'
-import Skillset from './components/Skillset'
 import OrganizationProfilePage from './pages/OrganizationProfilePage'
 import EventDetailOrgPage from './pages/EventDetailOrgPage'
 
@@ -66,7 +65,6 @@ class App extends Component {
             <Route path='/login' component={Login} exact />
             <Route path="/account-verified" exact component={VerifiedAccount}/>
             <Route path="/admin/login" exact component={LoginAdmin} />
-            <Route path="/skillset" exact component={Skillset} />
             <Route path="/organization/profile" exact component={OrganizationProfilePage} />
             <Route path="/event/detail/:event_id" exact component={EventDetailOrgPage}/>
           </div>
