@@ -110,11 +110,11 @@ float: right;
    
   
  }
- .imgg{
+//  .imgg{
   
 //  border-radius: 50%;
 //  border:2px solid black;
- }
+//  }
 
  .preview{
   height:100px; 
@@ -127,6 +127,16 @@ float: right;
    height: 200px;
  }
 
+.fa-user-circle{
+  color:#0065ff;
+}
+.fa-home{
+  color:#0065ff;
+}
+
+.para{
+  font-size: 12px;
+}
 //  Css Admin
 
 $orange: #f07b3f;
@@ -184,3 +194,4 @@ $dimlight: rgba(
   background: none;
   background-color: $blue;
 }
+
