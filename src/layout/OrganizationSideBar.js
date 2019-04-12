@@ -7,17 +7,18 @@ class OrganizationSideBar extends Component {
     return (
       <div className="side-bar">
         <div className="side-bar-list">
-          <div className="side-bar-item"><Links to="/event">Event</Links></div>
           <div className="side-bar-item" id="volunteer">Volunteer</div>
             <UncontrolledCollapse toggler="#volunteer">
               <div className="side-bar-subitem">Registered</div>
               <div className="side-bar-subitem">Accepted</div>
               <div className="side-bar-subitem">Rejected</div>
             </UncontrolledCollapse>
+          <div className="side-bar-item"><Links className="side-bar-link" to="/event">Event</Links></div>
+          <div className="side-bar-item"><Links className="side-bar-link" to="/organization/article">Article</Links></div>
           <div className="side-bar-item" id="setting">Setting</div>
             <UncontrolledCollapse toggler="#setting">
               <div className="side-bar-subitem">
-                <Links to="/organization/update-profile">
+                <Links className="side-bar-link" to="/organization/update-profile">
                   Edit Profile
                 </Links>
               </div>

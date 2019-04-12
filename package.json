@@ -8,11 +8,13 @@
     "@fortawesome/free-brands-svg-icons": "^5.8.1",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "i": "^0.3.6",
     "node-sass": "^4.11.0",
     "npm": "^6.9.0",
     "react": "^16.8.5",
+    "react-addons-update": "^15.6.2",
     "react-bootstrap": "^1.0.0-beta.6",
     "react-dom": "^16.8.5",
     "react-dotdotdot": "^1.2.3",
@@ -21,7 +23,8 @@
     "react-scripts": "2.1.8",
     "react-scroll": "^1.7.11",
     "reactstrap": "^7.1.0",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",

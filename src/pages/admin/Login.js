@@ -1,24 +1,112 @@
-import React, { Component } from 'react'
-import { Container, Row, Col } from 'reactstrap';
-import {Link} from 'react-router-dom'
-import '../../assets/css/_admin.scss';
-import Logo from '../../assets/images/blue-logo.png'
-import Foto from '../../assets/images/image1.png'
+import React, { Component } from "react";
+import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { connect } from 'react-redux';
+import { signIn } from '../../actions/adminActions';
+import axios from 'axios'
+import '../../assets/css/_style.scss'
 
+class SignInAdmin extends Component {
 
-export default class Login extends Component {
-  render() {
-    return (
-      <div>
-        <Container>
-            <div className=" my-4 logo" >
-                <Link to="/"><img className="" src={Logo} alt=""/></Link>
-            </div>
-            <Row>
-                c
-            </Row>
-        </Container>
-      </div>
-    )
+  componentDidMount(){
+    document.title= "AdminPanel - RelaOne"
+}
+constructor(props) {
+  super(props)
+
+  this.state = {
+     username: '',
+     password: ''
   }
 }
+
+onChange = e => this.setState({ [e.target.name]: e.target.value });
+
+onSubmit = e => {
+  e.preventDefault();
+  this.props.signIn(this.state.username, this.state.password)
+  this.setState({
+    username: "",
+    password: ""
+  });
+}
+
+componentDidUpdate() {
+  console.log(this.props.role)
+  this.props.role === 'admin' && this.props.history.push('/admin/dashboard')
+}
+
+  render() {
+
+    return (
+      <div className="auth-container auth-admin">
+        <div className="auth-banner" />
+        <div className="container auth-page">
+          <div className="auth-page-content">
+            <h1 className="text-center mb-3">Sign In | Admin</h1>
+            <Form onSubmit={this.onSubmit}>
+              <FormGroup>
+                <Label for="emailStudent">Email</Label>
+                <Input
+                  required
+                  type="text"
+                  name="username"
+                  id="emailStudent"
+                  placeholder="type your email"
+                  onChange={this.onChange}
+                  value={this.state.username}
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label for="password">Password</Label>
+                <Input
+                  required
+                  type="password"
+                  name="password"
+                  id="passwordauth"
+                  placeholder="type your password"
+                  onChange={this.onChange}
+                  value={this.state.password}
+                />
+              </FormGroup>
+              <div className="text-center">
+                <Button color="primary">Sign In</Button>
+              </div>
+            </Form>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    role: state.auth.role
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return{
+    signIn: (username, password) => {
+      axios
+        .post("https://relaonebinar.herokuapp.com/api/admin/login", {
+          'username':username,
+          'password':password
+        })
+        .then(res => {
+          console.log(res);
+          dispatch(signIn(username, password, res.data.message));
+          console.log(this.props)
+
+        })
+        .catch(err => {
+          console.log(err.response);
+        });
+    }
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SignInAdmin);

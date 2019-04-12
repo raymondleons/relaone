@@ -4,6 +4,13 @@ import { Button } from 'reactstrap';
 import { Link as Links} from 'react-router-dom';
 
 class Header extends Component {
+
+  // handleSignOut = () =>{
+  //   localStorage.removeItem('token');
+  //   this.setState({token: false});
+  // }
+
+
   render() {
     return (
         <div className="header">
@@ -11,7 +18,7 @@ class Header extends Component {
             <Links to="/"><img className="header-logo" src={bluelogo} alt='RelaOne logo'></img></Links>
             </div>
             <div>
-            <Links to="/"><Button className="logout" outline color="primary">Log Out</Button></Links>
+            <Links to="/login"><Button className="logout" outline color="primary">Log Out</Button></Links>
             </div>
         </div>
         

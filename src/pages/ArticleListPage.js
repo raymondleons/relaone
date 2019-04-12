@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import '../assets/css/_style.scss';
-import ProfileBadge from '../layout/ProfileBadge';
+import UserProfileBadge from '../layout/UserProfileBadge';
 import Header from '../layout/Header';
 import ArticleList from '../components/ArticleList';
 import UserSideBar from '../layout/UserSideBar';
@@ -16,7 +16,7 @@ class ArticleListPage extends Component {
           </Row>
           <Row>
             <Col sm="12" md="4">
-              <ProfileBadge></ProfileBadge>
+              <UserProfileBadge></UserProfileBadge>
               <UserSideBar/>
             </Col>
             <Col sm="12" md="8">
