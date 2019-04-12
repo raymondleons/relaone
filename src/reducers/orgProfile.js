@@ -25,7 +25,6 @@ const orgProfile=(state=initialState, action) => {
             return {
                 ...state,
                 organizationName: action.organizationName,
-                photo: action.photo,
                 confirmed: action.confirmed, 
                 username: action.username,
                 email: action.email,
