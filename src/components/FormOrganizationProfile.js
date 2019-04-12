@@ -43,7 +43,6 @@ class FormOrganizationProfile extends Component {
 }
 
   render() {
-    console.log(this.state.photo)
     return (
       <div className="form-organization-profile">
         <div>
@@ -66,13 +65,6 @@ class FormOrganizationProfile extends Component {
             <FormGroup>
                 <Label for="examplePhone">Phone Number</Label>
                 <Input defaultValue={this.state.phoneNumber} onChange={this.onChange} type="text" name="phone" id="examplePhone"/>
-            </FormGroup>
-            <FormGroup>
-                <Label for="exampleFile">Photo</Label>
-                <Input defaultValue={this.state.photo} onChange={this.onChange} type="file" name="file" id="exampleFile" />
-                <FormText color="muted">
-                    Please upload your organization photo or logo.
-                </FormText>
             </FormGroup>
             <Button color="primary">Save</Button>
         </Form>
@@ -101,5 +93,6 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormOrganizationProfile);
+
 
 
