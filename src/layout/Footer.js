@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import '../assets/css/_style.scss';
 import bluelogo from '../assets/images/blue-logo.png';
 import { Link as Links } from 'react-router-dom';
-// import { Link, animateScroll as scroll } from "react-scroll";
 import { Link } from "react-scroll";
 import playstorebutton from '../assets/images/get-it-on-the-google-play-store-button.png';
 import {
