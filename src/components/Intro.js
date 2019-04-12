@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Button } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import phone from '../assets/images/phone.png';
 import playstorebutton from '../assets/images/get-it-on-the-google-play-store-button.png';
 import '../assets/css/_style.scss';

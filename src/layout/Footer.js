@@ -30,16 +30,16 @@ class Footer extends Component {
                 <Col lg="5">
                   <div>
                     <p >Find us on : 
-                      <a href = "https://www.facebook.com/" target = "_blank"> 
+                      <a href = "https://www.facebook.com/" target = "_blank" rel="noopener noreferrer"> 
                         <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'facebook-f']}/>
                       </a>
-                      <a href = "https://www.twitter.com/" target = "_blank">
+                      <a href = "https://www.twitter.com/" target = "_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'twitter']}/>
                       </a>
-                      <a href = "https://www.instagram.com/" target = "_blank"> 
+                      <a href = "https://www.instagram.com/" target = "_blank" rel="noopener noreferrer"> 
                         <FontAwesomeIcon className="footer-socmed-icon" icon={['fab', 'instagram']}/>
                       </a>
-                      <a href = "https://play.google.com/store" target = "_blank"> 
+                      <a href = "https://play.google.com/store" target = "_blank" rel="noopener noreferrer"> 
                         <img className="footer-button" src={playstorebutton} alt="get it on playstore"/>
                       </a>
                     </p>
