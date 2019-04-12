@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import { Card, Row, Col, CardImg, CardBody, CardTitle, CardText, Pagination, PaginationItem, PaginationLink, Button } from 'reactstrap'
+import { Card, Row, Col, CardImg, CardBody, CardTitle, CardText } from 'reactstrap'
 import Event from './Event'
 import { connect } from 'react-redux'
 import { getArticle } from '../actions/memberActions' ;
 import Dotdotdot from 'react-dotdotdot';
 import { Link as Links } from 'react-router-dom';
-import Banjir from '../assets/images/event/banjir.jpg'
 
 class EventDetail extends Component {
   

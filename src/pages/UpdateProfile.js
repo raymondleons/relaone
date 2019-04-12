@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap';
 import '../assets/css/_style.scss';
-import SideBar from '../layout/SideNavBar'
 import Header from '../layout/Header'
 import ProfileBadge from '../layout/ProfileBadge'
 import FormUpdateProfile from '../components/FormUpdateProfile'

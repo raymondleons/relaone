@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Col, Input, Row, Button, Table } from 'reactstrap'
-import Search from '../assets/images/search.png'
 
 export default class ListEventRegister extends Component {
   render() {

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ADD_EVENT, GET_SKILLSET, GET_EVENT, GET_PROFILE, DELL_EVENT, DEL_EVENT, EDIT_PROFILE, GET_ARTICLE } from './type';
+import { ADD_EVENT, GET_SKILLSET, GET_EVENT, GET_PROFILE, DEL_EVENT, EDIT_PROFILE, GET_ARTICLE } from './type';
 
 export const getSkillset = () => {
     return dispatch => {
