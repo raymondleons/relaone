@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_ARTICLE, GET_USEREVENT, GET_PROFILE  } from './type';
+import { GET_ARTICLE, GET_USEREVENT, GET_PROFILE, SIGN_UP } from './type';
 
 export const getArticle = () => {
     return dispatch => {
@@ -89,7 +89,7 @@ export const signup = (fullname, username, email, password) => {
       .then(res => {
         console.log(res);
         dispatch({
-          type: "SIGN_UP",
+          type: SIGN_UP,
           fullname,
           username,
           email,

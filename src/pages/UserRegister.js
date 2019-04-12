@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, FormGroup, Label, Input, FormText, TabContent, TabPane, Nav, NavItem, NavLink, Button, Row, Col } from 'reactstrap';
+import { Form, FormGroup, Label, Input, FormText, Button, Row, Col } from 'reactstrap';
 import {Link} from 'react-router-dom'
 import '../assets/css/_style2.scss';
 import Img from '../assets/images/image1.png'
@@ -12,7 +12,7 @@ import { connect } from "react-redux";
 class UserRegister extends React.Component {
 
   componentDidMount(){
-    document.title= "Register - RelaOne"
+    document.title= "RelaOne | Register for User"
 }
 
   constructor(props) {
@@ -48,7 +48,7 @@ class UserRegister extends React.Component {
         <div className=" my-4 logo" >
         <Link to="/"><img className="" src={Logo} alt=""/></Link>
         </div>
-        <Row className="whitebg">
+        <Row className="whitebg mbot">
           <Col md={6} className="nopadding">
             <img className="width" src={Img} alt=""/>
           </Col>
@@ -104,7 +104,8 @@ class UserRegister extends React.Component {
                     </FormText>
                     <Button color="primary button-right mt-3 ">Sign Up!</Button>
                     <FormText className=" clear text-center mtop">
-                      Already have an account? <Link to='/Login'>Login here.</Link>
+                      Already have an account? <Link to='/Login'>Login here</Link>
+                      , Or <Link to='/organization/register'>Register as Organization.</Link>
                     </FormText>
                   </Form>
                 </Row>

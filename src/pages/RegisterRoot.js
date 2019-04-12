@@ -17,7 +17,7 @@ export default class RegisterHomeRoot extends Component {
           <div className=" my-4 logo" >
             <Link to="/"><img className="" src={Logo} alt=""/></Link>
           </div>
-          <Row className="whitebg">
+          <Row className="whitebg mbot">
             <Col md={6} className="nopadding">
               <img className="width" src={Img} alt=""/>
             </Col>

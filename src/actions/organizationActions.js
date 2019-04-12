@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ADD_EVENT, GET_SKILLSET, GET_EVENT, GET_PROFILE, DELL_EVENT, DEL_EVENT, EDIT_PROFILE } from './type';
+import { ADD_EVENT, GET_SKILLSET, GET_EVENT, GET_PROFILE, DELL_EVENT, DEL_EVENT, EDIT_PROFILE, SIGN_UP } from './type';
 
 export const getSkillset = () => {
     return dispatch => {
@@ -134,4 +134,29 @@ export const editProfile = (organizationName, username, email, phoneNumber, phot
     }
 }
 
-
+export const signup = (organizationName, username, phoneNumber, email, password) => {
+    return dispatch => {
+      axios
+        .post("https://relaonebinar.herokuapp.com/api/organization/signup", {
+          organizationName,
+          username,
+          phoneNumber,
+          email,
+          password
+        })
+        .then(res => {
+          console.log(res);
+          dispatch({
+            type: SIGN_UP,
+            organizationName,
+            username,
+            phoneNumber,
+            email,
+            password
+          });
+        }) 
+        .catch(err => {
+          console.log(err.response);
+        });
+    };
+  };
