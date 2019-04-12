@@ -14,7 +14,7 @@ import {
 class HowToJoin extends Component {
     constructor(props) {
         super(props);
-        // this.state = { activeIndex: 0 };
+        this.state = { activeIndex: 0 };
         this.next = this.next.bind(this);
         this.previous = this.previous.bind(this);
         this.goToIndex = this.goToIndex.bind(this);
@@ -32,13 +32,13 @@ class HowToJoin extends Component {
 
     next() {
     if (this.animating) return;
-    const nextIndex = this.props.activeIndex === this.props.howToJoin.length - 1 ? 0 : this.props.activeIndex + 1;
+    const nextIndex = this.state.activeIndex === this.props.howToJoin.length - 1 ? 0 : this.props.activeIndex + 1;
     this.setState({ activeIndex: nextIndex });
     }
 
     previous() {
     if (this.animating) return;
-    const nextIndex = this.props.activeIndex === 0 ? this.props.howToJoin.length - 1 : this.props.activeIndex - 1;
+    const nextIndex = this.state.activeIndex === 0 ? this.props.howToJoin.length - 1 : this.props.activeIndex - 1;
     this.setState({ activeIndex: nextIndex });
     }
 
@@ -49,7 +49,7 @@ class HowToJoin extends Component {
 
     render() {
 
-        const { activeIndex } = { activeIndex: this.props.activeIndex };
+        const { activeIndex } = this.state;
 
         const slides = this.props.howToJoin.map((item) => {
           return (

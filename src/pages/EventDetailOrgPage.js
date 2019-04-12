@@ -4,7 +4,6 @@ import '../assets/css/_style.scss';
 import ProfileBadge from '../layout/ProfileBadge';
 import Header from '../layout/Header';
 import EventDetailOrg from '../components/EventDetailOrg';
-import OrganizationDashboardPage from './OrganizationDashboardPage';
 import OrganizationSideBar from '../layout/OrganizationSideBar';
 
 class EventListPage extends Component {

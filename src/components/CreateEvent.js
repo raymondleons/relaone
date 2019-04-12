@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import '../assets/css/_style.scss';
 import { getSkillset, addEvent } from '../actions/organizationActions';
 import { Redirect } from 'react-router-dom';
@@ -39,9 +39,9 @@ class CreateEvent extends Component {
     handleCheck = (e) => {
         const id = (e.target.value)
         const skillsets = this.state.skillsets
-        const skills = skillsets.filter(skill => skill._id == id)
+        const skills = skillsets.filter(skill => skill._id === id)
         skills[0].status = !(skills[0].status)
-        if (skills[0].status == true) {
+        if (skills[0].status === true) {
             this.setState({
                 skillset: [...this.state.skillset, skills[0]._id]
             })

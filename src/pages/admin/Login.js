@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-import { Link, withRouter} from "react-router-dom";
 import { connect } from 'react-redux';
 import { signIn } from '../../actions/adminActions';
 import axios from 'axios'
 import '../../assets/css/_style.scss'
-import LoginPage from "../LoginPage";
 
 class SignInAdmin extends Component {
 

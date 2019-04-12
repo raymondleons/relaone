@@ -1,7 +1,6 @@
 import React from 'react';
-import { Form, FormGroup, Label, Input, FormText, TabContent, TabPane, Nav, NavItem, NavLink, Button, Row, Col } from 'reactstrap';
-import {Link , withRouter} from 'react-router-dom'
-import classnames from 'classnames';
+import { Form, FormGroup, Label, Input, FormText, Button, Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom'
 import '../assets/css/_style2.scss';
 import Img from '../assets/images/image1.png'
 import Logo from '../assets/images/blue-logo.png'
@@ -38,7 +37,7 @@ onSubmit = e => {
 componentDidUpdate() {
   console.log(this.props.role)
   this.props.role === 'member' && this.props.history.push('/dashboard')
-  this.props.role == 'organization' && this.props.history.push('/organization')
+  this.props.role === 'organization' && this.props.history.push('/organization')
 }
 
   render() {
