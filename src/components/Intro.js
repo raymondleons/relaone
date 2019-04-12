@@ -17,7 +17,7 @@ class Intro extends Component {
                     <h1>{this.props.introTitle}</h1>
                     <h5><span className="bold-text">{this.props.relaOne}</span> {this.props.introParagraph1}</h5>
                     <h5><span className="bold-text">{this.props.relaOneOrganization}</span> {this.props.introParagraph2}</h5>
-                      <a href = "https://play.google.com/store" target = "_blank"> 
+                      <a href="https://play.google.com/store" target = "_blank" rel="noopener noreferrer"> 
                       <img className="intro-button" src={playstorebutton} alt="get it on playstore"/>
                     </a>
                 </Col>
