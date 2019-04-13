@@ -2,29 +2,26 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Table } from 'reactstrap';
 import '../assets/css/_style.scss'
-import { getEvent } from '../actions/organizationActions';
+import { getSkillset } from '../actions/organizationActions';
 
 class EventList extends Component {
 
     componentDidMount(){
-        this.props.getEvent();
+        this.props.getSkillset();
     }
 
 
   render() {
-      const events = this.props.events
+      const skillsets = this.props.skillsets
       
 
-      const displayEvent = events.length ? (
-          events.map(event => {
+      const displayEvent = skillsets.length ? (
+        skillsets.map(skillset => {
               return(
                   <tr>
-                    {/* <th scope="row">1</th> */}
-                    <td key={event._id}>{event.title}</td>
-                    <td key={event._id}>{event.location}</td>
-                    <td key={event._id}>{event.quotaMax}</td>
-                    <td key={event._id}>{event.deadline}</td>
-                    <td key={event._id}><a>x</a></td>
+                    <th scope="row"></th>
+                    <td key={skillset._id}>{skillset.name}</td>
+                    <td key={skillset._id}><a>x</a></td>
                 </tr>
               )
           })
@@ -41,10 +38,8 @@ class EventList extends Component {
             <Table responsive>
                 <thead>
                     <tr>
-                        <th>Title</th>
-                        <th>Location</th>
-                        <th>Quota</th>
-                        <th>Deadline</th>
+                        <th>No</th>
+                        <th>Name</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -60,13 +55,13 @@ class EventList extends Component {
 
 const mapStateToProps = state => {
     return {
-        events: state.event.events
+        skillsets: state.skillset.skillsets
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        getEvent: () => { dispatch(getEvent())}
+        getSkillset: () => { dispatch(getSkillset())}
     }
 }
 
