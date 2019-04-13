@@ -60,12 +60,12 @@ class FormOrganizationProfile extends Component {
         <hr></hr>
         <Form onSubmit={this.onSubmit}>
             <FormGroup>
-                <Label for="exampleName">Name</Label>
-                <Input defaultValue={this.state.organizationName} onChange={this.onChange} className="form-control" type="text" name="name" id="exampleName"/>
+                <Label for="exampleName">Organization Name</Label>
+                <Input defaultValue={this.state.organizationName} onChange={this.onChange} className="form-control" type="text" name="organizationName" id="exampleName"/>
             </FormGroup>
             <FormGroup>
                 <Label for="exampleUsername">Username</Label>
-                <Input defaultValue={this.state.username} onChange={this.onChange} type="text" name="name" id="exampleName" />
+                <Input defaultValue={this.state.username} onChange={this.onChange} type="text" name="username" id="exampleName" />
             </FormGroup>
             <FormGroup>
                 <Label for="exampleEmail">Email</Label>
@@ -73,7 +73,7 @@ class FormOrganizationProfile extends Component {
             </FormGroup>
             <FormGroup>
                 <Label for="examplePhone">Phone Number</Label>
-                <Input defaultValue={this.state.phoneNumber} onChange={this.onChange} type="text" name="phone" id="examplePhone"/>
+                <Input defaultValue={this.state.phoneNumber} onChange={this.onChange} type="text" name="phoneNumber" id="examplePhone"/>
             </FormGroup>
             <Button color="primary">Save</Button>
         </Form>
