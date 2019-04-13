@@ -12,6 +12,6 @@ export const GET_SKILLSET = 'GET_SKILLSET';
 export const GET_PROFILE = 'GET_PROFILE';
 
 //actions for admin
-
+export const GET_USER = 'GET_USER';
 
 
