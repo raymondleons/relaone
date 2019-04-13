@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import '../assets/css/_style.scss';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { getProfile, editProfile } from '../actions/organizationActions';
 
 class FormOrganizationProfile extends Component {
@@ -13,7 +14,7 @@ class FormOrganizationProfile extends Component {
       username : props.username,
       email : props.email,
       phoneNumber : props.phoneNumber,
-      photo : props.photo
+      redirect : false
     }
   }
 
@@ -26,8 +27,7 @@ class FormOrganizationProfile extends Component {
       organizationName : props.organizationName,
       username : props.username,
       email : props.email,
-      phoneNumber : props.phoneNumber,
-      photo : props.photo
+      phoneNumber : props.phoneNumber
   })
   }
 
@@ -39,10 +39,19 @@ class FormOrganizationProfile extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.editProfile(this.state.organizationName, this.state.username, this.state.email, this.state.phoneNumber, this.state.photo);
+    this.props.editProfile(this.state.organizationName, this.state.username, this.state.email, this.state.phoneNumber);
+    this.setState({
+      redirect : true
+    })
 }
 
   render() {
+    const { redirect } = this.state;
+
+    if (redirect) {
+      return <Redirect to="/organization/update-profile/success"/>
+    }
+
     return (
       <div className="form-organization-profile">
         <div>
@@ -51,12 +60,12 @@ class FormOrganizationProfile extends Component {
         <hr></hr>
         <Form onSubmit={this.onSubmit}>
             <FormGroup>
-                <Label for="exampleName">Name</Label>
-                <Input defaultValue={this.state.organizationName} onChange={this.onChange} className="form-control" type="text" name="name" id="exampleName"/>
+                <Label for="exampleName">Organization Name</Label>
+                <Input defaultValue={this.state.organizationName} onChange={this.onChange} className="form-control" type="text" name="organizationName" id="exampleName"/>
             </FormGroup>
             <FormGroup>
                 <Label for="exampleUsername">Username</Label>
-                <Input defaultValue={this.state.username} onChange={this.onChange} type="text" name="name" id="exampleName" />
+                <Input defaultValue={this.state.username} onChange={this.onChange} type="text" name="username" id="exampleName" />
             </FormGroup>
             <FormGroup>
                 <Label for="exampleEmail">Email</Label>
@@ -64,7 +73,7 @@ class FormOrganizationProfile extends Component {
             </FormGroup>
             <FormGroup>
                 <Label for="examplePhone">Phone Number</Label>
-                <Input defaultValue={this.state.phoneNumber} onChange={this.onChange} type="text" name="phone" id="examplePhone"/>
+                <Input defaultValue={this.state.phoneNumber} onChange={this.onChange} type="text" name="phoneNumber" id="examplePhone"/>
             </FormGroup>
             <Button color="primary">Save</Button>
         </Form>
@@ -79,7 +88,6 @@ const mapStateToProps = state =>{
     username: state.orgProfile.username,
     email: state.orgProfile.email,
     phoneNumber : state.orgProfile.phoneNumber,
-    photo: state.orgProfile.photo,
     confirmed: state.orgProfile.confirmed
   }
 }
@@ -87,7 +95,7 @@ const mapStateToProps = state =>{
 const mapDispatchToProps = dispatch => {
   return {
     getProfile: () => { dispatch(getProfile()) },
-    editProfile: (organizationName, username, email, phoneNumber, photo) => { dispatch(editProfile(organizationName, username, email, phoneNumber, photo))}
+    editProfile: (organizationName, username, email, phoneNumber) => { dispatch(editProfile(organizationName, username, email, phoneNumber))}
 
   }
 }

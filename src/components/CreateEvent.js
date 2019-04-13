@@ -16,7 +16,8 @@ class CreateEvent extends Component {
             location : "",
             quotaMax : "", 
             skillset : [],
-            skillsets : props.skillsets
+            skillsets : props.skillsets,
+            redirect : false
         }
     }
 
