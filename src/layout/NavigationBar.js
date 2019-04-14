@@ -42,7 +42,7 @@ class NavigationBar extends Component {
                 </NavItem>
                 <NavItem>
                     <NavLink>
-                        <Links to="/find-activity">Find Activity</Links>
+                        <Links to="/find-activity">Join Event</Links>
                     </NavLink>
                 </NavItem>
                 <NavItem>
