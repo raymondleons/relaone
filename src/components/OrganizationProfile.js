@@ -38,7 +38,7 @@ class OrganizationProfile extends Component {
     return (
       <div className="form-organization-profile">
         <div>
-            <h3><b>Profile</b></h3>
+            <h3><b>Organization Profile</b></h3>
         </div>
         <hr></hr>
        <Row>
@@ -49,7 +49,7 @@ class OrganizationProfile extends Component {
             </Col>
             <Col md="8">
                 <Card className="profile-card">
-                    <CardTitle><h5>Nama: {this.state.organizationName}</h5></CardTitle>
+                    <CardTitle><h5>Organization Name: {this.state.organizationName}</h5></CardTitle>
                     <CardTitle><h5>Email: {this.state.email}</h5></CardTitle>
                     <CardTitle><h5>Username: {this.state.username}</h5></CardTitle>
                     <CardTitle><h5>Phone number: {this.props.phoneNumber}</h5></CardTitle>
