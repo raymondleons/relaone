@@ -12,6 +12,7 @@ class UserEvent extends Component {
   }
 
   render() {
+    console.log(this.props.events)
     const events = this.props.events
     const displayEvent = events.length ? (
       events.map(event => {
@@ -24,12 +25,12 @@ class UserEvent extends Component {
             <CardBody>
               <CardTitle><Link to={'/user/event/details/' + event._id}>{event.title}</Link></CardTitle>
                 <hr />
-                <div className="d-flex align-items-center">
+                {/* <div className="d-flex align-items-center">
                   <div className="logoevent">
                     <CardImg className="imgg" src={event.organization.photo} alt="No Photos" />
                   </div>
                   <CardSubtitle className="p-2">{event.organization.organizationName}</CardSubtitle>
-                </div>
+                </div> */}
                 <hr />
                 <Row>
                   <Col sm={6}>

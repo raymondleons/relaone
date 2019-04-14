@@ -87,7 +87,7 @@ export const signup = (fullname, username, email, password) => {
         password
       })
       .then(res => {
-        console.log(res);
+        console.log(res); 
         dispatch({
           type: SIGN_UP,
           fullname,

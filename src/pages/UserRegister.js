@@ -122,7 +122,7 @@ const mapDispatchToProps = dispatch => {
       axios
       .post("https://relaonebinar.herokuapp.com/api/member/signup", {
         fullname,
-        username,
+        username, 
         email,
         password
       })

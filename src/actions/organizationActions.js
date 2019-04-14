@@ -1,9 +1,5 @@
 import axios from 'axios';
-<<<<<<< HEAD
-import { ADD_EVENT, GET_SKILLSET, GET_EVENT, GET_PROFILE, DELL_EVENT, DEL_EVENT, EDIT_PROFILE, SIGN_UP } from './type';
-=======
-import { ADD_EVENT, GET_SKILLSET, GET_EVENT, GET_PROFILE, DEL_EVENT, EDIT_PROFILE, GET_ARTICLE } from './type';
->>>>>>> 1ba1d3a25f4cf8079c92df70de70b9f4f8ff5e66
+import { ADD_EVENT, GET_SKILLSET, GET_EVENT, GET_PROFILE, DEL_EVENT, EDIT_PROFILE, GET_ARTICLE, SIGN_UP } from './type';
 
 export const getSkillset = () => {
     return dispatch => {
@@ -138,7 +134,6 @@ export const editProfile = (organizationName, username, email, phoneNumber, phot
     }
 }
 
-<<<<<<< HEAD
 export const signup = (organizationName, username, phoneNumber, email, password) => {
     return dispatch => {
       axios
@@ -165,7 +160,6 @@ export const signup = (organizationName, username, phoneNumber, email, password)
         });
     };
   };
-=======
 export const getArticle = () => {
     return dispatch => {
         axios.get('https://relaonebinar.herokuapp.com/api/organization/article',
@@ -183,4 +177,3 @@ export const getArticle = () => {
 
 
 
->>>>>>> 1ba1d3a25f4cf8079c92df70de70b9f4f8ff5e66

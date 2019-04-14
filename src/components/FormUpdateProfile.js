@@ -8,6 +8,8 @@ class FormUpdateProfile extends Component {
         document.title = "Update Profile - Users"
     )
 
+
+
   render() {
     return (
       <div className="form-update-profile">
@@ -27,36 +29,14 @@ class FormUpdateProfile extends Component {
             <FormGroup>
                 <Label for="exampleEmail">Email</Label>
                 <Input type="email" name="email" id="exampleEmail" placeholder="email@example.com" />
-            </FormGroup>
-            <FormGroup>
-                <Label for="examplePassword">Password</Label>
-                <Input type="password" name="password" id="examplePassword" placeholder="************"/>
-            </FormGroup> 
-            <FormGroup>
-                <Label for="exampleResetPassword">Reset Password</Label>
-                <Input type="password" name="password" id="examplePassword" placeholder="************"/>
             </FormGroup> 
             <FormGroup>
                 <Label for="examplePhone">Birth Date</Label>
                 <Input type="date" name="birthdate" id="exampleBirthDate" placeholder="Phone number" />
             </FormGroup>
             <FormGroup>
-                <Label for="examplePhone">Gender</Label><br></br>
-                <input type="radio" name="gender" value="male"/> Male <br></br>
-                <input type="radio" name="gender" value="female"/> Female
-            </FormGroup>
-            <FormGroup>
-                <Label for="examplePhone">Skill Set</Label><br></br>
-                <input type="radio" name="gender" value="education"/> Education <br></br>
-                <input type="radio" name="gender" value="timwork"/> Tim Work
-            </FormGroup>
-            <FormGroup>
                 <Label for="examplePhone">Phone Number</Label>
                 <Input type="text" name="phone" id="examplePhone" placeholder="Phone number" />
-            </FormGroup>
-            <FormGroup>
-                <Label for="examplePhone">Identity Card Number</Label>
-                <Input type="text" name="phone" id="examplePhone" placeholder="Identity Card Number" />
             </FormGroup>
             <FormGroup>
                 <Label for="examplePhone">Bio</Label>

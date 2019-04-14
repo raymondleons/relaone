@@ -35,21 +35,21 @@ class UserEventDetails extends Component {
           </div>
           <CardImg top width="100%" src={this.props.events.photo} alt="Card image cap" />
           <div className="d-flex align-items-center">
-            <div className="logoevent">
+            {/* <div className="logoevent">
               <CardImg className="imgg" src={this.props.events.organization.photo} alt="Card image cap" />
             </div>
-            <CardSubtitle className="p-2">{this.props.events.organization.organizationName}</CardSubtitle>
+            <CardSubtitle className="p-2">{this.props.events.organization.organizationName}</CardSubtitle> */}
           </div>
           <hr />      
           <p className="">Location: {this.props.events.location}</p>
           <hr />
           <CardText>Description: {this.props.events.description}</CardText>
-          <ListGroup>
+          {/* <ListGroup>
             <CardText>Required Skillset :</CardText>            
             <ListGroupItem className="justify-content-between">{}</ListGroupItem>
             <ListGroupItem className="justify-content-between">jaga jarak</ListGroupItem>
             <ListGroupItem className="justify-content-between">jaga jaga </ListGroupItem>
-          </ListGroup>
+          </ListGroup> */}
           <div className="d-flex justify-content-center align-items-center my-3">
             <Button color='primary' className="mx-5">JOIN</Button>
           </div>
