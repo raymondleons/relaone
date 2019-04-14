@@ -46,6 +46,11 @@ body {
         padding-top: 15px;
         padding-left: 20px;
     }
+
+    .find-volunteer-div {
+        background-size: cover;
+        background-position: 40% 50%;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -84,6 +89,11 @@ body {
         padding-top: 15px;
         padding-left: 15px;
     }
+    
+    .find-volunteer-div {
+        background-size: cover;
+        background-position: 50% 50%;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -120,6 +130,11 @@ body {
         padding-top: 15px;
         padding-left: 15px;
     }
+    
+    .find-volunteer-div {
+        background-size: 140%;
+        background-position: 30% 50%;
+    }
 } 
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -154,6 +169,11 @@ body {
         padding-top: 15px;
         padding-left: 0px;
     }
+    
+    .find-volunteer-div {
+        background-size: 140%;
+        background-position: 30% 50%;
+    }
 } 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -182,6 +202,11 @@ body {
         object-fit: cover;
         border-radius: 50%;
         margin-left: 10px;
+    }
+    
+    .find-volunteer-div {
+        background-size: 140%;
+        background-position: 30% 50%;
     }
 }
 
@@ -222,6 +247,14 @@ body {
 }
 .nav-link a {
     color: white;
+}
+
+.dropdown {
+    background-color: #0052cc;
+}
+
+.dropdown:hover {
+    background-color: #0052cc;
 }
 
 .login-button {
@@ -540,6 +573,57 @@ body {
 
 .profile-card {
     border : none;
+}
+
+.find-volunteer {
+    margin-top: 30px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    text-align: center;
+    font-size: 2.5em;
+    z-index: 999 !important;
+}
+
+
+.find-volunteer-div {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3),rgba(255 , 255, 255, 0.3)), url('../images/find-volunteer.jpg');
+}
+
+.find-activity {
+    margin-top: 30px;
+    padding-top: 100px;
+    padding-bottom: 200px;
+}
+
+.find-activity-title {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.card-activity {
+    height: 175px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.opacity {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5),rgba(255 , 255, 255, 0.5))
+}
+
+.card-text {
+    color: black;
+}
+
+.card-text-title {
+    color: black;
+    font-size: 1.2em;
+}
+
+.card-text-descirption {
+    color: black;
+    font-size: 1em !important;
+    text-align: left;
 }
 
 .logo{
