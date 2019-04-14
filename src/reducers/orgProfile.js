@@ -7,7 +7,7 @@ const initialState={
     username: '',
     email: '',
     phoneNumber: ''
-}
+} 
 
 const orgProfile=(state=initialState, action) => {
     switch (action.type) {

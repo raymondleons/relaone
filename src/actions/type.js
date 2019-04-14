@@ -6,6 +6,8 @@ export const DEL_ARTICLE = 'DEL_ARTICLE';
 export const GET_ARTICLE = 'GET_ARTICLE';
 export const GET_USEREVENT = 'GET_USEREVENT';
 export const GET_USERJOINEDEVENT = 'GET_USERJOINEDEVENT';
+export const GET_USERPROFILE = 'GET_USEPROFILE';
+export const EDIT_USERPROFILE = 'EDIT_USERPROFILE';
 
 //actions for organization
 export const ADD_EVENT = 'ADD_EVENT';

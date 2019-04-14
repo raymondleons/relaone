@@ -1,4 +1,4 @@
-import { GET_PROFILE } from '../actions/type';
+import { GET_PROFILE, GET_USERPROFILE, EDIT_USERPROFILE } from '../actions/type';
 
 const initialState={
     fullname: '',
@@ -10,6 +10,7 @@ const initialState={
     password: '',
     address: '',
     idCard: '',
+    birthDate:''
 }
 
 const userProfile=(state=initialState, action) => {
@@ -26,6 +27,33 @@ const userProfile=(state=initialState, action) => {
                 phoneNumber: action.phoneNumber,
                 address: action.address,
                 idCard: action.idCard
+            }
+            case GET_USERPROFILE:
+            return {
+                ...state,
+                fullname: action.fullname,
+                username: action.username,
+                photo: action.photo,
+                confirmed: action.confirmed,
+                email: action.email,
+                password: action.password,
+                bio:action.bio,
+                phoneNumber: action.phoneNumber,
+                address: action.address,
+                idCard: action.idCard,
+                birthDate:action.birthDate
+            }
+            case EDIT_USERPROFILE:
+            return {
+                ...state,
+                fullname: action.fullname,
+                username: action.username,
+                email: action.email,
+                bio:action.bio,
+                phoneNumber: action.phoneNumber,
+                address: action.address,
+                idCard: action.idCard,
+                birthDate:action.birthDate
             }
         default:
             return state;
