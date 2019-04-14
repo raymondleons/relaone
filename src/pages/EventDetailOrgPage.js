@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import '../assets/css/_style.scss';
 import ProfileBadge from '../layout/ProfileBadge';
 import Header from '../layout/Header';
-import EventList from '../components/EventList';
+import EventDetailOrg from '../components/EventDetailOrg';
 import OrganizationSideBar from '../layout/OrganizationSideBar';
 
 class EventListPage extends Component {
@@ -20,7 +20,7 @@ class EventListPage extends Component {
               <OrganizationSideBar/>
             </Col>
             <Col sm="12" md="8">
-                <EventList/>
+                <EventDetailOrg/>
             </Col>
           </Row>
         </Container>      

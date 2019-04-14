@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Row } from 'reactstrap';
+import { Container } from 'reactstrap';
 import DashboardPage from '../components/DashboardPage'
 import '../assets/css/_style.scss';
 

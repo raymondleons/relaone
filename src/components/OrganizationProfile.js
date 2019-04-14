@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import '../assets/css/_style.scss';
+import { Row, Col, Card, CardImg, CardTitle, Button } from 'reactstrap';
 import { connect } from 'react-redux';
 import { getProfile } from '../actions/organizationActions';
+import { Link } from 'react-router-dom';
 
 class OrganizationProfile extends Component {
 
@@ -39,14 +41,22 @@ class OrganizationProfile extends Component {
             <h3><b>Profile</b></h3>
         </div>
         <hr></hr>
-                <p style={{fontWeight: 'bold'}}>Name</p>
-                <p>{this.state.organizationName}</p>
-                <p style={{fontWeight: 'bold'}}>Username</p>
-                <p>{this.state.username}</p>
-                <p style={{fontWeight: 'bold'}}>Email</p>
-                <p>{this.state.email}</p>
-                <p style={{fontWeight: 'bold'}}>Phone Number</p>
-                <p>{this.state.phoneNumber}</p>  
+       <Row>
+            <Col md="4">
+                <Card>
+                    <CardImg src={this.props.photo}></CardImg>
+                </Card>
+            </Col>
+            <Col md="8">
+                <Card className="profile-card">
+                    <CardTitle><h5>Nama: {this.state.organizationName}</h5></CardTitle>
+                    <CardTitle><h5>Email: {this.state.email}</h5></CardTitle>
+                    <CardTitle><h5>Username: {this.state.username}</h5></CardTitle>
+                    <CardTitle><h5>Phone number: {this.props.phoneNumber}</h5></CardTitle>
+                    <Link to="/organization/update-profile"><Button color="primary">Edit Profile</Button></Link>
+                </Card>
+            </Col>
+        </Row>
       </div>
     )
   }

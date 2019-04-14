@@ -508,6 +508,7 @@ body {
     padding-left: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
+    color: black
 }
 
 .side-bar-item:hover {
@@ -517,6 +518,10 @@ body {
 
 .side-bar-item:active {
     border-left: solid 3px blue;
+}
+
+.side-bar-link {
+    color: black !important;
 }
 
 .side-bar-subitem {
@@ -531,6 +536,10 @@ body {
 
 .button-text {
     color: white !important;
+}
+
+.profile-card {
+    border : none;
 }
 
 .logo{

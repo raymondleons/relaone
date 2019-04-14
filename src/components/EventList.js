@@ -29,18 +29,18 @@ class EventList extends Component {
           events.map(({_id, title, location, quotaMax, deadline, skillSet}, i) => {
               return(
                   <tr>
-                    <td key={_id}>{title}</td>
+                    <td key={_id}><Link to={'/event/detail/' + _id}>{title}</Link></td>
                     <td key={_id}>{location}</td>
                     <td key={_id}>{quotaMax}</td>
                     <td key={_id}>{deadline}</td>
                     <td key={_id}>{skillSet.map(skill => <p key={skill._id}>{skill.name}</p>)}</td>
                     <td key={_id}>
-                        <a className="event-action"> 
+                        <Button className="event-action"> 
                             <FontAwesomeIcon icon='edit'/>
-                        </a>
-                        <a className="event-action" onClick={() => this.delete(_id)}> 
+                        </Button>
+                        <Button className="event-action" onClick={() => this.delete(_id)}> 
                             <FontAwesomeIcon icon='trash'/>
-                        </a>
+                        </Button>
                     </td>
                 </tr>
               )

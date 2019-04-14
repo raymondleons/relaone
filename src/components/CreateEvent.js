@@ -1,32 +1,58 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import '../assets/css/_style.scss';
 import { getSkillset, addEvent } from '../actions/organizationActions';
 import { Redirect } from 'react-router-dom';
 
 class CreateEvent extends Component {
-    state = {
-        title : "",
-        description : "",
-        deadline : "",
-        location : "",
-        quotaMax : "", 
-        skillset : [],
-        redirect : false
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            title : "",
+            description : "",
+            deadline : "",
+            location : "",
+            quotaMax : "", 
+            skillset : [],
+            skillsets : props.skillsets
+        }
     }
 
-    componentDidMount(){
+    componentWillMount(){
       this.props.getSkillset();
     }
   
+    componentWillReceiveProps(props){
+        this.setState({
+            skillsets: props.skillsets
+        })
+    }
+
     onChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
     }
 
-    onSubmit = (e) => {
+    handleCheck = (e) => {
+        const id = (e.target.value)
+        const skillsets = this.state.skillsets
+        const skills = skillsets.filter(skill => skill._id === id)
+        skills[0].status = !(skills[0].status)
+        if (skills[0].status === true) {
+            this.setState({
+                skillset: [...this.state.skillset, skills[0]._id]
+            })
+        } else {
+            this.setState({
+                skillset: this.state.skillset.filter(x => x !== skills[0]._id)
+            })
+        }
+    }
+
+     onSubmit = (e) => {
         e.preventDefault();
         this.props.addEvent(this.state.title, this.state.description, this.state.deadline, this.state.location, this.state.quotaMax, this.state.skillset);
         this.setState({
@@ -41,6 +67,8 @@ class CreateEvent extends Component {
     }
 
   render() {
+    console.log(this.state.skillset)
+
     const { redirect } = this.state;
 
     if (redirect) {
@@ -51,7 +79,7 @@ class CreateEvent extends Component {
     const displaySkillset = skillsets.length ? (
       skillsets.map(skillset => {
         return (
-            <div><label><input type="checkbox" name="skillSet" key={skillset._id} value={skillset._id}/> {skillset.name}</label><br></br></div>
+            <div><label><input onChange={this.handleCheck} type="checkbox" name="skillSet" key={skillset._id} value={skillset._id}/> {skillset.name}</label><br></br></div>
         )
       })
     ) : (

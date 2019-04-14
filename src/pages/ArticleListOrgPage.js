@@ -3,10 +3,10 @@ import { Container, Row, Col } from 'reactstrap';
 import '../assets/css/_style.scss';
 import ProfileBadge from '../layout/ProfileBadge';
 import Header from '../layout/Header';
-import EventList from '../components/EventList';
+import ArticleListOrg from '../components/ArticleListOrg';
 import OrganizationSideBar from '../layout/OrganizationSideBar';
 
-class EventListPage extends Component {
+class ArticleListOrgPage extends Component {
   render() {
     return (
       <div className="create-event">
@@ -16,11 +16,11 @@ class EventListPage extends Component {
           </Row>
           <Row>
             <Col sm="12" md="4">
-              <ProfileBadge></ProfileBadge>
+              <ProfileBadge/>
               <OrganizationSideBar/>
             </Col>
             <Col sm="12" md="8">
-                <EventList/>
+              <ArticleListOrg/>
             </Col>
           </Row>
         </Container>      
@@ -29,5 +29,5 @@ class EventListPage extends Component {
   }
 }
 
-export default EventListPage;
+export default ArticleListOrgPage;
 

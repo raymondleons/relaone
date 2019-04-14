@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 
 import Intro from '../components/Intro';
-import HowToJoin from '../components/HowToJoin';
+import HowTo from '../components/HowTo';
 import ContactUs from '../components/ContactUs';
-import Testimony from '../components/Testimony';
+import Testi from '../components/Testi';
 import NavBar from '../layout/NavBar';
 import Footer from '../layout/Footer';
 
@@ -18,8 +18,8 @@ class LandingPage extends Component {
                   <div className="landing-page">
                   <NavBar/>
                   <Intro/>
-                  <HowToJoin/>
-                  <Testimony/>
+                  <HowTo/>
+                  <Testi/>
                   <ContactUs/>
                   <Footer/>
                 </div>  
