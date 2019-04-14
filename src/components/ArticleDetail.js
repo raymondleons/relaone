@@ -13,7 +13,7 @@ class ArticleDetail extends Component {
     const articles = this.props.articles ? (
         <div className="article-detail">
           <h1 className="bold-text">{this.props.articles.title}</h1>
-          <p className="text-muted">Created by {this.props.articles.createdBy.name}</p>
+          {/* <p className="text-muted">Created by {this.props.articles.createdBy.name}</p> */}
           <div>
               <img className="article-detail-image" src={this.props.articles.photo} alt="be volunteer"></img>
           </div>
