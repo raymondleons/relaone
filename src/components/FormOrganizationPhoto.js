@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import '../assets/css/_style.scss';
 import { connect } from 'react-redux';
-import { editProfile } from '../actions/organizationActions';
+import { editPhoto } from '../actions/organizationActions';
+import axios from 'axios';
 
 class FormOrganizationProfile extends Component {
 
@@ -28,7 +29,21 @@ class FormOrganizationProfile extends Component {
       let formdata = new FormData()
       formdata.append('image', file)
 
-      this.props.editPhoto(formdata)
+      // this.props.editPhoto(formdata)
+
+      axios ({
+            url: 'https://relaonebinar.herokuapp.com/api/organization/uploadphoto',
+            method: 'put',
+            headers: { 
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFJldHVybiBvZiBDbGF3Iiwicm9sZSI6Im9yZ2FuaXphdGlvbiIsImlhdCI6MTU1NTIxMTY2OCwiZXhwIjoxNTU1ODE2NDY4fQ.vtN4xMiBd2C_SmH1Y_JqSVvEVHhAYOUYwB83L4eA5-w',
+            },
+            data: {
+                formdata
+            }
+        })
+            .then(res => console.log(res)
+            )
+            .catch(err => console.log(err))
     }
     }
 
@@ -59,7 +74,7 @@ class FormOrganizationProfile extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    editPhoto: (formdata) => { dispatch(editProfile(formdata))}
+    editPhoto: (formdata) => { dispatch(editPhoto(formdata))}
   }
 }
 
