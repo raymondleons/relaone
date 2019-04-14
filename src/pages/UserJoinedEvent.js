@@ -14,7 +14,7 @@ class UserJoinedEvent extends Component {
   render() {
     const events = this.props.events
       const displayEvent = events.length ? (
-          events.map(({_id, title, location, quota, quotaMax, deadline, organization}, i) => {
+          events.map(({_id, title, location, quota, quotaMax, deadline, organization}) => {
             return(
               <tr>
              
