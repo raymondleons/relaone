@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import '../assets/css/_style.scss';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import { getProfile, editProfile } from '../actions/organizationActions';
+import { editProfile } from '../actions/organizationActions';
 
 class FormOrganizationProfile extends Component {
 

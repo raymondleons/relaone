@@ -14,6 +14,7 @@ class EventEdit extends Component {
 
     this.state = {
       skillsets : skillsets,
+      events : events
     }
   }
 
