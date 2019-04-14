@@ -11,10 +11,10 @@ class EventEdit extends Component {
     super(props);
 
     const { skillsets, events } = this.props;
-    const title = ((events || {}).title);
 
     this.state = {
       skillsets : skillsets,
+      events : events
     }
   }
 
