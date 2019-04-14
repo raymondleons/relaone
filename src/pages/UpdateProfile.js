@@ -4,7 +4,7 @@ import '../assets/css/_style.scss';
 import Header from '../layout/Header'
 import ProfileBadge from '../layout/ProfileBadge'
 import FormUpdateProfile from '../components/FormUpdateProfile'
-import SideNavBar from '../layout/SideNavBar';
+import UserSideBar from '../layout/UserSideBar';
 
 export default class UpdateProfile extends Component {
 
@@ -22,7 +22,7 @@ export default class UpdateProfile extends Component {
           <Row>
             <Col sm="12" md="4">
               <ProfileBadge></ProfileBadge>
-              <SideNavBar></SideNavBar>
+              <UserSideBar></UserSideBar>
             </Col>
             <Col sm="12" md="8">
               <FormUpdateProfile/>

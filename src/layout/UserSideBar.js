@@ -12,7 +12,7 @@ class OrganizationSideBar extends Component {
           <div className="side-bar-item" id="event">Event</div>
             <UncontrolledCollapse toggler="#event">
               <div className="side-bar-subitem"><Links className="side-bar-link" to="/user/event">Browse</Links></div>
-              <div className="side-bar-subitem">Registered</div>
+              <div className="side-bar-subitem"><Links className="side-bar-link" to="/user/event/joined">Registered</Links></div>
             </UncontrolledCollapse>
         
 

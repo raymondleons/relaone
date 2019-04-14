@@ -35,6 +35,7 @@ import RegisterRoot from './pages/RegisterRoot'
 import EventDetailOrgPage from './pages/EventDetailOrgPage'
 import ArticleListOrgPage from './pages/ArticleListOrgPage';
 import ArticleDetailOrgPage from './pages/ArticleDetailOrgPage';
+import UserJoinedEventPage from './pages/UserJoinedEventPage'
 
 class App extends Component {
   render() {
@@ -63,6 +64,7 @@ class App extends Component {
             <Route path='/terms' component={TermsandConditions} exact />
             <Route path='/user/event' component={UserEventPage} exact />
             <Route path='/user/event/details/:event_id' component={UserEventDetailsPage} exact />
+            <Route path='/user/event/joined' component={UserJoinedEventPage} exact />
             <Route path='/user/certification' component={UserCertificationPage} exact /> 
             <Route path='/user/certification/details' component={UserCertificationDetailsPage} exact />  
             <Route path='/login' component={Login} exact />
