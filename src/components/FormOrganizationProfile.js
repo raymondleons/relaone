@@ -1,22 +1,34 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import '../assets/css/_style.scss';
 import { connect } from 'react-redux';
-import { getProfile } from '../actions/organizationActions';
+import { Redirect } from 'react-router-dom';
+import { getProfile, editProfile } from '../actions/organizationActions';
 
 class FormOrganizationProfile extends Component {
 
-  state = {
-    organizationName: this.props.organizationName,
-    photo: this.props.photo,
-    confirmed: this.props.confirmed,
-    username: this.props.username,
-    email: this.props.email,
-    phoneNumber: this.props.phoneNumber
+  constructor(props) {
+    super(props);
+    this.state = {
+      organizationName : props.organizationName,
+      username : props.username,
+      email : props.email,
+      phoneNumber : props.phoneNumber,
+      redirect : false
+    }
   }
 
-  componentDidMount(){
+  componentWillMount(){
     this.props.getProfile();
+  }
+
+  componentWillReceiveProps(props){
+    this.setState({
+      organizationName : props.organizationName,
+      username : props.username,
+      email : props.email,
+      phoneNumber : props.phoneNumber
+  })
   }
 
   onChange = (e) => {
@@ -27,18 +39,19 @@ class FormOrganizationProfile extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.editProfile(this.state.organizationName, this.state.username, this.state.email, this.state.phoneNumber, this.state.photo);
+    this.props.editProfile(this.state.organizationName, this.state.username, this.state.email, this.state.phoneNumber);
     this.setState({
-        organizationName : "",
-        username : "",
-        email : "",
-        phoneNumber : "",
-        photo : ""
-    });
+      redirect : true
+    })
 }
 
   render() {
-    console.log(this.state)
+    const { redirect } = this.state;
+
+    if (redirect) {
+      return <Redirect to="/organization/update-profile/success"/>
+    }
+
     return (
       <div className="form-organization-profile">
         <div>
@@ -47,27 +60,20 @@ class FormOrganizationProfile extends Component {
         <hr></hr>
         <Form onSubmit={this.onSubmit}>
             <FormGroup>
-                <Label for="exampleName">Name</Label>
-                <Input onChange={this.onChange} className="form-control" type="text" name="name" id="exampleName"/>
+                <Label for="exampleName">Organization Name</Label>
+                <Input defaultValue={this.state.organizationName} onChange={this.onChange} className="form-control" type="text" name="organizationName" id="exampleName"/>
             </FormGroup>
             <FormGroup>
                 <Label for="exampleUsername">Username</Label>
-                <Input onChange={this.onChange} value={this.state.username} type="text" name="name" id="exampleName" />
+                <Input defaultValue={this.state.username} onChange={this.onChange} type="text" name="username" id="exampleName" />
             </FormGroup>
             <FormGroup>
                 <Label for="exampleEmail">Email</Label>
-                <Input onChange={this.onChange} value={this.state.email} type="email" name="email" id="exampleEmail"/>
+                <Input defaultValue={this.state.email} onChange={this.onChange} type="email" name="email" id="exampleEmail"/>
             </FormGroup>
             <FormGroup>
                 <Label for="examplePhone">Phone Number</Label>
-                <Input onChange={this.onChange} value={this.state.phoneNumber} type="text" name="phone" id="examplePhone"/>
-            </FormGroup>
-            <FormGroup>
-                <Label for="exampleFile">Photo</Label>
-                <Input onChange={this.onChange} type="file" name="file" id="exampleFile" />
-                <FormText color="muted">
-                    Please upload your organization photo or logo.
-                </FormText>
+                <Input defaultValue={this.state.phoneNumber} onChange={this.onChange} type="text" name="phoneNumber" id="examplePhone"/>
             </FormGroup>
             <Button color="primary">Save</Button>
         </Form>
@@ -82,19 +88,19 @@ const mapStateToProps = state =>{
     username: state.orgProfile.username,
     email: state.orgProfile.email,
     phoneNumber : state.orgProfile.phoneNumber,
-    photo: state.orgProfile.photo,
     confirmed: state.orgProfile.confirmed
-
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     getProfile: () => { dispatch(getProfile()) },
-    // addEvent: (organizationName, username, email, phoneNumber, photo) => { dispatch(addEvent(organizationName, username, email, phoneNumber, photo))}
+    editProfile: (organizationName, username, email, phoneNumber) => { dispatch(editProfile(organizationName, username, email, phoneNumber))}
 
   }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormOrganizationProfile);
+
+
 

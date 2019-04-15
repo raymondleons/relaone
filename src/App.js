@@ -38,6 +38,10 @@ import ArticlePage from './layout/Admin/ArticlePage'
 import OrganizationPage from './layout/Admin/OrganizationPage'
 import EventPage from './layout/Admin/EventPage'
 
+import OrganizationProfilePage from './pages/OrganizationProfilePage'
+import EventDetailOrgPage from './pages/EventDetailOrgPage'
+import ArticleListOrgPage from './pages/ArticleListOrgPage';
+import ArticleDetailOrgPage from './pages/ArticleDetailOrgPage';
 
 class App extends Component {
   render() {
@@ -47,7 +51,7 @@ class App extends Component {
           <div className="App">
             <Route path="/" exact component={LandingPage}/>
             <Route path="/register-success" exact component={RegisterSuccess}/>
-            <Route path="/organization/update-profile" exact component={UpdateOrganizationProfile}/>
+            <Route path="/organization/update-profile" exact component={UpdateOrganizationProfile}/>        
             <Route path="/organization/update-profile/success" exact component={UpdateOrgProfileSuccess}/>
             <Route path="/user/update-profile/success" exact component={UpdateUserProfileSuccess}/>
             <Route path="/user/update-profile" exact component={UpdateProfile}/>
@@ -80,6 +84,10 @@ class App extends Component {
             <Route path="/admin/article" exact component={ArticlePage} />
             <Route path="/admin/organization" exact component={OrganizationPage} />
             <Route path="/admin/events" exact component={EventPage} />
+            <Route path="/organization/profile" exact component={OrganizationProfilePage} />
+            <Route path="/event/detail/:event_id" exact component={EventDetailOrgPage}/>
+            <Route path="/organization/article" exact component={ArticleListOrgPage}/>
+            <Route path="/organization/article/detail/:article_id" exact component={ArticleDetailOrgPage}/>
           </div>
         </Router>
         </Provider>

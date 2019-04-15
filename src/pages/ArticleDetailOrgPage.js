@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import '../assets/css/_style.scss';
-import UserProfileBadge from '../layout/UserProfileBadge';
+import ProfileBadge from '../layout/ProfileBadge';
+import OrganizationSideBar from '../layout/OrganizationSideBar';
 import Header from '../layout/Header';
-import ArticleList from '../components/ArticleList';
-import UserSideBar from '../layout/UserSideBar';
+import ArticleDetailOrg from '../components/ArticleDetailOrg';
 
-class ArticleListPage extends Component {
+class ArticleDetailOrgPage extends Component {
   render() {
     return (
       <div className="create-event">
@@ -16,11 +16,11 @@ class ArticleListPage extends Component {
           </Row>
           <Row>
             <Col sm="12" md="4">
-              <UserProfileBadge></UserProfileBadge>
-              <UserSideBar/>
+              <ProfileBadge></ProfileBadge>
+              <OrganizationSideBar/>
             </Col>
             <Col sm="12" md="8">
-              <ArticleList/>
+              <ArticleDetailOrg/>
             </Col>
           </Row>
         </Container>      
@@ -29,5 +29,5 @@ class ArticleListPage extends Component {
   }
 }
 
-export default ArticleListPage;
+export default ArticleDetailOrgPage;
 

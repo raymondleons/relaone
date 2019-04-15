@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Row, Col, CardImg, CardBody, CardTitle, CardText, Pagination, PaginationItem, PaginationLink, Button } from 'reactstrap'
+import { Card, Row, Col, CardImg, CardBody, CardTitle, CardText } from 'reactstrap'
 import Banjir from '../assets/images/event/banjir.jpg'
 
 export default class Event extends Component {

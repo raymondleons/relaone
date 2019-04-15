@@ -1,27 +1,47 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Table } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import { Table, Button } from 'reactstrap';
 import '../assets/css/_style.scss'
-import { getSkillset } from '../actions/organizationActions';
+import { getEvent, delEvent } from '../actions/organizationActions';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faTrash, faEdit);
 
 class EventList extends Component {
 
     componentDidMount(){
-        this.props.getSkillset();
+        this.props.getEvent();
+    }
+
+    delete = (id) => {
+        this.props.delEvent(id)
     }
 
 
   render() {
-      const skillsets = this.props.skillsets
+      const events = this.props.events
       
 
-      const displayEvent = skillsets.length ? (
-        skillsets.map(skillset => {
+      const displayEvent = events.length ? (
+          events.map(({_id, title, location, quotaMax, deadline, skillSet}, i) => {
               return(
                   <tr>
-                    <th scope="row"></th>
-                    <td key={skillset._id}>{skillset.name}</td>
-                    <td key={skillset._id}><a>x</a></td>
+                    <td key={_id}><Link to={'/event/detail/' + _id}>{title}</Link></td>
+                    <td key={_id}>{location}</td>
+                    <td key={_id}>{quotaMax}</td>
+                    <td key={_id}>{deadline}</td>
+                    <td key={_id}>{skillSet.map(skill => <p key={skill._id}>{skill.name}</p>)}</td>
+                    <td key={_id}>
+                        <Button className="event-action"> 
+                            <FontAwesomeIcon icon='edit'/>
+                        </Button>
+                        <Button className="event-action" onClick={() => this.delete(_id)}> 
+                            <FontAwesomeIcon icon='trash'/>
+                        </Button>
+                    </td>
                 </tr>
               )
           })
@@ -31,15 +51,24 @@ class EventList extends Component {
 
     return (
       <div className="event">
-        <div className="content-title">
-            <h3 className="title bold-text">Event</h3>
+        <div className="content-title content-header">
+            <div>
+                <h3 className="title bold-text">Event</h3>
+            </div>
+            <div className="event-count">
+                <h4>{this.props.events.length}</h4>
+                <p>EVENT FOUND</p>
+            </div>
         </div>
         <div>
             <Table responsive>
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th>Name</th>
+                        <th>Title</th>
+                        <th>Location</th>
+                        <th>Quota</th>
+                        <th>Deadline</th>
+                        <th>Required Skillset</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -48,6 +77,9 @@ class EventList extends Component {
                 </tbody>
             </Table>
         </div>
+        <div className="event-action">
+            <Button color="primary"><Link to="/create-event" className="create-event-button">Create Event</Link></Button>
+        </div>
       </div>
     )
   }
@@ -55,17 +87,15 @@ class EventList extends Component {
 
 const mapStateToProps = state => {
     return {
-        skillsets: state.skillset.skillsets
+        events: state.event.events
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        getSkillset: () => { dispatch(getSkillset())}
+        getEvent: () => { dispatch(getEvent())},
+        delEvent: (id) => { dispatch(delEvent(id))}
     }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventList);
-
-
-

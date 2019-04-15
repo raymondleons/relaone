@@ -74,6 +74,8 @@ body {
     }
     .organization-picture {
         width: 80px;
+        height: 80px;
+        object-fit: cover;
         border-radius: 50%;
         margin-left: 10px;
     }
@@ -108,6 +110,8 @@ body {
 
     .organization-picture {
         width: 80px;
+        height: 80px;
+        object-fit: cover;
         border-radius: 50%;
         margin-left: 0px;
     }
@@ -140,6 +144,8 @@ body {
 
     .organization-picture {
         width: 80px;
+        height: 80px;
+        object-fit: cover;
         border-radius: 50%;
         margin-left: 0px;
     }
@@ -172,6 +178,8 @@ body {
 
     .organization-picture {
         width: 80px;
+        height: 80px;
+        object-fit: cover;
         border-radius: 50%;
         margin-left: 10px;
     }
@@ -500,6 +508,7 @@ body {
     padding-left: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
+    color: black
 }
 
 .side-bar-item:hover {
@@ -509,6 +518,10 @@ body {
 
 .side-bar-item:active {
     border-left: solid 3px blue;
+}
+
+.side-bar-link {
+    color: black !important;
 }
 
 .side-bar-subitem {
@@ -523,6 +536,10 @@ body {
 
 .button-text {
     color: white !important;
+}
+
+.profile-card {
+    border : none;
 }
 
 .logo{
@@ -626,6 +643,9 @@ input[type=texts] {
     padding-bottom: 70px;
     margin-bottom: 40px;
     box-shadow: 1px 1px 10px 1px #888888;
+}
+
+.event-action {
 }
 
 

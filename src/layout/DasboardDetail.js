@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Alert, Button } from 'reactstrap'
+import { Alert } from 'reactstrap'
 import noevent from '../assets/images/noevent.png'
 
 export default class DasboardDetail extends Component {
