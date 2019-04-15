@@ -4,7 +4,7 @@ import Footers from '../layout/Footers'
 import { Container, Row, Col, Card, CardTitle, CardText, CardImg, CardImgOverlay, Button } from 'reactstrap';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { getEvent } from '../actions/organizationActions'
+import { getEvent } from '../actions/guestActions'
 import Dotdotdot from 'react-dotdotdot';
 
 class FindActivity extends Component {
