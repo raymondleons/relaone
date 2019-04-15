@@ -6,6 +6,7 @@ import event from './event';
 import orgProfile from './orgProfile';
 import userProfile from './userProfile'
 import authReducer from './authReducer'
+import user from './user'
 
 export default combineReducers({
     landingPage: landingPage,
@@ -14,6 +15,7 @@ export default combineReducers({
     event: event,
     orgProfile: orgProfile,
     userProfile: userProfile,
-    auth: authReducer
+    auth: authReducer,
+    user: user,
 
 });
