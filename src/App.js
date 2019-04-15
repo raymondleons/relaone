@@ -36,6 +36,7 @@ import SkillSet from './layout/Admin/SkillSet'
 import AddNewSkillSet from './components/AddNewSkillSet'
 import ArticlePage from './layout/Admin/ArticlePage'
 import OrganizationPage from './layout/Admin/OrganizationPage'
+import EventPage from './layout/Admin/EventPage'
 
 import axios from 'axios';
 
@@ -79,6 +80,7 @@ class App extends Component {
             <Route path="/admin/skill-set/add" exact component={AddNewSkillSet} />
             <Route path="/admin/article" exact component={ArticlePage} />
             <Route path="/admin/organization" exact component={OrganizationPage} />
+            <Route path="/admin/events" exact component={EventPage} />
           </div>
         </Router>
         </Provider>
