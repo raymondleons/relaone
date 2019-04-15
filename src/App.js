@@ -38,7 +38,6 @@ import ArticlePage from './layout/Admin/ArticlePage'
 import OrganizationPage from './layout/Admin/OrganizationPage'
 import EventPage from './layout/Admin/EventPage'
 
-import axios from 'axios';
 
 class App extends Component {
   render() {
