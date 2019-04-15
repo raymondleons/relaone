@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ADD_EVENT, GET_SKILLSET, GET_EVENT, GET_PROFILE, DEL_EVENT, EDIT_PROFILE, GET_ARTICLE } from './type';
+import { ADD_EVENT, GET_SKILLSET, GET_EVENT, GET_PROFILE, DEL_EVENT, EDIT_PROFILE, GET_ARTICLE, EDIT_PROFILE_PHOTO } from './type';
 
 export const getSkillset = () => {
     return dispatch => {
@@ -127,6 +127,29 @@ export const editProfile = (organizationName, username, email, phoneNumber) => {
                 username: res.data.data.username,
                 email: res.data.data.email,
                 phoneNumber: res.data.data.phoneNumber
+                })
+              }
+            )
+            .catch(err => console.log(err))
+    }
+}
+
+export const editPhoto = (formdata) => {
+    return dispatch => {
+        axios ({
+            url: 'https://relaonebinar.herokuapp.com/api/organization/profile',
+            method: 'put',
+            headers: { 
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU0OTUyODU4LCJleHAiOjE1NTU1NTc2NTh9.hjnTlrfcJYsD7EiiGHKvVgxJ7YGi8LNC4iJzXll-ljA'
+            },
+            data: {
+                formdata
+            }
+        })
+            .then(res => {
+                dispatch({
+                type: EDIT_PROFILE_PHOTO,
+                photo: res.data.data.photo
                 })
               }
             )

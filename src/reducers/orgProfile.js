@@ -1,4 +1,4 @@
-import { GET_PROFILE, EDIT_PROFILE } from '../actions/type';
+import { GET_PROFILE, EDIT_PROFILE, EDIT_PROFILE_PHOTO } from '../actions/type';
 
 const initialState={
     organizationName: '',
@@ -29,6 +29,11 @@ const orgProfile=(state=initialState, action) => {
                 username: action.username,
                 email: action.email,
                 phoneNumber: action.phoneNumber
+            }
+        case EDIT_PROFILE_PHOTO:
+            return {
+                ...state,
+                photo: action.photo
             }
         default:
             return state;
