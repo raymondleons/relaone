@@ -67,7 +67,7 @@ class EventEdit extends Component {
         <Form onSubmit={this.onSubmit}>
             <FormGroup>
                 <Label for="exampleTitle">Title</Label>
-                <Input defaultValue={this.state.title} onChange={this.onChange} className="form-control" type="text" name="title" id="exampleTitle"/>
+                <Input defaultValue={this.state.jtitle} onChange={this.onChange} className="form-control" type="text" name="title" id="exampleTitle"/>
             </FormGroup>
             <FormGroup>
                 <Label for="exampleDescription">Description</Label>

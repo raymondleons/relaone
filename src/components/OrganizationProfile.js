@@ -53,7 +53,10 @@ class OrganizationProfile extends Component {
                     <CardTitle><h5>Email: {this.state.email}</h5></CardTitle>
                     <CardTitle><h5>Username: {this.state.username}</h5></CardTitle>
                     <CardTitle><h5>Phone number: {this.props.phoneNumber}</h5></CardTitle>
+                    <div>
                     <Link to="/organization/update-profile"><Button color="primary">Edit Profile</Button></Link>
+                    <Link to="/organization/update-photo"><Button color="primary" className="edit-profile-button">Edit Photo</Button></Link>
+                    </div>
                 </Card>
             </Col>
         </Row>
