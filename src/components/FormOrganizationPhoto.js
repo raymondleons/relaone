@@ -3,7 +3,6 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import '../assets/css/_style.scss';
 import { connect } from 'react-redux';
 import { editPhoto } from '../actions/organizationActions';
-import axios from 'axios';
 
 class FormOrganizationProfile extends Component {
 
