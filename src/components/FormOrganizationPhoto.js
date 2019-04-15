@@ -29,21 +29,7 @@ class FormOrganizationProfile extends Component {
       let formdata = new FormData()
       formdata.append('photo', file)
 
-      // this.props.editPhoto(formdata)
-
-      axios ({
-            url: 'https://relaonebinar.herokuapp.com/api/organization/uploadphoto',
-            method: 'put',
-            headers: { 
-                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFJldHVybiBvZiBDbGF3Iiwicm9sZSI6Im9yZ2FuaXphdGlvbiIsImlhdCI6MTU1NTIxMTY2OCwiZXhwIjoxNTU1ODE2NDY4fQ.vtN4xMiBd2C_SmH1Y_JqSVvEVHhAYOUYwB83L4eA5-w',
-            },
-            data: {
-                formdata
-            }
-        })
-            .then(res => console.log(res)
-            )
-            .catch(err => console.log(err))
+      this.props.editPhoto(formdata)
     }
     }
 
