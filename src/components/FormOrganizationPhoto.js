@@ -20,14 +20,14 @@ class FormOrganizationProfile extends Component {
 
   handleUpload = (e) => {
     e.preventDefault();
-    if (this.state.file ===  null) {
+    if (this.state.file === null) {
       alert("Please choose your photo before uploading")
     } else {
 
       let file = this.state.file
 
       let formdata = new FormData()
-      formdata.append('image', file)
+      formdata.append('photo', file)
 
       // this.props.editPhoto(formdata)
 
