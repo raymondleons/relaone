@@ -27,7 +27,7 @@ class FormOrganizationProfile extends Component {
 
       let formdata = new FormData()
       formdata.append('photo', file)
-
+      console.log(formdata)
       this.props.editPhoto(formdata)
     }
     }

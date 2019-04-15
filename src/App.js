@@ -80,7 +80,7 @@ class App extends Component {
             <Route path="/find-volunteer" exact component={FindVolunteer}/>
             <Route path="/find-activity" exact component={FindActivity}/>
             <Route path="/organization/update-photo" exact component={UpdateOrganizationPhoto}/>
-            <Route path="/organization/event-photo/edit" exact component={EventPhotoEditPage}/>         
+            <Route path="/organization/event-photo/edit/:event_id" exact component={EventPhotoEditPage}/>         
           </div>
         </Router>
         </Provider>
