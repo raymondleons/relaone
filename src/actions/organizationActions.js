@@ -50,7 +50,8 @@ export const addEvent = (title, description, deadline, location, quotaMax, skill
         })
             .then(res => {
                 dispatch({
-                type: ADD_EVENT
+                type: ADD_EVENT,
+                payload: res.data.data
                 })
               }
             )
@@ -71,6 +72,7 @@ export const delEvent = (id) => {
             }
             })
             .then(res => {
+                console.log(res)
                 dispatch ({
                     type: DEL_EVENT,
                     id
