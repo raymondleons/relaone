@@ -23,6 +23,7 @@ export const getEvent = () => {
             headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFJldHVybiBvZiBDbGF3Iiwicm9sZSI6Im9yZ2FuaXphdGlvbiIsImlhdCI6MTU1NTIxMTIxNCwiZXhwIjoxNTU1ODE2MDE0fQ.uoIvYKEMY071oHg46fgePS6UDKVM-wUPMSpP1t-t9hw"}
         })
         .then(res => {
+            console.log(res)
             dispatch ({
                 type: GET_EVENT,
                 payload: res.data.data

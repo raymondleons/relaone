@@ -42,8 +42,10 @@ class EventEdit extends Component {
 }
 
   render() {
-    console.log(this.state.events)
+    this.state.events.title && console.log('eventst', this.state.events)
+    // console.log(this.state.events.quota)
     const skillsets = this.props.skillsets
+    console.log(skillsets)
     const displaySkillset = skillsets.length ? (
       skillsets.map(skillset => {
         return (
@@ -53,6 +55,8 @@ class EventEdit extends Component {
     ) : (
         <div>Loading skill-set list</div>
     );
+    // const events = this.props.events
+    // console.log(events.title)
 
     return (
       <div className="form-organization-profile">
@@ -111,5 +115,4 @@ const mapDispatchToProps = dispatch => {
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EventEdit));
 
-// export default EventEdit;
 
