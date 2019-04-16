@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Row, Col, Card, CardImg, CardBody, CardTitle, CardText, Form, Input, FormGroup } from 'reactstrap';
+import { Spinner, Row, Col, Card, CardImg, CardBody, CardTitle, CardText, Form, Input, FormGroup } from 'reactstrap';
 import Dotdotdot from 'react-dotdotdot';
 import { getArticle, searchArticle } from '../actions/memberActions' ;
 import { Link as Links } from 'react-router-dom';
@@ -64,7 +64,11 @@ class ArticleList extends Component {
               )
           })
       ) : (
-          <div>no article...</div>
+          <div>
+            <Spinner type="grow" color="primary" />
+            <Spinner type="grow" color="primary" />
+            <Spinner type="grow" color="primary" />   
+          </div>
       );
 
     return (

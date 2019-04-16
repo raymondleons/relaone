@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ADD_EVENT, GET_SKILLSET, GET_EVENT, GET_PROFILE, DEL_EVENT, EDIT_PROFILE, GET_ARTICLE, EDIT_PROFILE_PHOTO, EDIT_EVENT_PHOTO } from './type';
+import { ADD_EVENT, GET_SKILLSET, GET_EVENT, GET_PROFILE, DEL_EVENT, EDIT_PROFILE, GET_ARTICLE, EDIT_PROFILE_PHOTO, EDIT_EVENT_PHOTO, SEARCH_ARTICLE } from './type';
 
 export const getSkillset = () => {
     return dispatch => {
@@ -192,5 +192,28 @@ export const getArticle = () => {
     }
 }
 
+export const searchArticle = (keyword) => {
+    return dispatch => {
+        axios.get(`https://relaonebinar.herokuapp.com/api/member/searcharticle?search=${keyword}`,
+        {
+          headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWJmN2M3NDhhMzg0MTQwZmYxNGFkYiIsInVzZXJuYW1lIjoicmVnZWRpdCIsImVtYWlsIjoiYmlhc2FzYWphQGdtYWlsLmNvbSIsImZ1bGxuYW1lIjoiSW5kcmEgVGFtdmFuIiwicm9sZSI6Im1lbWJlciIsInBob3RvIjpudWxsLCJza2lsbFNldCI6WyI1Y2E0NmJiZmYyZDNmOTE2OTFmZWY1YjgiLCI1Y2E0NmJlOGYyZDNmOTE2OTFmZWY1YmEiXSwiaWF0IjoxNTU1MjE5Mzc3LCJleHAiOjE1NTU4MjQxNzd9.G6I633dPc81z5bw799nz25vEdqcpu3nSYKNqpd2ZUKA"}          
+        })
+        .then(res => {
+          if (res.data.message === "Article Not Found") {
+            console.log('not found');
+            dispatch ({
+              type: SEARCH_ARTICLE,
+              payload: []
+            })
+          } else {
+            dispatch ({
+                type: SEARCH_ARTICLE,
+                payload: res.data.data
+            })
+          }
+        })
+        .catch(err => console.log(err))
+    }
+  }
 
 

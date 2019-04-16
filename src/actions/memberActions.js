@@ -99,12 +99,12 @@ export const searchArticle = (keyword) => {
         if (res.data.message === "Article Not Found") {
           console.log('not found');
           dispatch ({
-            type: GET_ARTICLE,
+            type: SEARCH_ARTICLE,
             payload: []
           })
         } else {
           dispatch ({
-              type: GET_ARTICLE,
+              type: SEARCH_ARTICLE,
               payload: res.data.data
           })
         }
