@@ -18,16 +18,9 @@ class EventEdit extends Component {
     }
   }
 
-  componentWillMount(){
+  componentDidMount(){
     this.props.getSkillset();
     this.props.getEvent();
-  }
-
-  componentWillReceiveProps(props){
-    this.setState({
-        skillsets : props.skillsets,
-        events : props.events,
-  })
   }
 
   onChange = (e) => {
@@ -42,10 +35,8 @@ class EventEdit extends Component {
 }
 
   render() {
-    this.state.events.title && console.log('eventst', this.state.events)
-    // console.log(this.state.events.quota)
     const skillsets = this.props.skillsets
-    console.log(skillsets)
+    
     const displaySkillset = skillsets.length ? (
       skillsets.map(skillset => {
         return (
@@ -55,8 +46,6 @@ class EventEdit extends Component {
     ) : (
         <div>Loading skill-set list</div>
     );
-    // const events = this.props.events
-    // console.log(events.title)
 
     return (
       <div className="form-organization-profile">
@@ -96,20 +85,17 @@ class EventEdit extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-    let id = ownProps.match.params.event_id;
+const mapStateToProps = (state) => {
     return {
       skillsets: state.skillset.skillsets,
-      events: state.event.events.find(event => event._id === id)
+      events: state.event.events
     }
   }
 
 const mapDispatchToProps = dispatch => {
   return {
     getSkillset: () => { dispatch(getSkillset()) },
-    getEvent: () => { dispatch(getEvent()) },
-    // editEvent: (title, description, location, deadline, quotaMax) => { dispatch(editEvent(title, description, location, deadline, quotaMax))}
-
+    getEvent: () => { dispatch(getEvent()) }
   }
 }
 
