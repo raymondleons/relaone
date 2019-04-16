@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Alert } from 'reactstrap'
 import noevent from '../assets/images/noevent.png'
-import UserSidebar from '../layout/UserSideBar'
 
 export default class DasboardDetail extends Component {
   render() {
