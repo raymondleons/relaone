@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap';
 import '../assets/css/_style.scss';
 import Header from '../layout/Header'
-import ProfileBadge from '../layout/ProfileBadge'
+import UserProfileBadge from '../layout/UserProfileBadge'
 import FormUpdateProfile from '../components/FormUpdateProfile'
 import UserSideBar from '../layout/UserSideBar';
 
@@ -21,7 +21,7 @@ export default class UpdateProfile extends Component {
           </Row>
           <Row>
             <Col sm="12" md="4">
-              <ProfileBadge></ProfileBadge>
+              <UserProfileBadge></UserProfileBadge>
               <UserSideBar></UserSideBar>
             </Col>
             <Col sm="12" md="8">

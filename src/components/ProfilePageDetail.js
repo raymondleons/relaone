@@ -1,17 +1,23 @@
 import React, { Component } from 'react'
 import { Row, Col, Card, CardImg, CardTitle, Button } from 'reactstrap'
 import {connect} from 'react-redux'
-import { getProfile } from '../actions/memberActions';
+import { getUserProfile } from '../actions/memberActions';
 import '../assets/css/_style2.scss';
 import {Link} from 'react-router-dom'
+import Moment from 'moment'
 
  class ProfilePageDetail extends Component {
 
     componentDidMount(){
-        this.props.getProfile();
+        this.props.getUserProfile();
       }
 
   render() {
+
+    let initbirthDate = this.props.birthDate
+    Moment.locale('en');
+    let DOB = Moment(initbirthDate).format('YYYY-MM-DD')
+
     return (
         <div className="event">
         <div className="content-title">
@@ -21,18 +27,19 @@ import {Link} from 'react-router-dom'
         <Row>
             <Col md="4">
                 <Card>
-                    <CardImg src={this.props.photo}></CardImg>
+                    <CardImg src={this.props.photo} alt="user photo"></CardImg>
                 </Card>
             </Col>
             <Col md="8">
                 
-                    <CardTitle><h5>Nama: {this.props.fullname}</h5></CardTitle>
-                    <CardTitle><h5>Email: {this.props.email}</h5></CardTitle>
-                    <CardTitle><h5>Username:{this.props.username}</h5></CardTitle>
-                    <CardTitle><h5>Kontak Person: {this.props.phoneNumber}</h5></CardTitle>
-                    <CardTitle><h5>Alamat: {this.props.address}</h5></CardTitle>
-                    <CardTitle><h5>No. KTP: {this.props.idCard}</h5></CardTitle>
-                    <CardTitle><h5>Bio: {this.props.bio}</h5></CardTitle>
+                    <CardTitle>Nama: {this.props.fullname}</CardTitle>
+                    <CardTitle>Email: {this.props.email}</CardTitle>
+                    <CardTitle>Username:{this.props.username}</CardTitle>
+                    <CardTitle>Kontak Person: {this.props.phoneNumber}</CardTitle>
+                    <CardTitle>Alamat: {this.props.address}</CardTitle>
+                    <CardTitle>No. KTP: {this.props.idCard}</CardTitle>
+                    <CardTitle>Bio: {this.props.bio}</CardTitle>
+                    <CardTitle>DOB: {DOB}</CardTitle>
                     <Link to="/user/profile/update"><Button color="primary">Edit Profile</Button></Link>
                 
             </Col>
@@ -46,19 +53,19 @@ const mapStateToProps = state => {
     return {
       fullname: state.userProfile.fullname,
       photo: state.userProfile.photo,
-      confirmed: state.userProfile.confirmed,
       email: state.userProfile.email,
-      password: state.userProfile.password,
       username: state.userProfile.username,
       phoneNumber: state.userProfile.phoneNumber,
       address: state.userProfile.address,
-      idCard: state.userProfile.idCard
+      idCard: state.userProfile.idCard,
+      bio: state.userProfile.bio,
+      birthDate: state.userProfile.birthDate
     }
   }
   
   const mapDispatchToProps = dispatch => {
     return {
-      getProfile: () => { dispatch(getProfile()) }
+      getUserProfile: () => { dispatch(getUserProfile()) }
     }
   }
   

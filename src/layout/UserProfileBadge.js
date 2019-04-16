@@ -5,12 +5,12 @@ import {
   Row,
   Col
 } from 'reactstrap';
-import { getProfile } from '../actions/memberActions';
+import {getUserProfile } from '../actions/memberActions';
 
 class ProfileBadge extends Component {
 
   componentDidMount(){
-    this.props.getProfile();
+    this.props.getUserProfile();
   }
 
   render() {
@@ -44,7 +44,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getProfile: () => { dispatch(getProfile()) }
+    getUserProfile: () => { dispatch(getUserProfile()) }
   }
 }
 
