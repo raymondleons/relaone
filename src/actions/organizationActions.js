@@ -28,6 +28,9 @@ export const getEvent = () => {
                 payload: res.data.data
             })
         })
+        .catch(err => {
+            console.log(err)
+        })
     }
 }
 
