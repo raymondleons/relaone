@@ -1,43 +1,43 @@
-image: node:latest
+# image: node:latest
 
-stages:
-  - build
-  - staging
-  - production
+# stages:
+#   - build
+#   - staging
+#   - production
 
-deploy-to-development:
-  type: build
-  script:
-    - npm install
-    - npm run build
-  except:
-    - develop
-    - master
+# deploy-to-development:
+#   type: build
+#   script:
+#     - npm install
+#     - npm run build
+#   except:
+#     - develop
+#     - master
 
-deploy-to-staging:
-  type: deploy
-  stage: staging
-  environment:
-    name: staging
-    url: https://staging-relaone-web.herokuapp.com/
-  script:
-    - apt-get update -qy
-    - apt-get install -y ruby ruby-dev rubygems-integration
-    - gem install dpl
-    - dpl --provider=heroku --app=staging-relaone-web --api-key=98c22ba0-9240-4f8f-a025-441df90721fe
-  only:
-    - develop
+# deploy-to-staging:
+#   type: deploy
+#   stage: staging
+#   environment:
+#     name: staging
+#     url: https://staging-relaone-web.herokuapp.com/
+#   script:
+#     - apt-get update -qy
+#     - apt-get install -y ruby ruby-dev rubygems-integration
+#     - gem install dpl
+#     - dpl --provider=heroku --app=staging-relaone-web --api-key=98c22ba0-9240-4f8f-a025-441df90721fe
+#   only:
+#     - develop
     
-deploy-production:
-  type: deploy
-  stage: production
-  environment:
-    name: production
-    url: https://relaone-web.herokuapp.com/
-  script:
-    - apt-get update -qy
-    - apt-get install -y ruby ruby-dev rubygems-integration
-    - gem install dpl
-    - dpl --provider=heroku --app=relaone-web --api-key=98c22ba0-9240-4f8f-a025-441df90721fe
-  only:
-    - master
+# deploy-production:
+#   type: deploy
+#   stage: production
+#   environment:
+#     name: production
+#     url: https://relaone-web.herokuapp.com/
+#   script:
+#     - apt-get update -qy
+#     - apt-get install -y ruby ruby-dev rubygems-integration
+#     - gem install dpl
+#     - dpl --provider=heroku --app=relaone-web --api-key=98c22ba0-9240-4f8f-a025-441df90721fe
+#   only:
+#     - master
