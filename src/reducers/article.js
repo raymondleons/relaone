@@ -1,4 +1,4 @@
-import { GET_ARTICLE } from '../actions/type';
+import { GET_ARTICLE, SEARCH_ARTICLE } from '../actions/type';
 
 const initialState={
     articles: []
@@ -10,6 +10,11 @@ const article=(state=initialState, action) => {
         return {
             ...state,
             articles: action.payload 
+        }
+        case SEARCH_ARTICLE:
+        return {
+            ...state,
+            articles: action.payload
         }
         default:
             return state;

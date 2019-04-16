@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_ARTICLE, GET_PROFILE } from './type';
+import { GET_ARTICLE, GET_PROFILE, SEARCH_ARTICLE } from './type';
 
 export const getArticle = () => {
     return dispatch => {
@@ -8,12 +8,12 @@ export const getArticle = () => {
             headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWJmN2M3NDhhMzg0MTQwZmYxNGFkYiIsInVzZXJuYW1lIjoicmVnZWRpdCIsImVtYWlsIjoiYmlhc2FzYWphQGdtYWlsLmNvbSIsImZ1bGxuYW1lIjoiSW5kcmEgVGFtdmFuIiwicm9sZSI6Im1lbWJlciIsInBob3RvIjpudWxsLCJza2lsbFNldCI6WyI1Y2E0NmJiZmYyZDNmOTE2OTFmZWY1YjgiLCI1Y2E0NmJlOGYyZDNmOTE2OTFmZWY1YmEiXSwiaWF0IjoxNTU1MjE5Mzc3LCJleHAiOjE1NTU4MjQxNzd9.G6I633dPc81z5bw799nz25vEdqcpu3nSYKNqpd2ZUKA"}
         })
         .then(res => {
-            dispatch ({
-                type: GET_ARTICLE,
-                payload: res.data.data
-            })
-        })
-    }
+              dispatch ({
+                  type: GET_ARTICLE,
+                  payload: res.data.data
+              })
+    })
+}
 }
 
 export const signIn = (username, password) => {
@@ -88,3 +88,31 @@ export const signup = (fullname, username, email, password) => {
       });
   };
 };
+
+export const searchArticle = (keyword) => {
+  return dispatch => {
+      axios.get(`https://relaonebinar.herokuapp.com/api/member/searcharticle?search=${keyword}`,
+      {
+        headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWJmN2M3NDhhMzg0MTQwZmYxNGFkYiIsInVzZXJuYW1lIjoicmVnZWRpdCIsImVtYWlsIjoiYmlhc2FzYWphQGdtYWlsLmNvbSIsImZ1bGxuYW1lIjoiSW5kcmEgVGFtdmFuIiwicm9sZSI6Im1lbWJlciIsInBob3RvIjpudWxsLCJza2lsbFNldCI6WyI1Y2E0NmJiZmYyZDNmOTE2OTFmZWY1YjgiLCI1Y2E0NmJlOGYyZDNmOTE2OTFmZWY1YmEiXSwiaWF0IjoxNTU1MjE5Mzc3LCJleHAiOjE1NTU4MjQxNzd9.G6I633dPc81z5bw799nz25vEdqcpu3nSYKNqpd2ZUKA"}          
+      })
+      .then(res => {
+        if (res.data.message === "Article Not Found") {
+          console.log('not found');
+          dispatch ({
+            type: GET_ARTICLE,
+            payload: []
+          })
+        } else {
+          dispatch ({
+              type: GET_ARTICLE,
+              payload: res.data.data
+          })
+        }
+      })
+      .catch(err => console.log(err))
+  }
+}
+
+
+
+
