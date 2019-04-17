@@ -10,30 +10,27 @@ class UserJoinedEvent extends Component {
     this.props.getUserJoinedEvent();
   }
 
-
   render() {
-    const events = this.props.events
+    const events = this.props.events 
       const displayEvent = events.length ? (
-          events.map(({_id, title, location, quota, quotaMax, deadline, organization}) => {
+          events.map(({_id, title, location, quota, quotaMax, deadline, organization}, i) => {
             return(
               <tr>
-             
-                    <td>1.</td>
-                    <td key={_id}><Link to={'/user/event/details/' + _id}>{title}</Link></td>
-                    <td key={_id}>{organization}</td>
-                    <td key={_id}>{location}</td>
-                    <td key={_id}>{quota}/{quotaMax}</td>
-                    <td key={_id}>{deadline}</td>
-                    
-                  </tr>
+                <td>1.</td>
+                <td key={_id}><Link to={'/user/event/details/' + _id}>{title}</Link></td>
+                <td key={_id}>{organization}</td>
+                <td key={_id}>{location}</td>
+                <td key={_id}>{quota}/{quotaMax}</td>
+                <td key={_id}>{deadline}</td> 
+                </tr>
             )
           })
       ) : (
-        <div>
-        <Spinner type="grow" color="primary" />
-        <Spinner type="grow" color="primary" />
-        <Spinner type="grow" color="primary" />
-      </div> 
+        <tr>
+        <Spinner type="grow" color="primary" ></Spinner>
+        <Spinner type="grow" color="primary" ></Spinner>
+        <Spinner type="grow" color="primary" ></Spinner>
+        </tr>
       );
 
 
@@ -46,25 +43,24 @@ class UserJoinedEvent extends Component {
     return (
       <div>
         <div className="event-count">
-                <h4>{this.props.events.length}</h4>
-                <p>Event Joined</p>
-            </div>
-      <Table responsive>
-      <thead>
-        <tr>
-          <th>No.</th>
-          <th>Event</th>
-          <th>Organization</th>
-          <th>Location</th>
-          <th>Quota</th>
-          <th>Due Date</th>
-        </tr>
-      </thead>
-      <tbody>
-      
-        {displayEvent}
-      </tbody>
-      </Table>
+          <h4>{this.props.events.length}</h4>
+          <p>Event Joined</p>
+        </div>
+        <Table responsive>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Event</th>
+              <th>Organization</th>
+              <th>Location</th>
+              <th>Quota</th>
+              <th>Due Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {displayEvent}
+          </tbody>
+        </Table>
       </div>
     )
   }
@@ -78,7 +74,7 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = dispatch => {
   return {
-      getUserJoinedEvent: () => { dispatch(getUserJoinedEvent())},
+      getUserJoinedEvent: () => { dispatch(getUserJoinedEvent())}
   }
 }
 
