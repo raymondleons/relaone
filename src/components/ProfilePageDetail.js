@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
-import { Row, Col, Card, CardImg, CardTitle, Button } from 'reactstrap'
+import { Row, Col, Card, CardImg, CardBody, CardText} from 'reactstrap'
 import {connect} from 'react-redux'
 import { getUserProfile } from '../actions/memberActions';
-import '../assets/css/_style2.scss';
+import '../assets/css/_style2.scss'
 import {Link} from 'react-router-dom'
 import Moment from 'moment'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserEdit } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faUserEdit);
 
  class ProfilePageDetail extends Component {
 
@@ -19,47 +24,62 @@ import Moment from 'moment'
     let DOB = Moment(initbirthDate).format('YYYY-MM-DD')
 
     return (
-        <div className="event">
-        <div className="content-title">
-            <h3 className="title bold-text">Profile</h3>
+      <div className="article-list">
+        <div className="content-title d-flex justify-content-between align-items-center">
+          <h3 className="bold-text">{this.props.fullname}'s Profile</h3>
+          <Link to='/user/profile/update'><FontAwesomeIcon icon='user-edit' className="fa-1x"/> Edit Profile</Link>
         </div>
-        <br></br>
-        <Row>
-            <Col md="4">
-                <Card>
-                    <CardImg src={this.props.photo} alt="user photo"></CardImg>
-                </Card>
+        <Card>
+          <Row>
+            <Col sm={6}>
+              <CardImg className="heigth" src={this.props.photo} alt="user photo"></CardImg>
             </Col>
-            <Col md="8">
-                
-                    <CardTitle>Nama: {this.props.fullname}</CardTitle>
-                    <CardTitle>Email: {this.props.email}</CardTitle>
-                    <CardTitle>Username:{this.props.username}</CardTitle>
-                    <CardTitle>Kontak Person: {this.props.phoneNumber}</CardTitle>
-                    <CardTitle>Alamat: {this.props.address}</CardTitle>
-                    <CardTitle>No. KTP: {this.props.idCard}</CardTitle>
-                    <CardTitle>Bio: {this.props.bio}</CardTitle>
-                    <CardTitle>DOB: {DOB}</CardTitle>
-                    <Link to="/user/profile/update"><Button color="primary">Edit Profile</Button></Link>
-                
+            <Col sm={6}>
+              <CardText className="font-weight-bold">Fullname</CardText>
+              <CardText>{this.props.fullname}</CardText>
+              <CardText className="font-weight-bold">Username</CardText>
+              <CardText>{this.props.username}</CardText>
+              <CardText className="font-weight-bold">Email</CardText>
+              <CardText>{this.props.email}</CardText>
             </Col>
-        </Row>
-      </div>
+          </Row>
+            <hr />
+          <Row>
+            <Col sm={6}>
+              <CardText className="font-weight-bold">Identity Card</CardText>
+              <CardText>{this.props.idCard}</CardText>
+              <CardText className="font-weight-bold">Date of Birth</CardText>
+              <CardText>{DOB}</CardText>
+            </Col>
+            <Col sm={6}>
+              <CardText className="font-weight-bold">Address</CardText>
+              <CardText>{this.props.address}</CardText>
+              <CardText className="font-weight-bold">Phone Number</CardText>
+              <CardText>{this.props.phoneNumber}</CardText>
+            </Col>
+          </Row>
+          <hr />
+          <CardBody>
+            <CardText className="font-weight-bold">Bio</CardText>
+            <CardText>{this.props.bio}</CardText>
+          </CardBody>
+        </Card>
+      </div>  
     )
   }
 }
 
 const mapStateToProps = state => {
     return {
-      fullname: state.userProfile.fullname,
       photo: state.userProfile.photo,
-      email: state.userProfile.email,
+      fullname: state.userProfile.fullname,
       username: state.userProfile.username,
-      phoneNumber: state.userProfile.phoneNumber,
-      address: state.userProfile.address,
+      email: state.userProfile.email,
       idCard: state.userProfile.idCard,
-      bio: state.userProfile.bio,
-      birthDate: state.userProfile.birthDate
+      birthDate: state.userProfile.birthDate,
+      address: state.userProfile.address,
+      phoneNumber: state.userProfile.phoneNumber,
+      bio: state.userProfile.bio
     }
   }
   

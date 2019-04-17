@@ -103,21 +103,22 @@ export const getUserProfile = () => {
       })
       .then(res => {
           dispatch ({
-              type: GET_USERPROFILE,
-              fullname : res.data.data.fullname,
+          type: GET_USERPROFILE,
+          photo : res.data.data.photo,
+          fullname : res.data.data.fullname,
           username : res.data.data.username,
           email : res.data.data.email,
-          phoneNumber : res.data.data.phoneNumber,
           idCard : res.data.data.idCard,
-          address : res.data.data.address,
-          bio : res.data.data.bio,
           birthDate : res.data.data.birthDate,
+          address : res.data.data.address,
+          phoneNumber : res.data.data.phoneNumber,
+          bio : res.data.data.bio
           })
       })
   }
 }
 
-export const editUserProfile = (fullname, username, email, phoneNumber, idCard, address, bio, birthDate, skillSet, emergencyContact, confirmed, _id) => {
+export const editUserProfile = (fullname, username, email, idCard, birthDate, address, phoneNumber, bio, skillSet, emergencyContact, confirmed, _id) => {
   return dispatch => {
       axios ({
           url: 'https://relaonebinar.herokuapp.com/api/member/profile',
@@ -129,11 +130,11 @@ export const editUserProfile = (fullname, username, email, phoneNumber, idCard, 
             fullname, 
             username, 
             email, 
-            phoneNumber, 
             idCard, 
-            address, 
-            bio,
             birthDate,
+            address, 
+            phoneNumber, 
+            bio,
             skillSet,
             emergencyContact,
             _id,
@@ -147,11 +148,11 @@ export const editUserProfile = (fullname, username, email, phoneNumber, idCard, 
               fullname : res.data.data.fullname,
               username : res.data.data.username,
               email : res.data.data.email,
-              phoneNumber : res.data.data.phoneNumber,
               idCard : res.data.data.idCard,
-              address : res.data.data.address,
-              bio : res.data.data.bio,
               birthDate : res.data.data.birthDate,
+              address : res.data.data.address,
+              phoneNumber : res.data.data.phoneNumber,
+              bio : res.data.data.bio,
               emergencyContact: res.data.data.emergencyContact,
               _id : res.data.data._id,
               skillSet : res.data.data.skillSet,

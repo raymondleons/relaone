@@ -18,11 +18,11 @@ class FormUpdateProfile extends Component {
           fullname : props.fullname,
           username : props.username,
           email : props.email,
-          phoneNumber : props.phoneNumber,
           idCard : props.idCard,
-          address : props.address,
-          bio : props.bio,
           birthDate : props.birthDate,
+          address : props.address,
+          phoneNumber : props.phoneNumber,
+          bio : props.bio,
           // _id : props._id,
           // emergencyContact : props.emergencyContact,
           // skillSet : props.skillSet,
@@ -40,11 +40,11 @@ class FormUpdateProfile extends Component {
             fullname : props.fullname,
             username : props.username,
             email : props.email,
-            phoneNumber : props.phoneNumber,
             idCard : props.idCard,
-            address : props.address,
-            bio : props.bio,
             birthDate : props.birthDate,
+            address : props.address,
+            phoneNumber : props.phoneNumber,
+            bio : props.bio,
             // _id : props._id,
             // emergencyContact : props.emergencyContact,
             // skillSet : props.skillSet,
@@ -61,16 +61,16 @@ class FormUpdateProfile extends Component {
     
       onSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state)
+       
         this.props.editUserProfile(
             this.state.fullame, 
             this.state.username, 
-            this.state.email, 
-            this.state.phoneNumber, 
-            this.state.idCard, 
-            this.state.bio, 
+            this.state.email,   
+            this.state.idCard,
+            this.state.birthDate,    
             this.state.address,
-            this.state.birthDate, 
+            this.state.phoneNumber, 
+            this.state.bio,
             // this.state._id,
             // this.state.confirmed,
             // this.state.emergencyContact,
@@ -84,7 +84,7 @@ class FormUpdateProfile extends Component {
 
   render() {
     
-   
+    
     let initbirthDate = this.state.birthDate
     Moment.locale('en');
     let DOB = Moment(initbirthDate).format('YYYY-MM-DD')
@@ -207,6 +207,7 @@ class FormUpdateProfile extends Component {
 
 
 const mapStateToProps = state =>{
+ 
     return {
         fullname : state.userProfile.fullname,
         username : state.userProfile.username,
@@ -225,8 +226,11 @@ const mapStateToProps = state =>{
   
 
   const mapDispatchToProps = dispatch => {
+    
     return {
+      
       getUserProfile: () => { dispatch(getUserProfile()) },
+      
       editUserProfile: (fullname,
         username,
          email, 
@@ -238,7 +242,7 @@ const mapStateToProps = state =>{
          ) => { dispatch(editUserProfile(fullname, username, email, phoneNumber, idCard, address, bio,
           birthDate, _id, emergencyContact, confirmed, skillSet
           ))}
-  
+         
     }
   }
 
