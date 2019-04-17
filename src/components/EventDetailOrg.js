@@ -32,7 +32,8 @@ class EventDetailOrg extends Component {
                     <CardText><p>Application Deadline : {this.props.events.deadline}</p></CardText>
                     <CardText><p>Volunteer Applicant : {this.props.events.quota}</p></CardText>
                     <CardText><p>Maximal Quota : {this.props.events.quotaMax}</p></CardText>
-                    <Link to="/event"><Button color="primary">Edit Event</Button></Link>
+                    <Link to={"/organization/event/edit/" + this.props.events._id}><Button color="primary">Edit Event</Button></Link>
+                    <Link to={"/organization/event-photo/edit/" + this.props.events._id}><Button color="primary">Edit Event Photo</Button></Link>
                 </Card>
             </Col>
         </Row>

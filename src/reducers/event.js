@@ -8,7 +8,8 @@ const event=(state=initialState, action) => {
     switch (action.type) {
         case ADD_EVENT:
         return {
-            ...state
+            ...state,
+            events: [...state.events, action.payload]
         }
         case GET_EVENT:
         return {
@@ -28,7 +29,7 @@ const event=(state=initialState, action) => {
         case DEL_EVENT:
         return {
             ...state,
-            events: [...state.events.filter(event => event.id !== action.id)]
+            events: [...state.events.filter(event => event._id !== action.id)]
         }
         default:
             return state;

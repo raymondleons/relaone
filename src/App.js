@@ -36,6 +36,11 @@ import EventDetailOrgPage from './pages/EventDetailOrgPage'
 import ArticleListOrgPage from './pages/ArticleListOrgPage';
 import ArticleDetailOrgPage from './pages/ArticleDetailOrgPage';
 import UserJoinedEventPage from './pages/UserJoinedEventPage'
+import EventEditPage from './pages/EventEditPage'
+import FindVolunteer from './pages/FindVolunteer'
+import FindActivity from './pages/FindActivity'
+import UpdateOrganizationPhoto from './pages/UpdateOrganizationPhoto'
+import EventPhotoEditPage from './pages/EventPhotoEditPage'
 
 class App extends Component {
   render() {
@@ -77,6 +82,11 @@ class App extends Component {
             <Route path="/event/detail/:event_id" exact component={EventDetailOrgPage}/>
             <Route path="/organization/article" exact component={ArticleListOrgPage}/>
             <Route path="/organization/article/detail/:article_id" exact component={ArticleDetailOrgPage}/>
+            <Route path="/organization/event/edit/:event_id" exact component={EventEditPage}/>
+            <Route path="/find-volunteer" exact component={FindVolunteer}/>
+            <Route path="/find-activity" exact component={FindActivity}/>
+            <Route path="/organization/update-photo" exact component={UpdateOrganizationPhoto}/>
+            <Route path="/organization/event-photo/edit/:event_id" exact component={EventPhotoEditPage}/>         
           </div>
         </Router>
         </Provider>

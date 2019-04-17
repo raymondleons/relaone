@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import '../assets/css/_style.scss';
 import bluelogo from '../assets/images/blue-logo.png';
 import { Link as Links } from 'react-router-dom';
-// import { Link, animateScroll as scroll } from "react-scroll";
 import { Link } from "react-scroll";
 import playstorebutton from '../assets/images/get-it-on-the-google-play-store-button.png';
 import {
@@ -54,8 +53,8 @@ class Footer extends Component {
               <Col lg="2"></Col>
               <Col lg="2" className="footer-content">
                 <p className="bold-text">TAKE ACTION</p>
-                <p>Join Event</p>
-                <p>Find Volunteer</p>
+                <p className="footer-links"><Links className="footer-links" exact to="/find-activity">Join Event</Links></p>
+                <p className="footer-links"><Links className="footer-links" exact to="/find-volunteer">Find Volunteer</Links></p>
               </Col>
               <Col lg="2" className="footer-content">
                 <p className="bold-text">LEARN MORE</p>

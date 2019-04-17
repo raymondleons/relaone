@@ -22,6 +22,11 @@ class OrganizationSideBar extends Component {
                   Edit Profile
                 </Links>
               </div>
+              <div className="side-bar-subitem">
+                <Links className="side-bar-link" to="/organization/update-photo">
+                  Edit Photo
+                </Links>
+              </div>
             </UncontrolledCollapse>
         </div>
         
