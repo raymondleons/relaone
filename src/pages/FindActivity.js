@@ -22,7 +22,7 @@ class FindActivity extends Component {
           <Card className="card-activity" inverse>
             <CardImg width="100%" src={event.photo} alt="Card image cap" />
             <CardImgOverlay className="opacity">
-              <CardTitle className="card-text-title">{event.title}</CardTitle>
+              <CardTitle className="card-text-title"><Dotdotdot clamp={1}>{event.title}</Dotdotdot></CardTitle>
               <CardText className="card-text-desc"><Dotdotdot clamp={2}>{event.description}</Dotdotdot></CardText>
               <Link exact to="/register"><Button color="primary" >Join</Button></Link>
             </CardImgOverlay>  

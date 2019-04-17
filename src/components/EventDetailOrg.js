@@ -15,7 +15,7 @@ class EventDetailOrg extends Component {
     const events = this.props.events ? (
         <div className="article-detail">
         <div>
-            <h3><b>Event</b></h3>
+            <h2><b>Event</b></h2>
         </div>
         <hr></hr>
         <Row>
@@ -26,7 +26,7 @@ class EventDetailOrg extends Component {
             </Col>
             <Col md="8">
                 <Card className="profile-card">
-                    <CardTitle><h3>{this.props.events.title}</h3></CardTitle>
+                    <CardTitle><h2>{this.props.events.title}</h2></CardTitle>
                     <CardText><p>Description : {this.props.events.description}</p></CardText>
                     <CardText><p>Location: {this.props.events.location}</p></CardText>
                     <CardText><p>Application Deadline : {this.props.events.deadline}</p></CardText>
