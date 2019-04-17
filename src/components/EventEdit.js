@@ -33,7 +33,7 @@ class EventEdit extends Component {
   componentWillReceiveProps(props){
     this.setState({
       skillsets : props.skillsets,
-      events : props.events
+      events : props.events 
     })
 
     // let events = {}

@@ -22,6 +22,7 @@ class FormOrganizationProfile extends Component {
     this.props.getProfile();
   }
 
+
   componentWillReceiveProps(props){
     this.setState({
       organizationName : props.organizationName,

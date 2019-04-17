@@ -80,6 +80,7 @@ class ArticleListOrg extends Component {
             </FormGroup>
         </Form>
         <div>
+            {articles.length} article(s)
             {displayArticle}
         </div>
       </div>

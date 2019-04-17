@@ -82,6 +82,7 @@ class ArticleList extends Component {
             </FormGroup>
         </Form>
         <div>
+            {articles.length} article(s)
             {displayArticle}
         </div>
       </div>
