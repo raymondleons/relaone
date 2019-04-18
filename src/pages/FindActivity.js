@@ -10,6 +10,7 @@ import Dotdotdot from 'react-dotdotdot';
 class FindActivity extends Component {
 
   componentDidMount(){
+    window.scrollTo(0, 0)
     this.props.getEvent();
   }
 

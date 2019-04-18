@@ -11,6 +11,10 @@ import Footer from '../layout/Footer';
 
 
 class LandingPage extends Component {
+  
+  componentDidMount(){
+    window.scrollTo(0, 0);
+  }
 
 
   render() {
