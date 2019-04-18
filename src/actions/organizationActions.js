@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ADD_EVENT, GET_SKILLSET, GET_EVENT, GET_PROFILE, DEL_EVENT, EDIT_PROFILE, GET_ARTICLE, EDIT_PROFILE_PHOTO, EDIT_EVENT_PHOTO, SEARCH_ARTICLE } from './type';
+import { ADD_EVENT, GET_SKILLSET, GET_EVENT, GET_PROFILE, DEL_EVENT, EDIT_PROFILE, GET_ARTICLE, EDIT_PROFILE_PHOTO, EDIT_EVENT_PHOTO, SEARCH_ARTICLE, EDIT_EVENT } from './type';
 
 export const getSkillset = () => {
     return dispatch => {
@@ -85,6 +85,42 @@ export const delEvent = (id) => {
         }
     }
 
+export const editEvent = (_id, title, description, location, quotaMax, skillSet, deadline) => {
+    return dispatch => {
+        axios ({
+            url: 'https://relaonebinar.herokuapp.com/api/organization/event',
+            method: 'put',
+            headers: { 
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiQmFkYW4gUGVuYW5nZ3VsYW5nYW4gQmVuY2FuYSBEYWVyYWgiLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1NTU4NTk4LCJleHAiOjE1NTYxNjMzOTh9.v_JCKy-ygT8kI6zFVv9kc5cBEz1lMrJRmuaegQSXw4M',
+                'Content-Type': 'application/json'
+            },
+            data: {
+                _id,
+                title,
+                description,
+                location,
+                quotaMax,
+                skillSet,
+                deadline
+            }
+        })
+            .then(res => {
+                console.log(res)
+                dispatch({
+                type: EDIT_EVENT,
+                title : res.data.data.title,
+                description : res.data.data.description,
+                location : res.data.data.location,
+                quotaMax : res.data.data.quotaMax,
+                skillSet : res.data.data.skillSet,
+                deadline : res.data.data.deadline
+                })
+                }
+            )
+            .catch(err => console.log(err))
+    }
+}
+
 export const editEventPhoto = (formdata) => {
     return dispatch => {
         axios ({
@@ -132,7 +168,7 @@ export const editProfile = (organizationName, username, email, phoneNumber) => {
             url: 'https://relaonebinar.herokuapp.com/api/organization/profile',
             method: 'put',
             headers: { 
-                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU0OTUyODU4LCJleHAiOjE1NTU1NTc2NTh9.hjnTlrfcJYsD7EiiGHKvVgxJ7YGi8LNC4iJzXll-ljA'
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiQmFkYW4gUGVuYW5nZ3VsYW5nYW4gQmVuY2FuYSBEYWVyYWgiLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1NTU4NTk4LCJleHAiOjE1NTYxNjMzOTh9.v_JCKy-ygT8kI6zFVv9kc5cBEz1lMrJRmuaegQSXw4M'
             },
             data: {
                 organizationName, 
@@ -181,7 +217,7 @@ export const getArticle = () => {
     return dispatch => {
         axios.get('https://relaonebinar.herokuapp.com/api/organization/article',
         {
-            headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU0OTUyODU4LCJleHAiOjE1NTU1NTc2NTh9.hjnTlrfcJYsD7EiiGHKvVgxJ7YGi8LNC4iJzXll-ljA"}
+            headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiQmFkYW4gUGVuYW5nZ3VsYW5nYW4gQmVuY2FuYSBEYWVyYWgiLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1NTU4NTk4LCJleHAiOjE1NTYxNjMzOTh9.v_JCKy-ygT8kI6zFVv9kc5cBEz1lMrJRmuaegQSXw4M"}
         })
         .then(res => {
             dispatch ({

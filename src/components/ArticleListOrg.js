@@ -54,7 +54,7 @@ class ArticleListOrg extends Component {
                             <CardBody>
                                 <CardTitle><h4><Links to={'/organization/article/detail/' + article._id}>{article.title}</Links></h4></CardTitle>
                                 <CardText><Dotdotdot clamp={3}>{article.description}</Dotdotdot></CardText>
-                                {/* <CardText className="text-muted">Created by {article.createdBy.name}</CardText> */}
+                                <CardText className="text-muted">Created by {article.createdBy.name}</CardText>
                             </CardBody>
                         </Col>
                     </Row>

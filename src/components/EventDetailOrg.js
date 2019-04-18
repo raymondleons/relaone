@@ -12,6 +12,27 @@ class EventDetailOrg extends Component {
 
   render() {
     console.log(this.props.events)
+
+    let eventsDetail = {}
+    if (this.props.events) {
+      eventsDetail = this.props.events
+    }
+
+    let skillSets =[]
+    if (eventsDetail) {
+      skillSets = eventsDetail.skillSet
+    }
+    
+    const displaySkillset = skillSets ? (
+      skillSets.map(skillset => {
+        return (
+            <div>{skillset.name}</div>
+        )
+      })
+    ) : (
+        <div>No skillset needed</div>
+    );
+
     const events = this.props.events ? (
         <div className="article-detail">
         <div>
@@ -32,6 +53,7 @@ class EventDetailOrg extends Component {
                     <CardText><p>Application Deadline : {this.props.events.deadline}</p></CardText>
                     <CardText><p>Volunteer Applicant : {this.props.events.quota}</p></CardText>
                     <CardText><p>Maximal Quota : {this.props.events.quotaMax}</p></CardText>
+                    <CardText><p>Required skillset : {displaySkillset}</p></CardText>
                     <Link to={"/organization/event/edit/" + this.props.events._id}><Button color="primary">Edit Event</Button></Link>
                     <Link to={"/organization/event-photo/edit/" + this.props.events._id}><Button color="primary">Edit Event Photo</Button></Link>
                 </Card>

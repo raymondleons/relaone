@@ -3,7 +3,7 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import '../assets/css/_style.scss';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { getSkillset, getEvent } from '../actions/organizationActions';
+import { getSkillset, getEvent, editEvent } from '../actions/organizationActions';
 import Moment from 'moment'
 
 class EventEdit extends Component {
@@ -14,12 +14,13 @@ class EventEdit extends Component {
     this.state = {
       skillsets : this.props.skillsets,
       events : this.props.events,
+      id : props.match.params.event_id,
       title : "",
       description : "",
       deadline : "",
       location : "",
       quotaMax : "", 
-      skillset : []
+      skillSet : []
     }
   }
 
@@ -36,24 +37,19 @@ class EventEdit extends Component {
       events : props.events 
     })
 
-    // let events = {}
-    // if (this.props.events) {
-    //   events = this.props.events
-    // }
+    let events = {}
+    if (this.props.events) {
+      events = this.props.events
+    }
 
-    // // let title = ""
-    // // if (events.title) {
-    // //   title = events.title
-    // // }
-
-    // this.setState({
-    //   title : events.title,
-    //   // description : events.description,
-    //   // deadline : events.deadline,
-    //   // location : events.location      
-    // })
-    
-
+    this.setState({
+      title : events.title,
+      description : events.description,
+      deadline : events.deadline,
+      location : events.location,
+      quotaMax : events.quotaMax, 
+      skillSet : events.skillSet      
+    })
   }
 
   onChange = (e) => {
@@ -80,12 +76,11 @@ class EventEdit extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.editEvent(this.state.title, this.state.description, this.state.location, this.state.deadline, this.state.quotaMax);
+    this.props.editEvent(this.state.id, this.state.title, this.state.description, this.state.location, this.state.quotaMax, this.state.skillSet, this.state.deadline);
 }
 
   render() {
     console.log(this.state)
-    console.log(this.props)
 
     let events = {}
     if (this.props.events) {
@@ -171,7 +166,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     getSkillset: () => { dispatch(getSkillset()) },
-    getEvent: () => { dispatch(getEvent()) }
+    getEvent: () => { dispatch(getEvent()) },
+    editEvent: (_id, title, description, location, quotaMax, skillSet, deadline) => { dispatch(editEvent(_id, title, description, location, quotaMax, skillSet, deadline))}
   }
 }
 
