@@ -4,7 +4,7 @@ import '../assets/css/_style.scss';
 import Header from '../layout/Header'
 import ProfileBadge from '../layout/UserProfileBadge'
 import UserSideBar from '../layout/UserSideBar'
-import Dashboard from '../layout/Dashboard'
+import Dashboard from '../components/DashboardPage'
 
 export default class DashboardPage extends Component {
   render() {

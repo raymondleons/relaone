@@ -1,11 +1,10 @@
 import React from 'react';
 import { Form, FormGroup, Label, Input, FormText, Button, Row, Col } from 'reactstrap';
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import '../assets/css/_style2.scss';
 import Img from '../assets/images/image1.png'
 import Logo from '../assets/images/blue-logo.png'
 import { signup } from "../actions/memberActions";
-import axios from 'axios'
 import { connect } from "react-redux";
 
 
@@ -16,12 +15,13 @@ class UserRegister extends React.Component {
 }
 
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {  
       email: '',
       fullname: '',
       username: '',
-      password: ''
+      password: '',
+      redirect : false
     };
   }
   onChange = e => this.setState({ [e.target.name]: e.target.value });
@@ -38,11 +38,16 @@ class UserRegister extends React.Component {
       email: '',
       fullname: '',
       username: '',
-      password: ''
+      password: '',
+      redirect : true
     });
   };
 
   render() {
+    const { redirect } = this.state;
+    if (redirect) {
+      return <Redirect to="/register/success"/>
+    }
     return (
       <div className="container2">
         <div className=" my-4 logo" >
@@ -109,7 +114,6 @@ class UserRegister extends React.Component {
                     </FormText>
                   </Form>
                 </Row>
-            
           </Col>
         </Row>
       </div>
@@ -119,22 +123,11 @@ class UserRegister extends React.Component {
 const mapDispatchToProps = dispatch => {
   return {
     signup: (fullname, username, email, password) => {
-      axios
-      .post("https://relaonebinar.herokuapp.com/api/member/signup", {
-        fullname,
-        username, 
-        email,
-        password
-      })
-      .then(res => {
-        console.log(res);
-        localStorage.setItem("token", res.data.token);
-        dispatch(signup(fullname, username, email, password));
-        this.props.history.push('/register/success');
-      })
-    }
-  };
-};
+      dispatch(signup(fullname, username, email, password))}
+      
+
+  }
+}
 
 export default connect(
   null,

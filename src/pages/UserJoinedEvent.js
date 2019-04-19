@@ -3,6 +3,7 @@ import {Table, Spinner} from 'reactstrap'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux';
 import { getUserJoinedEvent } from '../actions/memberActions' ;
+import Moment from 'moment'
 
 class UserJoinedEvent extends Component {
 
@@ -11,18 +12,24 @@ class UserJoinedEvent extends Component {
   }
 
   render() {
+    
+    let initdeadLine = this.props.deadLine
+    Moment.locale('en');
+    let deadline = Moment(initdeadLine).format('YYYY-MM-DD')
+
     const events = this.props.events 
+    console.log(events)
       const displayEvent = events.length ? (
-          events.map(({_id, title, location, quota, quotaMax, deadline, organization}, i) => {
+          events.map(({_id, title, location, quota, quotaMax, organization}, i) => {
             return(
               <tr>
                 <td>1.</td>
                 <td key={_id}><Link to={'/user/event/details/' + _id}>{title}</Link></td>
-                <td key={_id}>{organization}</td>
+                <td key={_id}>{organization.organizationName}</td>
                 <td key={_id}>{location}</td>
                 <td key={_id}>{quota}/{quotaMax}</td>
                 <td key={_id}>{deadline}</td> 
-                </tr>
+              </tr>
             )
           })
       ) : (

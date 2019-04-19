@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_ARTICLE, GET_USEREVENT, SIGN_UP, GET_USERJOINEDEVENT, GET_USERPROFILE, EDIT_USERPROFILE, SEARCH_ARTICLE} from './type';
+import { GET_ARTICLE, GET_USEREVENT, SIGN_UP, GET_USERJOINEDEVENT, GET_USERPROFILE, EDIT_USERPROFILE, SEARCH_ARTICLE, EDIT_USERPHOTO} from './type';
 
 export const getArticle = () => {
     return dispatch => {
@@ -118,7 +118,7 @@ export const getUserProfile = () => {
   }
 }
 
-export const editUserProfile = (fullname, username, email, idCard, birthDate, address, phoneNumber, bio, skillSet, emergencyContact, confirmed, _id) => {
+export const editUserProfile = (fullname, username, email, idCard, birthDate, address, phoneNumber, bio, skillSet, emergencyContact) => {
   return dispatch => {
       axios ({
           url: 'https://relaonebinar.herokuapp.com/api/member/profile',
@@ -136,9 +136,7 @@ export const editUserProfile = (fullname, username, email, idCard, birthDate, ad
             phoneNumber, 
             bio,
             skillSet,
-            emergencyContact,
-            _id,
-            confirmed
+            emergencyContact
           }
       })
           .then(res => {
@@ -153,16 +151,13 @@ export const editUserProfile = (fullname, username, email, idCard, birthDate, ad
               address : res.data.data.address,
               phoneNumber : res.data.data.phoneNumber,
               bio : res.data.data.bio,
-              emergencyContact: res.data.data.emergencyContact,
-              _id : res.data.data._id,
+              emergencyContact:res.data.data.emergencyContact,
               skillSet : res.data.data.skillSet,
-              confirmed : res.data.data.confirmed
               })
             }
           )
-          .catch(err => {
-            console.log(err);
-          });
+          .catch(err => 
+            console.log(err))
   }
 }
 export const searchArticle = (keyword) => {
@@ -189,6 +184,23 @@ export const searchArticle = (keyword) => {
   }
 }
 
-
-
-
+export const editUserPhoto = (formdata) => {
+  return dispatch => {
+      axios ({
+          url: 'https://relaonebinar.herokuapp.com/api/member/uploadphoto',
+          method: 'put',
+          headers: { 
+              'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWJmN2M3NDhhMzg0MTQwZmYxNGFkYiIsInVzZXJuYW1lIjoicmVnZWRpdCIsImVtYWlsIjoiYmlhc2FzYWphQGdtYWlsLmNvbSIsImZ1bGxuYW1lIjoiSW5kcmEgVGFtdmFuIiwicm9sZSI6Im1lbWJlciIsInBob3RvIjoiaHR0cDovL3Jlcy5jbG91ZGluYXJ5LmNvbS9yZWxhb25lL2ltYWdlL3VwbG9hZC92MTU1NTMxMzYzMi9NZW1iZXIvNWNhYmY3Yzc0OGEzODQxNDBmZjE0YWRiLmpwZyIsInNraWxsU2V0IjpbIjVjYTQ2YmJmZjJkM2Y5MTY5MWZlZjViOCIsIjVjYTQ2YmU4ZjJkM2Y5MTY5MWZlZjViYSJdLCJpYXQiOjE1NTU0MDA1MzcsImV4cCI6MTU1NjAwNTMzN30.eIL-ZKAH2YpIJ4P3dsrunq2JgkmynhPo7BuDW2ENtKM'
+          },
+          data: formdata
+      })
+          .then(res => {
+              dispatch({
+              type: EDIT_USERPHOTO,
+              photo: res.data.data.photo
+              })
+            }
+          )
+          .catch(err => console.log(err))
+  }
+}

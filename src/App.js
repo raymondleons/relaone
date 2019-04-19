@@ -42,6 +42,7 @@ import FindActivity from './pages/FindActivity'
 import UpdateOrganizationPhoto from './pages/UpdateOrganizationPhoto'
 import EventPhotoEditPage from './pages/EventPhotoEditPage'
 
+
 class App extends Component {
   render() {
     return (
@@ -87,6 +88,7 @@ class App extends Component {
             <Route path="/find-activity" exact component={FindActivity}/>
             <Route path="/organization/update-photo" exact component={UpdateOrganizationPhoto}/>
             <Route path="/organization/event-photo/edit/:event_id" exact component={EventPhotoEditPage}/>         
+         
           </div>
         </Router>
         </Provider>

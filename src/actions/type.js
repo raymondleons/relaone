@@ -9,6 +9,7 @@ export const GET_USERJOINEDEVENT = 'GET_USERJOINEDEVENT';
 export const GET_USERPROFILE = 'GET_USEPROFILE';
 export const EDIT_USERPROFILE = 'EDIT_USERPROFILE';
 export const SEARCH_ARTICLE = 'SEARCH_ARTICLE';
+export const EDIT_USERPHOTO = 'EDIT_USERPRHOTO';
 
 //actions for organization
 export const ADD_EVENT = 'ADD_EVENT';

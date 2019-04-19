@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { getUserProfile, editUserProfile } from '../actions/memberActions';
 import Moment from 'moment'
 
+
 class FormUpdateProfile extends Component {
 
     ComponentDidMount = (
@@ -101,6 +102,7 @@ class FormUpdateProfile extends Component {
         </div>
         <hr></hr>
         <Form onSubmit={this.onSubmit}>
+        
             <FormGroup>
                 <Label for="exampleName">Full Name</Label>
                 <Input 
