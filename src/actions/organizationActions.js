@@ -87,11 +87,12 @@ export const delEvent = (id) => {
 
 export const editEvent = (_id, title, description, location, quotaMax, skillSet, deadline) => {
     return dispatch => {
+        console.log(_id, title, description, location, quotaMax, skillSet, deadline)
         axios ({
             url: 'https://relaonebinar.herokuapp.com/api/organization/event',
             method: 'put',
             headers: { 
-                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiQmFkYW4gUGVuYW5nZ3VsYW5nYW4gQmVuY2FuYSBEYWVyYWgiLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1NTU4NTk4LCJleHAiOjE1NTYxNjMzOTh9.v_JCKy-ygT8kI6zFVv9kc5cBEz1lMrJRmuaegQSXw4M',
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiQmFkYW4gUGVuYW5nZ3VsYW5nYW4gQmVuY2FuYSIsInJvbGUiOiJvcmdhbml6YXRpb24iLCJpYXQiOjE1NTU2NDkzMDksImV4cCI6MTU1NjI1NDEwOX0.Xn2tGmavbBl7iagh7PP0ow0Sqxj99R5jevF5u66WvLU',
                 'Content-Type': 'application/json'
             },
             data: {
@@ -164,11 +165,12 @@ export const getProfile = () => {
 
 export const editProfile = (organizationName, username, email, phoneNumber) => {
     return dispatch => {
+        console.log(organizationName, username, email, phoneNumber)
         axios ({
             url: 'https://relaonebinar.herokuapp.com/api/organization/profile',
             method: 'put',
             headers: { 
-                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiQmFkYW4gUGVuYW5nZ3VsYW5nYW4gQmVuY2FuYSBEYWVyYWgiLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1NTU4NTk4LCJleHAiOjE1NTYxNjMzOTh9.v_JCKy-ygT8kI6zFVv9kc5cBEz1lMrJRmuaegQSXw4M'
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1NjQ2MjE0LCJleHAiOjE1NTYyNTEwMTR9.2-XYwETiKd8_Rbu-_MPoHoWFIbKADWSfmfcxbeJ-2ME'
             },
             data: {
                 organizationName, 

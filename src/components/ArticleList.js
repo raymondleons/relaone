@@ -42,7 +42,8 @@ class ArticleList extends Component {
   
 
   render() {
-      const articles = this.props.articles;      
+      const articles = this.props.articles; 
+
       const displayArticle = 
       articles.length ? (
         articles.map(article => {

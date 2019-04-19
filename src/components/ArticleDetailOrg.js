@@ -18,7 +18,7 @@ class ArticleDetailOrg extends Component {
               <img className="article-detail-image" src={this.props.articles.photo} alt="be volunteer"></img>
           </div>
           <div>
-              <p>{this.props.articles.description}</p>
+              <p className="article-paragraph">{this.props.articles.description}</p>
           </div>
         </div>
     ) : (

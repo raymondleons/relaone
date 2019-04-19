@@ -532,6 +532,12 @@ body {
     margin-bottom: 30px;
 }
 
+.article-paragraph {
+    white-space: pre-line;
+    text-align: justify;
+  }
+  
+
 .side-bar {
     background-color: white;
     box-shadow: 1px 1px 10px 1px #888888;
@@ -625,10 +631,11 @@ body {
     font-size: 1.2em;
 }
 
-.card-text-descirption {
+.card-text-desc {
     color: black;
     font-size: 1em !important;
     text-align: left;
+    height: 45px;
 }
 
 .logo{

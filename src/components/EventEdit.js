@@ -28,6 +28,27 @@ class EventEdit extends Component {
   componentWillMount(){
     this.props.getSkillset();
     this.props.getEvent();
+
+    let events = {}
+    if (this.props.events) {
+      events = this.props.events
+    }
+
+    let initDeadline = events.deadline
+    Moment.locale('en');
+    let deadline = Moment(initDeadline).format('YYYY-MM-DD')
+
+    let initQuota = events.quotaMax
+    let quotaMax = initQuota.toString()
+
+    this.setState({
+      title : events.title,
+      description : events.description,
+      deadline : deadline,
+      location : events.location,
+      quotaMax : quotaMax, 
+      skillSet : events.skillSet      
+    })
   }
 
 
@@ -42,10 +63,14 @@ class EventEdit extends Component {
       events = this.props.events
     }
 
+    let initDeadline = events.deadline
+    Moment.locale('en');
+    let deadline = Moment(initDeadline).format('YYYY-MM-DD')
+
     this.setState({
       title : events.title,
       description : events.description,
-      deadline : events.deadline,
+      deadline : deadline,
       location : events.location,
       quotaMax : events.quotaMax, 
       skillSet : events.skillSet      
@@ -55,6 +80,14 @@ class EventEdit extends Component {
   onChange = (e) => {
     this.setState({
         [e.target.name]: e.target.value
+    })
+  }
+
+  onChangeNum = (e) => {
+    let num = e.target.value;
+    let str = num.toString();
+    this.setState({
+      [e.target.name]: str
     })
   }
 
@@ -138,7 +171,7 @@ class EventEdit extends Component {
             </FormGroup>
             <FormGroup>
                 <Label for="exampleQuotaMax">Maximal Quota</Label>
-                <Input defaultValue={events.quotaMax} onChange={this.onChange} type="text" name="quotaMax" id="exampleQuotaMax"/>
+                <Input defaultValue={events.quotaMax} onChange={this.onChangeNum} type="text" name="quotaMax" id="exampleQuotaMax"/>
             </FormGroup>
             <FormGroup>
                 <Label for="exampleSkillSet">Skill Set</Label><br></br>
