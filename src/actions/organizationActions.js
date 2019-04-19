@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { ADD_EVENT, GET_SKILLSET, GET_EVENT, GET_PROFILE, DEL_EVENT, EDIT_PROFILE, GET_ARTICLE, EDIT_PROFILE_PHOTO, EDIT_EVENT_PHOTO, SEARCH_ARTICLE, EDIT_EVENT } from './type';
+import history from '../history';
 
 export const getSkillset = () => {
     return dispatch => {
@@ -55,7 +56,8 @@ export const addEvent = (title, description, deadline, location, quotaMax, skill
                 dispatch({
                 type: ADD_EVENT,
                 payload: res.data.data
-                })
+                });
+                history.push('/event');
               }
             )
             .catch(err => console.log(err))
@@ -187,7 +189,8 @@ export const editProfile = (organizationName, username, email, phoneNumber) => {
                 username: res.data.data.username,
                 email: res.data.data.email,
                 phoneNumber: res.data.data.phoneNumber
-                })
+                });
+                history.push('/organization/update-profile/success');
               }
             )
             .catch(err => console.log(err))
@@ -208,7 +211,8 @@ export const editPhoto = (formdata) => {
                 dispatch({
                 type: EDIT_PROFILE_PHOTO,
                 photo: res.data.data.photo
-                })
+                });
+                history.push('/organization/update-profile/success');
               }
             )
             .catch(err => console.log(err))

@@ -13,6 +13,10 @@ class FindActivity extends Component {
     window.scrollTo(0, 0)
     this.props.getEvent();
   }
+  
+  handleJoin = (e) => {
+    console.log(e.target.value)
+  }
 
   render() {
     const events = this.props.events
@@ -25,7 +29,9 @@ class FindActivity extends Component {
             <CardImgOverlay className="opacity">
               <CardTitle className="card-text-title"><Dotdotdot clamp={1}>{event.title}</Dotdotdot></CardTitle>
               <CardText className="card-text-desc"><Dotdotdot clamp={2}>{event.description}</Dotdotdot></CardText>
-              <Link exact to="/register"><Button color="primary" >Join</Button></Link>
+              {/* <Link exact to="/register"> */}
+                <Button color="primary" value={event._id} onClick={this.handleJoin}>Join</Button>
+              {/* </Link> */}
             </CardImgOverlay>  
           </Card>
           </Col>

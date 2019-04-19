@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import '../assets/css/_style.scss';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import { getProfile, editProfile } from '../actions/organizationActions';
 
 class FormOrganizationProfile extends Component {
@@ -13,8 +12,7 @@ class FormOrganizationProfile extends Component {
       organizationName : props.organizationName,
       username : props.username,
       email : props.email,
-      phoneNumber : props.phoneNumber,
-      redirect : false
+      phoneNumber : props.phoneNumber
     }
   }
 
@@ -41,17 +39,9 @@ class FormOrganizationProfile extends Component {
   onSubmit = (e) => {
     e.preventDefault();
     this.props.editProfile(this.state.organizationName, this.state.username, this.state.email, this.state.phoneNumber);
-    this.setState({
-      redirect : true
-    })
 }
 
   render() {
-    const { redirect } = this.state;
-
-    if (redirect) {
-      return <Redirect to="/organization/update-profile/success"/>
-    }
 
     return (
       <div className="form-organization-profile">
