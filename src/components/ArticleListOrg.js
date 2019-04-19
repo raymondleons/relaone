@@ -27,13 +27,10 @@ class ArticleListOrg extends Component {
   }
 
   onChange = (e) => {
-    console.log(this.props.articles)
     this.setState({
         [e.target.name]: e.target.value
     })
-    console.log(e.target.value);
     this.props.searchArticle(e.target.value);
-    console.log(this.props.articles)
   }
 
   onSubmit = (e) => {

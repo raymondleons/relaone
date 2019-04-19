@@ -68,7 +68,6 @@ class CreateEvent extends Component {
     }
 
   render() {
-    console.log(this.state.skillset)
 
     const { redirect } = this.state;
 
@@ -80,7 +79,7 @@ class CreateEvent extends Component {
     const displaySkillset = skillsets.length ? (
       skillsets.map(skillset => {
         return (
-            <div><label><input onChange={this.handleCheck} type="checkbox" name="skillSet" key={skillset._id} value={skillset._id}/> {skillset.name}</label><br></br></div>
+            <div key={skillset.name}><label><input onChange={this.handleCheck} type="checkbox" name="skillSet" key={skillset._id} value={skillset._id}/> {skillset.name}</label><br></br></div>
         )
       })
     ) : (

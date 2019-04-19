@@ -47,7 +47,6 @@ class FormOrganizationProfile extends Component {
 }
 
   render() {
-    console.log(this.state)
     const { redirect } = this.state;
 
     if (redirect) {

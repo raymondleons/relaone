@@ -53,8 +53,8 @@ class Footer extends Component {
               <Col lg="2"></Col>
               <Col lg="2" className="footer-content">
                 <p className="bold-text">TAKE ACTION</p>
-                <p className="footer-links"><Links className="footer-links" exact to="/find-activity">Join Event</Links></p>
-                <p className="footer-links"><Links className="footer-links" exact to="/find-volunteer">Find Volunteer</Links></p>
+                <p className="footer-links"><Links className="footer-links" exact="true" to="/find-activity">Join Event</Links></p>
+                <p className="footer-links"><Links className="footer-links" exact="true" to="/find-volunteer">Find Volunteer</Links></p>
               </Col>
               <Col lg="2" className="footer-content">
                 <p className="bold-text">LEARN MORE</p>
@@ -88,7 +88,6 @@ class Footer extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     footerDesc: state.landingPage.footerDesc,
     footerLocation: state.landingPage.footerLocation

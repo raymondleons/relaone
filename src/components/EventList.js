@@ -28,13 +28,13 @@ class EventList extends Component {
       const displayEvent = events.length ? (
         events.map(({_id, title, location, quotaMax, deadline, skillSet}, i) => {
             return(
-                <tr>
-                  <td key={_id}><Link to={'/event/detail/' + _id}>{title}</Link></td>
-                  <td key={_id}>{location}</td>
-                  <td key={_id}>{quotaMax}</td>
-                  <td key={_id}>{deadline}</td>
-                  <td key={_id}>{skillSet.map(skill => <p key={skill._id}>{skill.name}</p>)}</td>
-                  <td key={_id}>
+                <tr key={_id}>
+                  <td><Link to={'/event/detail/' + _id}>{title}</Link></td>
+                  <td>{location}</td>
+                  <td>{quotaMax}</td>
+                  <td>{deadline}</td>
+                  <td>{skillSet.map(skill => <p key={skill._id}>{skill.name}</p>)}</td>
+                  <td>
                       {/* <Button color="link" className="event-action"> 
                       <Link to={'/organization/event/edit/' + _id}><FontAwesomeIcon icon='edit'/></Link>
                       </Button> */}

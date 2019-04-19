@@ -21,7 +21,7 @@ body {
     }
 
     .bold-text {
-        font-weight: bold;
+        font-weight: bold !important;
     }
 
     .how-to-join-image {
@@ -235,6 +235,7 @@ body {
 
 .navitem a {
     margin-left: 8px;
+    margin-right: 16px;
     color: white !important;
 }
 
@@ -247,6 +248,14 @@ body {
 }
 .nav-link a {
     color: white;
+}
+
+.drop {
+    margin-top: -8px;
+    color: white !important;
+    margin-left: -8px;
+    margin-right: -8px;
+    background-color: transparent;   
 }
 
 .dropdown {
@@ -597,7 +606,7 @@ body {
 
 
 .find-volunteer-div {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.3),rgba(255 , 255, 255, 0.3)), url('../images/find-volunteer.jpg');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3),rgba(255 , 255, 255, 0.3)), url('../images/find-volunteer.png');
 }
 
 .find-activity {

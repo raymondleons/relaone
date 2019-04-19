@@ -34,7 +34,6 @@ class OrganizationProfile extends Component {
 
 
   render() {
-    console.log(this.state.photo)
     return (
       <div className="form-organization-profile">
         <div>

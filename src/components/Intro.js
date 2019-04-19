@@ -33,7 +33,6 @@ class Intro extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     introTitle: state.landingPage.introTitle,
     relaOne: state.landingPage.relaOne,
