@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import {Col, Row, Card, CardImg, CardBody, CardTitle, CardSubtitle, Button, Spinner} from 'reactstrap'
 import {Link} from 'react-router-dom'
-import '../assets/css/_style2.scss'
-import { getEvent } from '../actions/memberActions' ;
+import '../../assets/css/_style.scss'
+import { getEvent } from '../../actions/memberActions' ;
 import { connect } from 'react-redux';
 
 class UserEvent extends Component {

@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import {Row, Col, Container} from 'reactstrap'
-import '../assets/css/_style2.scss';
-import Header from '../layout/Header'
-import UserProfileBadge from '../layout/UserProfileBadge'
-import UserSideBar from '../layout/UserSideBar'
-import UserEventDetails from './UserEventDetails'
-import '../assets/css/_style2.scss'
+import '../../assets/css/_style2.scss';
+import Header from '../../layout/Header'
+import UserProfileBadge from '../../layout/UserProfileBadge'
+import UserEvent from '../../components/member/UserEvent'
+import UserSideBar from '../../layout/UserSideBar'
 
-export default class UserEventDetailsPage extends Component {
+export default class UserEventPage extends Component {
   render() {
     return (
       <div className="create-event">
@@ -21,7 +20,7 @@ export default class UserEventDetailsPage extends Component {
               <UserSideBar />
             </Col>
             <Col sm="12" md="8">
-              <UserEventDetails />
+              <UserEvent />
             </Col>
           </Row>
         </Container>      

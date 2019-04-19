@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import store from './store';
+import history from './history'
+
 import LandingPage from './pages/LandingPage';
 import UpdateOrganizationProfile from './pages/UpdateOrganizationProfile';
-import './assets/css/_style.scss';
 import {Router, Route } from 'react-router-dom';
 import UpdateOrgProfileSuccess from './pages/UpdateOrgProfileSuccess';
 import UpdateUserProfileSuccess from './pages/UpdateUserProfileSuccess';
@@ -23,10 +24,12 @@ import ListPendaftarEvent from './pages/ListPendaftarEvent'
 import TermsandConditions from './pages/TermsandConditions'
 import UserCertificationPage from './pages/UserCertificationPage'
 import UserCertificationDetailsPage from './pages/UserCertificationDetailsPage'
-import UserEventPage from './pages/UserEventPage'
-import UserRegister from './pages/UserRegister'
-import OrganizationRegister from './pages/OrganizationRegister'
-import UserEventDetailsPage from './pages/UserEventDetailsPage'
+import UserEventPage from './pages/member/UserEventPage'
+import UserEventDetailsPage from './pages/member/UserEventDetailsPage'
+import UserRegister from './components/member/UserRegister'
+import UserDashboardPage from './pages/member/UserDashboardPage'
+import UserJoinedEventPage from './pages/member/UserJoinedEventPage'
+import OrganizationRegister from './components/organization/OrganizationRegister'
 import Login from './pages/LoginPage'
 import VerifiedAccount from './pages/VerifiedAccount'
 import LoginAdmin from './pages/admin/Login'
@@ -35,13 +38,12 @@ import RegisterRoot from './pages/RegisterRoot'
 import EventDetailOrgPage from './pages/EventDetailOrgPage'
 import ArticleListOrgPage from './pages/ArticleListOrgPage';
 import ArticleDetailOrgPage from './pages/ArticleDetailOrgPage';
-import UserJoinedEventPage from './pages/UserJoinedEventPage'
 import EventEditPage from './pages/EventEditPage'
 import FindVolunteer from './pages/FindVolunteer'
 import FindActivity from './pages/FindActivity'
 import UpdateOrganizationPhoto from './pages/UpdateOrganizationPhoto'
 import EventPhotoEditPage from './pages/EventPhotoEditPage'
-import history from './history'
+
 
 class App extends Component {
   render() {
@@ -72,13 +74,14 @@ class App extends Component {
             <Route path='/user/event/details/:event_id' component={UserEventDetailsPage} exact />
             <Route path='/user/event/joined/' component={UserJoinedEventPage} exact />
             <Route path='/user/certification' component={UserCertificationPage} exact /> 
-            <Route path='/user/certification/details' component={UserCertificationDetailsPage} exact />  
+            <Route path='/user/certification/details' component={UserCertificationDetailsPage} exact />
+            <Route path='/user/register' component={UserRegister} exact />
+            <Route path='/user/dashboard' component={UserDashboardPage} exact />  
             <Route path='/login' component={Login} exact />
             <Route path="/account-verified" exact component={VerifiedAccount}/>
             <Route path="/admin/login" exact component={LoginAdmin} />
             <Route path="/organization/profile" exact component={OrganizationProfilePage} />
             <Route path='/register' component={RegisterRoot} exact />
-            <Route path='/user/register' component={UserRegister} exact />
             <Route path='/organization/register' component={OrganizationRegister} exact />
             <Route path="/event/detail/:event_id" exact component={EventDetailOrgPage}/>
             <Route path="/organization/article" exact component={ArticleListOrgPage}/>

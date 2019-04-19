@@ -1,10 +1,10 @@
 import React from 'react';
 import { Form, FormGroup, Label, Input, FormText, Button, Row, Col } from 'reactstrap';
 import {Link} from 'react-router-dom'
-import '../assets/css/_style2.scss';
-import Img from '../assets/images/image1.png'
-import Logo from '../assets/images/blue-logo.png'
-import { signup } from "../actions/memberActions";
+import '../../assets/css/_style2.scss';
+import Img from '../../assets/images/image1.png'
+import Logo from '../../assets/images/blue-logo.png'
+import { signup } from "../../actions/memberActions";
 import { connect } from "react-redux";
 
 

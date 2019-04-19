@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Table, Spinner} from 'reactstrap'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux';
-import { getUserJoinedEvent } from '../actions/memberActions' ;
+import { getUserJoinedEvent } from '../../actions/memberActions' ;
 import Moment from 'moment'
 
 class UserJoinedEvent extends Component {

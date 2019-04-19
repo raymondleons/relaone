@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import {Container, Row, Col} from 'reactstrap'
-import Header from '../layout/Header'
-import UserProfileBadge from '../layout/UserProfileBadge'
-import UserJoinedEvent from './UserJoinedEvent'
-import UserSideBar from '../layout/UserSideBar'
+import Header from '../../layout/Header'
+import UserProfileBadge from '../../layout/UserProfileBadge'
+import UserJoinedEvent from '../../components/member/UserJoinedEvent'
+import UserSideBar from '../../layout/UserSideBar'
 
 export default class UserJoinedEventPage extends Component {
   render() {

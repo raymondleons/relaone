@@ -7,7 +7,7 @@ class OrganizationSideBar extends Component {
     return (
       <div className="side-bar">
         <div className="side-bar-list">
-          <div className="side-bar-item"><Links className="side-bar-link" to="/dashboard">Dashboard</Links></div>
+          <div className="side-bar-item"><Links className="side-bar-link" to="/user/dashboard">Dashboard</Links></div>
 
           <div className="side-bar-item" id="event">Event</div>
             <UncontrolledCollapse toggler="#event">
