@@ -1,4 +1,5 @@
 import axios from 'axios';
+import history from '../history';
 import { GET_ARTICLE, GET_USEREVENT, SIGN_UP, GET_USERJOINEDEVENT, GET_USERPROFILE, EDIT_USERPROFILE, SEARCH_ARTICLE, EDIT_USERPHOTO} from './type';
 
 export const getArticle = () => {
@@ -87,6 +88,7 @@ export const signup = (fullname, username, email, password) => {
           email,
           password
         });
+        history.push('/register/success');
       }) 
       .catch(err => {
         console.log(err);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, FormGroup, Label, Input, FormText, Button, Row, Col } from 'reactstrap';
-import {Link, Redirect} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import '../assets/css/_style2.scss';
 import Img from '../assets/images/image1.png'
 import Logo from '../assets/images/blue-logo.png'
@@ -20,8 +20,7 @@ class UserRegister extends React.Component {
       email: '',
       fullname: '',
       username: '',
-      password: '',
-      redirect : false
+      password: ''
     };
   }
   onChange = e => this.setState({ [e.target.name]: e.target.value });
@@ -38,16 +37,11 @@ class UserRegister extends React.Component {
       email: '',
       fullname: '',
       username: '',
-      password: '',
-      redirect : true
+      password: ''
     });
   };
 
   render() {
-    const { redirect } = this.state;
-    if (redirect) {
-      return <Redirect to="/register/success"/>
-    }
     return (
       <div className="container2">
         <div className=" my-4 logo" >
@@ -123,9 +117,8 @@ class UserRegister extends React.Component {
 const mapDispatchToProps = dispatch => {
   return {
     signup: (fullname, username, email, password) => {
-      dispatch(signup(fullname, username, email, password))}
-      
-
+      dispatch(signup(fullname, username, email, password))
+    }  
   }
 }
 

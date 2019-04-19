@@ -1,4 +1,5 @@
 import axios from 'axios';
+import history from '../history';
 import { ADD_EVENT, GET_SKILLSET, GET_EVENT, GET_PROFILE, DEL_EVENT, EDIT_PROFILE, GET_ARTICLE, EDIT_PROFILE_PHOTO, EDIT_EVENT_PHOTO, SEARCH_ARTICLE, SIGN_UP } from './type';
 
 export const getSkillset = () => {
@@ -176,6 +177,7 @@ export const signup = (organizationName, username, phoneNumber, email, password)
             email,
             password
           });
+          history.push('/register/success')
         }) 
         .catch(err => {
           console.log(err.response);

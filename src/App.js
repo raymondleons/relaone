@@ -4,7 +4,7 @@ import store from './store';
 import LandingPage from './pages/LandingPage';
 import UpdateOrganizationProfile from './pages/UpdateOrganizationProfile';
 import './assets/css/_style.scss';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import {Router, Route } from 'react-router-dom';
 import UpdateOrgProfileSuccess from './pages/UpdateOrgProfileSuccess';
 import UpdateUserProfileSuccess from './pages/UpdateUserProfileSuccess';
 import UpdateProfile from './pages/UpdateProfile'
@@ -41,13 +41,13 @@ import FindVolunteer from './pages/FindVolunteer'
 import FindActivity from './pages/FindActivity'
 import UpdateOrganizationPhoto from './pages/UpdateOrganizationPhoto'
 import EventPhotoEditPage from './pages/EventPhotoEditPage'
-
+import history from './history'
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router>
+        <Router history={history}>
           <div className="App">
             <Route path="/" exact component={LandingPage}/>
             <Route path="/register-success" exact component={RegisterSuccess}/>
