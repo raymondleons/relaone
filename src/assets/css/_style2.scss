@@ -18,7 +18,17 @@ body {
     width:40%;
   }
 }
+@media only screen and (min-width:768px) and (max-width: 1000px) {
+  .col-sm-6{
+    flex-basis: 100%;
+    max-width:100%;
+  }
+}
 
+.no-border{
+  border:0px;
+  border-radius: 0px;
+}
 .logo{
   width:200px;
   margin:auto;
@@ -125,6 +135,7 @@ float: right;
  }
  .heigth{
    height: 200px;
+   object-fit:cover;
  }
 
 .fa-user-circle{
@@ -133,7 +144,15 @@ float: right;
 .fa-home{
   color:#0065ff;
 }
-
+.fa-calendar-alt{
+  color:#0065ff;
+}
+.fa-map-marker-alt{
+  color:#0065ff;
+}
+.card-height{
+  max-height: 380px;
+}
 .para{
   font-size: 12px;
 }

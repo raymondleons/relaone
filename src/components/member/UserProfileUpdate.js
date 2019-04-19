@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
-import '../assets/css/_style.scss'
+import '../../assets/css/_style.scss'
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getUserProfile, editUserProfile } from '../actions/memberActions';
+import { getUserProfile, editUserProfile } from '../../actions/memberActions';
 import Moment from 'moment'
 
 

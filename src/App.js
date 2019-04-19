@@ -8,7 +8,7 @@ import UpdateOrganizationProfile from './pages/UpdateOrganizationProfile';
 import {Router, Route } from 'react-router-dom';
 import UpdateOrgProfileSuccess from './pages/UpdateOrgProfileSuccess';
 import UpdateUserProfileSuccess from './pages/UpdateUserProfileSuccess';
-import UpdateProfile from './pages/UpdateProfile'
+import UserProfileUpdate from './pages/member/UserProfileUpdatePage'
 import RegisterSuccess from './pages/RegisterSuccess';
 import OrganizationDashboardPage from './pages/OrganizationDashboardPage';
 import DashboardPage from './pages/DashboardPage'
@@ -18,7 +18,7 @@ import ArticleListPage from './pages/ArticleListPage';
 import ForgotPassword from './pages/ForgotPassword';
 import ArticleDetailPage from './pages/ArticleDetailPage';
 import ListPendaftarEventOrganisasi from './pages/ListPendaftarEventOrganisasi'
-import DisplayProfileUser from './pages/ProfilePage'
+import UserProfilePage from './pages/member/UserProfilePage'
 import DashboardNotVerify from './pages/Dashboards'
 import ListPendaftarEvent from './pages/ListPendaftarEvent'
 import TermsandConditions from './pages/TermsandConditions'
@@ -56,7 +56,7 @@ class App extends Component {
             <Route path="/organization/update-profile" exact component={UpdateOrganizationProfile}/>        
             <Route path="/organization/update-profile/success" exact component={UpdateOrgProfileSuccess}/>
             <Route path="/user/update-profile/success" exact component={UpdateUserProfileSuccess}/>
-            <Route path="/user/profile/update" exact component={UpdateProfile}/>
+            <Route path="/user/profile/update" exact component={UserProfileUpdate}/>
             <Route path="/organization/dashboard" exact component={OrganizationDashboardPage}/>
             <Route path="/dashboard" exact component={DashboardPage}/>
             <Route path="/event" exact component={EventListPage}/>
@@ -65,7 +65,7 @@ class App extends Component {
             <Route path="/forgot-password" exact component={ForgotPassword}/>
             <Route path="/article/detail/:article_id" exact component={ArticleDetailPage}/>
             <Route path="/organization/event/list/register" exact component={ListPendaftarEventOrganisasi} />
-            <Route path="/user/profile/" exact component={DisplayProfileUser} />
+            <Route path="/user/profile/" exact component={UserProfilePage} />
             <Route path="/dashboards" exact component={DashboardNotVerify} />
             <Route path="/event/list-register" exact component={ListPendaftarEvent} />
             <Route path='/register/success' exact component={RegisterSuccess} />

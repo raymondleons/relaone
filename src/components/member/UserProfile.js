@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Row, Col, Card, CardImg, CardBody, CardText} from 'reactstrap'
 import {connect} from 'react-redux'
-import { getUserProfile } from '../actions/memberActions';
-import '../assets/css/_style2.scss'
+import { getUserProfile } from '../../actions/memberActions';
+import '../../assets/css/_style2.scss'
 import {Link} from 'react-router-dom'
 import Moment from 'moment'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -11,7 +11,7 @@ import { faUserEdit } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faUserEdit);
 
- class ProfilePageDetail extends Component {
+ class userProfile extends Component {
 
     componentDidMount(){
         this.props.getUserProfile();
@@ -29,7 +29,7 @@ library.add(faUserEdit);
           <h3 className="bold-text">{this.props.fullname}'s Profile</h3>
           <Link to='/user/profile/update'><FontAwesomeIcon icon='user-edit' className="fa-1x"/> Edit Profile</Link>
         </div>
-        <Card>
+        <Card className="no-border">
           <Row>
             <Col sm={6}>
               <CardImg className="heigth" src={this.props.photo} alt="user photo"></CardImg>
@@ -89,4 +89,4 @@ const mapStateToProps = state => {
     }
   }
   
-  export default connect(mapStateToProps, mapDispatchToProps)(ProfilePageDetail);
+  export default connect(mapStateToProps, mapDispatchToProps)(userProfile);

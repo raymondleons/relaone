@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap';
-import '../assets/css/_style.scss';
-import Header from '../layout/Header'
-import UserProfileBadge from '../layout/UserProfileBadge'
-import FormUpdateProfile from '../components/FormUpdateProfile'
-import UserSideBar from '../layout/UserSideBar';
+import '../../assets/css/_style.scss';
+import Header from '../../layout/Header'
+import UserProfileBadge from '../../layout/UserProfileBadge'
+import FormUpdateProfile from '../../components/member/UserProfileUpdate'
+import UserSideBar from '../../layout/UserSideBar';
 
 export default class UpdateProfile extends Component {
 
