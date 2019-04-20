@@ -87,6 +87,7 @@ export const delEvent = (id) => {
         }
     }
 
+
 export const editEvent = (_id, title, description, location, quotaMax, skillSet, deadline) => {
     return dispatch => {
         console.log(_id, title, description, location, quotaMax, skillSet, deadline)
@@ -94,36 +95,30 @@ export const editEvent = (_id, title, description, location, quotaMax, skillSet,
             url: 'https://relaonebinar.herokuapp.com/api/organization/event',
             method: 'put',
             headers: { 
-                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiQmFkYW4gUGVuYW5nZ3VsYW5nYW4gQmVuY2FuYSIsInJvbGUiOiJvcmdhbml6YXRpb24iLCJpYXQiOjE1NTU2NDkzMDksImV4cCI6MTU1NjI1NDEwOX0.Xn2tGmavbBl7iagh7PP0ow0Sqxj99R5jevF5u66WvLU',
-                'Content-Type': 'application/json'
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1NjQ2MjE0LCJleHAiOjE1NTYyNTEwMTR9.2-XYwETiKd8_Rbu-_MPoHoWFIbKADWSfmfcxbeJ-2ME'
             },
             data: {
-                _id,
-                title,
-                description,
-                location,
-                quotaMax,
-                skillSet,
-                deadline
+                "id": _id,
+                "title": title,
+                "description": description,
+                "deadline": deadline,
+                "location": location,
+                "quotaMax": quotaMax,
+                "skillSet": skillSet
             }
         })
             .then(res => {
-                console.log(res)
+                console.log(res.data.data)
                 dispatch({
-                type: EDIT_EVENT,
-                title : res.data.data.title,
-                description : res.data.data.description,
-                location : res.data.data.location,
-                quotaMax : res.data.data.quotaMax,
-                skillSet : res.data.data.skillSet,
-                deadline : res.data.data.deadline
-                })
+                type: EDIT_EVENT
+                });
+                history.push('/organization/update-profile/success');
                 }
             )
             .catch(err => console.log(err))
     }
 }
-
+  
 export const editEventPhoto = (formdata) => {
     return dispatch => {
         axios ({
