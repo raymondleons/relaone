@@ -1,14 +1,43 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Row, Col, Card, CardImg, CardBody, CardTitle, CardText} from 'reactstrap';
+import { Form, FormGroup, Input, Spinner, Row, Col, Card, CardImg, CardBody, CardTitle, CardText} from 'reactstrap';
 import Dotdotdot from 'react-dotdotdot';
-import { getArticle } from '../actions/organizationActions' ;
+import { getArticle, searchArticle } from '../actions/organizationActions' ;
 import { Link as Links } from 'react-router-dom';
 
 class ArticleListOrg extends Component {
 
   componentDidMount(){
     this.props.getArticle();
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      articles : [],
+      search : ""
+    }
+  }
+
+  componentWillReceiveProps() {
+    this.setState({
+      articles : this.props.articles
+    })
+  }
+
+  onChange = (e) => {
+    console.log(this.props.articles)
+    this.setState({
+        [e.target.name]: e.target.value
+    })
+    console.log(e.target.value);
+    this.props.searchArticle(e.target.value);
+    console.log(this.props.articles)
+  }
+
+  onSubmit = (e) => {
+    e.preventDefault();
   }
 
   render() {
@@ -25,7 +54,7 @@ class ArticleListOrg extends Component {
                             <CardBody>
                                 <CardTitle><h4><Links to={'/organization/article/detail/' + article._id}>{article.title}</Links></h4></CardTitle>
                                 <CardText><Dotdotdot clamp={3}>{article.description}</Dotdotdot></CardText>
-                                <CardText className="text-muted">Created by {article.createdBy.name}</CardText>
+                                {/* <CardText className="text-muted">Created by {article.createdBy.name}</CardText> */}
                             </CardBody>
                         </Col>
                     </Row>
@@ -33,7 +62,11 @@ class ArticleListOrg extends Component {
               )
           })
       ) : (
-          <div>wait a moment...</div>
+        <div>
+          <Spinner type="grow" color="primary" />
+          <Spinner type="grow" color="primary" />
+          <Spinner type="grow" color="primary" />   
+      </div>
       );
 
     return (
@@ -41,6 +74,11 @@ class ArticleListOrg extends Component {
         <div className="content-title">
             <h3 className="bold-text">Article</h3>
         </div>
+        <Form onSubmit={this.onSubmit}>
+            <FormGroup>
+                <Input onChange={this.onChange} className="form-control" type="text" name="search" id="exampleSearch" placeholder="search"/>
+            </FormGroup>
+        </Form>
         <div>
             {displayArticle}
         </div>
@@ -57,7 +95,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getArticle: () => { dispatch(getArticle()) }
+    getArticle: () => { dispatch(getArticle()) },
+    searchArticle: (keyword) => [ dispatch(searchArticle(keyword))]
   }
 }
 

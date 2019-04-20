@@ -11,6 +11,10 @@ import {
     Nav,
     NavItem,
     NavLink,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
     Button } from 'reactstrap';
 
 class NavBar extends Component {
@@ -79,6 +83,21 @@ class NavBar extends Component {
                             duration= {500}
                         >Contact Us</Link>
                     </NavLink>
+                </NavItem>
+                <NavItem className="navitem">
+                    <UncontrolledDropdown nav inNavbar>
+                        <DropdownToggle nav caret>
+                        Take Action
+                        </DropdownToggle>
+                        <DropdownMenu right className="dropdown">
+                        <DropdownItem className="dropdown">
+                            <Links className="footer-links" exact to="/find-activity">Join Event</Links>
+                        </DropdownItem>
+                        <DropdownItem className="dropdown">
+                            <Links className="footer-links" exact to="/find-volunteer">Find Volunteer</Links>
+                        </DropdownItem>
+                        </DropdownMenu>
+                    </UncontrolledDropdown>
                 </NavItem>
                 <NavItem>
                     <NavLink>

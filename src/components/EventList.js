@@ -35,10 +35,10 @@ class EventList extends Component {
                     <td key={_id}>{deadline}</td>
                     <td key={_id}>{skillSet.map(skill => <p key={skill._id}>{skill.name}</p>)}</td>
                     <td key={_id}>
-                        <Button className="event-action"> 
-                            <FontAwesomeIcon icon='edit'/>
+                        <Button color="link" className="event-action"> 
+                        <Link to={'/organization/event/edit/' + _id}><FontAwesomeIcon icon='edit'/></Link>
                         </Button>
-                        <Button className="event-action" onClick={() => this.delete(_id)}> 
+                        <Button color="link" className="event-action" onClick={() => this.delete(_id)}> 
                             <FontAwesomeIcon icon='trash'/>
                         </Button>
                     </td>

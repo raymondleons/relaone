@@ -1,19 +1,19 @@
 import axios from 'axios';
-import { GET_ARTICLE, GET_PROFILE } from './type';
+import { GET_ARTICLE, GET_PROFILE, SEARCH_ARTICLE } from './type';
 
 export const getArticle = () => {
     return dispatch => {
         axios.get('https://relaonebinar.herokuapp.com/api/member/article',
         {
-            headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTE2NzQ1MWJlODZkNjlhY2Q2MTg4NSIsInVzZXJuYW1lIjoicmVnZWRpdCIsImVtYWlsIjoiYWhheWRlQGdtYWlsLmNvbSIsImZ1bGxuYW1lIjoiaW5kcmEiLCJyb2xlIjoibWVtYmVyIiwiaWF0IjoxNTU0NTI4NDA5LCJleHAiOjE1NTUxMzMyMDl9.FshP-mBV_f_qbo1o9AVqKWozylluYTvNzDwHWJ1EVQ0"}
+            headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWJmN2M3NDhhMzg0MTQwZmYxNGFkYiIsInVzZXJuYW1lIjoicmVnZWRpdCIsImVtYWlsIjoiYmlhc2FzYWphQGdtYWlsLmNvbSIsImZ1bGxuYW1lIjoiSW5kcmEgVGFtdmFuIiwicm9sZSI6Im1lbWJlciIsInBob3RvIjpudWxsLCJza2lsbFNldCI6WyI1Y2E0NmJiZmYyZDNmOTE2OTFmZWY1YjgiLCI1Y2E0NmJlOGYyZDNmOTE2OTFmZWY1YmEiXSwiaWF0IjoxNTU1MjE5Mzc3LCJleHAiOjE1NTU4MjQxNzd9.G6I633dPc81z5bw799nz25vEdqcpu3nSYKNqpd2ZUKA"}
         })
         .then(res => {
-            dispatch ({
-                type: GET_ARTICLE,
-                payload: res.data.data
-            })
-        })
-    }
+              dispatch ({
+                  type: GET_ARTICLE,
+                  payload: res.data.data
+              })
+    })
+}
 }
 
 export const signIn = (username, password) => {
@@ -42,7 +42,7 @@ export const getProfile = () => {
   return dispatch => {
       axios.get('https://relaonebinar.herokuapp.com/api/member/profile',
       {
-          headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTVjMTE2M2IwNTE1MDAxNzgxMzEyYiIsInVzZXJuYW1lIjoicmF5bW9uZGxlb25zIiwiZW1haWwiOiJyYXltb25kbGVvbnMxOTk3QGdtYWlsLmNvbSIsImZ1bGxuYW1lIjoiUmF5bW9uZCBMZW9uIFNlbWJpcmluZyIsInJvbGUiOiJtZW1iZXIiLCJwaG90byI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL3JlbGFvbmUvaW1hZ2UvdXBsb2FkL3YxNTU0NjMzNzA3L0RlZmF1bHQvZGVmYXVsdC1hdmF0YXIuanBnIiwic2tpbGxTZXQiOltdLCJpYXQiOjE1NTQ2NjAxNzAsImV4cCI6MTU1NTI2NDk3MH0.Lg2kY365iVWtvoL9BGrtLX0XOJ16IROOnf62u30WsCc"}
+          headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWJmN2M3NDhhMzg0MTQwZmYxNGFkYiIsInVzZXJuYW1lIjoicmVnZWRpdCIsImVtYWlsIjoiYmlhc2FzYWphQGdtYWlsLmNvbSIsImZ1bGxuYW1lIjoiSW5kcmEgVGFtdmFuIiwicm9sZSI6Im1lbWJlciIsInBob3RvIjpudWxsLCJza2lsbFNldCI6WyI1Y2E0NmJiZmYyZDNmOTE2OTFmZWY1YjgiLCI1Y2E0NmJlOGYyZDNmOTE2OTFmZWY1YmEiXSwiaWF0IjoxNTU1MjE5Mzc3LCJleHAiOjE1NTU4MjQxNzd9.G6I633dPc81z5bw799nz25vEdqcpu3nSYKNqpd2ZUKA"}
       })
       .then(res => {
           dispatch ({
@@ -88,3 +88,31 @@ export const signup = (fullname, username, email, password) => {
       });
   };
 };
+
+export const searchArticle = (keyword) => {
+  return dispatch => {
+      axios.get(`https://relaonebinar.herokuapp.com/api/member/searcharticle?search=${keyword}`,
+      {
+        headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWJmN2M3NDhhMzg0MTQwZmYxNGFkYiIsInVzZXJuYW1lIjoicmVnZWRpdCIsImVtYWlsIjoiYmlhc2FzYWphQGdtYWlsLmNvbSIsImZ1bGxuYW1lIjoiSW5kcmEgVGFtdmFuIiwicm9sZSI6Im1lbWJlciIsInBob3RvIjpudWxsLCJza2lsbFNldCI6WyI1Y2E0NmJiZmYyZDNmOTE2OTFmZWY1YjgiLCI1Y2E0NmJlOGYyZDNmOTE2OTFmZWY1YmEiXSwiaWF0IjoxNTU1MjE5Mzc3LCJleHAiOjE1NTU4MjQxNzd9.G6I633dPc81z5bw799nz25vEdqcpu3nSYKNqpd2ZUKA"}          
+      })
+      .then(res => {
+        if (res.data.message === "Article Not Found") {
+          console.log('not found');
+          dispatch ({
+            type: SEARCH_ARTICLE,
+            payload: []
+          })
+        } else {
+          dispatch ({
+              type: SEARCH_ARTICLE,
+              payload: res.data.data
+          })
+        }
+      })
+      .catch(err => console.log(err))
+  }
+}
+
+
+
+
