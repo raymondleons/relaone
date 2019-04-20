@@ -38,7 +38,10 @@ class ArticleListOrg extends Component {
   }
 
   render() {
-      const articles = this.props.articles
+      let articles = []
+      if (this.props.articles) {
+        articles = this.props.articles
+      }
       const displayArticle = articles.length ? (
         articles.map(article => {
               return (
