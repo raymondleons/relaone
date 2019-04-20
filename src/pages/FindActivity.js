@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import NavigationBar from '../layout/NavigationBar'
 import Footers from '../layout/Footers'
-import { Container, Row, Col, Card, CardTitle, CardText, CardImg, CardImgOverlay, Button } from 'reactstrap';
+import { Container, Row, Col, Card, CardTitle, CardImg, CardImgOverlay, Button } from 'reactstrap';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getEvent } from '../actions/guestActions'
@@ -28,10 +28,10 @@ class FindActivity extends Component {
             <CardImg width="100%" src={event.photo} alt="Card image cap" />
             <CardImgOverlay className="opacity">
               <CardTitle className="card-text-title"><Dotdotdot clamp={1}>{event.title}</Dotdotdot></CardTitle>
-              <CardText className="card-text-desc"><Dotdotdot clamp={2}>{event.description}</Dotdotdot></CardText>
-              {/* <Link exact to="/register"> */}
+              <div className="card-text-desc"><Dotdotdot clamp={2}>{event.description}</Dotdotdot></div>
+              <Link exact="true" to="/register">
                 <Button color="primary" value={event._id} onClick={this.handleJoin}>Join</Button>
-              {/* </Link> */}
+              </Link>
             </CardImgOverlay>  
           </Card>
           </Col>

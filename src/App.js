@@ -38,7 +38,7 @@ import FindVolunteer from './pages/FindVolunteer'
 import FindActivity from './pages/FindActivity'
 import UpdateOrganizationPhoto from './pages/UpdateOrganizationPhoto'
 import EventPhotoEditPage from './pages/EventPhotoEditPage'
-import history from './history';
+import history from './history'
 
 class App extends Component {
   render() {
