@@ -11,15 +11,6 @@ class ArticleListOrg extends Component {
     this.props.getArticle();
   }
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      articles : [],
-      search : ""
-    }
-  }
-
   componentWillReceiveProps() {
     this.setState({
       articles : this.props.articles
