@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Spinner, Row, Col, Card, CardImg, CardBody, CardTitle, CardText, Form, Input, FormGroup } from 'reactstrap';
+import { Spinner, Row, Col, Card, CardImg, CardBody, CardTitle, CardText, Form, Input, FormGroup, Button } from 'reactstrap';
 import Dotdotdot from 'react-dotdotdot';
 import { getArticle, searchArticle } from '../actions/memberActions' ;
 import { Link as Links } from 'react-router-dom';
@@ -27,17 +27,14 @@ class ArticleList extends Component {
   }
 
   onChange = (e) => {
-    console.log(this.props.articles)
     this.setState({
         [e.target.name]: e.target.value
     })
-    console.log(e.target.value);
-    this.props.searchArticle(e.target.value);
-    console.log(this.props.articles)
   }
 
   onSubmit = (e) => {
     e.preventDefault();
+    this.props.searchArticle(this.state.search)
   }
   
 
@@ -79,7 +76,14 @@ class ArticleList extends Component {
         </div>
         <Form onSubmit={this.onSubmit}>
             <FormGroup>
-                <Input onChange={this.onChange} className="form-control" type="text" name="search" id="exampleSearch" placeholder="search"/>
+              <Row>
+                <Col md="10">
+                  <Input onChange={this.onChange} className="form-control" type="text" name="search" id="exampleSearch" placeholder="search"/>
+                </Col>
+                <Col md="2">
+                  <Button color="primary">Search</Button> 
+                </Col>
+              </Row>
             </FormGroup>
         </Form>
         <div>

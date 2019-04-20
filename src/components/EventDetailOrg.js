@@ -11,7 +11,7 @@ class EventDetailOrg extends Component {
   }
 
   render() {
-
+  
     let eventsDetail = {}
     if (this.props.events) {
       eventsDetail = this.props.events
@@ -21,7 +21,7 @@ class EventDetailOrg extends Component {
     if (eventsDetail) {
       skillSets = eventsDetail.skillSet
     }
-    
+        
     const displaySkillset = skillSets ? (
       skillSets.map(skillset => {
         return (
@@ -29,7 +29,7 @@ class EventDetailOrg extends Component {
         )
       })
     ) : (
-        <div>No skillset needed</div>
+        <p>No skillset needed</p>
     );
 
     const events = this.props.events ? (

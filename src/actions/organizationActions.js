@@ -112,7 +112,7 @@ export const editEvent = (_id, title, description, location, quotaMax, skillSet,
                 dispatch({
                 type: EDIT_EVENT
                 });
-                history.push('/organization/update-profile/success');
+                history.push('/event');
                 }
             )
             .catch(err => console.log(err))

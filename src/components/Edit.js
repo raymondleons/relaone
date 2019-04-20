@@ -13,8 +13,6 @@ class Edit extends Component {
         this.props.getSkillset();
     }
 
-    
-
     constructor(props) {
         super(props);
 
@@ -84,7 +82,6 @@ class Edit extends Component {
         this.props.editEvent(this.state.id, this.state.title, this.state.description, this.state.location, this.state.quotaMax, this.state.skillSet, this.state.deadline);
     }
     
-
     render() {
         console.log(this.props)
         console.log(this.state)
@@ -135,7 +132,7 @@ class Edit extends Component {
                   </FormGroup>
                   <FormGroup>
                       <Label for="exampleSkillSet">Skill Set</Label><br></br>
-                      {/* {displaySkillset} */}
+                      {displaySkillset}
                   </FormGroup>
                   <FormGroup>
                       <Label for="exampleDeadline">Deadline</Label>
