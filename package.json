@@ -26,7 +26,8 @@
     "react-scroll": "^1.7.11",
     "reactstrap": "^7.1.0",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "sweetalert2": "^8.8.5"
   },
   "scripts": {
     "start": "react-scripts start",

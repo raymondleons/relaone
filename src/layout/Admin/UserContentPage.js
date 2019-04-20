@@ -8,15 +8,13 @@ class UserContentPage extends Component {
 
     componentDidMount(){
         this.props.getUser();
-    }
-   
+    }  
+
+    
 
   render() {
       
     const users = this.props.users
-
-    // const 
-      
       
       
     const displayUser = users.length ? (
