@@ -11,7 +11,6 @@ class EventDetailOrg extends Component {
   }
 
   render() {
-    console.log(this.props.events)
 
     let eventsDetail = {}
     if (this.props.events) {
@@ -26,7 +25,7 @@ class EventDetailOrg extends Component {
     const displaySkillset = skillSets ? (
       skillSets.map(skillset => {
         return (
-            <div>{skillset.name}</div>
+            <li key={skillset._id}>{skillset.name}</li>
         )
       })
     ) : (
@@ -48,14 +47,16 @@ class EventDetailOrg extends Component {
             <Col md="8">
                 <Card className="profile-card">
                     <CardTitle><h2>{this.props.events.title}</h2></CardTitle>
-                    <CardText><p>Description : {this.props.events.description}</p></CardText>
-                    <CardText><p>Location: {this.props.events.location}</p></CardText>
-                    <CardText><p>Application Deadline : {this.props.events.deadline}</p></CardText>
-                    <CardText><p>Volunteer Applicant : {this.props.events.quota}</p></CardText>
-                    <CardText><p>Maximal Quota : {this.props.events.quotaMax}</p></CardText>
-                    <CardText><p>Required skillset : {displaySkillset}</p></CardText>
-                    <Link to={"/organization/event/edit/" + this.props.events._id}><Button color="primary">Edit Event</Button></Link>
-                    <Link to={"/organization/event-photo/edit/" + this.props.events._id}><Button color="primary">Edit Event Photo</Button></Link>
+                    <CardText>Description : {this.props.events.description}</CardText>
+                    <CardText>Location: {this.props.events.location}</CardText>
+                    <CardText>Application Deadline : {this.props.events.deadline}</CardText>
+                    <CardText>Volunteer Applicant : {this.props.events.quota}</CardText>
+                    <CardText>Maximal Quota : {this.props.events.quotaMax}</CardText>
+                    <div className="card-skillset">Required skillset : <ol>{displaySkillset}</ol></div>
+                    <div>
+                      <Link to={"/organization/event/edit/" + this.props.events._id}><Button color="primary">Edit Event</Button></Link>
+                      <Link to={"/organization/event-photo/edit/" + this.props.events._id}><Button color="primary" className="edit-profile-button">Edit Event Photo</Button></Link>
+                    </div>
                 </Card>
             </Col>
         </Row>

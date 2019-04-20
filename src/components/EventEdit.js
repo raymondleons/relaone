@@ -11,15 +11,27 @@ class EventEdit extends Component {
   constructor(props) {
     super(props);
 
+    let events = {}
+    if (this.props.events) {
+      events = this.props.events
+    }
+
+    let initDeadline = events.deadline
+    Moment.locale('en');
+    let deadline = Moment(initDeadline).format('YYYY-MM-DD')
+
+    let initQuota = events.quotaMax
+    let quotaMax = initQuota.toString()
+
     this.state = {
       skillsets : this.props.skillsets,
       events : this.props.events,
       id : props.match.params.event_id,
-      title : "",
+      title : events.title,
       description : "",
-      deadline : "",
+      deadline : deadline,
       location : "",
-      quotaMax : "", 
+      quotaMax : quotaMax, 
       skillSet : []
     }
   }
@@ -138,7 +150,7 @@ class EventEdit extends Component {
     const displaySkillset = skillsets.length ? (
       skillsets.map(skillset => {
         return (
-            <div><label><input onChange={this.handleCheck} defaultChecked={skillset.status} type="checkbox" name="skillSet" key={skillset._id} value={skillset._id}/> {skillset.name}</label><br></br></div>
+            <div key={skillset._id}><label><input onChange={this.handleCheck} defaultChecked={skillset.status} type="checkbox" name="skillSet" key={skillset._id} value={skillset._id}/> {skillset.name}</label><br></br></div>
         )
       })
     ) : (

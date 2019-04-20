@@ -50,7 +50,7 @@ class ArticleListOrg extends Component {
                         <Col md="8">
                             <CardBody>
                                 <CardTitle><h4><Links to={'/organization/article/detail/' + article._id}>{article.title}</Links></h4></CardTitle>
-                                <CardText><Dotdotdot clamp={3}>{article.description}</Dotdotdot></CardText>
+                                <div><Dotdotdot clamp={3}>{article.description}</Dotdotdot></div>
                                 <CardText className="text-muted">Created by {article.createdBy.name}</CardText>
                             </CardBody>
                         </Col>
