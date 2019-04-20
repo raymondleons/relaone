@@ -83,7 +83,7 @@ class Testi extends Component {
                 activeIndex={activeIndex}
                 next={this.next}
                 previous={this.previous}
-                interval={3000}
+                interval={3500}
                 ride='carousel'
             >
                 <CarouselIndicators items={this.props.testimony} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
