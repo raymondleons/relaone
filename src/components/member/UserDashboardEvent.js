@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Col, Row, Card, CardImg, CardBody, CardTitle, CardSubtitle, Button, Spinner} from 'reactstrap'
 import {Link} from 'react-router-dom'
 import '../../assets/css/_style.scss'
-import { getEvent, putUserJoinEvent } from '../../actions/memberActions' ;
+import { getEvent} from '../../actions/memberActions' ;
 import { connect } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -15,10 +15,7 @@ class UserEvent extends Component {
     this.props.getEvent();
   }
 
-  handleJoin = (e) => {
-    let id = e.target.value
-    putUserJoinEvent(id)
-  }
+ 
   
 
   render() {
@@ -100,8 +97,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-      getEvent: () => { dispatch(getEvent())},
-      joinEvent : (id) => { dispatch(getEvent())}
+      getEvent: () => { dispatch(getEvent())}
   }
 }
 

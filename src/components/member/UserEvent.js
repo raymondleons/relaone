@@ -8,7 +8,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarAlt, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 library.add(faCalendarAlt, faMapMarkerAlt);
-
+ 
 class UserEvent extends Component {
 
   componentDidMount(){
@@ -17,7 +17,7 @@ class UserEvent extends Component {
 
   componentWillReceiveProps() {
     this.setState({
-      articles : this.props.events
+      events : this.props.events
     })
   }
   onSubmit = (e) => {
@@ -107,7 +107,7 @@ class UserEvent extends Component {
             </FormGroup>
         </Form>
         </div>
-        {events.length} article(s) found
+        {events.length} event(s) found
         <Row className="pt-3">
           {displayEvent}
         </Row>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import history from '../history';
-import { GET_ARTICLE, GET_USEREVENT, SIGN_UP, GET_USERJOINEDEVENT, GET_USERPROFILE, EDIT_USERPROFILE, SEARCH_ARTICLE, SEARCH_EVENT, EDIT_USERPHOTO, PUT_USERJOINEVENT} from './type';
+import { GET_ARTICLE, GET_USEREVENT, SIGN_UP, GET_USERJOINEDEVENT, GET_USERPROFILE, EDIT_USERPROFILE, SEARCH_ARTICLE, SEARCH_EVENT, EDIT_USERPHOTO, USER_JOINEVENT} from './type';
 
 export const getArticle = () => {
     return dispatch => {
@@ -32,18 +32,22 @@ export const getEvent = () => {
   }
 }
 
-export const putUserJoinEvent = (_id) => {
+export const joinEvent = (_id) => {
   return dispatch => {
     axios.put('https://relaonebinar.herokuapp.com/api/member/event',
     {
       headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWJmN2M3NDhhMzg0MTQwZmYxNGFkYiIsInVzZXJuYW1lIjoicmVnZWRpdCIsImVtYWlsIjoiYmlhc2FzYWphQGdtYWlsLmNvbSIsImZ1bGxuYW1lIjoiSW5kcmEgVGFtdmFuIiwicm9sZSI6Im1lbWJlciIsInBob3RvIjoiaHR0cDovL3Jlcy5jbG91ZGluYXJ5LmNvbS9yZWxhb25lL2ltYWdlL3VwbG9hZC92MTU1NTMxMzYzMi9NZW1iZXIvNWNhYmY3Yzc0OGEzODQxNDBmZjE0YWRiLmpwZyIsInNraWxsU2V0IjpbIjVjYTQ2YmJmZjJkM2Y5MTY5MWZlZjViOCIsIjVjYTQ2YmU4ZjJkM2Y5MTY5MWZlZjViYSJdLCJpYXQiOjE1NTU0MDA1MzcsImV4cCI6MTU1NjAwNTMzN30.eIL-ZKAH2YpIJ4P3dsrunq2JgkmynhPo7BuDW2ENtKM"}
     })
     .then(res => {
+      console.log(res)
       dispatch ({
-          type: PUT_USERJOINEVENT,
+          type: USER_JOINEVENT,
           _id
       })
     })
+    .catch(err => {
+      console.log(err);
+    });
   }
 }
 

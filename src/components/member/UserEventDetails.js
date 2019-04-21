@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button,  Spinner} from 'reactstrap'
 import '../../assets/css/_style2.scss'
 import { connect } from 'react-redux';
-import { getEvent } from '../../actions/memberActions' ;
+import { getEvent, joinEvent } from '../../actions/memberActions' ;
 import { withRouter } from 'react-router-dom';
 
 class UserEventDetails extends Component {
@@ -10,6 +10,13 @@ class UserEventDetails extends Component {
   componentDidMount(){
     this.props.getEvent();
   } 
+
+  handleJoin = (e) => {
+    console.log(this.props.events._id)
+    let _id = e.target.value
+    joinEvent(_id)
+  }
+  
 
   render() {
     // const skillsets = this.props.events.skillsets
@@ -34,12 +41,12 @@ class UserEventDetails extends Component {
             <Button color='primary' className="p-1">Join</Button>
           </div>
           <CardImg top width="100%" src={this.props.events.photo} alt="Card image cap" />
-          {/* <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center">
             <div className="logoevent">
               <CardImg className="imgg" src={this.props.events.organization.photo} alt="Card image cap" />
             </div>
             <CardSubtitle className="p-2">{this.props.events.organization.organizationName}</CardSubtitle>
-          </div> */}
+          </div>
           <hr />      
           <p className="">Location: {this.props.events.location}</p>
           <hr />
@@ -47,7 +54,11 @@ class UserEventDetails extends Component {
           <div>Skillset Needed: {this.props.events.skillSet.map(skill => <CardText key={skill._id}>{skill.name}</CardText> )}</div>
           
           <div className="d-flex justify-content-center align-items-center my-3">
-            <Button color='primary' className="mx-5">JOIN</Button>
+            <Button color='primary' 
+            className="mx-5"
+            value={this.props.events_id}
+            onClick={this.handleJoin}
+            >JOIN</Button>
           </div>
         </CardBody>
       </Card>
@@ -77,7 +88,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getEvent: () => { dispatch(getEvent()) }
+    getEvent: () => { dispatch(getEvent()) },
+    joinEvent: (_id) => { dispatch(getEvent())}
   }
 }
 
