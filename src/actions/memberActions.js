@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { GET_ARTICLE, GET_PROFILE, SEARCH_ARTICLE } from './type';
 
+const url = "https://relaonebinar.herokuapp.com/api";
+
 export const getArticle = () => {
     return dispatch => {
         axios.get('https://relaonebinar.herokuapp.com/api/member/article',
@@ -19,7 +21,7 @@ export const getArticle = () => {
 export const signIn = (username, password) => {
   return dispatch => {
     axios
-      .post("https://relaonebinar.herokuapp.com/api/member/login", {
+      .post(`${url}/member/login`, {
         username: username,
         password: password
       })
@@ -61,8 +63,6 @@ export const getProfile = () => {
       })
   }
 }
-
-const url = "https://relaonebinar.herokuapp.com";
 
 export const signup = (fullname, username, email, password) => {
   return dispatch => {

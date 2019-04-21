@@ -18,7 +18,7 @@ library.add(faFacebookF, faTwitter, faInstagram);
 class Footers extends Component {
   render() {
     return (
-      <div className="footer">
+      <div className="footer-landingpage">
          <Container>
              <Row>
                 <Col lg="3">

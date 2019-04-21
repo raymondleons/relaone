@@ -4,12 +4,8 @@ import { Link } from 'react-router-dom';
 import { Table, Button, Spinner } from 'reactstrap';
 import '../assets/css/_style.scss'
 import { getEvent, delEvent } from '../actions/organizationActions';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 import noevent from '../assets/images/noevent.png';
 
-library.add(faTrash, faEdit);
 
 class EventList extends Component {
 
@@ -35,11 +31,8 @@ class EventList extends Component {
                   <td>{deadline}</td>
                   <td>{skillSet.map(skill => <p key={skill._id}>{skill.name}</p>)}</td>
                   <td>
-                      {/* <Button color="link" className="event-action"> 
-                      <Link to={'/organization/event/edit/' + _id}><FontAwesomeIcon icon='edit'/></Link>
-                      </Button> */}
                       <Button color="link" className="event-action" onClick={() => this.delete(_id)}> 
-                          <FontAwesomeIcon icon='trash'/>
+                          x
                       </Button>
                   </td>
               </tr>
@@ -116,6 +109,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventList);
-
-
-
