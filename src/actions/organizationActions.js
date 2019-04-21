@@ -21,7 +21,7 @@ export const getEvent = () => {
     return dispatch => {
         axios.get('https://relaonebinar.herokuapp.com/api/organization/event',
         {
-            headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFJldHVybiBvZiBDbGF3Iiwicm9sZSI6Im9yZ2FuaXphdGlvbiIsImlhdCI6MTU1NTIxMTIxNCwiZXhwIjoxNTU1ODE2MDE0fQ.uoIvYKEMY071oHg46fgePS6UDKVM-wUPMSpP1t-t9hw"}
+            headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiQm9jYWggTWVvbmciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1MjIyODcwLCJleHAiOjE1NTU4Mjc2NzB9.ik4ptth05V46kFJJp6I07O9afKzbpb0GkrFtD0i_-II"}
         })
         .then(res => {
             dispatch ({
@@ -195,10 +195,10 @@ export const editProfile = (organizationName, username, email, phoneNumber) => {
 export const editPhoto = (formdata) => {
     return dispatch => {
         axios ({
-            url: 'https://relaonebinar.herokuapp.com/api/organization/uploadphoto',
+            url: 'https://testrelaone.herokuapp.com/api/organization/uploadphoto',
             method: 'put',
             headers: { 
-                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU0OTUyODU4LCJleHAiOjE1NTU1NTc2NTh9.hjnTlrfcJYsD7EiiGHKvVgxJ7YGi8LNC4iJzXll-ljA'
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1NjQ2MjE0LCJleHAiOjE1NTYyNTEwMTR9.2-XYwETiKd8_Rbu-_MPoHoWFIbKADWSfmfcxbeJ-2ME'
             },
             data: formdata
         })

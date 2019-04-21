@@ -33,6 +33,14 @@ class Edit extends Component {
         let initQuota = events.quotaMax
         let quotaMax = initQuota.toString()
 
+        let initSkillSet = events.skillSet
+        let skills = []
+        if (initSkillSet.length === 0) {
+            skills = []
+        } else {initSkillSet.map(skill => 
+            skills = [...skills, skill._id]
+        )} 
+
         this.state = {
             id : props.match.params.event_id,
             skillsets : skillsets,
@@ -42,9 +50,10 @@ class Edit extends Component {
             location : events.location,
             deadline : deadline,
             quotaMax : quotaMax,
-            skillSet : events.skillSet
+            skillSet : skills
 
         }
+        
     }
 
       onChange = (e) => {
@@ -64,38 +73,40 @@ class Edit extends Component {
       handleCheck = (e) => {
         const id = (e.target.value)
         const skillsets = this.props.skillsets
+        
         const skills = skillsets.filter(skill => skill._id === id)
+        
         skills[0].status = !(skills[0].status)
+        
         if (skills[0].status === true) {
             this.setState({
-                skillset: [...this.state.skillset, skills[0]._id]
+                skillSet: [...this.state.skillSet, skills[0]._id]
             })
         } else {
             this.setState({
-                skillset: this.state.skillset.filter(x => x !== skills[0]._id)
+                skillSet: this.state.skillSet.filter(x => x !== skills[0]._id)
             })
         }
     }
     
       onSubmit = (e) => {
         e.preventDefault();
+        console.log(this.state.id, this.state.title, this.state.description, this.state.location, this.state.quotaMax, this.state.skillSet, this.state.deadline);        
         this.props.editEvent(this.state.id, this.state.title, this.state.description, this.state.location, this.state.quotaMax, this.state.skillSet, this.state.deadline);
     }
     
     render() {
-        console.log(this.props)
-        console.log(this.state)
 
         const skillsets = this.props.skillsets    
-
+        
         for (let i=0; i<skillsets.length; i++){ 
           for (let j=0; j<this.state.skillSet.length; j++){
-            if (skillsets[i].name===this.state.skillSet[j].name){
+            if (skillsets[i]._id === this.state.skillSet[j]){
               skillsets[i].status=true
             }
           }
         }
-    
+
         const displaySkillset = skillsets.length ? (
           skillsets.map(skillset => {
             return (
