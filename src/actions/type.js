@@ -10,6 +10,7 @@ export const PUT_USERJOINEVENT = 'PUT_USERJOINEVENT';
 export const GET_USERPROFILE = 'GET_USEPROFILE';
 export const EDIT_USERPROFILE = 'EDIT_USERPROFILE';
 export const SEARCH_ARTICLE = 'SEARCH_ARTICLE';
+export const SEARCH_EVENT = 'SEARCH_EVENT';
 export const EDIT_USERPHOTO = 'EDIT_USERPRHOTO';
 
 //actions for organization

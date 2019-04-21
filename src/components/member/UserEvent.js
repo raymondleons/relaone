@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import {Col, Row, Card, CardImg, CardBody, CardTitle, CardSubtitle, Button, Spinner} from 'reactstrap'
+import {Form, FormGroup, Input, Col, Row, Card, CardImg, CardBody, CardTitle, CardSubtitle, Button, Spinner} from 'reactstrap'
 import {Link} from 'react-router-dom'
 import '../../assets/css/_style.scss'
-import { getEvent, putUserJoinEvent } from '../../actions/memberActions' ;
+import { getEvent, searchEvent } from '../../actions/memberActions' ;
 import { connect } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -15,15 +15,32 @@ class UserEvent extends Component {
     this.props.getEvent();
   }
 
-  handleJoin = (e) => {
-    let id = e.target.value
-    putUserJoinEvent(id)
+  componentWillReceiveProps() {
+    this.setState({
+      articles : this.props.events
+    })
   }
-  
+  onSubmit = (e) => {
+    e.preventDefault();
+    this.props.searchEvent(this.state.search)
+  }
+
+  onChange = (e) => {
+    console.log(this.props.Events)
+    this.setState({
+        [e.target.name]: e.target.value
+    })
+  }
+
+
 
   render() {
-    console.log(this.props.events)
-    const events = this.props.events
+    let events = []
+      if (this.props.events) {
+        events = this.props.events
+      }    
+ 
+    // const events = this.props.events
    
     const displayEvent = events.length ? (
       events.map(({_id, photo, title, location, organization, deadline, skillSet}, i) => {
@@ -76,7 +93,21 @@ class UserEvent extends Component {
       <div className="article-list">
         <div className="content-title">
           <h3 className="bold-text">Event</h3>
+          <Form onSubmit={this.onSubmit}>
+            <FormGroup>
+            <Row>
+                <Col md="10">
+                  <Input onChange={this.onChange} className="form-control" type="text" name="search" id="exampleSearch" placeholder="search"/>
+                </Col>
+                <Col md="2">
+                  <Button color="primary">Search</Button> 
+                </Col>
+              </Row>
+
+            </FormGroup>
+        </Form>
         </div>
+        {events.length} article(s) found
         <Row className="pt-3">
           {displayEvent}
         </Row>
@@ -94,7 +125,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
       getEvent: () => { dispatch(getEvent())},
-      joinEvent : (id) => { dispatch(getEvent())}
+      searchEvent: (keyword) => [ dispatch(searchEvent(keyword))]
+      
   }
 }
 
