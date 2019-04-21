@@ -124,7 +124,7 @@ export const editEvent = (_id, title, description, location, quotaMax, skillSet,
                 type: EDIT_EVENT
                 });
                 toast.success("Your event has been updated")
-                history.push('/event');
+                history.push('/organization/event');
                 }
             )
             .catch(err => {
