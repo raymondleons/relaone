@@ -24,18 +24,17 @@ class UserJoinedEvent extends Component {
           events.map(({_id, title, location, quota, quotaMax, organization, member}, i) => {
             return(
               <tr>
-                <td>1.</td>
+               <td key={_id}>{deadline}</td> 
                 <td key={_id}><Link to={'/user/event/details/' + _id}>{title}</Link></td>
                 <td key={_id}>{organization.organizationName}</td>
                 <td key={_id}>{location}</td>
                 <td key={_id}>{quota}/{quotaMax}</td>
-                <td key={_id}>{deadline}</td> 
-                <td>
-                  {/* {member.filter(members => members.idMember === this.props.id  {
-                      return members.status
-                    }
-                  )} */}
-                </td>
+                {/* <td>
+                  {member.filter(members => members.idMember === this.props.id ? (
+                      return (members.status)
+                  )
+                  )}
+                </td> */}
               </tr>
             )
           })
@@ -63,12 +62,11 @@ class UserJoinedEvent extends Component {
         <Table responsive>
           <thead>
             <tr>
-              <th>No.</th>
+              <th>Due Date</th>
               <th>Event</th>
               <th>Organization</th>
               <th>Location</th>
               <th>Quota</th>
-              <th>Due Date</th>
               <th>Status</th>
             </tr>
           </thead>

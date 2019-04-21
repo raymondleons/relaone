@@ -29,6 +29,7 @@ import UserEventDetailsPage from './pages/member/UserEventDetailsPage'
 import UserRegister from './components/member/UserRegister'
 import UserDashboardPage from './pages/member/UserDashboardPage'
 import UserJoinedEventPage from './pages/member/UserJoinedEventPage'
+import UserPhotoUpdate from './pages/member/UserPhotoUpdatePage'
 import OrganizationRegister from './components/organization/OrganizationRegister'
 import Login from './pages/LoginPage'
 import VerifiedAccount from './pages/VerifiedAccount'
@@ -77,6 +78,7 @@ class App extends Component {
             <Route path='/user/certification/details' component={UserCertificationDetailsPage} exact />
             <Route path='/user/register' component={UserRegister} exact />
             <Route path='/user/dashboard' component={UserDashboardPage} exact />  
+            <Route path='/user/photo/update' component={UserPhotoUpdate} exact />  
             <Route path='/login' component={Login} exact />
             <Route path="/account-verified" exact component={VerifiedAccount}/>
             <Route path="/admin/login" exact component={LoginAdmin} />

@@ -22,7 +22,11 @@ class FormUpdateProfile extends Component {
           birthDate : props.birthDate,
           address : props.address,
           phoneNumber : props.phoneNumber,
-          bio : props.bio
+          bio : props.bio,
+          _id : props._id,
+          emergencyContact : props.emergencyContact,
+          skillSet : props.skillSet,
+          confirmed : props.confirmed
         }
       }
     
@@ -39,7 +43,11 @@ class FormUpdateProfile extends Component {
             birthDate : props.birthDate,
             address : props.address,
             phoneNumber : props.phoneNumber,
-            bio : props.bio
+            bio : props.bio,
+            _id : props._id,
+            emergencyContact : props.emergencyContact,
+            skillSet : props.skillSet,
+            confirmed : props.confirmed
 
       })
       }
@@ -60,7 +68,11 @@ class FormUpdateProfile extends Component {
             this.state.birthDate,    
             this.state.address,
             this.state.phoneNumber, 
-            this.state.bio
+            this.state.bio,
+            this.state._id,
+            this.state.confirmed,
+            this.state.emergencyContact,
+            this.state.skillSet
             )
     }
     
@@ -194,7 +206,11 @@ const mapStateToProps = state =>{
         idCard : state.userProfile.idCard,
         address : state.userProfile.address,
         bio : state.userProfile.bio,
-        birthDate : state.userProfile.birthDate
+        birthDate : state.userProfile.birthDate,
+        _id : state.userProfile._id,
+        emergencyContact : state.userProfile.emergencyContact,
+        confirmed : state.userProfile.confirmed,
+        skillSet : state.userProfile.skillSet
     }
   }
   
@@ -213,8 +229,9 @@ const mapStateToProps = state =>{
          idCard, 
          address, 
          bio, 
-         birthDate
-         ) => { dispatch(editUserProfile(fullname, username, email, phoneNumber, idCard, address, bio, birthDate
+         birthDate, _id, emergencyContact, confirmed, skillSet
+         ) => { dispatch(editUserProfile(fullname, username, email, phoneNumber, idCard, address, bio,
+          birthDate, _id, emergencyContact, confirmed, skillSet
           ))}
          
     }

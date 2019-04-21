@@ -36,13 +36,6 @@ class UserEvent extends Component {
               <CardBody className="px-1 py-1">
                 <CardTitle><Link to={'/user/event/details/' + _id}>{title}</Link></CardTitle>
                   <hr />
-                  {/* <div>{Object.keys(organization).map((organizationName,photo) => (
-                      <div key={organization._id}>
-                          <p>{organization[organizationName]}</p>
-                          <p>{organization[photo]}</p>
-                      </div>))}
-                  </div> */}
-                 
                   <div className="d-flex align-items-center">
                     <div className="logoevent">
                       <CardImg className="imgg" src={organization.photo} alt="No Photos" />
