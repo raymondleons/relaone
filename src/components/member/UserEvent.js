@@ -22,39 +22,49 @@ class UserEvent extends Component {
   
 
   render() {
-    // console.log(this.props.events)
+    console.log(this.props.events)
     const events = this.props.events
+   
     const displayEvent = events.length ? (
-      events.map(event => {
+      events.map(({_id, photo, title, location, organization, deadline, skillSet}, i) => {
         return (
-          <Col sm={6} key={event._id}>
+          <Col sm={6} key={_id}>
             <Card className="mbot card-height">
-              <Link to={'/user/event/details/' + event._id}>
-                <CardImg className="heigth" src={event.photo} alt="No Photos" />
+              <Link to={'/user/event/details/' + _id}>
+                <CardImg className="heigth" src={photo} alt="No Photos" />
               </Link>
               <CardBody className="px-1 py-1">
-                <CardTitle><Link to={'/user/event/details/' + event._id}>{event.title}</Link></CardTitle>
+                <CardTitle><Link to={'/user/event/details/' + _id}>{title}</Link></CardTitle>
                   <hr />
-                  {/* <div className="d-flex align-items-center">
-                    <div className="logoevent">
-                      <CardImg className="imgg" src={event.organization.photo} alt="No Photos" />
-                    </div>
-                    <CardSubtitle className="p-2">{event.organization}</CardSubtitle>
+                  {/* <div>{Object.keys(organization).map((organizationName,photo) => (
+                      <div key={organization._id}>
+                          <p>{organization[organizationName]}</p>
+                          <p>{organization[photo]}</p>
+                      </div>))}
                   </div> */}
+                 
+                  {/* <div className="d-flex align-items-center">
+                  
+                    <div className="logoevent">
+                      <CardImg className="imgg" src={org.photo} alt="No Photos" />
+                    </div>
+                    <CardSubtitle className="p-2">{org.organizationName}</CardSubtitle>
+                  
+                    </div> */}
                   <hr />
                   <Row>
                     <Col sm={6}>
-                      <CardSubtitle><FontAwesomeIcon icon='calendar-alt' className="fa-1x mr-2"/>{event.deadline}</CardSubtitle>
+                      <CardSubtitle><FontAwesomeIcon icon='calendar-alt' className="fa-1x mr-2"/>{deadline}</CardSubtitle>
                     </Col>
                     <Col sm={6}>
-                      <CardSubtitle><FontAwesomeIcon icon='map-marker-alt' className="fa-1x mr-2"/>{event.location}</CardSubtitle>
-                      <Link to={'/user/event/details/' + event._id}>Details...</Link>
+                      <CardSubtitle><FontAwesomeIcon icon='map-marker-alt' className="fa-1x mr-2"/>{location}</CardSubtitle>
+                      <Link to={'/user/event/details/' + _id}>Details...</Link>
                     </Col>
                 </Row>
                   <Button block 
                   color="primary" 
                   className="my-3" 
-                  value={event.id}
+                  value={_id}
                   onClick={this.handleJoin}>
                   Join Now
                   </Button>

@@ -24,7 +24,6 @@ class UserEventDetails extends Component {
     // )
 
     const events = this.props.events? (
-      
       <Card className="whitebg">
         <CardBody>
           <CardTitle>{this.props.events.title}</CardTitle>
@@ -45,18 +44,14 @@ class UserEventDetails extends Component {
           <p className="">Location: {this.props.events.location}</p>
           <hr />
           <CardText>Description: {this.props.events.description}</CardText>
-          {/* <CardText>{this.props.skillSet.map(skill => <p key={skill._id}>{skill.name}</p>)}</CardText> */}
-          {/* <ListGroup>
-            <CardText>Required Skillset :</CardText>            
-            <ListGroupItem className="justify-content-between">{}</ListGroupItem>
-            <ListGroupItem className="justify-content-between">jaga jarak</ListGroupItem>
-            <ListGroupItem className="justify-content-between">jaga jaga </ListGroupItem>
-          </ListGroup> */}
+          <div>Skillset Needed: {this.props.events.skillSet.map(skill => <CardText key={skill._id}>{skill.name}</CardText> )}</div>
+          
           <div className="d-flex justify-content-center align-items-center my-3">
             <Button color='primary' className="mx-5">JOIN</Button>
           </div>
         </CardBody>
       </Card>
+      
     ) : (
       <div>
         <Spinner type="grow" color="primary" />
