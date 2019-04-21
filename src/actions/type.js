@@ -12,6 +12,7 @@ export const EDIT_USERPROFILE = 'EDIT_USERPROFILE';
 export const SEARCH_ARTICLE = 'SEARCH_ARTICLE';
 export const SEARCH_EVENT = 'SEARCH_EVENT';
 export const EDIT_USERPHOTO = 'EDIT_USERPRHOTO';
+export const GET_USERSKILLSET = 'GET_USERSKILLSET'
 
 //actions for organization
 export const ADD_EVENT = 'ADD_EVENT';
