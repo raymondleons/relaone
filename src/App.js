@@ -29,6 +29,15 @@ import UserEventDetailsPage from './pages/UserEventDetailsPage'
 import Login from './pages/LoginPage'
 import VerifiedAccount from './pages/VerifiedAccount'
 import LoginAdmin from './pages/admin/Login'
+import DashboardAdmin from './layout/Admin/DashboardPage'
+import AddNewArticle from './pages/admin/AddNewArticle'
+import UserPage from './layout/Admin/UserPage'
+import SkillSet from './layout/Admin/SkillSet'
+import AddNewSkillSet from './components/AddNewSkillSet'
+import ArticlePage from './layout/Admin/ArticlePage'
+import OrganizationPage from './layout/Admin/OrganizationPage'
+import EventPage from './layout/Admin/EventPage'
+
 import OrganizationProfilePage from './pages/OrganizationProfilePage'
 import EventDetailOrgPage from './pages/EventDetailOrgPage'
 import ArticleListOrgPage from './pages/ArticleListOrgPage';
@@ -72,6 +81,14 @@ class App extends Component {
             <Route path='/login' component={Login} exact />
             <Route path="/account-verified" exact component={VerifiedAccount}/>
             <Route path="/admin/login" exact component={LoginAdmin} />
+            <Route path="/admin/dashboard" exact component={DashboardAdmin} />
+            <Route path="/admin/article/add-new" exact component={AddNewArticle} />
+            <Route path="/admin/users" exact component={UserPage} />
+            <Route path="/admin/skill-set" exact component={SkillSet} />
+            <Route path="/admin/skill-set/add" exact component={AddNewSkillSet} />
+            <Route path="/admin/article" exact component={ArticlePage} />
+            <Route path="/admin/organization" exact component={OrganizationPage} />
+            <Route path="/admin/events" exact component={EventPage} />
             <Route path="/organization/profile" exact component={OrganizationProfilePage} />
             <Route path="/event/detail/:event_id" exact component={EventDetailOrgPage}/>
             <Route path="/organization/article" exact component={ArticleListOrgPage}/>
