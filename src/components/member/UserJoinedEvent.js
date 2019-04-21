@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import {Table, Spinner} from 'reactstrap'
 import {Link} from 'react-router-dom'
 import { connect } from 'react-redux';
-import { getUserJoinedEvent } from '../../actions/memberActions' ;
+import { getUserJoinedEvent, getUserProfile } from '../../actions/memberActions' ;
 import Moment from 'moment'
 
 class UserJoinedEvent extends Component {
 
   componentDidMount(){
-    this.props.getUserJoinedEvent();
+    this.props.getUserJoinedEvent()
+    this.props.getUserProfile();
   }
 
   render() {
@@ -20,7 +21,7 @@ class UserJoinedEvent extends Component {
     const events = this.props.events 
     console.log(events)
       const displayEvent = events.length ? (
-          events.map(({_id, title, location, quota, quotaMax, organization}, i) => {
+          events.map(({_id, title, location, quota, quotaMax, organization, member}, i) => {
             return(
               <tr>
                 <td>1.</td>
@@ -29,6 +30,12 @@ class UserJoinedEvent extends Component {
                 <td key={_id}>{location}</td>
                 <td key={_id}>{quota}/{quotaMax}</td>
                 <td key={_id}>{deadline}</td> 
+                <td>
+                  {/* {member.filter(members => members.idMember === this.props.id  {
+                      return members.status
+                    }
+                  )} */}
+                </td>
               </tr>
             )
           })
@@ -62,6 +69,7 @@ class UserJoinedEvent extends Component {
               <th>Location</th>
               <th>Quota</th>
               <th>Due Date</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -76,12 +84,14 @@ class UserJoinedEvent extends Component {
 
 const mapStateToProps = state => {
   return {
-      events: state.event.events
+      events: state.event.events,
+      id: state.userProfile.id
   }
 }
 const mapDispatchToProps = dispatch => {
   return {
-      getUserJoinedEvent: () => { dispatch(getUserJoinedEvent())}
+      getUserJoinedEvent: () => { dispatch(getUserJoinedEvent())},
+      getUserProfile: () => { dispatch(getUserProfile()) }
   }
 }
 

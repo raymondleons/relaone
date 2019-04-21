@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Col, Row, Card, CardImg, CardBody, CardTitle, CardSubtitle, Button, Spinner} from 'reactstrap'
 import {Link} from 'react-router-dom'
 import '../../assets/css/_style.scss'
-import { getEvent } from '../../actions/memberActions' ;
+import { getEvent, putUserJoinEvent } from '../../actions/memberActions' ;
 import { connect } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -14,6 +14,12 @@ class UserEvent extends Component {
   componentDidMount(){
     this.props.getEvent();
   }
+
+  handleJoin = (e) => {
+    let id = e.target.value
+    putUserJoinEvent(id)
+  }
+  
 
   render() {
     // console.log(this.props.events)
@@ -44,10 +50,14 @@ class UserEvent extends Component {
                       <CardSubtitle><FontAwesomeIcon icon='map-marker-alt' className="fa-1x mr-2"/>{event.location}</CardSubtitle>
                       <Link to={'/user/event/details/' + event._id}>Details...</Link>
                     </Col>
-                    
                 </Row>
-                  
-                  <Button block color="primary" className="my-3" >Join Now</Button>
+                  <Button block 
+                  color="primary" 
+                  className="my-3" 
+                  value={event.id}
+                  onClick={this.handleJoin}>
+                  Join Now
+                  </Button>
               </CardBody>
             </Card>
           </Col>
@@ -82,7 +92,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-      getEvent: () => { dispatch(getEvent())}
+      getEvent: () => { dispatch(getEvent())},
+      joinEvent : (id) => { dispatch(getEvent())}
   }
 }
 

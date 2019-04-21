@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Row, Col, Card, CardImg, CardBody, CardText} from 'reactstrap'
+import { Row, Col, Card, CardImg, CardText, Spinner} from 'reactstrap'
 import {connect} from 'react-redux'
 import { getUserProfile } from '../../actions/memberActions';
 import '../../assets/css/_style2.scss'
@@ -23,6 +23,27 @@ library.add(faUserEdit);
     Moment.locale('en');
     let DOB = Moment(initbirthDate).format('YYYY-MM-DD')
 
+    let emergencyContact = {}
+      if (this.props.emergencyContact ){
+        emergencyContact = this.props.emergencyContact
+      }
+      console.log(emergencyContact)
+
+    const skillSets = this.props.skillSet
+    const displaySkillset = skillSets ? (
+      skillSets.map(skillset => {
+        return (
+            <li key={skillset._id}>{skillset.name}</li>
+        )
+      })
+    ) : (
+        <div>
+        <Spinner type="grow" color="primary" />
+        <Spinner type="grow" color="primary" />
+        <Spinner type="grow" color="primary" />
+        </div>
+    );
+      
     return (
       <div className="article-list">
         <div className="content-title d-flex justify-content-between align-items-center">
@@ -59,10 +80,24 @@ library.add(faUserEdit);
             </Col>
           </Row>
           <hr />
-          <CardBody>
+          <Row>
+            <Col sm={6}>
             <CardText className="font-weight-bold">Bio</CardText>
             <CardText>{this.props.bio}</CardText>
-          </CardBody>
+            <CardText className="font-weight-bold">Skill Set</CardText>
+            <ul>
+              {displaySkillset}
+            </ul>
+           
+            </Col>
+            <Col sm={6}>
+            <CardText className="font-weight-bold">Emergency Contact</CardText>
+            <CardText>Name: {this.props.emergencyContact.name}</CardText>
+            <CardText>Relationship: {this.props.emergencyContact.relationship}</CardText>
+            <CardText>Address: {this.props.emergencyContact.address}</CardText>
+            <CardText>Phone: {this.props.emergencyContact.phoneNumber}</CardText>
+            </Col>
+          </Row>
         </Card>
       </div>  
     )
@@ -79,7 +114,9 @@ const mapStateToProps = state => {
       birthDate: state.userProfile.birthDate,
       address: state.userProfile.address,
       phoneNumber: state.userProfile.phoneNumber,
-      bio: state.userProfile.bio
+      bio: state.userProfile.bio,
+      skillSet: state.userProfile.skillSet,
+      emergencyContact: state.userProfile.emergencyContact
     }
   }
   

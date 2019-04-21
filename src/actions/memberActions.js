@@ -1,6 +1,6 @@
 import axios from 'axios';
 import history from '../history';
-import { GET_ARTICLE, GET_USEREVENT, SIGN_UP, GET_USERJOINEDEVENT, GET_USERPROFILE, EDIT_USERPROFILE, SEARCH_ARTICLE, EDIT_USERPHOTO} from './type';
+import { GET_ARTICLE, GET_USEREVENT, SIGN_UP, GET_USERJOINEDEVENT, GET_USERPROFILE, EDIT_USERPROFILE, SEARCH_ARTICLE, EDIT_USERPHOTO, PUT_USERJOINEVENT} from './type';
 
 export const getArticle = () => {
     return dispatch => {
@@ -29,6 +29,21 @@ export const getEvent = () => {
               payload: res.data.data
           })
       })
+  }
+}
+
+export const putUserJoinEvent = (_id) => {
+  return dispatch => {
+    axios.put('https://relaonebinar.herokuapp.com/api/member/event',
+    {
+      headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWJmN2M3NDhhMzg0MTQwZmYxNGFkYiIsInVzZXJuYW1lIjoicmVnZWRpdCIsImVtYWlsIjoiYmlhc2FzYWphQGdtYWlsLmNvbSIsImZ1bGxuYW1lIjoiSW5kcmEgVGFtdmFuIiwicm9sZSI6Im1lbWJlciIsInBob3RvIjoiaHR0cDovL3Jlcy5jbG91ZGluYXJ5LmNvbS9yZWxhb25lL2ltYWdlL3VwbG9hZC92MTU1NTMxMzYzMi9NZW1iZXIvNWNhYmY3Yzc0OGEzODQxNDBmZjE0YWRiLmpwZyIsInNraWxsU2V0IjpbIjVjYTQ2YmJmZjJkM2Y5MTY5MWZlZjViOCIsIjVjYTQ2YmU4ZjJkM2Y5MTY5MWZlZjViYSJdLCJpYXQiOjE1NTU0MDA1MzcsImV4cCI6MTU1NjAwNTMzN30.eIL-ZKAH2YpIJ4P3dsrunq2JgkmynhPo7BuDW2ENtKM"}
+    })
+    .then(res => {
+      dispatch ({
+          type: PUT_USERJOINEVENT,
+          _id
+      })
+    })
   }
 }
 
@@ -104,6 +119,7 @@ export const getUserProfile = () => {
         headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWJmN2M3NDhhMzg0MTQwZmYxNGFkYiIsInVzZXJuYW1lIjoicmVnZWRpdCIsImVtYWlsIjoiYmlhc2FzYWphQGdtYWlsLmNvbSIsImZ1bGxuYW1lIjoiSW5kcmEgVGFtdmFuIiwicm9sZSI6Im1lbWJlciIsInBob3RvIjoiaHR0cDovL3Jlcy5jbG91ZGluYXJ5LmNvbS9yZWxhb25lL2ltYWdlL3VwbG9hZC92MTU1NTMxMzYzMi9NZW1iZXIvNWNhYmY3Yzc0OGEzODQxNDBmZjE0YWRiLmpwZyIsInNraWxsU2V0IjpbIjVjYTQ2YmJmZjJkM2Y5MTY5MWZlZjViOCIsIjVjYTQ2YmU4ZjJkM2Y5MTY5MWZlZjViYSJdLCJpYXQiOjE1NTU0MDA1MzcsImV4cCI6MTU1NjAwNTMzN30.eIL-ZKAH2YpIJ4P3dsrunq2JgkmynhPo7BuDW2ENtKM"}
       })
       .then(res => {
+        console.log(res.data.data)
           dispatch ({
           type: GET_USERPROFILE,
           photo : res.data.data.photo,
@@ -114,7 +130,10 @@ export const getUserProfile = () => {
           birthDate : res.data.data.birthDate,
           address : res.data.data.address,
           phoneNumber : res.data.data.phoneNumber,
-          bio : res.data.data.bio
+          bio : res.data.data.bio,
+          emergencyContact: res.data.data.emergencyContact,
+          skillSet: res.data.data.skillSet,
+          id : res.data.data._id
           })
       })
   }

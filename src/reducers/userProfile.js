@@ -13,6 +13,7 @@ const initialState={
     birthDate:'',
     emergencyContact:'',
     skillSet:'',
+    id:''
 }
 
 const userProfile=(state=initialState, action) => {
@@ -28,7 +29,9 @@ const userProfile=(state=initialState, action) => {
                 username: action.username,
                 phoneNumber: action.phoneNumber,
                 address: action.address,
-                idCard: action.idCard
+                idCard: action.idCard,
+                skillSet: action.skillSet,
+                emergencyContact: action.emergencyContact
             }
             case GET_USERPROFILE:
             return {
@@ -43,7 +46,10 @@ const userProfile=(state=initialState, action) => {
                 phoneNumber: action.phoneNumber,
                 address: action.address,
                 idCard: action.idCard,
-                birthDate:action.birthDate
+                birthDate:action.birthDate,
+                skillSet: action.skillSet,
+                emergencyContact: action.emergencyContact,
+                id : action.id
             }
             case EDIT_USERPROFILE:
             return {

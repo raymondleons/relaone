@@ -23,7 +23,8 @@ class UserEventDetails extends Component {
     //   <p>loading...:)</p>
     // )
 
-    const events = this.props.events ? (
+    const events = this.props.events? (
+      
       <Card className="whitebg">
         <CardBody>
           <CardTitle>{this.props.events.title}</CardTitle>
@@ -34,16 +35,17 @@ class UserEventDetails extends Component {
             <Button color='primary' className="p-1">Join</Button>
           </div>
           <CardImg top width="100%" src={this.props.events.photo} alt="Card image cap" />
-          <div className="d-flex align-items-center">
-            {/* <div className="logoevent">
+          {/* <div className="d-flex align-items-center">
+            <div className="logoevent">
               <CardImg className="imgg" src={this.props.events.organization.photo} alt="Card image cap" />
             </div>
-            <CardSubtitle className="p-2">{this.props.events.organization.organizationName}</CardSubtitle> */}
-          </div>
+            <CardSubtitle className="p-2">{this.props.events.organization.organizationName}</CardSubtitle>
+          </div> */}
           <hr />      
           <p className="">Location: {this.props.events.location}</p>
           <hr />
           <CardText>Description: {this.props.events.description}</CardText>
+          {/* <CardText>{this.props.skillSet.map(skill => <p key={skill._id}>{skill.name}</p>)}</CardText> */}
           {/* <ListGroup>
             <CardText>Required Skillset :</CardText>            
             <ListGroupItem className="justify-content-between">{}</ListGroupItem>

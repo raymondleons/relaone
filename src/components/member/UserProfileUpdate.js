@@ -24,10 +24,10 @@ class FormUpdateProfile extends Component {
           address : props.address,
           phoneNumber : props.phoneNumber,
           bio : props.bio,
-          // _id : props._id,
-          // emergencyContact : props.emergencyContact,
-          // skillSet : props.skillSet,
-          // confirmed : props.confirmed,
+          _id : props._id,
+          emergencyContact : props.emergencyContact,
+          skillSet : props.skillSet,
+          confirmed : props.confirmed,
           redirect : false
         }
       }
@@ -46,10 +46,10 @@ class FormUpdateProfile extends Component {
             address : props.address,
             phoneNumber : props.phoneNumber,
             bio : props.bio,
-            // _id : props._id,
-            // emergencyContact : props.emergencyContact,
-            // skillSet : props.skillSet,
-            // confirmed : props.confirmed
+            _id : props._id,
+            emergencyContact : props.emergencyContact,
+            skillSet : props.skillSet,
+            confirmed : props.confirmed
 
       })
       }
@@ -72,10 +72,10 @@ class FormUpdateProfile extends Component {
             this.state.address,
             this.state.phoneNumber, 
             this.state.bio,
-            // this.state._id,
-            // this.state.confirmed,
-            // this.state.emergencyContact,
-            // this.state.skillSet
+            this.state._id,
+            this.state.confirmed,
+            this.state.emergencyContact,
+            this.state.skillSet
             );
         this.setState({
           redirect : true
@@ -219,10 +219,10 @@ const mapStateToProps = state =>{
         address : state.userProfile.address,
         bio : state.userProfile.bio,
         birthDate : state.userProfile.birthDate,
-        // _id : state.userProfile._id,
-        // emergencyContact : state.userProfile.emergencyContact,
-        // confirmed : state.userProfile.confirmed,
-        // skillSet : state.userProfile.skillSet
+        _id : state.userProfile._id,
+        emergencyContact : state.userProfile.emergencyContact,
+        confirmed : state.userProfile.confirmed,
+        skillSet : state.userProfile.skillSet
     }
   }
   
