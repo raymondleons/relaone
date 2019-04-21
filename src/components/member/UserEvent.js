@@ -43,14 +43,12 @@ class UserEvent extends Component {
                       </div>))}
                   </div> */}
                  
-                  {/* <div className="d-flex align-items-center">
-                  
+                  <div className="d-flex align-items-center">
                     <div className="logoevent">
-                      <CardImg className="imgg" src={org.photo} alt="No Photos" />
+                      <CardImg className="imgg" src={organization.photo} alt="No Photos" />
                     </div>
-                    <CardSubtitle className="p-2">{org.organizationName}</CardSubtitle>
-                  
-                    </div> */}
+                    <CardSubtitle className="p-2">{organization.organizationName}</CardSubtitle>
+                    </div>
                   <hr />
                   <Row>
                     <Col sm={6}>

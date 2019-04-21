@@ -139,8 +139,9 @@ export const getUserProfile = () => {
   }
 }
 
-export const editUserProfile = (fullname, username, email, idCard, birthDate, address, phoneNumber, bio, skillSet, emergencyContact) => {
+export const editUserProfile = (fullname, username, email, idCard, birthDate, address, phoneNumber, bio) => {
   return dispatch => {
+    console.log(fullname, username, email, idCard, birthDate, address, phoneNumber, bio)
       axios ({
           url: 'https://relaonebinar.herokuapp.com/api/member/profile',
           method: 'put',
@@ -155,9 +156,7 @@ export const editUserProfile = (fullname, username, email, idCard, birthDate, ad
             birthDate,
             address, 
             phoneNumber, 
-            bio,
-            skillSet,
-            emergencyContact
+            bio
           }
       })
           .then(res => {
@@ -171,10 +170,9 @@ export const editUserProfile = (fullname, username, email, idCard, birthDate, ad
               birthDate : res.data.data.birthDate,
               address : res.data.data.address,
               phoneNumber : res.data.data.phoneNumber,
-              bio : res.data.data.bio,
-              emergencyContact:res.data.data.emergencyContact,
-              skillSet : res.data.data.skillSet,
+              bio : res.data.data.bio
               })
+              history.push('/user/update-profile/success');
             }
           )
           .catch(err => 

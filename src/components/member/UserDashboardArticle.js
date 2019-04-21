@@ -1,120 +1,107 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import '../../assets/css/_style.scss';
-import {
-    Container,
-    Row,
-    Col,
-    Carousel,
-    CarouselItem,
-    CarouselControl,
-    CarouselIndicators
-  } from 'reactstrap';
-import { getArticle } from '../../actions/memberActions' ;
+import { Spinner, Row, Col, Card, CardImg, CardBody, CardTitle, CardText, Form, Input, FormGroup } from 'reactstrap';
+import Dotdotdot from 'react-dotdotdot';
+import { getArticle, searchArticle } from '../../actions/memberActions' ;
+import { Link as Links } from 'react-router-dom';
 
-class UserDashboardArticle extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { activeIndex: 0 };
-        this.next = this.next.bind(this);
-        this.previous = this.previous.bind(this);
-        this.goToIndex = this.goToIndex.bind(this);
-        this.onExiting = this.onExiting.bind(this);
-        this.onExited = this.onExited.bind(this);
-      }
-    
-    onExiting() {
-    this.animating = true;
+class ArticleList extends Component {
+
+    componentWillMount(){
+    this.props.getArticle();
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      articles : [],
+      search : ""
     }
+  }
 
-    onExited() {
-    this.animating = false;
-    }
+  componentWillReceiveProps() {
+    this.setState({
+      articles : this.props.articles
+    })
+  }
 
-    next() {
-    if (this.animating) return;
-    const nextIndex = this.state.activeIndex === this.props.howToJoin.length - 1 ? 0 : this.props.activeIndex + 1;
-    this.setState({ activeIndex: nextIndex });
-    }
+  onChange = (e) => {
+    console.log(this.props.articles)
+    this.setState({
+        [e.target.name]: e.target.value
+    })
+    console.log(e.target.value);
+    this.props.searchArticle(e.target.value);
+    console.log(this.props.articles)
+  }
 
-    previous() {
-    if (this.animating) return;
-    const nextIndex = this.state.activeIndex === 0 ? this.props.howToJoin.length - 1 : this.props.activeIndex - 1;
-    this.setState({ activeIndex: nextIndex });
-    }
+  onSubmit = (e) => {
+    e.preventDefault();
+  }
+  
 
-    goToIndex(newIndex) {
-    if (this.animating) return;
-    this.setState({ activeIndex: newIndex });
-    }
-
-    render() {
-    const { activeIndex } = this.state;
-    const articles = this.props.articles
-        const slides = articles.length ? (
-          articles.map((article => {
-          return (
-            <CarouselItem
-              onExiting={this.onExiting}
-              onExited={this.onExited}
-              key={article._id}
-            >
-              <Container>
-                <Row>
-                  <Col xs="0" sm="0" md="2"></Col>
-                  <Col xs="4" sm="4" md="2">
-                    <img src={article.photo} alt={article._id} className="how-to-join-image" />
-                  </Col>
-                  <Col xs="8" sm="8" md="6">
-                    <p><span className="bold-text">{article.title}</span></p>
-                    <br></br>
-                    <p>{article.description}</p>
-                    <br></br>
-                  </Col>
-                </Row>
-              </Container>
-            </CarouselItem>
-          )
-        }))
-        ): (
-          <div>wait a moment...</div>
+  render() {
+      const articles = this.props.articles;      
+      const displayArticle = 
+      articles.length ? (
+        articles.map(article => {
+              return (
+                <Card className="article-card" key={article._id}>
+                    <Row>
+                        <Col md="4">
+                            <CardImg className="article-image" src={article.photo} alt={article._id}></CardImg>
+                        </Col>
+                        <Col md="8">
+                            <CardBody>
+                                <CardTitle><h4><Links to={'/article/detail/' + article._id}>{article.title}</Links></h4></CardTitle>
+                                <CardText><Dotdotdot clamp={3}>{article.description}</Dotdotdot></CardText>
+                                {/* <CardText className="text-muted">Created by {article.createdBy.name}</CardText> */}
+                            </CardBody>
+                        </Col>
+                    </Row>
+                </Card>
+              )
+          })
+      ) : (
+          <div>
+            <Spinner type="grow" color="primary" />
+            <Spinner type="grow" color="primary" />
+            <Spinner type="grow" color="primary" />   
+          </div>
       );
-      
 
-        return (
-            <div className="section how-to-join" id="how-to-join">
-                <h4 className="text-center bold-text">How to Join</h4>
-                <br></br>
-                <Carousel
-                activeIndex={activeIndex}
-                next={this.next}
-                previous={this.previous}
-                >
-                    <CarouselIndicators items={articles} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
-                    {slides}
-                    <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-                    <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
-                </Carousel>
-            </div>
-            
-        );
-    }
+    return (
+      <div className="article-list">
+        <div className="content-title">
+            <h3 className="bold-text">Article</h3>
+        </div>
+        <Form onSubmit={this.onSubmit}>
+            <FormGroup>
+                <Input onChange={this.onChange} className="form-control" type="text" name="search" id="exampleSearch" placeholder="search"/>
+            </FormGroup>
+        </Form>
+        <div>
+            {displayArticle}
+        </div>
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = state => {
-  console.log(state);
-  return {
-    articles: state.article.articles,
-    activeIndex: state.landingPage.activeIndex
-  }
+    return {
+        articles: state.article.articles
+    }
 }
-
 
 const mapDispatchToProps = dispatch => {
   return {
-    getArticle: () => { dispatch(getArticle()) }
+    getArticle: () => { dispatch(getArticle()) },
+    searchArticle: (keyword) => { dispatch(searchArticle(keyword))}
   }
-  }
+}
 
-export default connect(mapStateToProps,  mapDispatchToProps)(UserDashboardArticle);
+export default connect(mapStateToProps, mapDispatchToProps)(ArticleList);
+
 

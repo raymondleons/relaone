@@ -61,8 +61,8 @@ const userProfile=(state=initialState, action) => {
                 phoneNumber: action.phoneNumber,
                 address: action.address,
                 idCard: action.idCard,
-                skillSet:action.skillSet,
-                emergencyContact:action.emergencyContact
+                birthDate:action.birthDate
+            
             }
             case EDIT_USERPHOTO:
             return {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import '../../assets/css/_style.scss'
-import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getUserProfile, editUserProfile } from '../../actions/memberActions';
 import Moment from 'moment'
@@ -23,12 +22,7 @@ class FormUpdateProfile extends Component {
           birthDate : props.birthDate,
           address : props.address,
           phoneNumber : props.phoneNumber,
-          bio : props.bio,
-          _id : props._id,
-          emergencyContact : props.emergencyContact,
-          skillSet : props.skillSet,
-          confirmed : props.confirmed,
-          redirect : false
+          bio : props.bio
         }
       }
     
@@ -45,11 +39,7 @@ class FormUpdateProfile extends Component {
             birthDate : props.birthDate,
             address : props.address,
             phoneNumber : props.phoneNumber,
-            bio : props.bio,
-            _id : props._id,
-            emergencyContact : props.emergencyContact,
-            skillSet : props.skillSet,
-            confirmed : props.confirmed
+            bio : props.bio
 
       })
       }
@@ -62,7 +52,6 @@ class FormUpdateProfile extends Component {
     
       onSubmit = (e) => {
         e.preventDefault();
-       
         this.props.editUserProfile(
             this.state.fullame, 
             this.state.username, 
@@ -71,29 +60,16 @@ class FormUpdateProfile extends Component {
             this.state.birthDate,    
             this.state.address,
             this.state.phoneNumber, 
-            this.state.bio,
-            this.state._id,
-            this.state.confirmed,
-            this.state.emergencyContact,
-            this.state.skillSet
-            );
-        this.setState({
-          redirect : true
-        })
+            this.state.bio
+            )
     }
     
 
   render() {
-    
-    
+  
     let initbirthDate = this.state.birthDate
     Moment.locale('en');
     let DOB = Moment(initbirthDate).format('YYYY-MM-DD')
-
-    const { redirect } = this.state;
-    if (redirect) {
-      return <Redirect to="/user/update-profile/success"/>
-    }
 
     return (
       <div className="form-update-profile">
@@ -218,11 +194,7 @@ const mapStateToProps = state =>{
         idCard : state.userProfile.idCard,
         address : state.userProfile.address,
         bio : state.userProfile.bio,
-        birthDate : state.userProfile.birthDate,
-        _id : state.userProfile._id,
-        emergencyContact : state.userProfile.emergencyContact,
-        confirmed : state.userProfile.confirmed,
-        skillSet : state.userProfile.skillSet
+        birthDate : state.userProfile.birthDate
     }
   }
   
@@ -233,16 +205,16 @@ const mapStateToProps = state =>{
       
       getUserProfile: () => { dispatch(getUserProfile()) },
       
-      editUserProfile: (fullname,
+      editUserProfile: (
+        fullname,
         username,
          email, 
          phoneNumber, 
          idCard, 
          address, 
          bio, 
-         birthDate, _id, emergencyContact, confirmed, skillSet
-         ) => { dispatch(editUserProfile(fullname, username, email, phoneNumber, idCard, address, bio,
-          birthDate, _id, emergencyContact, confirmed, skillSet
+         birthDate
+         ) => { dispatch(editUserProfile(fullname, username, email, phoneNumber, idCard, address, bio, birthDate
           ))}
          
     }
