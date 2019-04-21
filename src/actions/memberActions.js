@@ -1,6 +1,11 @@
 import axios from 'axios';
 import { GET_ARTICLE, GET_PROFILE, SEARCH_ARTICLE } from './type';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+toast.configure({
+        position: "top-center"}
+)
 const url = "https://relaonebinar.herokuapp.com/api";
 
 export const getArticle = () => {
@@ -98,6 +103,7 @@ export const searchArticle = (keyword) => {
       .then(res => {
         if (res.data.message === "Article not found") {
           console.log('not found');
+          toast.warn(res.data.message)
         } else {
           dispatch ({
               type: SEARCH_ARTICLE,

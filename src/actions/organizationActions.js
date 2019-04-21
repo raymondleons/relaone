@@ -12,7 +12,7 @@ export const getSkillset = () => {
     return dispatch => {
         axios.get('https://relaonebinar.herokuapp.com/api/organization/skillset',
         {
-            headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODI5NTQwLCJleHAiOjE1NTY0MzQzNDB9.iRYPQuq2SdKqdCLGqwXj1qSUT2B5f74S5YlXtIv02_Y"}
+            headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiQmFkYW4gUGVuYW5nZ3VsYW5nYW4gQmVuY2FuYSBEYWVyYWgiLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODU2OTk2LCJleHAiOjE1NTY0NjE3OTZ9.H7Q_PxOD2SadAK1GLCxoUsXmdrOPW7DTjSIWPEQPrxU"}
         })
         .then(res => {
             dispatch ({
@@ -27,7 +27,7 @@ export const getEvent = () => {
     return dispatch => {
         axios.get('https://relaonebinar.herokuapp.com/api/organization/event',
         {
-            headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODI5NTQwLCJleHAiOjE1NTY0MzQzNDB9.iRYPQuq2SdKqdCLGqwXj1qSUT2B5f74S5YlXtIv02_Y"}
+            headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiQmFkYW4gUGVuYW5nZ3VsYW5nYW4gQmVuY2FuYSBEYWVyYWgiLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODU2OTk2LCJleHAiOjE1NTY0NjE3OTZ9.H7Q_PxOD2SadAK1GLCxoUsXmdrOPW7DTjSIWPEQPrxU"}
         })
         .then(res => {
             dispatch ({
@@ -47,7 +47,7 @@ export const addEvent = (title, description, deadline, location, quotaMax, skill
             url: 'https://relaonebinar.herokuapp.com/api/organization/event',
             method: 'post',
             headers: {
-                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODI5NTQwLCJleHAiOjE1NTY0MzQzNDB9.iRYPQuq2SdKqdCLGqwXj1qSUT2B5f74S5YlXtIv02_Y'
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiQmFkYW4gUGVuYW5nZ3VsYW5nYW4gQmVuY2FuYSBEYWVyYWgiLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODU2OTk2LCJleHAiOjE1NTY0NjE3OTZ9.H7Q_PxOD2SadAK1GLCxoUsXmdrOPW7DTjSIWPEQPrxU'
             },
             data: {
                 title,
@@ -63,10 +63,14 @@ export const addEvent = (title, description, deadline, location, quotaMax, skill
                 type: ADD_EVENT,
                 payload: res.data.data
                 });
-                history.push('/event');
+                toast.success("Your event is successfully created")
+                history.push('/organization/event');
               }
             )
-            .catch(err => console.log(err))
+            .catch(err => {
+                console.log(err)
+                toast.error("Error. Please check your input.")
+            })
     }
 }
 
@@ -76,7 +80,7 @@ export const delEvent = (id) => {
             url: 'https://relaonebinar.herokuapp.com/api/organization/event',
             method: 'delete',
             headers: {
-                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODI5NTQwLCJleHAiOjE1NTY0MzQzNDB9.iRYPQuq2SdKqdCLGqwXj1qSUT2B5f74S5YlXtIv02_Y'
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiQmFkYW4gUGVuYW5nZ3VsYW5nYW4gQmVuY2FuYSBEYWVyYWgiLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODU2OTk2LCJleHAiOjE1NTY0NjE3OTZ9.H7Q_PxOD2SadAK1GLCxoUsXmdrOPW7DTjSIWPEQPrxU'
             },
             data: {
                 id
@@ -88,6 +92,7 @@ export const delEvent = (id) => {
                     type: DEL_EVENT,
                     id
                 })
+                toast.success("Your event is successfully deleted")
             })
             .catch(err => console.log(err))
         }
@@ -101,7 +106,7 @@ export const editEvent = (_id, title, description, location, quotaMax, skillSet,
             url: 'https://relaonebinar.herokuapp.com/api/organization/event',
             method: 'put',
             headers: { 
-                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODI5NTQwLCJleHAiOjE1NTY0MzQzNDB9.iRYPQuq2SdKqdCLGqwXj1qSUT2B5f74S5YlXtIv02_Y'
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiQmFkYW4gUGVuYW5nZ3VsYW5nYW4gQmVuY2FuYSBEYWVyYWgiLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODU2OTk2LCJleHAiOjE1NTY0NjE3OTZ9.H7Q_PxOD2SadAK1GLCxoUsXmdrOPW7DTjSIWPEQPrxU'
             },
             data: {
                 "id": _id,
@@ -118,10 +123,14 @@ export const editEvent = (_id, title, description, location, quotaMax, skillSet,
                 dispatch({
                 type: EDIT_EVENT
                 });
+                toast.success("Your event has been updated")
                 history.push('/event');
                 }
             )
-            .catch(err => console.log(err))
+            .catch(err => {
+                console.log(err)
+                toast.error("Error. Please check your input.")
+            })
     }
 }
   
@@ -131,7 +140,7 @@ export const editEventPhoto = (formdata) => {
             url: 'https://relaonebinar.herokuapp.com/api/organization/uploadphotoevent',
             method: 'put',
             headers: { 
-                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODI5NTQwLCJleHAiOjE1NTY0MzQzNDB9.iRYPQuq2SdKqdCLGqwXj1qSUT2B5f74S5YlXtIv02_Y'
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiQmFkYW4gUGVuYW5nZ3VsYW5nYW4gQmVuY2FuYSBEYWVyYWgiLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODU2OTk2LCJleHAiOjE1NTY0NjE3OTZ9.H7Q_PxOD2SadAK1GLCxoUsXmdrOPW7DTjSIWPEQPrxU'
             },
             data: formdata
         })
@@ -141,9 +150,13 @@ export const editEventPhoto = (formdata) => {
                 type: EDIT_EVENT_PHOTO,
                 photo: res.data.data.photo
                 })
+                toast.success("Your event has been updated")
                 }
             )
-            .catch(err => console.log(err))
+            .catch(err => {
+                console.log(err)
+                toast.error("Error. Please check your input.")
+            })
     }
 }
 
@@ -151,7 +164,7 @@ export const getProfile = () => {
     return dispatch => {
         axios.get('https://relaonebinar.herokuapp.com/api/organization/profile',
         {
-            headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODI5NTQwLCJleHAiOjE1NTY0MzQzNDB9.iRYPQuq2SdKqdCLGqwXj1qSUT2B5f74S5YlXtIv02_Y"}
+            headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiQmFkYW4gUGVuYW5nZ3VsYW5nYW4gQmVuY2FuYSBEYWVyYWgiLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODU2OTk2LCJleHAiOjE1NTY0NjE3OTZ9.H7Q_PxOD2SadAK1GLCxoUsXmdrOPW7DTjSIWPEQPrxU"}
         })
         .then(res => {
             dispatch ({
@@ -174,7 +187,7 @@ export const editProfile = (organizationName, username, email, phoneNumber) => {
             url: 'https://relaonebinar.herokuapp.com/api/organization/profile',
             method: 'put',
             headers: { 
-                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODI5NTQwLCJleHAiOjE1NTY0MzQzNDB9.iRYPQuq2SdKqdCLGqwXj1qSUT2B5f74S5YlXtIv02_Y'
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiQmFkYW4gUGVuYW5nZ3VsYW5nYW4gQmVuY2FuYSBEYWVyYWgiLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODU2OTk2LCJleHAiOjE1NTY0NjE3OTZ9.H7Q_PxOD2SadAK1GLCxoUsXmdrOPW7DTjSIWPEQPrxU'
             },
             data: {
                 organizationName, 
@@ -209,7 +222,7 @@ export const editPhoto = (formdata) => {
             url: 'https://relaonebinar.herokuapp.com/api/organization/uploadphoto',
             method: 'put',
             headers: { 
-                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODI5NTQwLCJleHAiOjE1NTY0MzQzNDB9.iRYPQuq2SdKqdCLGqwXj1qSUT2B5f74S5YlXtIv02_Y'
+                'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiQmFkYW4gUGVuYW5nZ3VsYW5nYW4gQmVuY2FuYSBEYWVyYWgiLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODU2OTk2LCJleHAiOjE1NTY0NjE3OTZ9.H7Q_PxOD2SadAK1GLCxoUsXmdrOPW7DTjSIWPEQPrxU'
             },
             data: formdata
         })
@@ -222,7 +235,10 @@ export const editPhoto = (formdata) => {
                 history.push('/organization/update-profile/success');
               }
             )
-            .catch(err => console.log(err))
+            .catch(err => {
+                console.log(err)
+                toast.error("Error. Please check your input.")
+            })
     }
 }
 
@@ -230,7 +246,7 @@ export const getArticle = () => {
     return dispatch => {
         axios.get('https://relaonebinar.herokuapp.com/api/organization/article',
         {
-            headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODI5NTQwLCJleHAiOjE1NTY0MzQzNDB9.iRYPQuq2SdKqdCLGqwXj1qSUT2B5f74S5YlXtIv02_Y"}
+            headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiQmFkYW4gUGVuYW5nZ3VsYW5nYW4gQmVuY2FuYSBEYWVyYWgiLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODU2OTk2LCJleHAiOjE1NTY0NjE3OTZ9.H7Q_PxOD2SadAK1GLCxoUsXmdrOPW7DTjSIWPEQPrxU"}
         })
         .then(res => {
             dispatch ({
@@ -245,7 +261,7 @@ export const searchArticle = (keyword) => {
     return dispatch => {
         axios.get(`https://relaonebinar.herokuapp.com/api/organization/searcharticle?search=${keyword}`,
         {
-          headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiVGhlIFBvd2VyIG9mIENsYXciLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODI5NTQwLCJleHAiOjE1NTY0MzQzNDB9.iRYPQuq2SdKqdCLGqwXj1qSUT2B5f74S5YlXtIv02_Y"}          
+          headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTMyNGE0YWRiYTlhNDA5YjY5YWE3YyIsInVzZXJuYW1lIjoibWFudGFwIiwiZW1haWwiOiJwYWxzdWFzbGk2OUBnbWFpbC5jb20iLCJvcmdhbml6YXRpb25OYW1lIjoiQmFkYW4gUGVuYW5nZ3VsYW5nYW4gQmVuY2FuYSBEYWVyYWgiLCJyb2xlIjoib3JnYW5pemF0aW9uIiwiaWF0IjoxNTU1ODU2OTk2LCJleHAiOjE1NTY0NjE3OTZ9.H7Q_PxOD2SadAK1GLCxoUsXmdrOPW7DTjSIWPEQPrxU"}          
         })
         .then(res => {
           if (res.data.message === "Article not found") {

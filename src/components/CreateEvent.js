@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import '../assets/css/_style.scss';
 import { getSkillset, addEvent } from '../actions/organizationActions';
-import { Redirect } from 'react-router-dom';
 
 class CreateEvent extends Component {
 
@@ -16,8 +15,7 @@ class CreateEvent extends Component {
             location : "",
             quotaMax : "", 
             skillset : [],
-            skillsets : props.skillsets,
-            redirect : false
+            skillsets : props.skillsets
         }
     }
 
@@ -56,24 +54,17 @@ class CreateEvent extends Component {
      onSubmit = (e) => {
         e.preventDefault();
         this.props.addEvent(this.state.title, this.state.description, this.state.deadline, this.state.location, this.state.quotaMax, this.state.skillset);
-        this.setState({
-            title : "",
-            description : "",
-            deadline : "",
-            location : "",
-            quotaMax : "",
-            skillset : [],
-            redirect : true
-        });
+        // this.setState({
+        //     title : "",
+        //     description : "",
+        //     deadline : "",
+        //     location : "",
+        //     quotaMax : "",
+        //     skillset : []
+        // });
     }
 
   render() {
-
-    const { redirect } = this.state;
-
-    if (redirect) {
-        return <Redirect to='/event'/>
-    } 
 
     const skillsets = this.props.skillsets
     const displaySkillset = skillsets.length ? (
