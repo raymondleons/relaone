@@ -16,10 +16,10 @@ class OrganizationSideBar extends Component {
           <div className="side-bar-item" id="event">Event</div>
             <UncontrolledCollapse toggler="#event">
               <div className="side-bar-subitem">
-                <Links className="side-bar-link" to="/event">Event List</Links>
+                <Links className="side-bar-link" to="/organization/event">Event List</Links>
               </div>
               <div className="side-bar-subitem">
-                <Links className="side-bar-link" to="/create-event">Create Event</Links>
+                <Links className="side-bar-link" to="/organization/create-event">Create Event</Links>
               </div>
             </UncontrolledCollapse>
           <div className="side-bar-item"><Links className="side-bar-link" to="/organization/article">Article</Links></div>

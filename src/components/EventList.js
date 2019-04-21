@@ -25,7 +25,7 @@ class EventList extends Component {
         events.map(({_id, title, location, quotaMax, deadline, skillSet}, i) => {
             return(
                 <tr key={_id}>
-                  <td><Link to={'/event/detail/' + _id}>{title}</Link></td>
+                  <td><Link to={'/organization/event/detail/' + _id}>{title}</Link></td>
                   <td>{location}</td>
                   <td>{quotaMax}</td>
                   <td>{deadline}</td>
@@ -88,7 +88,7 @@ class EventList extends Component {
         </div>
         {displayTable}
         <div className="event-action">
-            <Button color="primary"><Link to="/create-event" className="create-event-button">Create Event</Link></Button>
+            <Button color="primary"><Link to="/organization/create-event" className="create-event-button">Create Event</Link></Button>
         </div>
       </div>
     )
