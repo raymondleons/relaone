@@ -33,13 +33,13 @@ class NavigationBar extends Component {
             <NavbarToggler onClick={this.toggle}/>
             <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
-                <NavItem>
+                <NavItem className="navitem">
                         <Links to="/find-volunteer">Find Volunteer</Links>
                 </NavItem>
-                <NavItem>
+                <NavItem className="navitem">
                         <Links to="/find-activity">Join Event</Links>
                 </NavItem>
-                <NavItem>
+                <NavItem className="navitem">
                         <Links to="/register">Join</Links>
                 </NavItem>
                 <NavItem>
