@@ -48,9 +48,24 @@ import FindActivity from './pages/FindActivity'
 import UpdateOrganizationPhoto from './pages/UpdateOrganizationPhoto'
 import EventPhotoEditPage from './pages/EventPhotoEditPage'
 import history from './history'
+import VolunteerListPage from './pages/VolunteerListPage'
+import VolunteerDetailPage from './pages/VolunteerDetailPage'
+import LoginContoh from './pages/Login'
 
 class App extends Component {
   render() {
+      let minutes = 1;
+      let now = new Date().getTime();
+      let setupTime = localStorage.getItem('setupTime');
+      if (setupTime == null) {
+          localStorage.setItem('setupTime', now)
+      } else {
+          if(now-setupTime > minutes*60*1000) {
+              localStorage.clear()
+              localStorage.setItem('setupTime', now);
+          }
+      }
+
     return (
       <Provider store={store}>
         <Router history={history}>
@@ -98,7 +113,10 @@ class App extends Component {
             <Route path="/find-volunteer" exact component={FindVolunteer}/>
             <Route path="/find-activity" exact component={FindActivity}/>
             <Route path="/organization/update-photo" exact component={UpdateOrganizationPhoto}/>
-            <Route path="/organization/event-photo/edit/:event_id" exact component={EventPhotoEditPage}/>         
+            <Route path="/organization/event-photo/edit/:event_id" exact component={EventPhotoEditPage}/>    
+            <Route path="/organization/volunteer-list" exact component={VolunteerListPage}/>
+            <Route path="/organization/volunteer/detail/:volunteer_id" exact component={VolunteerDetailPage}/>
+            <Route path="/contohlogin" exact component={LoginContoh}/>     
           </div>
         </Router>
         </Provider>

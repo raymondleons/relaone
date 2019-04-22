@@ -652,6 +652,27 @@ body {
     margin-bottom: 10px;
 }
 
+.volunteer-card {
+    margin-top: 30px;
+    text-align: center !important;
+}
+
+.volunteer-picture {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center !important;
+}
+
+.volunteer-detail {
+    height: 20px;
+}
+
 .logo{
  width:200px;
  margin:auto;

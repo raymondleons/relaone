@@ -9,9 +9,12 @@ class OrganizationSideBar extends Component {
         <div className="side-bar-list">
           <div className="side-bar-item" id="volunteer">Volunteer</div>
             <UncontrolledCollapse toggler="#volunteer">
-              <div className="side-bar-subitem">Registered</div>
-              <div className="side-bar-subitem">Accepted</div>
-              <div className="side-bar-subitem">Rejected</div>
+              <div className="side-bar-subitem">
+                <Links className="side-bar-link" to="/organization/volunteer-list">Volunteer List</Links>
+              </div>
+              <div className="side-bar-subitem">
+                <Links className="side-bar-link" to="/organization/event">Event List</Links>
+              </div>
             </UncontrolledCollapse>
           <div className="side-bar-item" id="event">Event</div>
             <UncontrolledCollapse toggler="#event">
