@@ -65,7 +65,7 @@ class Footer extends Component {
                     offset={-70}
                     duration= {500}
                 >How to Join</Link></p>
-                <p className="footer-links"><Links to="/terms" className="footer-links">Term and Condition</Links></p>
+                <p className="footer-links"><Links to="/terms" target="_blank" rel="noopener noreferrer" className="footer-links">Term and Condition</Links></p>
               </Col>
               <Col lg="2" className="footer-content">
                 <p className="bold-text">CONNECT</p>

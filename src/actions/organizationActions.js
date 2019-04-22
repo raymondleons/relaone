@@ -1,4 +1,5 @@
 import axios from 'axios';
+<<<<<<< HEAD
 import { ADD_EVENT, 
         GET_SKILLSET, 
         GET_EVENT, 
@@ -13,6 +14,9 @@ import { ADD_EVENT,
         GET_VOLUNTEER,
         SEARCH_VOLUNTEER,
         SIGN_IN_ORG } from './type';
+=======
+import { ADD_EVENT, GET_SKILLSET, GET_EVENT, GET_PROFILE, DEL_EVENT, EDIT_PROFILE, GET_ARTICLE, EDIT_PROFILE_PHOTO, EDIT_EVENT_PHOTO, SEARCH_ARTICLE, EDIT_EVENT, SIGN_UP} from './type';
+>>>>>>> ac6c27a541854d9512b40f6c63cf2d36f7ab1e35
 import history from '../history';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -258,6 +262,33 @@ export const editProfile = (organizationName, username, email, phoneNumber) => {
     }
 }
 
+export const signup = (organizationName, username, phoneNumber, email, password) => {
+    return dispatch => {
+      axios
+        .post("https://relaonebinar.herokuapp.com/api/organization/signup", {
+          organizationName,
+          username,
+          phoneNumber,
+          email,
+          password
+        })
+        .then(res => {
+          console.log(res);
+          dispatch({
+            type: SIGN_UP,
+            organizationName,
+            username,
+            phoneNumber,
+            email,
+            password
+          });
+          history.push('/register/success')
+        }) 
+        .catch(err => {
+          console.log(err.response);
+        });
+    };
+  };
 export const editPhoto = (formdata) => {
     return dispatch => {
         axios ({
@@ -320,6 +351,7 @@ export const searchArticle = (keyword) => {
     }
   }
 
+<<<<<<< HEAD
   export const getVolunteer = () => {
     return dispatch => {
         axios.get(`${url}/organization/showallmember`,
@@ -356,4 +388,28 @@ export const searchVolunteer = (keyword) => {
     }
   }
 
+=======
+const url = "https://relaonebinar.herokuapp.com/api";
+>>>>>>> ac6c27a541854d9512b40f6c63cf2d36f7ab1e35
 
+export const signIn = (username, password) => {
+    return dispatch => {
+      axios
+        .post(`${url}/organization/login`, {
+          username: username,
+          password: password
+        })
+        .then(res => {
+          console.log(res);
+          dispatch({
+            type: "SIGN_IN",
+            username,
+            password,
+            response: res.data
+          });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    };
+  };

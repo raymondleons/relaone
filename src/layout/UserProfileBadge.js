@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {Link} from 'react-router-dom'
 import {
   Row,
   Col
 } from 'reactstrap';
-import { getProfile } from '../actions/memberActions';
+import {getUserProfile } from '../actions/memberActions';
 
 class ProfileBadge extends Component {
 
   componentDidMount(){
-    this.props.getProfile();
+    this.props.getUserProfile();
   }
 
   render() {
@@ -25,7 +26,7 @@ class ProfileBadge extends Component {
               <img className="organization-picture" src={this.props.photo} alt={this.props.fullname}></img>
             </Col>
             <Col xs="9" sm="9" md="8">
-              <div className="profile-name"><b>{this.props.fullname}</b><br></br>{verifiedFunction}</div>
+              <p className="profile-name"><Link to="/user/profile"><b>{this.props.fullname}</b></Link><br></br>{verifiedFunction}</p>
             </Col>
           </Row>
         </div>
@@ -43,7 +44,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getProfile: () => { dispatch(getProfile()) }
+    getUserProfile: () => { dispatch(getUserProfile()) }
   }
 }
 
