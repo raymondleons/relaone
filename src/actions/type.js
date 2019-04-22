@@ -26,6 +26,6 @@ export const EDIT_PROFILE = 'EDIT_PROFILE';
 export const EDIT_PROFILE_PHOTO = 'EDIT_PROFILE_PHOTO';
 
 //actions for admin
-
+export const GET_USER = 'GET_USER';
 
 

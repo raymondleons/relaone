@@ -5,7 +5,8 @@ import history from './history'
 
 import LandingPage from './pages/LandingPage';
 import UpdateOrganizationProfile from './pages/UpdateOrganizationProfile';
-import {Router, Route } from 'react-router-dom';
+import './assets/css/_style.scss';
+import { Router, Route } from 'react-router-dom';
 import UpdateOrgProfileSuccess from './pages/UpdateOrgProfileSuccess';
 import UpdateUserProfileSuccess from './pages/UpdateUserProfileSuccess';
 import UserProfileUpdate from './pages/member/UserProfileUpdatePage'
@@ -34,6 +35,14 @@ import OrganizationRegister from './components/organization/OrganizationRegister
 import Login from './pages/LoginPage'
 import VerifiedAccount from './pages/VerifiedAccount'
 import LoginAdmin from './pages/admin/Login'
+import DashboardAdmin from './layout/Admin/DashboardPage'
+import AddNewArticle from './pages/admin/AddNewArticle'
+import UserPage from './layout/Admin/UserPage'
+import SkillSet from './layout/Admin/SkillSet'
+import AddNewSkillSet from './components/AddNewSkillSet'
+import ArticlePage from './layout/Admin/ArticlePage'
+import OrganizationPage from './layout/Admin/OrganizationPage'
+import EventPage from './layout/Admin/EventPage'
 import OrganizationProfilePage from './pages/OrganizationProfilePage'
 import RegisterRoot from './pages/RegisterRoot'
 import EventDetailOrgPage from './pages/EventDetailOrgPage'
@@ -44,7 +53,6 @@ import FindVolunteer from './pages/FindVolunteer'
 import FindActivity from './pages/FindActivity'
 import UpdateOrganizationPhoto from './pages/UpdateOrganizationPhoto'
 import EventPhotoEditPage from './pages/EventPhotoEditPage'
-
 
 class App extends Component {
   render() {
@@ -60,11 +68,11 @@ class App extends Component {
             <Route path="/user/profile/update" exact component={UserProfileUpdate}/>
             <Route path="/organization/dashboard" exact component={OrganizationDashboardPage}/>
             <Route path="/dashboard" exact component={DashboardPage}/>
-            <Route path="/event" exact component={EventListPage}/>
-            <Route path="/create-event" exact component={CreateEventPage}/>
-            <Route path="/article" exact component={ArticleListPage}/>
+            <Route path="/organization/event" exact component={EventListPage}/>
+            <Route path="/organization/create-event" exact component={CreateEventPage}/>
+            <Route path="/user/article" exact component={ArticleListPage}/>
             <Route path="/forgot-password" exact component={ForgotPassword}/>
-            <Route path="/article/detail/:article_id" exact component={ArticleDetailPage}/>
+            <Route path="/user/article/detail/:article_id" exact component={ArticleDetailPage}/>
             <Route path="/organization/event/list/register" exact component={ListPendaftarEventOrganisasi} />
             <Route path="/user/profile/" exact component={UserProfilePage} />
             <Route path="/dashboards" exact component={DashboardNotVerify} />
@@ -82,10 +90,19 @@ class App extends Component {
             <Route path='/login' component={Login} exact />
             <Route path="/account-verified" exact component={VerifiedAccount}/>
             <Route path="/admin/login" exact component={LoginAdmin} />
+            <Route path="/admin/dashboard" exact component={DashboardAdmin} />
+            <Route path="/admin/article/add-new" exact component={AddNewArticle} />
+            <Route path="/admin/users" exact component={UserPage} />
+            <Route path="/admin/skill-set" exact component={SkillSet} />
+            <Route path="/admin/skill-set/add" exact component={AddNewSkillSet} />
+            <Route path="/admin/article" exact component={ArticlePage} />
+            <Route path="/admin/organization" exact component={OrganizationPage} />
+            <Route path="/admin/events" exact component={EventPage} />
             <Route path="/organization/profile" exact component={OrganizationProfilePage} />
             <Route path='/register' component={RegisterRoot} exact />
             <Route path='/organization/register' component={OrganizationRegister} exact />
             <Route path="/event/detail/:event_id" exact component={EventDetailOrgPage}/>
+            <Route path="/organization/event/detail/:event_id" exact component={EventDetailOrgPage}/>
             <Route path="/organization/article" exact component={ArticleListOrgPage}/>
             <Route path="/organization/article/detail/:article_id" exact component={ArticleDetailOrgPage}/>
             <Route path="/organization/event/edit/:event_id" exact component={EventEditPage}/>

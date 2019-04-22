@@ -1,12 +1,13 @@
 import React from 'react';
 import { Form, FormGroup, Label, Input, FormText, Button, Row, Col } from 'reactstrap';
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import '../assets/css/_style2.scss';
 import Img from '../assets/images/image1.png'
 import Logo from '../assets/images/blue-logo.png'
 import { signIn } from "../actions/memberActions";
 import axios from 'axios'
 import { connect } from "react-redux";
+import { getRole } from "../actions/mainActions";
 
 
 class LoginPage extends React.Component {
@@ -34,13 +35,8 @@ onSubmit = e => {
   });
 }
 
-componentDidUpdate() {
-  console.log(this.props.role)
-  this.props.role === 'member' && this.props.history.push('/dashboard')
-  this.props.role === 'organization' && this.props.history.push('/organization')
-}
-
   render() {
+    this.props.role === "member" && this.props.history.push("/dashboard")
     return (
       <div className="container2">
         <div className=" my-4 logo" >
@@ -53,7 +49,7 @@ componentDidUpdate() {
           <Col md={6} className="right">
               <h2>Login</h2>
                 <Row className="box">
-                  <Form className="" onSubmit={this.onSubmit}>
+                  <Form onSubmit={this.onSubmit}>
                     <FormGroup>
                       <Label >Username</Label>
                       <Input 
@@ -94,31 +90,23 @@ componentDidUpdate() {
 const mapStateToProps = state => {
   return {
     role: state.auth.role
-  }
-}
+  };
+};
 
 const mapDispatchToProps = dispatch => {
-  return{
+  return {
     signIn: (username, password) => {
-      axios
-        .post("https://relaonebinar.herokuapp.com/api/member/login", {
-          'username':username,
-          'password':password
-        })
-        .then(res => {
-          console.log(res);
-          dispatch(signIn(username, password, res.data.message));
-          console.log(this.props)
-
-        })
-        .catch(err => {
-          console.log(err.response);
-        });
+      dispatch(signIn(username, password));
+    },
+    getRole: () => {
+      dispatch(getRole())
     }
-  }
-}
+  };
+};
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(LoginPage);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(LoginPage)
+);

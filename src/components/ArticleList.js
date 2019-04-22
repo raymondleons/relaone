@@ -18,7 +18,6 @@ class ArticleList extends Component {
   }
 
   onChange = (e) => {
-    console.log(this.props.articles)
     this.setState({
         [e.target.name]: e.target.value
     })
@@ -31,11 +30,10 @@ class ArticleList extends Component {
   
 
   render() {
-    let articles = []
-      if (this.props.articles) {
-        articles = this.props.articles
-      }     
-      const displayArticle = articles.length ? (
+      const articles = this.props.articles; 
+
+      const displayArticle = 
+      articles.length ? (
         articles.map(article => {
               return (
                 <Card className="article-card" key={article._id}>
@@ -45,8 +43,8 @@ class ArticleList extends Component {
                         </Col>
                         <Col md="8">
                             <CardBody>
-                                <CardTitle><h4><Links to={'/article/detail/' + article._id}>{article.title}</Links></h4></CardTitle>
-                                <CardText><Dotdotdot clamp={3}>{article.description}</Dotdotdot></CardText>
+                                <CardTitle><h4><Links to={'/user/article/detail/' + article._id}>{article.title}</Links></h4></CardTitle>
+                                <div><Dotdotdot clamp={3}>{article.description}</Dotdotdot></div>
                                 <CardText className="text-muted">Created by {article.createdBy.name}</CardText>
                             </CardBody>
                         </Col>
@@ -69,7 +67,7 @@ class ArticleList extends Component {
         </div>
         <Form onSubmit={this.onSubmit}>
             <FormGroup>
-            <Row>
+              <Row>
                 <Col md="10">
                   <Input onChange={this.onChange} className="form-control" type="text" name="search" id="exampleSearch" placeholder="search"/>
                 </Col>

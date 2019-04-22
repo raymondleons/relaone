@@ -16,7 +16,7 @@ class OrganizationSideBar extends Component {
             </UncontrolledCollapse>
         
 
-          <div className="side-bar-item"><Links className="side-bar-link" to="/article">Article</Links></div>
+          <div className="side-bar-item"><Links className="side-bar-link" to="/user/article">Article</Links></div>
 
           <div className="side-bar-item" id="setting">Setting</div>
             <UncontrolledCollapse toggler="#setting">

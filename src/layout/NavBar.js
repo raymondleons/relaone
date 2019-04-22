@@ -7,10 +7,8 @@ import {
     Collapse,
     Navbar,
     NavbarToggler,
-    NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
@@ -36,12 +34,11 @@ class NavBar extends Component {
         return (
         <div>
             <Navbar dark expand="md" className="navbar">
-            <NavbarBrand className="navbar-brand"><Links to="/"><img src={logo} alt="relaone logo"/></Links></NavbarBrand>
+            <div className="navbar-brand"><Links to="/"><img src={logo} alt="relaone logo"/></Links></div>
             <NavbarToggler onClick={this.toggle}/>
             <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                 <NavItem className="navitem">
-                    <NavLink>
                         <Link
                             to="intro"
                             spy={true}
@@ -49,10 +46,8 @@ class NavBar extends Component {
                             offset={-70}
                             duration= {500}
                         >Home</Link>
-                    </NavLink>
                 </NavItem>
                 <NavItem className="navitem">
-                    <NavLink>
                         <Link
                             to="how-to-join"
                             spy={true}
@@ -60,10 +55,8 @@ class NavBar extends Component {
                             offset={-70}
                             duration= {500}
                         >How to Join</Link>
-                    </NavLink>
                 </NavItem>
                 <NavItem className="navitem">
-                    <NavLink>
                         <Link
                             to="testimony"
                             spy={true}
@@ -71,10 +64,8 @@ class NavBar extends Component {
                             offset={-70}
                             duration= {500}
                         >Testimony</Link>
-                    </NavLink>
                 </NavItem>
                 <NavItem className="navitem">
-                    <NavLink>
                         <Link
                             to="contact-us"
                             spy={true}
@@ -82,30 +73,27 @@ class NavBar extends Component {
                             offset={-70}
                             duration= {500}
                         >Contact Us</Link>
-                    </NavLink>
                 </NavItem>
-                <NavItem className="navitem">
-                    <UncontrolledDropdown nav inNavbar>
+                
+                    <UncontrolledDropdown nav inNavbar className="navitem drop">
                         <DropdownToggle nav caret>
                         Take Action
                         </DropdownToggle>
                         <DropdownMenu right className="dropdown">
                         <DropdownItem className="dropdown">
-                            <Links className="footer-links" exact to="/find-activity">Join Event</Links>
+                            <Links className="footer-links" exact="true" to="/find-activity">Join Event</Links>
                         </DropdownItem>
                         <DropdownItem className="dropdown">
-                            <Links className="footer-links" exact to="/find-volunteer">Find Volunteer</Links>
+                            <Links className="footer-links" exact="true" to="/find-volunteer">Find Volunteer</Links>
                         </DropdownItem>
                         </DropdownMenu>
                     </UncontrolledDropdown>
-                </NavItem>
-                <NavItem>
-                    <NavLink>
+                
+                <NavItem className="navitem">
                         <Links to="/register">Join</Links>
-                    </NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink><Links to="/login"><Button className="login-button bold-text" color="warning">Login</Button></Links></NavLink>
+                    <Links to="/login"><Button className="login-button bold-text" color="warning">Login</Button></Links>
                 </NavItem>
                 </Nav>
             </Collapse>

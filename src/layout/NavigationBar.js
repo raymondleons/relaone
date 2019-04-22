@@ -6,10 +6,8 @@ import {
     Collapse,
     Navbar,
     NavbarToggler,
-    NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
     Button } from 'reactstrap';
 
 class NavigationBar extends Component {
@@ -31,27 +29,21 @@ class NavigationBar extends Component {
         return (
         <div>
             <Navbar dark expand="md" className="navbar">
-            <NavbarBrand className="navbar-brand"><Links to="/"><img src={logo} alt="relaone logo"/></Links></NavbarBrand>
+            <div className="navbar-brand"><Links to="/"><img src={logo} alt="relaone logo"/></Links></div>
             <NavbarToggler onClick={this.toggle}/>
             <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
-                <NavItem>
-                    <NavLink>
+                <NavItem className="navitem">
                         <Links to="/find-volunteer">Find Volunteer</Links>
-                    </NavLink>
                 </NavItem>
-                <NavItem>
-                    <NavLink>
+                <NavItem className="navitem">
                         <Links to="/find-activity">Join Event</Links>
-                    </NavLink>
                 </NavItem>
-                <NavItem>
-                    <NavLink>
+                <NavItem className="navitem">
                         <Links to="/register">Join</Links>
-                    </NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink><Links to="/login"><Button className="login-button bold-text" color="warning">Login</Button></Links></NavLink>
+                    <Links to="/login"><Button className="login-button bold-text" color="warning">Login</Button></Links>
                 </NavItem>
                 </Nav>
             </Collapse>

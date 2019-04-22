@@ -27,7 +27,6 @@ class FormOrganizationProfile extends Component {
 
       let formdata = new FormData()
       formdata.append('photo', file)
-      console.log(formdata)
       this.props.editPhoto(formdata)
     }
     }
@@ -36,7 +35,7 @@ class FormOrganizationProfile extends Component {
     return (
       <div className="form-organization-profile">
         <div>
-            <h3><b>Update Organization Photo</b></h3>
+            <h2><b>Update Organization Photo</b></h2>
         </div>
         <hr></hr>
         <Form onSubmit={this.onSubmit}>
