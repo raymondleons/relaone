@@ -1,5 +1,4 @@
 import axios from 'axios';
-<<<<<<< HEAD
 import { ADD_EVENT, 
         GET_SKILLSET, 
         GET_EVENT, 
@@ -13,10 +12,8 @@ import { ADD_EVENT,
         EDIT_EVENT,
         GET_VOLUNTEER,
         SEARCH_VOLUNTEER,
-        SIGN_IN_ORG } from './type';
-=======
-import { ADD_EVENT, GET_SKILLSET, GET_EVENT, GET_PROFILE, DEL_EVENT, EDIT_PROFILE, GET_ARTICLE, EDIT_PROFILE_PHOTO, EDIT_EVENT_PHOTO, SEARCH_ARTICLE, EDIT_EVENT, SIGN_UP} from './type';
->>>>>>> ac6c27a541854d9512b40f6c63cf2d36f7ab1e35
+        SIGN_IN_ORG,
+        SIGN_UP } from './type';
 import history from '../history';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -351,7 +348,6 @@ export const searchArticle = (keyword) => {
     }
   }
 
-<<<<<<< HEAD
   export const getVolunteer = () => {
     return dispatch => {
         axios.get(`${url}/organization/showallmember`,
@@ -388,9 +384,6 @@ export const searchVolunteer = (keyword) => {
     }
   }
 
-=======
-const url = "https://relaonebinar.herokuapp.com/api";
->>>>>>> ac6c27a541854d9512b40f6c63cf2d36f7ab1e35
 
 export const signIn = (username, password) => {
     return dispatch => {

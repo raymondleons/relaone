@@ -6,14 +6,9 @@ const initialState={
     confirmed: false,
     username: '',
     email: '',
-<<<<<<< HEAD
     phoneNumber: '',
     token:''
 }
-=======
-    phoneNumber: ''
-} 
->>>>>>> ac6c27a541854d9512b40f6c63cf2d36f7ab1e35
 
 const orgProfile=(state=initialState, action) => {
     switch (action.type) {

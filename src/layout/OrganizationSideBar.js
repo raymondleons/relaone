@@ -9,18 +9,16 @@ class OrganizationSideBar extends Component {
         <div className="side-bar-list">
           <div className="side-bar-item" id="volunteer">Volunteer</div>
             <UncontrolledCollapse toggler="#volunteer">
-              <div className="side-bar-subitem">
-<<<<<<< HEAD
+              {/* <div className="side-bar-subitem">
                 <Links className="side-bar-link" to="/organization/volunteer-list">Volunteer List</Links>
               </div>
               <div className="side-bar-subitem">
                 <Links className="side-bar-link" to="/organization/event">Event List</Links>
-              </div>
-=======
-              <Links className="side-bar-link" to="/organization/volunteer">Registered</Links></div>
+              </div> */}
+
+              <div className="side-bar-subitem"><Links className="side-bar-link" to="/organization/volunteer">Registered</Links></div>
               <div className="side-bar-subitem"><Links className="side-bar-link" to="/organization/volunteer/accepted">Accepted</Links></div>
               <div className="side-bar-subitem"><Links className="side-bar-link" to="/organization/volunteer/rejected">Rejected</Links></div>
->>>>>>> ac6c27a541854d9512b40f6c63cf2d36f7ab1e35
             </UncontrolledCollapse>
           <div className="side-bar-item" id="event">Event</div>
             <UncontrolledCollapse toggler="#event">
