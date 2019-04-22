@@ -53,13 +53,11 @@ import FindVolunteer from './pages/FindVolunteer'
 import FindActivity from './pages/FindActivity'
 import UpdateOrganizationPhoto from './pages/UpdateOrganizationPhoto'
 import EventPhotoEditPage from './pages/EventPhotoEditPage'
-<<<<<<< HEAD
 import VoluteerRegistered from './pages/VolunteerRegistered'
 import VolunteerAccepted from './pages/VolunteerAccepted'
 import VolunteerRejected from './pages/VolunteerRejected'
-import history from './history'
-=======
->>>>>>> f2f19e850c8ca62627c8eaeb67c33455cf7a0078
+// import history from './history'
+import LoginOrganization from './pages/organization/LoginPage'
 
 class App extends Component {
   render() {
@@ -121,7 +119,7 @@ class App extends Component {
             <Route path="/organization/volunteer/accepted" exact component={VolunteerAccepted} />  
             <Route path="/organization/volunteer/rejected" exact component={VolunteerRejected}/>  
             <Route path="/organization/event-photo/edit/:event_id" exact component={EventPhotoEditPage}/>         
-         
+            <Route path="/login-org" exact component={LoginOrganization}/>
           </div>
         </Router>
         </Provider>
