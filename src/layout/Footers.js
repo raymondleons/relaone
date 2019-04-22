@@ -18,7 +18,7 @@ library.add(faFacebookF, faTwitter, faInstagram);
 class Footers extends Component {
   render() {
     return (
-      <div className="footer">
+      <div className="footer-landingpage">
          <Container>
              <Row>
                 <Col lg="3">
@@ -52,17 +52,17 @@ class Footers extends Component {
               <Col lg="2"></Col>
               <Col lg="2" className="footer-content">
                 <p className="bold-text">TAKE ACTION</p>
-                <p className="footer-links"><Links className="footer-links" exact to="/find-activity">Join Event</Links></p>
-                <p className="footer-links"><Links className="footer-links" exact to="/find-volunteer">Find Volunteer</Links></p>
+                <p className="footer-links"><Links className="footer-links" exact="true" to="/find-activity">Join Event</Links></p>
+                <p className="footer-links"><Links className="footer-links" exact="true" to="/find-volunteer">Find Volunteer</Links></p>
               </Col>
               <Col lg="2" className="footer-content">
                 <p className="bold-text">LEARN MORE</p>
-                <p className="footer-links"><Links className="footer-links" exact to="/">How to Join</Links></p>
+                <p className="footer-links"><Links className="footer-links" exact="true" to="/">How to Join</Links></p>
                 <p className="footer-links"><Links to="/terms" className="footer-links">Term and Condition</Links></p>
               </Col>
               <Col lg="2" className="footer-content">
                 <p className="bold-text">CONNECT</p>
-                <p className="footer-links"><Links className="footer-links" exact to="/">Contact Us</Links></p>
+                <p className="footer-links"><Links className="footer-links" exact="true" to="/">Contact Us</Links></p>
               </Col>
             </Row>
              <Row>
@@ -75,7 +75,6 @@ class Footers extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     footerDesc: state.landingPage.footerDesc,
     footerLocation: state.landingPage.footerLocation

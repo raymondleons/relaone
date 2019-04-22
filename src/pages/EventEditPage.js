@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import EventEdit from '../components/EventEdit';
+// import EventEdit from '../components/EventEdit';
+import Edit from '../components/Edit';
 import '../assets/css/_style.scss';
 import ProfileBadge from '../layout/ProfileBadge';
 import Header from '../layout/Header';
@@ -20,7 +21,8 @@ class EventEditPage extends Component {
               <OrganizationSideBar/>
             </Col>
             <Col sm="12" md="8">
-              <EventEdit/>  
+              {/* <EventEdit/>   */}
+              <Edit/>
             </Col>
           </Row>
         </Container>      

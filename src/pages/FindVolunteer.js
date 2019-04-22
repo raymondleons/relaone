@@ -4,7 +4,12 @@ import Footers from '../layout/Footers'
 import { Button } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
-export default class FindVolunteer extends Component {
+class FindVolunteer extends Component {
+
+  componentDidMount(){
+    window.scrollTo(0, 0)
+  }
+
   render() {
     return (
       <div>
@@ -21,3 +26,6 @@ export default class FindVolunteer extends Component {
     )
   }
 }
+
+export default FindVolunteer
+

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { UncontrolledCollapse } from 'reactstrap';
-import { Link as Links} from 'react-router-dom';
+import { Link as Links } from 'react-router-dom';
 
 class OrganizationSideBar extends Component {
   render() {
@@ -14,7 +14,15 @@ class OrganizationSideBar extends Component {
               <div className="side-bar-subitem"><Links className="side-bar-link" to="/organization/volunteer/accepted">Accepted</Links></div>
               <div className="side-bar-subitem"><Links className="side-bar-link" to="/organization/volunteer/rejected">Rejected</Links></div>
             </UncontrolledCollapse>
-          <div className="side-bar-item"><Links className="side-bar-link" to="/event">Event</Links></div>
+          <div className="side-bar-item" id="event">Event</div>
+            <UncontrolledCollapse toggler="#event">
+              <div className="side-bar-subitem">
+                <Links className="side-bar-link" to="/organization/event">Event List</Links>
+              </div>
+              <div className="side-bar-subitem">
+                <Links className="side-bar-link" to="/organization/create-event">Create Event</Links>
+              </div>
+            </UncontrolledCollapse>
           <div className="side-bar-item"><Links className="side-bar-link" to="/organization/article">Article</Links></div>
           <div className="side-bar-item" id="setting">Setting</div>
             <UncontrolledCollapse toggler="#setting">
