@@ -25,7 +25,7 @@ class ProfileBadge extends Component {
               <img className="organization-picture" src={this.props.photo} alt={this.props.fullname}></img>
             </Col>
             <Col xs="9" sm="9" md="8">
-              <p className="profile-name"><b>{this.props.fullname}</b><br></br>{verifiedFunction}</p>
+              <div className="profile-name"><b>{this.props.fullname}</b><br></br>{verifiedFunction}</div>
             </Col>
           </Row>
         </div>

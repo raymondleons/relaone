@@ -4,7 +4,7 @@ import store from './store';
 import LandingPage from './pages/LandingPage';
 import UpdateOrganizationProfile from './pages/UpdateOrganizationProfile';
 import './assets/css/_style.scss';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
 import UpdateOrgProfileSuccess from './pages/UpdateOrgProfileSuccess';
 import UpdateUserProfileSuccess from './pages/UpdateUserProfileSuccess';
 import UpdateProfile from './pages/UpdateProfile'
@@ -47,12 +47,13 @@ import FindVolunteer from './pages/FindVolunteer'
 import FindActivity from './pages/FindActivity'
 import UpdateOrganizationPhoto from './pages/UpdateOrganizationPhoto'
 import EventPhotoEditPage from './pages/EventPhotoEditPage'
+import history from './history'
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router>
+        <Router history={history}>
           <div className="App">
             <Route path="/" exact component={LandingPage}/>
             <Route path="/register-success" exact component={RegisterSuccess}/>
@@ -62,17 +63,17 @@ class App extends Component {
             <Route path="/user/update-profile" exact component={UpdateProfile}/>
             <Route path="/organization/dashboard" exact component={OrganizationDashboardPage}/>
             <Route path="/dashboard" exact component={DashboardPage}/>
-            <Route path="/event" exact component={EventListPage}/>
-            <Route path="/create-event" exact component={CreateEventPage}/>
-            <Route path="/article" exact component={ArticleListPage}/>
+            <Route path="/organization/event" exact component={EventListPage}/>
+            <Route path="/organization/create-event" exact component={CreateEventPage}/>
+            <Route path="/user/article" exact component={ArticleListPage}/>
             <Route path="/forgot-password" exact component={ForgotPassword}/>
-            <Route path="/article/detail/:article_id" exact component={ArticleDetailPage}/>
+            <Route path="/user/article/detail/:article_id" exact component={ArticleDetailPage}/>
             <Route path="/organization/event/list/register" exact component={ListPendaftarEventOrganisasi} />
             <Route path="/user/profile/" exact component={DisplayProfileUser} />
             <Route path="/dashboards" exact component={DashboardNotVerify} />
             <Route path="/event/list-register" exact component={ListPendaftarEvent} />
             <Route path='/register' component={Register} exact />
-            <Route path='register/success' exact component={RegisterSuccess} />
+            <Route path='/register/success' exact component={RegisterSuccess} />
             <Route path='/terms' component={TermsandConditions} exact />
             <Route path='/user/event' component={UserEventPage} exact />
             <Route path='/user/event/details' component={UserEventDetailsPage} exact />
@@ -90,7 +91,7 @@ class App extends Component {
             <Route path="/admin/organization" exact component={OrganizationPage} />
             <Route path="/admin/events" exact component={EventPage} />
             <Route path="/organization/profile" exact component={OrganizationProfilePage} />
-            <Route path="/event/detail/:event_id" exact component={EventDetailOrgPage}/>
+            <Route path="/organization/event/detail/:event_id" exact component={EventDetailOrgPage}/>
             <Route path="/organization/article" exact component={ArticleListOrgPage}/>
             <Route path="/organization/article/detail/:article_id" exact component={ArticleDetailOrgPage}/>
             <Route path="/organization/event/edit/:event_id" exact component={EventEditPage}/>

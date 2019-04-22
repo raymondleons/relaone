@@ -83,6 +83,8 @@ class HowTo extends Component {
                 activeIndex={activeIndex}
                 next={this.next}
                 previous={this.previous}
+                interval={3000}
+                ride='carousel'
             >
                 <CarouselIndicators items={this.props.howToJoin} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
                 {slides}

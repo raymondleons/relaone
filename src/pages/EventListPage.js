@@ -7,6 +7,11 @@ import EventList from '../components/EventList';
 import OrganizationSideBar from '../layout/OrganizationSideBar';
 
 class EventListPage extends Component {
+
+  componentDidMount(){
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <div className="create-event">
