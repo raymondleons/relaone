@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
-import Header from '../layout/Header'
-import ProfileBadge from '../layout/UserProfileBadge'
-import ProfileDetail from '../components/ProfilePageDetail.js'
-import Navbar from '../layout/UserSideBar'
+import Header from '../../layout/Header'
+import ProfileBadge from '../../layout/UserProfileBadge'
+import ProfileDetail from '../../components/member/UserProfile'
+import Navbar from '../../layout/UserSideBar'
 
 export default class ProfilePage extends Component {
   render() {

@@ -3,8 +3,8 @@ import { Container, Row, Col } from 'reactstrap';
 import '../assets/css/_style.scss';
 import Header from '../layout/Header'
 import ProfileBadge from '../layout/UserProfileBadge'
-import SideNavBar from '../layout/UserSideBar'
-import Dashboard from '../layout/Dashboard'
+import UserSideBar from '../layout/UserSideBar'
+import Dashboard from '../components/DashboardPage'
 
 export default class DashboardPage extends Component {
   render() {
@@ -17,7 +17,7 @@ export default class DashboardPage extends Component {
       <Row>
             <Col sm="12" md="4">
               <ProfileBadge></ProfileBadge>
-              <SideNavBar></SideNavBar>
+              <UserSideBar></UserSideBar>
             </Col>
             <Col sm="12" md="8">
               <Dashboard/>
