@@ -47,6 +47,9 @@ import FindVolunteer from './pages/FindVolunteer'
 import FindActivity from './pages/FindActivity'
 import UpdateOrganizationPhoto from './pages/UpdateOrganizationPhoto'
 import EventPhotoEditPage from './pages/EventPhotoEditPage'
+import VoluteerRegistered from './pages/VolunteerRegistered'
+import VolunteerAccepted from './pages/VolunteerAccepted'
+import VolunteerRejected from './pages/VolunteerRejected'
 
 class App extends Component {
   render() {
@@ -97,7 +100,10 @@ class App extends Component {
             <Route path="/find-volunteer" exact component={FindVolunteer}/>
             <Route path="/find-activity" exact component={FindActivity}/>
             <Route path="/organization/update-photo" exact component={UpdateOrganizationPhoto}/>
-            <Route path="/organization/event-photo/edit/:event_id" exact component={EventPhotoEditPage}/>         
+            <Route path="/organization/event-photo/edit/:event_id" exact component={EventPhotoEditPage}/> 
+            <Route path="/organization/volunteer" exact component={VoluteerRegistered}/>    
+            <Route path="/organization/volunteer/accepted" exact component={VolunteerAccepted} />  
+            <Route path="/organization/volunteer/rejected" exact component={VolunteerRejected}/>  
           </div>
         </Router>
         </Provider>
