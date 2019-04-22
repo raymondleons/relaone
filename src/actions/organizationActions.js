@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ADD_EVENT, GET_SKILLSET, GET_EVENT, GET_PROFILE, DEL_EVENT, EDIT_PROFILE, GET_ARTICLE, EDIT_PROFILE_PHOTO, EDIT_EVENT_PHOTO, SEARCH_ARTICLE, EDIT_EVENT } from './type';
+import { ADD_EVENT, GET_SKILLSET, GET_EVENT, GET_PROFILE, DEL_EVENT, EDIT_PROFILE, GET_ARTICLE, EDIT_PROFILE_PHOTO, EDIT_EVENT_PHOTO, SEARCH_ARTICLE, EDIT_EVENT, SIGN_UP} from './type';
 import history from '../history';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -216,6 +216,33 @@ export const editProfile = (organizationName, username, email, phoneNumber) => {
     }
 }
 
+export const signup = (organizationName, username, phoneNumber, email, password) => {
+    return dispatch => {
+      axios
+        .post("https://relaonebinar.herokuapp.com/api/organization/signup", {
+          organizationName,
+          username,
+          phoneNumber,
+          email,
+          password
+        })
+        .then(res => {
+          console.log(res);
+          dispatch({
+            type: SIGN_UP,
+            organizationName,
+            username,
+            phoneNumber,
+            email,
+            password
+          });
+          history.push('/register/success')
+        }) 
+        .catch(err => {
+          console.log(err.response);
+        });
+    };
+  };
 export const editPhoto = (formdata) => {
     return dispatch => {
         axios ({

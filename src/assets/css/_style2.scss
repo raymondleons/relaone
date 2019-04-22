@@ -8,13 +8,27 @@ body {
   font-family:MavenPro-Medium,sans-serif;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .width {
     display: none;
   }
 }
+@media only screen and (min-width: 768px) {
+  .modal-dialog{
+    width:40%;
+  }
+}
+@media only screen and (min-width:768px) and (max-width: 1000px) {
+  .col-sm-6{
+    flex-basis: 100%;
+    max-width:100%;
+  }
+}
 
-
+.no-border{
+  border:0px;
+  border-radius: 0px;
+}
 .logo{
   width:200px;
   margin:auto;
@@ -42,7 +56,11 @@ body {
  }
  .mbot{
   margin-bottom: 10px;
-  box-shadow:1px 1px 10px 1px #888888;
+  
+ }
+
+ form{
+   width:100%;
  }
  .form-row{
      margin-left:0;
@@ -67,7 +85,7 @@ body {
  .whitebg
  {
    background-color: white;
-   box-shadow: 0 1px 7px 0 rgba(0,0,0,.14);
+   box-shadow:1px 1px 10px 1px #888888;
  }
 
  .nopadding
@@ -95,21 +113,49 @@ float: right;
 
  .logoevent
  {
-   width: 70px;
-   height: 70px;
+   width:70px;
+   height:60px;
+   
+   border:1px solid black;
    
   
  }
- .imgg{
-   max-width:auto;
-   max-height: auto;
- object-fit: contain;
- }
+//  .imgg{
+  
+//  border-radius: 50%;
+//  border:2px solid black;
+//  }
 
  .preview{
   height:100px; 
  }
 
+ .nav-tabs  .nav-link.active{
+   color:#0065ff;
+ }
+ .heigth{
+   height: 200px;
+   object-fit:cover;
+ }
+
+.fa-user-circle{
+  color:#0065ff;
+}
+.fa-home{
+  color:#0065ff;
+}
+.fa-calendar-alt{
+  color:#0065ff;
+}
+.fa-map-marker-alt{
+  color:#0065ff;
+}
+.card-height{
+  max-height: 380px;
+}
+.para{
+  font-size: 12px;
+}
 //  Css Admin
 
 $orange: #f07b3f;
@@ -167,3 +213,4 @@ $dimlight: rgba(
   background: none;
   background-color: $blue;
 }
+

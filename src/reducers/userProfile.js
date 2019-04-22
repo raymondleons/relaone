@@ -1,4 +1,4 @@
-import { GET_PROFILE } from '../actions/type';
+import { GET_PROFILE, GET_USERPROFILE, EDIT_USERPROFILE, EDIT_USERPHOTO } from '../actions/type';
 
 const initialState={
     fullname: '',
@@ -10,9 +10,13 @@ const initialState={
     password: '',
     address: '',
     idCard: '',
+    birthDate:'',
+    emergencyContact:'',
+    skillSet:'',
+    id:''
 }
 
-const orgProfile=(state=initialState, action) => {
+const userProfile=(state=initialState, action) => {
     switch (action.type) {
         case GET_PROFILE:
             return {
@@ -25,11 +29,49 @@ const orgProfile=(state=initialState, action) => {
                 username: action.username,
                 phoneNumber: action.phoneNumber,
                 address: action.address,
-                idCard: action.idCard
+                idCard: action.idCard,
+                skillSet: action.skillSet,
+                emergencyContact: action.emergencyContact
+            }
+            case GET_USERPROFILE:
+            return {
+                ...state,
+                fullname: action.fullname,
+                username: action.username,
+                photo: action.photo,
+                confirmed: action.confirmed,
+                email: action.email,
+                password: action.password,
+                bio:action.bio,
+                phoneNumber: action.phoneNumber,
+                address: action.address,
+                idCard: action.idCard,
+                birthDate:action.birthDate,
+                skillSet: action.skillSet,
+                emergencyContact: action.emergencyContact,
+                id : action.id
+            }
+            case EDIT_USERPROFILE:
+            return {
+                ...state,
+                fullname: action.fullname,
+                username: action.username,
+                email: action.email,
+                bio:action.bio,
+                phoneNumber: action.phoneNumber,
+                address: action.address,
+                idCard: action.idCard,
+                birthDate:action.birthDate
+            
+            }
+            case EDIT_USERPHOTO:
+            return {
+                ...state,
+                photo: action.photo
             }
         default:
             return state;
     }
 }
 
-export default orgProfile
+export default userProfile

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Card, Button, CardTitle, CardText, Row, Col, CardImg } from 'reactstrap';
+import '../assets/css/_style2.scss';
+import test2 from '../assets/images/certemplate.jpg'
 import {Link} from 'react-router-dom'
-import '../assets/css/_style2.scss'
-import test2 from '../assets/images/bg-contactus.jpg'
 
 export default class UserCertification extends Component {
   render() {
