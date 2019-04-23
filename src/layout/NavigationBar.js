@@ -26,6 +26,16 @@ class NavigationBar extends Component {
     }  
 
     render() {
+
+
+        let token = localStorage.getItem('token');
+        
+        const logButton = (token !== null) ? (
+            <Links to="/"><Button onClick={this.handleSignOut} className="login-button bold-text" color="warning">Log Out</Button></Links>
+        ) : (
+            <Links to="/login"><Button className="login-button bold-text" color="warning">Login</Button></Links>
+        )
+
         return (
         <div>
             <Navbar dark expand="md" className="navbar">
@@ -43,7 +53,7 @@ class NavigationBar extends Component {
                         <Links to="/register">Join</Links>
                 </NavItem>
                 <NavItem>
-                    <Links to="/login"><Button className="login-button bold-text" color="warning">Login</Button></Links>
+                    {logButton}
                 </NavItem>
                 </Nav>
             </Collapse>

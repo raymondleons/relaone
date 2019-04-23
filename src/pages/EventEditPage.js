@@ -6,8 +6,19 @@ import '../assets/css/_style.scss';
 import ProfileBadge from '../layout/ProfileBadge';
 import Header from '../layout/Header';
 import OrganizationSideBar from '../layout/OrganizationSideBar';
+import history from '../history'
 
 class EventEditPage extends Component {
+
+  componentDidMount(){
+    let role = localStorage.getItem('role')
+    if (role !== 'organization') {
+      history.push('/login-org')
+    }
+    window.scrollTo(0, 0);
+    document.title = "Edit Event";
+  }
+
   render() {
     return (
       <div className="update-organization-profile">

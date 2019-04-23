@@ -5,10 +5,10 @@ import { Link as Links} from 'react-router-dom';
 
 class Header extends Component {
 
-  // handleSignOut = () =>{
-  //   localStorage.removeItem('token');
-  //   this.setState({token: false});
-  // }
+  
+  handleSignOut = () =>{
+    localStorage.clear()
+  }
 
 
   render() {
@@ -18,7 +18,7 @@ class Header extends Component {
             <Links to="/"><img className="header-logo" src={bluelogo} alt='RelaOne logo'></img></Links>
             </div>
             <div>
-            <Links to="/login"><Button className="logout" outline color="primary">Log Out</Button></Links>
+            <Links to="/login"><Button onClick={this.handleSignOut} className="logout" outline color="primary">Log Out</Button></Links>
             </div>
         </div>
         

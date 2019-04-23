@@ -56,16 +56,32 @@ import EventPhotoEditPage from './pages/EventPhotoEditPage'
 import VoluteerRegistered from './pages/VolunteerRegistered'
 import VolunteerAccepted from './pages/VolunteerAccepted'
 import VolunteerRejected from './pages/VolunteerRejected'
-// import history from './history'
 import LoginOrganization from './pages/organization/LoginPage'
+
+
+
+
+
+import VolunteerListPage from './pages/VolunteerListPage'
+import VolunteerDetailPage from './pages/VolunteerDetailPage'
+import LoginContoh from './pages/Login'
 
 class App extends Component {
   render() {
+
+    let days = 7;
+    let now = new Date().getTime();
+    let setupTime = localStorage.getItem('setupTime');
+    if(now-setupTime > days*24*60*60*1000) {
+            localStorage.clear()
+        }
+    
+
     return (
       <Provider store={store}>
         <Router history={history}>
           <div className="App">
-            <Route path="/" exact component={LandingPage}/>
+          <Route path="/" exact component={LandingPage}/>
             <Route path="/register-success" exact component={RegisterSuccess}/>
             <Route path="/organization/update-profile" exact component={UpdateOrganizationProfile}/>        
             <Route path="/organization/update-profile/success" exact component={UpdateOrgProfileSuccess}/>
@@ -120,6 +136,9 @@ class App extends Component {
             <Route path="/organization/volunteer/rejected" exact component={VolunteerRejected}/>  
             <Route path="/organization/event-photo/edit/:event_id" exact component={EventPhotoEditPage}/>         
             <Route path="/login-org" exact component={LoginOrganization}/>
+            <Route path="/organization/volunteer-list" exact component={VolunteerListPage}/>
+            <Route path="/organization/volunteer/detail/:volunteer_id" exact component={VolunteerDetailPage}/>
+            <Route path="/contohlogin" exact component={LoginContoh}/>     
           </div>
         </Router>
         </Provider>

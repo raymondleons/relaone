@@ -4,17 +4,28 @@ import { Link, withRouter } from 'react-router-dom'
 import '../../assets/css/_style2.scss';
 import Img from '../../assets/images/organization-img.jpg'
 import Logo from '../../assets/images/blue-logo.png'
-import { signIn } from "../../actions/organizationActions";
-import axios from 'axios'
+import { signInOrganization } from "../../actions/organizationActions";
 import { connect } from "react-redux";
 import { getRole } from "../../actions/mainActions";
+import history from '../../history'
 
 
 class LoginPage extends React.Component {
 
   componentDidMount(){
+    let role = localStorage.getItem('role')
+    if ( role === 'organization' ) {
+      history.push('/organization/event')
+    } else if (role === 'member') {
+      history.push('/')
+    } else if (role === 'admin') {
+      history.push('/')
+    }
+
+    window.scrollTo(0, 0);
     document.title= "Login Organization - RelaOne"
 }
+
 constructor(props) {
   super(props)
 
@@ -24,19 +35,37 @@ constructor(props) {
   }
 }
 
-onChange = e => this.setState({ [e.target.name]: e.target.value });
-
-onSubmit = e => {
-  e.preventDefault();
-  this.props.signIn(this.state.username, this.state.password)
+onChange = (e) => {
   this.setState({
-    username: "",
-    password: ""
+      [e.target.name]: e.target.value
+  })
+}
+
+onSubmit = (e) => {
+  e.preventDefault();
+
+  let days = 7;
+  let now = new Date().getTime();
+  let setupTime = localStorage.getItem('setupTime');
+  if (setupTime == null) {
+      localStorage.setItem('setupTime', now)
+  } else {
+      if(now-setupTime > days*24*60*60*1000) {
+          localStorage.clear()
+      }
+  }
+  
+  this.props.signInOrganization(this.state.username, this.state.password)
+  this.setState({
+    username: '',
+    password: ''
   });
 }
 
   render() {
     this.props.role === "organization" && this.props.history.push("/organization/dashboard")
+
+
     return (
       <div className="container2">
         <div className=" my-4 logo" >
@@ -95,8 +124,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    signIn: (username, password) => {
-      dispatch(signIn(username, password));
+    signInOrganization: (username, password) => {
+      dispatch(signInOrganization(username, password));
     },
     getRole: () => {
       dispatch(getRole())

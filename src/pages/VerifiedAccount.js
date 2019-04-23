@@ -24,7 +24,7 @@ class UpdateOrgProfileSuccess extends Component {
                   <img src={updatesuccess} alt="wait for verification" className="icon-success"></img>
                   <h3 className="bold-text">Congrats! Your account has been verified</h3>
                   <p>Let's start your voluntary journey now.</p>
-                  <Button color="primary"><Links className="button-text" to="/dashboard">Dashboard</Links></Button>
+                  <Button color="primary"><Links className="button-text" to="/login">Login</Links></Button>
                 </div>
               </Col>
             </Row>

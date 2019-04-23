@@ -37,7 +37,7 @@ class EventEdit extends Component {
   }
 
 
-  componentWillMount(){
+  componentDidMount(){
     this.props.getSkillset();
     this.props.getEvent();
 
