@@ -14,8 +14,8 @@ class LoginPage extends React.Component {
 
   componentDidMount(){
     let role = localStorage.getItem('role')
-    if ( role === 'organization' ) {
-      history.push('/organization/event')
+    if ( role === 'admin' ) {
+      history.push('/admin')
     } else if (role === 'member') {
       history.push('/')
     } else if (role === 'admin') {

@@ -28,7 +28,7 @@ export const signInAdmin = (username, password) => {
                 });
                 let message = res.data.message
                 toast.success(message)
-                history.push('/organization/event');
+                history.push('/admin');
               }
             )
             .catch(err => {
