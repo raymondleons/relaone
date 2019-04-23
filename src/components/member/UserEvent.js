@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Form, FormGroup, Input, Col, Row, Card, CardImg, CardBody, CardTitle, CardSubtitle, Button, Spinner} from 'reactstrap'
 import {Link} from 'react-router-dom'
-import '../../assets/css/_style.scss'
+import '../../assets/css/_style2.scss'
 import { getEvent, searchEvent } from '../../actions/memberActions' ;
 import { connect } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -43,7 +43,7 @@ class UserEvent extends Component {
     // const events = this.props.events
    
     const displayEvent = events.length ? (
-      events.map(({_id, photo, title, location, organization, deadline, skillSet}, i) => {
+      events.map(({_id, photo, title, location, organization, deadline}, i) => {
         return (
           <Col sm={6} key={_id}>
             <Card className="mbot card-height">
@@ -52,30 +52,30 @@ class UserEvent extends Component {
               </Link>
               <CardBody className="px-1 py-1">
                 <CardTitle><Link to={'/user/event/details/' + _id}>{title}</Link></CardTitle>
-                  <hr />
+                  <hr className="hr-margin-0"/>
                   <div className="d-flex align-items-center">
                     <div className="logoevent">
                       <CardImg className="imgg" src={organization.photo} alt="No Photos" />
                     </div>
                     <CardSubtitle className="p-2">{organization.organizationName}</CardSubtitle>
                     </div>
-                  <hr />
-                  <Row>
+                  <hr className="hr-margin-0"/>
+                  <Row className="py-2">
                     <Col sm={6}>
                       <CardSubtitle><FontAwesomeIcon icon='calendar-alt' className="fa-1x mr-2"/>{deadline}</CardSubtitle>
                     </Col>
                     <Col sm={6}>
                       <CardSubtitle><FontAwesomeIcon icon='map-marker-alt' className="fa-1x mr-2"/>{location}</CardSubtitle>
-                      <Link to={'/user/event/details/' + _id}>Details...</Link>
                     </Col>
                 </Row>
+                <Link to={'/user/event/details/' + _id}>
                   <Button block 
                   color="primary" 
-                  className="my-3" 
                   value={_id}
                   onClick={this.handleJoin}>
-                  Join Now
+                  Details
                   </Button>
+                  </Link>
               </CardBody>
             </Card>
           </Col>

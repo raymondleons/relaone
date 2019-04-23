@@ -12,23 +12,14 @@ class UserEventDetails extends Component {
   } 
 
   handleJoin = (e) => {
-    console.log(this.props.events._id)
-    let _id = e.target.value
-    joinEvent(_id)
+    // console.log(e.target.value)
+    let id = e.target.value
+    // console.log(id)
+    this.props.joinEvent(id)
   }
   
 
   render() {
-    // const skillsets = this.props.events.skillsets
-    // const displaySkillset = skillsets.length ?(
-    //   skillsets.map(skillset => {
-    //     return(
-    //       <ListGroupItem className="">{}</ListGroupItem>
-    //     )
-    //   })
-    // ):(
-    //   <p>loading...:)</p>
-    // )
 
     const events = this.props.events? (
       <Card className="whitebg">
@@ -56,7 +47,7 @@ class UserEventDetails extends Component {
           <div className="d-flex justify-content-center align-items-center my-3">
             <Button color='primary' 
             className="mx-5"
-            value={this.props.events_id}
+            value={this.props.events._id}
             onClick={this.handleJoin}
             >JOIN</Button>
           </div>
@@ -89,7 +80,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     getEvent: () => { dispatch(getEvent()) },
-    joinEvent: (_id) => { dispatch(getEvent())}
+    joinEvent: (id) => { dispatch(joinEvent(id))}
   }
 }
 

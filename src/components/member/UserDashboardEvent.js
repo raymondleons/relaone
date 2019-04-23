@@ -14,13 +14,25 @@ class UserEvent extends Component {
   componentDidMount(){
     this.props.getEvent();
   }
+  
+  componentWillReceiveProps() {
+    this.setState({
+      events : this.props.articles
+    })
+  }
 
  
   
 
   render() {
-    console.log(this.props.events)
-    const events = this.props.events
+    // console.log(this.props.events)
+    // const events = this.props.events
+    let initEvents = []
+    let events = []
+    if (this.props.events){
+      initEvents = this.props.events
+      events = initEvents.slice(0,6)
+    }    
    
     const displayEvent = events.length ? (
       events.map(({_id, photo, title, location, organization, deadline, skillSet}, i) => {
@@ -84,6 +96,7 @@ class UserEvent extends Component {
         <Row className="pt-3">
           {displayEvent}
         </Row>
+        <Link to='/user/event'>Show All Events</Link>
       </div>  
     )
   }

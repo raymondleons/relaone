@@ -19,9 +19,16 @@ library.add(faUserEdit);
 
   render() {
 
-    let initbirthDate = this.props.birthDate
-    Moment.locale('en');
-    let DOB = Moment(initbirthDate).format('YYYY-MM-DD')
+    // let initbirthDate = this.props.birthDate
+    // Moment.locale('en');
+    // let DOB = Moment(initbirthDate).format('YYYY-MM-DD')
+
+    let DOB = (deadline) =>{
+      Moment.locale('en');
+      let DOB = Moment(deadline).format('YYYY-MM-DD')
+      return <p>{DOB}</p>
+    }
+
 
     let emergencyContact = {}
       if (this.props.emergencyContact ){

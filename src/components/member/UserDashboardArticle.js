@@ -1,23 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Spinner, Row, Col, Card, CardImg, CardBody, CardTitle, CardText, Form, Input, FormGroup } from 'reactstrap';
+import { Spinner, Row, Col, Card, CardImg, CardBody, CardTitle, CardText} from 'reactstrap';
 import Dotdotdot from 'react-dotdotdot';
-import { getArticle, searchArticle } from '../../actions/memberActions' ;
+import { getArticle} from '../../actions/memberActions' ;
 import { Link as Links } from 'react-router-dom';
 
 class ArticleList extends Component {
 
-    componentWillMount(){
+    componentDidMount(){
     this.props.getArticle();
-  }
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      articles : [],
-      search : ""
-    }
   }
 
   componentWillReceiveProps() {
@@ -26,23 +17,15 @@ class ArticleList extends Component {
     })
   }
 
-  onChange = (e) => {
-    console.log(this.props.articles)
-    this.setState({
-        [e.target.name]: e.target.value
-    })
-    console.log(e.target.value);
-    this.props.searchArticle(e.target.value);
-    console.log(this.props.articles)
-  }
 
-  onSubmit = (e) => {
-    e.preventDefault();
-  }
-  
 
   render() {
-      const articles = this.props.articles;      
+    let initArticles = []
+    let articles = []
+    if (this.props.articles){
+      initArticles = this.props.articles
+      articles = initArticles.slice(0,3)
+    }     
       const displayArticle = 
       articles.length ? (
         articles.map(article => {
@@ -56,7 +39,7 @@ class ArticleList extends Component {
                             <CardBody>
                                 <CardTitle><h4><Links to={'/article/detail/' + article._id}>{article.title}</Links></h4></CardTitle>
                                 <CardText><Dotdotdot clamp={3}>{article.description}</Dotdotdot></CardText>
-                                {/* <CardText className="text-muted">Created by {article.createdBy.name}</CardText> */}
+                                <CardText className="text-muted">Created by {article.createdBy.name}</CardText>
                             </CardBody>
                         </Col>
                     </Row>
@@ -76,14 +59,10 @@ class ArticleList extends Component {
         <div className="content-title">
             <h3 className="bold-text">Article</h3>
         </div>
-        <Form onSubmit={this.onSubmit}>
-            <FormGroup>
-                <Input onChange={this.onChange} className="form-control" type="text" name="search" id="exampleSearch" placeholder="search"/>
-            </FormGroup>
-        </Form>
         <div>
             {displayArticle}
         </div>
+        <Links to='/user/article'>Show All Articles</Links>
       </div>
     )
   }
@@ -97,8 +76,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getArticle: () => { dispatch(getArticle()) },
-    searchArticle: (keyword) => { dispatch(searchArticle(keyword))}
+    getArticle: () => { dispatch(getArticle())}
   }
 }
 
