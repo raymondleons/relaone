@@ -31,7 +31,6 @@ class VolunteerDashboard extends Component {
 
   onClick = (e) => {
     console.log(this.state)
-    console.log(e.target.value)
   }
 
   render() {
@@ -55,7 +54,7 @@ class VolunteerDashboard extends Component {
         // let id = applicant._id
         console.log(applicant._id)
         const action = status === "Waiting" ? (
-          <Button color="link" value="asdf" onClick={this.onClick}><FontAwesomeIcon icon='check'/></Button>
+          <div><Button key="asdf" color="link" onClick={this.onClick}><FontAwesomeIcon icon='check'/></Button><Button color="link"><FontAwesomeIcon style={{marginLeft:'5px'}} icon='times'/></Button></div>
         ) : (
           <p></p>
         )
@@ -76,7 +75,7 @@ class VolunteerDashboard extends Component {
       <div className="organization-dashboard">
         <div className="content-title content-header">
             <div>
-              <h3>Volunteers</h3>
+              <h3>Applicants</h3>
             </div>
             <div className="event-count">
                 <h4>{this.props.applicants.length}</h4>
