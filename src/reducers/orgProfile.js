@@ -1,4 +1,4 @@
-import { GET_PROFILE, EDIT_PROFILE, EDIT_PROFILE_PHOTO } from '../actions/type';
+import { GET_PROFILE, EDIT_PROFILE, EDIT_PROFILE_PHOTO, SIGN_IN_ORG } from '../actions/type';
 
 const initialState={
     organizationName: '',
@@ -6,11 +6,21 @@ const initialState={
     confirmed: false,
     username: '',
     email: '',
-    phoneNumber: ''
-} 
+    phoneNumber: '',
+    token:'',
+    role:''
+}
 
 const orgProfile=(state=initialState, action) => {
     switch (action.type) {
+        case SIGN_IN_ORG:
+            localStorage.setItem('token', action.token)
+            localStorage.setItem('role', action.role)
+            return {
+                ...state,
+                token: action.token,
+                role: action.role
+            }
         case GET_PROFILE:
             return {
                 ...state,

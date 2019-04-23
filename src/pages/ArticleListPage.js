@@ -7,6 +7,12 @@ import ArticleList from '../components/ArticleList';
 import UserSideBar from '../layout/UserSideBar';
 
 class ArticleListPage extends Component {
+
+  componentDidMount(){
+    window.scrollTo(0, 0);
+    document.title = "Articles";
+  }
+
   render() {
     return (
       <div className="create-event">

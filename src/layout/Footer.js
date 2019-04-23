@@ -18,6 +18,19 @@ library.add(faFacebookF, faTwitter, faInstagram);
 
 class Footer extends Component {
   render() {
+
+    let token = localStorage.getItem('token');
+
+    const takeAction = (token === null) ? (
+      <Col lg="2" className="footer-content">
+      <p className="bold-text">TAKE ACTION</p>
+      <p className="footer-links"><Links className="footer-links" exact="true" to="/find-activity">Join Event</Links></p>
+      <p className="footer-links"><Links className="footer-links" exact="true" to="/find-volunteer">Find Volunteer</Links></p>
+      </Col>
+    ) : (
+      <Col lg="2" className="footer-content"></Col>      
+    )
+
     return (
       <div className="footer-landingpage">
          <Container>
@@ -51,11 +64,9 @@ class Footer extends Component {
                 <p>{this.props.footerLocation}</p>
               </Col>
               <Col lg="2"></Col>
-              <Col lg="2" className="footer-content">
-                <p className="bold-text">TAKE ACTION</p>
-                <p className="footer-links"><Links className="footer-links" exact="true" to="/find-activity">Join Event</Links></p>
-                <p className="footer-links"><Links className="footer-links" exact="true" to="/find-volunteer">Find Volunteer</Links></p>
-              </Col>
+              
+                {takeAction}
+              
               <Col lg="2" className="footer-content">
                 <p className="bold-text">LEARN MORE</p>
                 <p><Link

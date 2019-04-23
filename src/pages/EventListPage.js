@@ -5,11 +5,17 @@ import ProfileBadge from '../layout/ProfileBadge';
 import Header from '../layout/Header';
 import EventList from '../components/EventList';
 import OrganizationSideBar from '../layout/OrganizationSideBar';
+import history from '../history'
 
 class EventListPage extends Component {
 
   componentDidMount(){
+    let role = localStorage.getItem('role')
+    if (role !== 'organization') {
+      history.push('/login-org')
+    }
     window.scrollTo(0, 0);
+    document.title = "Event";
   }
 
   render() {

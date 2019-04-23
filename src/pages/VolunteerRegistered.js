@@ -1,26 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap';
+import VolunteerDashboard from '../components/VolunteerDashboard';
 import '../assets/css/_style.scss';
 import ProfileBadge from '../layout/ProfileBadge';
 import Header from '../layout/Header';
-import CreateEvent from '../components/CreateEvent';
 import OrganizationSideBar from '../layout/OrganizationSideBar';
-import history from '../history'
 
-class UpdateOrganizationProfile extends Component {
-
-  componentDidMount(){
-    let role = localStorage.getItem('role')
-    if (role !== 'organization') {
-      history.push('/login-org')
-    }
-    window.scrollTo(0, 0);
-    document.title = "Create Event";
-  }
-
+class VolunteerRegistered extends Component {
   render() {
     return (
-      <div className="create-event">
+      <div className="update-organization-profile">
         <Container>
           <Row>
             <Header/>
@@ -31,14 +20,13 @@ class UpdateOrganizationProfile extends Component {
               <OrganizationSideBar/>
             </Col>
             <Col sm="12" md="8">
-                <CreateEvent/>
+              <VolunteerDashboard/>  
             </Col>
           </Row>
-        </Container>      
+        </Container>
       </div>
     )
   }
 }
 
-export default UpdateOrganizationProfile;
-
+export default VolunteerRegistered;

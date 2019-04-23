@@ -30,8 +30,17 @@ class UserJoinedEvent extends Component {
     
     
 
-    const events = this.props.events 
-    console.log(events)
+    let events = this.props.events
+
+    // let memberFilter = (member) => {
+    //   let x = member.filter(members => members.idMember === this.props.id);
+    //   let status = '';
+    //   if (x[0].status) {
+    //     status = x[0].status
+    //   };
+    //   return <p>{status}</p>
+    // }
+    
       const displayEvent = events.length ? (
           events.map(({_id, deadline, title, location, quota, quotaMax, organization, member}, i) => {
             return(
@@ -94,3 +103,5 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserJoinedEvent);
+
+

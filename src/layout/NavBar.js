@@ -30,7 +30,63 @@ class NavBar extends Component {
     });
     }  
 
+    handleSignOut = () =>{
+        localStorage.clear()
+      }
+    
+
     render() {
+
+        let token = localStorage.getItem('token');
+        
+        const logButton = (token !== null) ? (
+            <Links to="/"><Button onClick={this.handleSignOut} className="login-button bold-text" color="warning">Log Out</Button></Links>
+        ) : (
+            <Links to="/login"><Button className="login-button bold-text" color="warning">Login</Button></Links>
+        )
+
+        const find = (token === null) ? (
+            <UncontrolledDropdown nav inNavbar className="navitem drop">
+            <DropdownToggle nav caret>
+            Take Action
+            </DropdownToggle>
+            <DropdownMenu right className="dropdown">
+            <DropdownItem className="dropdown">
+                <Links className="footer-links" exact="true" to="/find-activity">Join Event</Links>
+            </DropdownItem>
+            <DropdownItem className="dropdown">
+                <Links className="footer-links" exact="true" to="/find-volunteer">Find Volunteer</Links>
+            </DropdownItem>
+            </DropdownMenu>
+        </UncontrolledDropdown>
+        ) : (
+            <div></div>
+        )
+
+        const join = (token === null) ? (
+        <NavItem className="navitem">
+            <Links to="/register">Join</Links>
+        </NavItem>
+        ) : (
+            <div></div>
+        )
+
+        let role = localStorage.getItem('role')
+
+        const dashboard = () => {
+            if (role === "organization") {
+                return <NavItem className="navitem">
+                    <Links to="/organization/event">Dashboard</Links>
+                </NavItem>
+            } else if (role === "member") {
+                return <NavItem className="navitem">
+                    <Links to="/dashboard">Dashboard</Links>
+                </NavItem>
+            } else {
+                return <div></div>
+            }
+        }
+            
         return (
         <div>
             <Navbar dark expand="md" className="navbar">
@@ -75,25 +131,13 @@ class NavBar extends Component {
                         >Contact Us</Link>
                 </NavItem>
                 
-                    <UncontrolledDropdown nav inNavbar className="navitem drop">
-                        <DropdownToggle nav caret>
-                        Take Action
-                        </DropdownToggle>
-                        <DropdownMenu right className="dropdown">
-                        <DropdownItem className="dropdown">
-                            <Links className="footer-links" exact="true" to="/find-activity">Join Event</Links>
-                        </DropdownItem>
-                        <DropdownItem className="dropdown">
-                            <Links className="footer-links" exact="true" to="/find-volunteer">Find Volunteer</Links>
-                        </DropdownItem>
-                        </DropdownMenu>
-                    </UncontrolledDropdown>
+                {find}
                 
-                <NavItem className="navitem">
-                        <Links to="/register">Join</Links>
-                </NavItem>
+                {join}
+
+                {dashboard()}
                 <NavItem>
-                    <Links to="/login"><Button className="login-button bold-text" color="warning">Login</Button></Links>
+                    {logButton}
                 </NavItem>
                 </Nav>
             </Collapse>

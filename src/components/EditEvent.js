@@ -11,28 +11,6 @@ class Edit extends Component {
     componentWillMount() {
         this.props.getEvent();
         this.props.getSkillset();
-
-        let initDeadline = this.props.events.deadline
-        Moment.locale('en');
-        let deadline = Moment(initDeadline).format('YYYY-MM-DD')
-
-        let initQuota = this.props.events.quotaMax
-        let quotaMax = initQuota.toString()
-
-        let initSkillSet = this.props.events.skillSet
-        let skills = []
-        if (initSkillSet.length === 0) {
-            skills = []
-        } else {initSkillSet.map(skill => 
-            skills = [...skills, skill._id]
-        )}
-
-        localStorage.setItem("title", this.props.events.title);
-        localStorage.setItem("description", this.props.events.description);
-        localStorage.setItem("location", this.props.events.location);
-        localStorage.setItem("deadline", deadline);
-        localStorage.setItem("quotaMax", quotaMax);
-        localStorage.setItem("skillSet", skills)
     }
 
     constructor(props) {

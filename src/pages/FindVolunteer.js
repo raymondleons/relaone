@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom'
 class FindVolunteer extends Component {
 
   componentDidMount(){
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
+    document.title = "Find Volunteer";
   }
 
   render() {
