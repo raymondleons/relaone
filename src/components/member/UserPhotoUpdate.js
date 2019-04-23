@@ -35,7 +35,7 @@ class FormOrganizationProfile extends Component {
     return (
       <div className="form-organization-profile">
         <div>
-            <h2><b>Update Organization Photo</b></h2>
+            <h2><b>Update Photo</b></h2>
         </div>
         <hr></hr>
         <Form onSubmit={this.onSubmit}>
