@@ -669,6 +669,18 @@ body {
     text-align: center !important;
 }
 
+.volunteer-avatar {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center !important;
+}
+
 .volunteer-detail {
     height: 20px;
 }

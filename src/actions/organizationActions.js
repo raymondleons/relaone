@@ -13,7 +13,8 @@ import { ADD_EVENT,
         GET_VOLUNTEER,
         SEARCH_VOLUNTEER,
         SIGN_IN_ORG,
-        SIGN_UP } from './type';
+        SIGN_UP,
+        GET_APPLICANT } from './type';
 import history from '../history';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -195,6 +196,7 @@ export const editEventPhoto = (formdata) => {
                 photo: res.data.data.photo
                 })
                 toast.success("Your event has been updated")
+                history.push("/organization/event")
                 }
             )
             .catch(err => {
@@ -287,6 +289,7 @@ export const signup = (organizationName, username, phoneNumber, email, password)
         });
     };
   };
+
 export const editPhoto = (formdata) => {
     return dispatch => {
         axios ({
@@ -407,3 +410,29 @@ export const signIn = (username, password) => {
         });
     };
   };
+
+  export const getApplicant = (id) => {
+    return dispatch => {
+        axios ({
+            url: `${url}/organization/listmember?eventid=${id}`,
+            method: 'get',
+            headers: { 
+                'x-access-token': localStorage.getItem('token')
+            }
+        })
+            .then(res => {
+                dispatch({
+                type: GET_APPLICANT,
+                payload: res.data.data.member
+                });
+              }
+            )
+            .catch(err => {
+                console.log(err)
+                // toast.error("Error. Please check your input.")
+            })
+    }
+}
+
+
+
