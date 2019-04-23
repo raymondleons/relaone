@@ -15,10 +15,10 @@ class LoginPage extends React.Component {
   componentDidMount(){
     document.title= "Login - RelaOne"
     let role = localStorage.getItem('role')
-    if ( role === 'organization' ) {
-      history.push('/organization/event')
-    } else if (role === 'member') {
+    if ( role === 'member' ) {
       history.push('/user/dashboard')
+    } else if (role === 'organization') {
+      history.push('/organization/event')
     } else if (role === 'admin') {
       history.push('/')
     }

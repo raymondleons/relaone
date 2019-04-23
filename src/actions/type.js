@@ -1,7 +1,8 @@
 //actions for more than 1 role
-export const SIGN_UP = 'SIGN_UP;'
+export const SIGN_UP = 'SIGN_UP';
 
 //actions for user
+export const USERSIGN_IN = 'USERSIGN_IN';
 export const DEL_ARTICLE = 'DEL_ARTICLE';
 export const GET_ARTICLE = 'GET_ARTICLE';
 export const GET_USEREVENT = 'GET_USEREVENT';

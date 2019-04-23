@@ -1,4 +1,4 @@
-import { GET_PROFILE, GET_USERPROFILE, EDIT_USERPROFILE, EDIT_USERPHOTO } from '../actions/type';
+import {USERSIGN_IN, GET_PROFILE, GET_USERPROFILE, EDIT_USERPROFILE, EDIT_USERPHOTO } from '../actions/type';
 
 const initialState={
     fullname: '',
@@ -13,7 +13,9 @@ const initialState={
     birthDate:'',
     emergencyContact:'',
     skillSet:'',
-    id:''
+    id:'',
+    token: '',
+    role: ''
 }
 
 const userProfile=(state=initialState, action) => {
@@ -68,6 +70,14 @@ const userProfile=(state=initialState, action) => {
             return {
                 ...state,
                 photo: action.photo
+            }
+            case USERSIGN_IN:
+            localStorage.setItem('token', action.token)
+            localStorage.setItem('role', action.role)
+            return {
+                ...state,
+                token: action.token,
+                role: action.role
             }
         default:
             return state;

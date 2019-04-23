@@ -11,6 +11,7 @@ import { GET_ARTICLE,
   SEARCH_EVENT,
   EDIT_USERPHOTO,
   USER_JOINEVENT,
+  USERSIGN_IN,
   GET_USERSKILLSET} from './type';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -164,12 +165,10 @@ export const signIn = (username, password) => {
       }
     })
       .then(res => {
-        console.log(res);
         dispatch({
-          type: "SIGN_IN",
+          type: USERSIGN_IN,
           token: res.data.token,
-          role: res.data.data.role,
-          response: res.data
+          role: res.data.data.role
         });
         history.push('/user/dashboard');
       })
