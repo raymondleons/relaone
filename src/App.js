@@ -33,6 +33,7 @@ import UserJoinedEventPage from './pages/member/UserJoinedEventPage'
 import UserPhotoUpdate from './pages/member/UserPhotoUpdatePage'
 import OrganizationRegister from './components/organization/OrganizationRegister'
 import Login from './pages/LoginPage'
+import LoginRoot from './pages/LoginRoot'
 import VerifiedAccount from './pages/VerifiedAccount'
 import LoginAdmin from './pages/admin/Login'
 import DashboardAdmin from './layout/Admin/DashboardPage'
@@ -109,6 +110,7 @@ class App extends Component {
             <Route path='/user/dashboard' component={UserDashboardPage} exact />  
             <Route path='/user/photo/update' component={UserPhotoUpdate} exact />  
             <Route path='/login' component={Login} exact />
+            <Route path="/log-in" exact component={LoginRoot} />
             <Route path="/account-verified" exact component={VerifiedAccount}/>
             <Route path="/admin/login" exact component={LoginAdmin} />
             <Route path="/admin/dashboard" exact component={DashboardAdmin} />
