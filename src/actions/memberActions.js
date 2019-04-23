@@ -1,7 +1,17 @@
 import axios from 'axios';
 import history from '../history';
 import { toast } from 'react-toastify';
-import { GET_ARTICLE, GET_USEREVENT, SIGN_UP, GET_USERJOINEDEVENT, GET_USERPROFILE, EDIT_USERPROFILE, SEARCH_ARTICLE, SEARCH_EVENT, EDIT_USERPHOTO, USER_JOINEVENT, GET_USERSKILLSET} from './type';
+import { GET_ARTICLE,
+  GET_USEREVENT,
+  SIGN_UP,
+  GET_USERJOINEDEVENT,
+  GET_USERPROFILE,
+  EDIT_USERPROFILE,
+  SEARCH_ARTICLE,
+  SEARCH_EVENT,
+  EDIT_USERPHOTO,
+  USER_JOINEVENT,
+  GET_USERSKILLSET} from './type';
 import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure({
@@ -145,19 +155,23 @@ export const getUserJoinedEvent = () => {
 
 export const signIn = (username, password) => {
   return dispatch => {
-    axios
-      .post(`${url}/member/login`, {
-        username: username,
-        password: password
-      })
+    axios ({
+      url: `${url}/member/login`,
+      method: 'post',
+      data: {
+          username,
+          password
+      }
+    })
       .then(res => {
         console.log(res);
         dispatch({
           type: "SIGN_IN",
-          username,
-          password,
+          token: res.data.token,
+          role: res.data.data.role,
           response: res.data
         });
+        history.push('/user/dashboard');
       })
       .catch(err => {
         console.log(err);

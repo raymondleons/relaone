@@ -5,15 +5,23 @@ import '../assets/css/_style2.scss';
 import Img from '../assets/images/image1.png'
 import Logo from '../assets/images/blue-logo.png'
 import { signIn } from "../actions/memberActions";
-import axios from 'axios'
 import { connect } from "react-redux";
 import { getRole } from "../actions/mainActions";
+import history from '../history'
 
 
 class LoginPage extends React.Component {
 
   componentDidMount(){
     document.title= "Login - RelaOne"
+    let role = localStorage.getItem('role')
+    if ( role === 'organization' ) {
+      history.push('/organization/event')
+    } else if (role === 'member') {
+      history.push('/user/dashboard')
+    } else if (role === 'admin') {
+      history.push('/')
+    }
 }
 constructor(props) {
   super(props)
@@ -28,15 +36,29 @@ onChange = e => this.setState({ [e.target.name]: e.target.value });
 
 onSubmit = e => {
   e.preventDefault();
+
+  let days = 7;
+  let now = new Date().getTime();
+  let setupTime = localStorage.getItem('setupTime');
+  if (setupTime == null) {
+      localStorage.setItem('setupTime', now)
+  } else {
+      if(now-setupTime > days*24*60*60*1000) {
+          localStorage.clear()
+      }
+  }
+  
   this.props.signIn(this.state.username, this.state.password)
   this.setState({
-    username: "",
-    password: ""
+    username: '',
+    password: ''
   });
 }
 
   render() {
-    this.props.role === "member" && this.props.history.push("/dashboard")
+    this.props.role === "member" && this.props.history.push("/user/dashboard")
+
+    
     return (
       <div className="container2">
         <div className=" my-4 logo" >

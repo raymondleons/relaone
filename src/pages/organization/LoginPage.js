@@ -17,7 +17,7 @@ class LoginPage extends React.Component {
     if ( role === 'organization' ) {
       history.push('/organization/event')
     } else if (role === 'member') {
-      history.push('/')
+      history.push('/user/dashboard')
     } else if (role === 'admin') {
       history.push('/')
     }
