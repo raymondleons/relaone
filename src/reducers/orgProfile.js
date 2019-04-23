@@ -7,16 +7,19 @@ const initialState={
     username: '',
     email: '',
     phoneNumber: '',
-    token:''
+    token:'',
+    role:''
 }
 
 const orgProfile=(state=initialState, action) => {
     switch (action.type) {
         case SIGN_IN_ORG:
             localStorage.setItem('token', action.token)
+            localStorage.setItem('role', action.role)
             return {
                 ...state,
-                token: action.token
+                token: action.token,
+                role: action.role
             }
         case GET_PROFILE:
             return {

@@ -68,17 +68,14 @@ import LoginContoh from './pages/Login'
 
 class App extends Component {
   render() {
-      let days = 7;
-      let now = new Date().getTime();
-      let setupTime = localStorage.getItem('setupTime');
-      if (setupTime == null) {
-          localStorage.setItem('setupTime', now)
-      } else {
-          if(now-setupTime > days*24*60*60*1000) {
-              localStorage.clear()
-              localStorage.setItem('setupTime', now);
-          }
-      }
+
+    let days = 7;
+    let now = new Date().getTime();
+    let setupTime = localStorage.getItem('setupTime');
+    if(now-setupTime > days*24*60*60*1000) {
+            localStorage.clear()
+        }
+    
 
     return (
       <Provider store={store}>

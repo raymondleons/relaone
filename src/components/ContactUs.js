@@ -13,17 +13,17 @@ class ContactUs extends Component {
               <Col sm="0" md="3" lg="4"></Col>
               <Col sm="12" md="6" lg="4">
                 <h2 className="mb-5">Contact Us</h2>
-                <FormGroup>
-                    <Input
-                        type="email"
-                        name="email"
-                        id="exampleEmail"
-                        placeholder="enter your email"
-                        className="mb-3"
-                    />
-                    <Input type="textarea" name="text" id="exampleText" rows="8" placeholder="your messages" className="mb-3" />
-                    <Button color="warning">Submit</Button>
-                </FormGroup>
+                <div>
+                  <h2>RelaOne Main Office</h2>
+                  <p style={{fontSize:"20px"}}>Nongsa Digital Park
+                  <br/>Jl. Hang Lekiu No.KM 2
+                  <br/>Sambau, Nongsa, Batam, Kepulauan Riau 29465
+                  <br/>Indonesia</p>
+                  <p style={{fontSize:"20px"}}>
+                  (+62) 778 2374043
+                  relaonebinar@gmail.com
+                  </p>
+                </div>
               </Col>
           </Row>
         </Container>

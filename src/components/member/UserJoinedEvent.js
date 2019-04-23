@@ -14,27 +14,35 @@ class UserJoinedEvent extends Component {
 
   render() {
     
-    let initdeadLine = this.props.deadLine
-    Moment.locale('en');
-    let deadline = Moment(initdeadLine).format('YYYY-MM-DD')
+    let formatDeadline = (deadline) => {
+      Moment.locale('en');
+      let formatedDeadline = Moment(deadline).format('YYYY-MM-DD');
+      return <p>{formatedDeadline}</p>
+    }
 
-    const events = this.props.events 
-    console.log(events)
+    let events = this.props.events
+
+    // let memberFilter = (member) => {
+    //   let x = member.filter(members => members.idMember === this.props.id);
+    //   let status = '';
+    //   if (x[0].status) {
+    //     status = x[0].status
+    //   };
+    //   return <p>{status}</p>
+    // }
+    
       const displayEvent = events.length ? (
-          events.map(({_id, title, location, quota, quotaMax, organization, member}, i) => {
+          events.map(({_id, deadline, title, location, quota, quotaMax, organization, member}, i) => {
             return(
               <tr>
-               <td key={_id}>{deadline}</td> 
+               <td key={_id}>{formatDeadline(deadline)}</td> 
                 <td key={_id}><Link to={'/user/event/details/' + _id}>{title}</Link></td>
                 <td key={_id}>{organization.organizationName}</td>
                 <td key={_id}>{location}</td>
                 <td key={_id}>{quota}/{quotaMax}</td>
-                {/* <td>
-                  {member.filter(members => members.idMember === this.props.id ? (
-                      return (members.status)
-                  )
-                  )}
-                </td> */}
+                <td>
+                  {/* {memberFilter(member)} */}
+                </td>
               </tr>
             )
           })
@@ -94,3 +102,5 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserJoinedEvent);
+
+

@@ -5,8 +5,19 @@ import ProfileBadge from '../layout/ProfileBadge';
 import Header from '../layout/Header';
 import EventDetailOrg from '../components/EventDetailOrg';
 import OrganizationSideBar from '../layout/OrganizationSideBar';
+import history from '../history'
 
 class EventListPage extends Component {
+
+  componentDidMount(){
+  let role = localStorage.getItem('role')
+  if (role !== 'organization') {
+    history.push('/login-org')
+  }
+  window.scrollTo(0, 0);
+  document.title = "Event Detail";
+}
+
   render() {
     return (
       <div className="create-event">

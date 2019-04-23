@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import NavigationBar from '../layout/NavigationBar'
 import Footers from '../layout/Footers'
-import { Container, Row, Col, Card, CardTitle, CardImg, CardImgOverlay, Button } from 'reactstrap';
+import { Spinner, Container, Row, Col, Card, CardTitle, CardImg, CardImgOverlay, Button } from 'reactstrap';
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getEvent } from '../actions/guestActions'
@@ -12,6 +12,7 @@ class FindActivity extends Component {
   componentDidMount(){
     window.scrollTo(0, 0)
     this.props.getEvent();
+    document.title = "Find Event"
   }
   
   handleJoin = (e) => {
@@ -38,7 +39,11 @@ class FindActivity extends Component {
         )
       })
     ) : (
-      <p>loading</p>
+      <div>
+        <Spinner type="grow" color="primary" />
+        <Spinner type="grow" color="primary" />
+        <Spinner type="grow" color="primary" />   
+      </div>
     );
 
     return (

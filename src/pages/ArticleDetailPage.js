@@ -7,6 +7,12 @@ import Header from '../layout/Header';
 import ArticleDetail from '../components/ArticleDetail';
 
 class ArticleDetailPage extends Component {
+
+  componentDidMount(){
+    window.scrollTo(0, 0);
+    document.title = "Articles Detail";
+  }
+
   render() {
     return (
       <div className="create-event">

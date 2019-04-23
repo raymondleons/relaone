@@ -37,7 +37,8 @@ export const signInOrganization = (username, password) => {
             .then(res => {
                 dispatch({
                 type: SIGN_IN_ORG,
-                token: res.data.token
+                token: res.data.token,
+                role: res.data.data.role
                 });
                 let message = res.data.message
                 toast.success(message)
