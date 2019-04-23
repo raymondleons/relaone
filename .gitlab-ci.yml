@@ -19,12 +19,12 @@ deploy-to-staging:
   stage: staging
   environment:
     name: staging
-    url: https://staging-relaone-web.herokuapp.com/
+    url: https://webrelaone.herokuapp.com/
   script:
     - apt-get update -qy
     - apt-get install -y ruby ruby-dev rubygems-integration
     - gem install dpl
-    - dpl --provider=heroku --app=staging-relaone-web --api-key=98c22ba0-9240-4f8f-a025-441df90721fe
+    - dpl --provider=heroku --app=webrelaone --api-key=77e3aaf2-f574-4379-8d37-8e70e5d6cabe
   only:
     - develop
     
@@ -33,11 +33,11 @@ deploy-production:
   stage: production
   environment:
     name: production
-    url: https://relaone-web.herokuapp.com/
+    url: https://webrelaone.herokuapp.com/
   script:
     - apt-get update -qy
     - apt-get install -y ruby ruby-dev rubygems-integration
     - gem install dpl
-    - dpl --provider=heroku --app=relaone-web --api-key=98c22ba0-9240-4f8f-a025-441df90721fe
+    - dpl --provider=heroku --app=webrelaone --api-key=77e3aaf2-f574-4379-8d37-8e70e5d6cabe
   only:
     - master
