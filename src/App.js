@@ -34,15 +34,6 @@ import UserPhotoUpdate from './pages/member/UserPhotoUpdatePage'
 import OrganizationRegister from './components/organization/OrganizationRegister'
 import Login from './pages/LoginPage'
 import VerifiedAccount from './pages/VerifiedAccount'
-import LoginAdmin from './pages/admin/Login'
-import DashboardAdmin from './layout/Admin/DashboardPage'
-import AddNewArticle from './pages/admin/AddNewArticle'
-import UserPage from './layout/Admin/UserPage'
-import SkillSet from './layout/Admin/SkillSet'
-import AddNewSkillSet from './components/AddNewSkillSet'
-import ArticlePage from './layout/Admin/ArticlePage'
-import OrganizationPage from './layout/Admin/OrganizationPage'
-import EventPage from './layout/Admin/EventPage'
 import OrganizationProfilePage from './pages/OrganizationProfilePage'
 import RegisterRoot from './pages/RegisterRoot'
 import EventDetailOrgPage from './pages/EventDetailOrgPage'
@@ -57,14 +48,11 @@ import VoluteerRegistered from './pages/VolunteerRegistered'
 import VolunteerAccepted from './pages/VolunteerAccepted'
 import VolunteerRejected from './pages/VolunteerRejected'
 import LoginOrganization from './pages/organization/LoginPage'
-
-
-
-
-
 import VolunteerListPage from './pages/VolunteerListPage'
 import VolunteerDetailPage from './pages/VolunteerDetailPage'
 import LoginContoh from './pages/Login'
+
+import SignInAdmin from './pages/admin/SignInAdmin'
 
 class App extends Component {
   render() {
@@ -110,15 +98,6 @@ class App extends Component {
             <Route path='/user/photo/update' component={UserPhotoUpdate} exact />  
             <Route path='/login' component={Login} exact />
             <Route path="/account-verified" exact component={VerifiedAccount}/>
-            <Route path="/admin/login" exact component={LoginAdmin} />
-            <Route path="/admin/dashboard" exact component={DashboardAdmin} />
-            <Route path="/admin/article/add-new" exact component={AddNewArticle} />
-            <Route path="/admin/users" exact component={UserPage} />
-            <Route path="/admin/skill-set" exact component={SkillSet} />
-            <Route path="/admin/skill-set/add" exact component={AddNewSkillSet} />
-            <Route path="/admin/article" exact component={ArticlePage} />
-            <Route path="/admin/organization" exact component={OrganizationPage} />
-            <Route path="/admin/events" exact component={EventPage} />
             <Route path="/organization/profile" exact component={OrganizationProfilePage} />
             <Route path='/register' component={RegisterRoot} exact />
             <Route path='/organization/register' component={OrganizationRegister} exact />
@@ -138,7 +117,8 @@ class App extends Component {
             <Route path="/login-org" exact component={LoginOrganization}/>
             <Route path="/organization/volunteer-list" exact component={VolunteerListPage}/>
             <Route path="/organization/volunteer/detail/:volunteer_id" exact component={VolunteerDetailPage}/>
-            <Route path="/contohlogin" exact component={LoginContoh}/>     
+            <Route path="/contohlogin" exact component={LoginContoh}/>   
+            <Route path="/login-admin" exact component={SignInAdmin}/>  
           </div>
         </Router>
         </Provider>
