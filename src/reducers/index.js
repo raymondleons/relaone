@@ -8,6 +8,7 @@ import userProfile from './userProfile'
 import authReducer from './authReducer'
 import user from './user'
 import volunteer from './volunteer'
+import admin from './admin'
 
 export default combineReducers({
     landingPage: landingPage,
@@ -18,6 +19,7 @@ export default combineReducers({
     userProfile: userProfile,
     auth: authReducer,
     user: user,
-    volunteer: volunteer
+    volunteer: volunteer,
+    admin: admin
 
 });

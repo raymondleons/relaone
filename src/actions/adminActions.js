@@ -1,5 +1,23 @@
 import axios from 'axios'
-import {GET_USER, SIGN_IN_ADMIN} from './type'
+import {
+    ADD_USER,
+    GET_USER, 
+    DEL_USER, 
+    GET_ARTICLE, 
+    DEL_ARTICLE, 
+    GET_ORGANIZATION, 
+    DEL_ORGANIZATION,
+    GET_EVENT,
+    DEL_EVENT,
+    GET_USER_TOTAL,
+    GET_ARTICLE_TOTAL,
+    GET_EVENT_TOTAL,
+    GET_ORGANIZATION_TOTAL,
+    GET_SKILLSET,
+    DEL_SKILLSET,
+    GET_PROFILE_ADMIN,
+    SIGNIN_ADMIN,
+    EDIT_PROFILE} from './type'
 import history from '../history';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -22,7 +40,7 @@ export const signInAdmin = (username, password) => {
         })
             .then(res => {
                 dispatch({
-                type: SIGN_IN_ADMIN,
+                type: SIGNIN_ADMIN,
                 token: res.data.token,
                 role: res.data.data.role
                 });
@@ -36,7 +54,8 @@ export const signInAdmin = (username, password) => {
                 toast.error("Error. Please check your input.")
             })
     }
-}
+  }
+  
 export const getUser = () => {
     return dispatch => {
         axios.get('https://relaonebinar.herokuapp.com/api/admin/member',
