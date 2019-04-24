@@ -24,7 +24,7 @@ export const getArticle = () => {
     return dispatch => {
         axios.get('https://relaonebinar.herokuapp.com/api/member/article',
         {
-            headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTg2MTQ3MjA1MDlhMDAxNzM5MmYyZiIsInVzZXJuYW1lIjoiYmFzcnVsbGFoIiwiZW1haWwiOiJiYXNydWxsYWg5NkBnbWFpbC5jb20iLCJmdWxsbmFtZSI6IkJhc3J1bGxhaCIsInJvbGUiOiJtZW1iZXIiLCJwaG90byI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL3JlbGFvbmUvaW1hZ2UvdXBsb2FkL3YxNTU0NjMzNzA3L0RlZmF1bHQvZGVmYXVsdC1hdmF0YXIuanBnIiwic2tpbGxTZXQiOltdLCJpYXQiOjE1NTYwMDExOTUsImV4cCI6MTU1NjYwNTk5NX0.1vQpTEiQlfYJDqW6QxMG9_BFV9c7DYoCXGqh9NauE3Q"}
+            headers: { "x-access-token": localStorage.getItem('token')}
         })
         .then(res => {
               dispatch ({
@@ -39,7 +39,7 @@ export const getUserSkillset = () => {
   return dispatch => {
       axios.get('https://relaonebinar.herokuapp.com/api/member/skillset',
       {
-          headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTg2MTQ3MjA1MDlhMDAxNzM5MmYyZiIsInVzZXJuYW1lIjoiYmFzcnVsbGFoIiwiZW1haWwiOiJiYXNydWxsYWg5NkBnbWFpbC5jb20iLCJmdWxsbmFtZSI6IkJhc3J1bGxhaCIsInJvbGUiOiJtZW1iZXIiLCJwaG90byI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL3JlbGFvbmUvaW1hZ2UvdXBsb2FkL3YxNTU0NjMzNzA3L0RlZmF1bHQvZGVmYXVsdC1hdmF0YXIuanBnIiwic2tpbGxTZXQiOltdLCJpYXQiOjE1NTYwMDExOTUsImV4cCI6MTU1NjYwNTk5NX0.1vQpTEiQlfYJDqW6QxMG9_BFV9c7DYoCXGqh9NauE3Q"}
+          headers: { "x-access-token": localStorage.getItem('token')}
       })
       .then(res => {
           dispatch ({
@@ -57,7 +57,7 @@ export const editUserProfile = (fullname, username, email, idCard, birthDate, ad
           url: 'https://relaonebinar.herokuapp.com/api/member/profile',
           method: 'put',
           headers: { 
-              'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTg2MTQ3MjA1MDlhMDAxNzM5MmYyZiIsInVzZXJuYW1lIjoiYmFzcnVsbGFoIiwiZW1haWwiOiJiYXNydWxsYWg5NkBnbWFpbC5jb20iLCJmdWxsbmFtZSI6IkJhc3J1bGxhaCIsInJvbGUiOiJtZW1iZXIiLCJwaG90byI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL3JlbGFvbmUvaW1hZ2UvdXBsb2FkL3YxNTU0NjMzNzA3L0RlZmF1bHQvZGVmYXVsdC1hdmF0YXIuanBnIiwic2tpbGxTZXQiOltdLCJpYXQiOjE1NTYwMDExOTUsImV4cCI6MTU1NjYwNTk5NX0.1vQpTEiQlfYJDqW6QxMG9_BFV9c7DYoCXGqh9NauE3Q'
+              'x-access-token': localStorage.getItem('token')
           },
           data: {
             fullname : fullname,
@@ -101,7 +101,7 @@ export const getEvent = () => {
   return dispatch => {
       axios.get('https://relaonebinar.herokuapp.com/api/member/event',
       {
-          headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTg2MTQ3MjA1MDlhMDAxNzM5MmYyZiIsInVzZXJuYW1lIjoiYmFzcnVsbGFoIiwiZW1haWwiOiJiYXNydWxsYWg5NkBnbWFpbC5jb20iLCJmdWxsbmFtZSI6IkJhc3J1bGxhaCIsInJvbGUiOiJtZW1iZXIiLCJwaG90byI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL3JlbGFvbmUvaW1hZ2UvdXBsb2FkL3YxNTU0NjMzNzA3L0RlZmF1bHQvZGVmYXVsdC1hdmF0YXIuanBnIiwic2tpbGxTZXQiOltdLCJpYXQiOjE1NTYwMDExOTUsImV4cCI6MTU1NjYwNTk5NX0.1vQpTEiQlfYJDqW6QxMG9_BFV9c7DYoCXGqh9NauE3Q"}
+          headers: { "x-access-token": localStorage.getItem('token')}
       })
       .then(res => {
           dispatch ({
@@ -118,7 +118,7 @@ export const joinEvent = (id) => {
       url: 'https://relaonebinar.herokuapp.com/api/member/event',
       method: 'put',
       headers: { 
-          'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTg2MTQ3MjA1MDlhMDAxNzM5MmYyZiIsInVzZXJuYW1lIjoiYmFzcnVsbGFoIiwiZW1haWwiOiJiYXNydWxsYWg5NkBnbWFpbC5jb20iLCJmdWxsbmFtZSI6IkJhc3J1bGxhaCIsInJvbGUiOiJtZW1iZXIiLCJwaG90byI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL3JlbGFvbmUvaW1hZ2UvdXBsb2FkL3YxNTU0NjMzNzA3L0RlZmF1bHQvZGVmYXVsdC1hdmF0YXIuanBnIiwic2tpbGxTZXQiOltdLCJpYXQiOjE1NTYwMDExOTUsImV4cCI6MTU1NjYwNTk5NX0.1vQpTEiQlfYJDqW6QxMG9_BFV9c7DYoCXGqh9NauE3Q'
+          'x-access-token': localStorage.getItem('token')
       },
       data: {
           "id" : id
@@ -141,7 +141,7 @@ export const getUserJoinedEvent = () => {
   return dispatch => {
       axios.get('https://relaonebinar.herokuapp.com/api/member/joinedevent',
       {
-          headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTg2MTQ3MjA1MDlhMDAxNzM5MmYyZiIsInVzZXJuYW1lIjoiYmFzcnVsbGFoIiwiZW1haWwiOiJiYXNydWxsYWg5NkBnbWFpbC5jb20iLCJmdWxsbmFtZSI6IkJhc3J1bGxhaCIsInJvbGUiOiJtZW1iZXIiLCJwaG90byI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL3JlbGFvbmUvaW1hZ2UvdXBsb2FkL3YxNTU0NjMzNzA3L0RlZmF1bHQvZGVmYXVsdC1hdmF0YXIuanBnIiwic2tpbGxTZXQiOltdLCJpYXQiOjE1NTYwMDExOTUsImV4cCI6MTU1NjYwNTk5NX0.1vQpTEiQlfYJDqW6QxMG9_BFV9c7DYoCXGqh9NauE3Q"}
+          headers: { "x-access-token": localStorage.getItem('token')}
       })
       .then(res => {
         console.log(res)
@@ -209,7 +209,7 @@ export const getUserProfile = () => {
   return dispatch => {
       axios.get('https://relaonebinar.herokuapp.com/api/member/profile',
       {
-        headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTg2MTQ3MjA1MDlhMDAxNzM5MmYyZiIsInVzZXJuYW1lIjoiYmFzcnVsbGFoIiwiZW1haWwiOiJiYXNydWxsYWg5NkBnbWFpbC5jb20iLCJmdWxsbmFtZSI6IkJhc3J1bGxhaCIsInJvbGUiOiJtZW1iZXIiLCJwaG90byI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL3JlbGFvbmUvaW1hZ2UvdXBsb2FkL3YxNTU0NjMzNzA3L0RlZmF1bHQvZGVmYXVsdC1hdmF0YXIuanBnIiwic2tpbGxTZXQiOltdLCJpYXQiOjE1NTYwMDExOTUsImV4cCI6MTU1NjYwNTk5NX0.1vQpTEiQlfYJDqW6QxMG9_BFV9c7DYoCXGqh9NauE3Q"}
+        headers: { "x-access-token": localStorage.getItem('token')}
       })
       .then(res => {
           dispatch ({
@@ -235,7 +235,7 @@ export const searchArticle = (keyword) => {
   return dispatch => {
       axios.get(`https://relaonebinar.herokuapp.com/api/member/searcharticle?search=${keyword}`,
       {
-        headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTg2MTQ3MjA1MDlhMDAxNzM5MmYyZiIsInVzZXJuYW1lIjoiYmFzcnVsbGFoIiwiZW1haWwiOiJiYXNydWxsYWg5NkBnbWFpbC5jb20iLCJmdWxsbmFtZSI6IkJhc3J1bGxhaCIsInJvbGUiOiJtZW1iZXIiLCJwaG90byI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL3JlbGFvbmUvaW1hZ2UvdXBsb2FkL3YxNTU0NjMzNzA3L0RlZmF1bHQvZGVmYXVsdC1hdmF0YXIuanBnIiwic2tpbGxTZXQiOltdLCJpYXQiOjE1NTYwMDExOTUsImV4cCI6MTU1NjYwNTk5NX0.1vQpTEiQlfYJDqW6QxMG9_BFV9c7DYoCXGqh9NauE3Q"}          
+        headers: { "x-access-token": localStorage.getItem('token')}          
       })
       .then(res => {
         if (res.data.message === "Article not found") {
@@ -258,7 +258,7 @@ export const editUserPhoto = (formdata) => {
           url: 'https://relaonebinar.herokuapp.com/api/member/uploadphoto',
           method: 'put',
           headers: { 
-              'x-access-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTg2MTQ3MjA1MDlhMDAxNzM5MmYyZiIsInVzZXJuYW1lIjoiYmFzcnVsbGFoIiwiZW1haWwiOiJiYXNydWxsYWg5NkBnbWFpbC5jb20iLCJmdWxsbmFtZSI6IkJhc3J1bGxhaCIsInJvbGUiOiJtZW1iZXIiLCJwaG90byI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL3JlbGFvbmUvaW1hZ2UvdXBsb2FkL3YxNTU0NjMzNzA3L0RlZmF1bHQvZGVmYXVsdC1hdmF0YXIuanBnIiwic2tpbGxTZXQiOltdLCJpYXQiOjE1NTYwMDExOTUsImV4cCI6MTU1NjYwNTk5NX0.1vQpTEiQlfYJDqW6QxMG9_BFV9c7DYoCXGqh9NauE3Q'
+              'x-access-token': localStorage.getItem('token')
           },
           data: formdata
       })
@@ -278,7 +278,7 @@ export const searchEvent = (keyword) => {
   return dispatch => {
       axios.get(`https://relaonebinar.herokuapp.com/api/member/searchevent?search=${keyword}`,
       {
-        headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTg2MTQ3MjA1MDlhMDAxNzM5MmYyZiIsInVzZXJuYW1lIjoiYmFzcnVsbGFoIiwiZW1haWwiOiJiYXNydWxsYWg5NkBnbWFpbC5jb20iLCJmdWxsbmFtZSI6IkJhc3J1bGxhaCIsInJvbGUiOiJtZW1iZXIiLCJwaG90byI6Imh0dHBzOi8vcmVzLmNsb3VkaW5hcnkuY29tL3JlbGFvbmUvaW1hZ2UvdXBsb2FkL3YxNTU0NjMzNzA3L0RlZmF1bHQvZGVmYXVsdC1hdmF0YXIuanBnIiwic2tpbGxTZXQiOltdLCJpYXQiOjE1NTYwMDExOTUsImV4cCI6MTU1NjYwNTk5NX0.1vQpTEiQlfYJDqW6QxMG9_BFV9c7DYoCXGqh9NauE3Q"}          
+        headers: { "x-access-token": localStorage.getItem('token')}          
       })
       .then(res => {
         if (res.data.message === "Event Not Found") {

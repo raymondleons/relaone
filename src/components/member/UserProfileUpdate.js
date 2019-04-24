@@ -246,6 +246,40 @@ class FormUpdateProfile extends Component {
            />
             </FormGroup>
             <FormGroup>
+                <Label for="exampleAddress">Name :</Label>
+                <Input 
+                defaultValue={this.state.address} 
+                onChange={this.onChange}
+                type="text" 
+                name="address" 
+                id="exampleAddress" 
+           />
+           <Label for="exampleAddress">Relationship</Label>
+                <Input 
+                defaultValue={this.state.address} 
+                onChange={this.onChange}
+                type="text" 
+                name="address" 
+                id="exampleAddress" 
+           />
+           <Label for="exampleAddress">Address</Label>
+                <Input 
+                defaultValue={this.state.address} 
+                onChange={this.onChange}
+                type="text" 
+                name="address" 
+                id="exampleAddress" 
+           />
+           <Label for="exampleAddress">Phone</Label>
+                <Input 
+                defaultValue={this.state.address} 
+                onChange={this.onChange}
+                type="text" 
+                name="address" 
+                id="exampleAddress" 
+           />
+            </FormGroup>
+            <FormGroup>
                 <Label for="exampleSkillSet">Skill Set</Label><br></br>
                 {displaySkillset}
             </FormGroup>

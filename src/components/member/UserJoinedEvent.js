@@ -32,14 +32,14 @@ class UserJoinedEvent extends Component {
 
     let events = this.props.events
 
-    // let memberFilter = (member) => {
-    //   let x = member.filter(members => members.idMember === this.props.id);
-    //   let status = '';
-    //   if (x[0].status) {
-    //     status = x[0].status
-    //   };
-    //   return <p>{status}</p>
-    // }
+    let memberFilter = (member) => {
+      let x = member.filter(members => members.idMember === this.props.id);
+      let status = '';
+      if (x[0].status) {
+        status = x[0].status
+      };
+      return <p>{status}</p>
+    }
     
       const displayEvent = events.length ? (
           events.map(({_id, deadline, title, location, quota, quotaMax, organization, member}, i) => {
@@ -50,7 +50,7 @@ class UserJoinedEvent extends Component {
                 <td key={_id}>{organization.organizationName}</td>
                 <td key={_id}>{location}</td>
                 <td key={_id}>{quota}/{quotaMax}</td>
-                {/* <td>{memberFilter(member)}</td> */}
+                <td>{memberFilter(member)}</td>
               </tr>
             )
           })
