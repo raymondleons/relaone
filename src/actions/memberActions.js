@@ -50,9 +50,9 @@ export const getUserSkillset = () => {
   }
 }
 
-export const editUserProfile = (fullname, username, email, idCard, birthDate, address, phoneNumber, bio, emergencyContact, skillSet) => {
+export const editUserProfile = (fullname, username, email, idCard, birthDate, address, phoneNumber, bio, name, relationship, addr, phone, skillSet) => {
   return dispatch => {
-    console.log(fullname, username, email, idCard, birthDate, address, phoneNumber, bio, emergencyContact, skillSet)
+    // console.log(fullname, username, email, idCard, birthDate, address, phoneNumber, bio, emergencyContact, skillSet)
       axios ({
           url: 'https://relaonebinar.herokuapp.com/api/member/profile',
           method: 'put',
@@ -68,7 +68,12 @@ export const editUserProfile = (fullname, username, email, idCard, birthDate, ad
             address : address, 
             phoneNumber : phoneNumber, 
             bio : bio,
-            emergencyContact : emergencyContact,
+            emergencyContact : {
+              name : name,
+              relationship : relationship,
+              address : addr,
+              phoneNumber : phone
+            },
             skillSet : skillSet
           }
       })

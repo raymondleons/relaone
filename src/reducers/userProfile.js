@@ -33,7 +33,8 @@ const userProfile=(state=initialState, action) => {
                 address: action.address,
                 idCard: action.idCard,
                 skillSet: action.skillSet,
-                emergencyContact: action.emergencyContact
+                emergencyContact: action.emergencyContact,
+                birthDate: action.birthDate
             }
             case GET_USERPROFILE:
             return {

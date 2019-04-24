@@ -28,7 +28,8 @@ export const EDIT_PROFILE_PHOTO = 'EDIT_PROFILE_PHOTO';
 export const GET_VOLUNTEER = 'GET_VOLUNTEER';
 export const SEARCH_VOLUNTEER = 'SEARCH_VOLUNTEER';
 export const SIGN_IN_ORG = 'SIGN_IN_ORG';
-export const GET_APPLICANT = 'GET_APPLICANT'
+export const GET_APPLICANT = 'GET_APPLICANT';
+export const FORGOT_PASSWORD = 'FORGOT_PASSWORD';
 
 //actions for admin
 export const GET_USER = 'GET_USER';
