@@ -2,7 +2,7 @@ import { GET_VOLUNTEER, SEARCH_VOLUNTEER, GET_APPLICANT } from '../actions/type'
 
 const initialState={
     volunteers: [],
-    applicant: []
+    applicants: []
 }
 
 const volunteer=(state=initialState, action) => {
@@ -20,7 +20,7 @@ const volunteer=(state=initialState, action) => {
         case GET_APPLICANT:
         return {
             ...state,
-            applicant: action.payload
+            applicants: action.payload
         }
         default:
             return state;
