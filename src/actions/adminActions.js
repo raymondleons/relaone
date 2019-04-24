@@ -109,7 +109,7 @@ const editProfileUser = (organizationName, username, email, phoneNumber) => {
   
   export const getProfileAdmin = () => {
     return dispatch => {
-        axios.get(`${url}/api/admin/`,
+        axios.get(`${url}/admin/`,
         {
             headers: { "x-access-token": localStorage.getItem('token')}
         })
@@ -126,8 +126,8 @@ const editProfileUser = (organizationName, username, email, phoneNumber) => {
     return dispatch => {
       axios({
         method: "get",
-        url:`${url}/api/admin/member/`,
-        headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWM0Y2IxNzg5YWNlMDAxNzEyZjgzZiIsInVzZXJuYW1lIjoiYWRtaW5rdSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1NDc5NTc1N30.KJwVq7ZV3pDYe723nY9S5fqT8GQM4SAlWPvJ4EcpDTM"}
+        url:`${url}/admin/member/`,
+        headers: { "x-access-token": localStorage.getItem('token')}
           })
         .then(res => {
           console.log(res)
@@ -144,8 +144,8 @@ const editProfileUser = (organizationName, username, email, phoneNumber) => {
     return dispatch => {
       axios({
         method: "delete",
-        url: `${url}/api/admin/member/`,
-        headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWM0Y2IxNzg5YWNlMDAxNzEyZjgzZiIsInVzZXJuYW1lIjoiYWRtaW5rdSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1NDc5NTc1N30.KJwVq7ZV3pDYe723nY9S5fqT8GQM4SAlWPvJ4EcpDTM"},
+        url: `${url}/admin/member/`,
+        headers: { "x-access-token": localStorage.getItem('token')},
         data: {
           id
       }
@@ -165,8 +165,8 @@ const editProfileUser = (organizationName, username, email, phoneNumber) => {
     return dispatch => {
       axios({
         method: "get",
-        url:`${url}/api/admin/article`,
-        headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWM0Y2IxNzg5YWNlMDAxNzEyZjgzZiIsInVzZXJuYW1lIjoiYWRtaW5rdSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1NDc5NTc1N30.KJwVq7ZV3pDYe723nY9S5fqT8GQM4SAlWPvJ4EcpDTM"}
+        url:`${url}/admin/article`,
+        headers: { "x-access-token": localStorage.getItem('token')}
           })
         .then(res => {
           console.log(res)
@@ -183,8 +183,8 @@ const editProfileUser = (organizationName, username, email, phoneNumber) => {
     return dispatch => {
       axios({
         method: "delete",
-        url: `${url}/api/admin/article/`,
-        headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWM0Y2IxNzg5YWNlMDAxNzEyZjgzZiIsInVzZXJuYW1lIjoiYWRtaW5rdSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1NDc5NTc1N30.KJwVq7ZV3pDYe723nY9S5fqT8GQM4SAlWPvJ4EcpDTM"},
+        url: `${url}/admin/article/`,
+        headers: { "x-access-token": localStorage.getItem('token')},
         data: {
           id
       }
@@ -204,8 +204,8 @@ const editProfileUser = (organizationName, username, email, phoneNumber) => {
     return dispatch => {
       axios({
         method: "get",
-        url:`${url}/api/admin/organization/`,
-        headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWM0Y2IxNzg5YWNlMDAxNzEyZjgzZiIsInVzZXJuYW1lIjoiYWRtaW5rdSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1NDc5NTc1N30.KJwVq7ZV3pDYe723nY9S5fqT8GQM4SAlWPvJ4EcpDTM"}
+        url:`${url}/admin/organization/`,
+        headers: { "x-access-token": localStorage.getItem('token')}
           })
         .then(res => {
           console.log(res)
@@ -221,8 +221,8 @@ const editProfileUser = (organizationName, username, email, phoneNumber) => {
     return dispatch => {
       axios({
         method: "get",
-        url:`${url}/api/admin/organization/`,
-        headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWM0Y2IxNzg5YWNlMDAxNzEyZjgzZiIsInVzZXJuYW1lIjoiYWRtaW5rdSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1NDc5NTc1N30.KJwVq7ZV3pDYe723nY9S5fqT8GQM4SAlWPvJ4EcpDTM"}
+        url:`${url}/admin/organization/`,
+        headers: { "x-access-token": localStorage.getItem('token')}
           })
         .then(res => {
           console.log(res)
@@ -239,8 +239,8 @@ const editProfileUser = (organizationName, username, email, phoneNumber) => {
     return dispatch => {
       axios({
         method: "delete",
-        url: `${url}/api/admin/organization/`,
-        headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWM0Y2IxNzg5YWNlMDAxNzEyZjgzZiIsInVzZXJuYW1lIjoiYWRtaW5rdSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1NDc5NTc1N30.KJwVq7ZV3pDYe723nY9S5fqT8GQM4SAlWPvJ4EcpDTM"},
+        url: `${url}/admin/organization/`,
+        headers: { "x-access-token": localStorage.getItem('token')},
         data: {
           id
       }
@@ -260,8 +260,8 @@ const editProfileUser = (organizationName, username, email, phoneNumber) => {
     return dispatch => {
       axios({
         method: "get",
-        url:`${url}/api/admin/event/`,
-        headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWM0Y2IxNzg5YWNlMDAxNzEyZjgzZiIsInVzZXJuYW1lIjoiYWRtaW5rdSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1NDc5NTc1N30.KJwVq7ZV3pDYe723nY9S5fqT8GQM4SAlWPvJ4EcpDTM"}
+        url:`${url}/admin/event/`,
+        headers: { "x-access-token": localStorage.getItem('token')}
           })
         .then(res => {
           console.log(res)
@@ -278,8 +278,8 @@ const editProfileUser = (organizationName, username, email, phoneNumber) => {
     return dispatch => {
       axios({
         method: "get",
-        url:`${url}/api/admin/event/`,
-        headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWM0Y2IxNzg5YWNlMDAxNzEyZjgzZiIsInVzZXJuYW1lIjoiYWRtaW5rdSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1NDc5NTc1N30.KJwVq7ZV3pDYe723nY9S5fqT8GQM4SAlWPvJ4EcpDTM"}
+        url:`${url}/admin/event/`,
+        headers: { "x-access-token": localStorage.getItem('token')}
           })
         .then(res => {
           console.log(res)
@@ -296,8 +296,8 @@ const editProfileUser = (organizationName, username, email, phoneNumber) => {
     return dispatch => {
       axios({
         method: "delete",
-        url: `${url}/api/admin/event/`,
-        headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWM0Y2IxNzg5YWNlMDAxNzEyZjgzZiIsInVzZXJuYW1lIjoiYWRtaW5rdSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1NDc5NTc1N30.KJwVq7ZV3pDYe723nY9S5fqT8GQM4SAlWPvJ4EcpDTM"},
+        url: `${url}/admin/event/`,
+        headers: { "x-access-token": localStorage.getItem('token')},
         data: {
           id
       }
@@ -317,8 +317,8 @@ const editProfileUser = (organizationName, username, email, phoneNumber) => {
     return dispatch => {
       axios({
         method: "get",
-        url:`${url}/api/admin/article/`,
-        headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWM0Y2IxNzg5YWNlMDAxNzEyZjgzZiIsInVzZXJuYW1lIjoiYWRtaW5rdSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1NDc5NTc1N30.KJwVq7ZV3pDYe723nY9S5fqT8GQM4SAlWPvJ4EcpDTM"}
+        url:`${url}/admin/article/`,
+        headers: { "x-access-token": localStorage.getItem('token')}
           })
         .then(res => {
           console.log(res)
@@ -335,8 +335,8 @@ const editProfileUser = (organizationName, username, email, phoneNumber) => {
     return dispatch => {
       axios({
         method: "get",
-        url:`${url}/api/admin/skillset/`,
-        headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWM0Y2IxNzg5YWNlMDAxNzEyZjgzZiIsInVzZXJuYW1lIjoiYWRtaW5rdSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1NDc5NTc1N30.KJwVq7ZV3pDYe723nY9S5fqT8GQM4SAlWPvJ4EcpDTM"}
+        url:`${url}/admin/skillset/`,
+        headers: { "x-access-token": localStorage.getItem('token')}
           })
         .then(res => {
           console.log(res)
@@ -353,8 +353,8 @@ const editProfileUser = (organizationName, username, email, phoneNumber) => {
     return dispatch => {
       axios({
         method: "delete",
-        url: `${url}/api/admin/skillset/`,
-        headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWM0Y2IxNzg5YWNlMDAxNzEyZjgzZiIsInVzZXJuYW1lIjoiYWRtaW5rdSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1NDc5NTc1N30.KJwVq7ZV3pDYe723nY9S5fqT8GQM4SAlWPvJ4EcpDTM"},
+        url: `${url}/admin/skillset/`,
+        headers: { "x-access-token": localStorage.getItem('token')},
         data: {
           id
       }
@@ -373,7 +373,7 @@ const editProfileUser = (organizationName, username, email, phoneNumber) => {
   export const addUser = (fullname, username, password, email) => {
     return dispatch => {
         axios ({
-            url: `${url}/api/admin/member`,
+            url: `${url}/admin/member`,
             method: 'post',
             headers: {
                 'x-access-token': localStorage.getItem('token')

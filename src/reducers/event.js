@@ -1,4 +1,4 @@
-import { GET_EVENT, ADD_EVENT, GET_USEREVENT, DEL_EVENT, GET_USERJOINEDEVENT, USER_JOINEVENT, SEARCH_EVENT, EDIT_EVENT} from '../actions/type';
+import { GET_EVENT, ADD_EVENT, GET_USEREVENT, DEL_EVENT, GET_USERJOINEDEVENT, USER_JOINEVENT, SEARCH_EVENT, EDIT_EVENT, GET_EVENT_TOTAL} from '../actions/type';
 
 const initialState={
     events: []
@@ -44,6 +44,11 @@ const event=(state=initialState, action) => {
         case EDIT_EVENT:
         return {
             ...state
+        }
+        case GET_EVENT_TOTAL:
+        return {
+            ...state,
+            events: action.payload
         }
         default:
             return state;

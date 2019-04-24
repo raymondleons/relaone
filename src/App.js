@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import store from './store';
 import history from './history'
 
 import LandingPage from './pages/LandingPage';
 import UpdateOrganizationProfile from './pages/UpdateOrganizationProfile';
 import './assets/css/_style.scss';
-import { Router, Route } from 'react-router-dom';
 import UpdateOrgProfileSuccess from './pages/UpdateOrgProfileSuccess';
 import UpdateUserProfileSuccess from './pages/UpdateUserProfileSuccess';
 import UserProfileUpdate from './pages/member/UserProfileUpdatePage'
@@ -53,7 +53,7 @@ import VolunteerDetailPage from './pages/VolunteerDetailPage'
 import LoginContoh from './pages/Login'
 
 import SignInAdmin from './pages/admin/SignInAdmin'
-import DashboardAdmin from './pages/admin/Dashboard'
+import AdminPage from './pages/admin/'
 
 class App extends Component {
   render() {
@@ -69,7 +69,6 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router history={history}>
-          <div className="App">
           <Route path="/" exact component={LandingPage}/>
             <Route path="/register-success" exact component={RegisterSuccess}/>
             <Route path="/organization/update-profile" exact component={UpdateOrganizationProfile}/>        
@@ -119,8 +118,8 @@ class App extends Component {
             <Route path="/organization/volunteer/detail/:volunteer_id" exact component={VolunteerDetailPage}/>
             <Route path="/contohlogin" exact component={LoginContoh}/>   
             <Route path="/login-admin" exact component={SignInAdmin}/>
-            <Route path="/admin" exact component={DashboardAdmin}/>
-          </div>
+            <Route path="/admin" exact component={AdminPage}/>
+
         </Router>
         </Provider>
     );
