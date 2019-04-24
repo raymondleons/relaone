@@ -256,7 +256,6 @@ export const editProfile = (organizationName, username, email, phoneNumber) => {
             )
             .catch(err => {
                 console.log(err)
-                // console.log(err.data.message)
                 toast.error("Error. Please check your input.")
             })
     }
@@ -429,7 +428,6 @@ export const signIn = (username, password) => {
             )
             .catch(err => {
                 console.log(err)
-                // toast.error("Error. Please check your input.")
             })
     }
 }
