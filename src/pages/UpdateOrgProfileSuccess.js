@@ -24,7 +24,7 @@ class UpdateOrgProfileSuccess extends Component {
                   <img src={updatesuccess} alt="wait for verification" className="icon-success"></img>
                   <h3 className="bold-text">Thank you for updating your profile.</h3>
                   <p>Your profile will be reviewed by our team.</p>
-                  <Button color="primary"><Links className="button-text" to="/event">Dashboard</Links></Button>
+                  <Button color="primary"><Links className="button-text" to="/organization/event">Dashboard</Links></Button>
                 </div>
               </Col>
             </Row>

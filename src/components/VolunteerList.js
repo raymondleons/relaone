@@ -26,6 +26,9 @@ class VolunteerList extends Component {
   onSubmit = (e) => {
     e.preventDefault();
     this.props.searchVolunteer(this.state.search)
+    this.setState({
+      search: ''
+    })
   }
 
   render() {
@@ -43,7 +46,6 @@ class VolunteerList extends Component {
                             <CardBody>
                                 <CardTitle className="volunteer-detail"><Links to={'/organization/volunteer/detail/' + volunteer._id}>{volunteer.fullname}</Links></CardTitle>
                                 <div className="volunteer-detail"><Dotdotdot clamp={1}>{volunteer.address}</Dotdotdot></div>
-                                <CardText className="text-muted">Skillset :  </CardText>
                             </CardBody>
                 </Card>
                 </Col>
