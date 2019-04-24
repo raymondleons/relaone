@@ -32,5 +32,6 @@ export const GET_APPLICANT = 'GET_APPLICANT'
 
 //actions for admin
 export const GET_USER = 'GET_USER';
+export const SIGN_IN_ADMIN = 'SIGN_IN_ADMIN';
 
 
