@@ -5,12 +5,16 @@ import UserProfileBadge from '../layout/UserProfileBadge';
 import Header from '../layout/Header';
 import ArticleList from '../components/ArticleList';
 import UserSideBar from '../layout/UserSideBar';
-
+import history from '../history'
 class ArticleListPage extends Component {
 
   componentDidMount(){
+    let role = localStorage.getItem('role')
+    if (role !== 'member') {
+      history.push('/log-in')
+    }
     window.scrollTo(0, 0);
-    document.title = "Articles";
+    document.title = "RelaOne | Articles";
   }
 
   render() {

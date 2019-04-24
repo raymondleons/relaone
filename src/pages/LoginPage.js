@@ -94,7 +94,7 @@ onSubmit = e => {
                         id="password" 
                         placeholder="Type here .." />
                     </FormGroup>
-                    <FormText ><Link to='/forgot-password'>Forgot password?</Link>
+                    <FormText ><Link to='/user/forgot-password'>Forgot password?</Link>
                     </FormText>
                     <Button color="primary button-right mt-3 ">Login</Button>
                     <FormText className=" clear text-center mtop">

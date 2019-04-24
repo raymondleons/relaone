@@ -12,13 +12,41 @@ import { GET_ARTICLE,
   EDIT_USERPHOTO,
   USER_JOINEVENT,
   USERSIGN_IN,
-  GET_USERSKILLSET} from './type';
+  GET_USERSKILLSET,
+  USER_FORGOTPASSWORD} from './type';
 import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure({
         position: "top-center"}
 )
 const url = "https://relaonebinar.herokuapp.com/api";
+
+
+export const forgotPassword = (email) => {
+  return dispatch => {
+      axios ({
+          url: `${url}/member/forgetpassword`,
+          method: 'post',
+          data: {
+              email         
+          }
+      })
+          .then(res => {
+              console.log(res)
+              // dispatch({
+              // type: USER_FORGOTPASSWORD
+              // });
+              let message = "Please check your email"
+              toast.success(message)
+              history.push('/log-in');
+            }
+          )
+          .catch(err => {
+              console.log(err)
+              toast.error("Error. Please check your input.")
+          })
+  }
+}
 
 export const getArticle = () => {
     return dispatch => {

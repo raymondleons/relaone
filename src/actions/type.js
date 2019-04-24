@@ -14,6 +14,7 @@ export const SEARCH_ARTICLE = 'SEARCH_ARTICLE';
 export const SEARCH_EVENT = 'SEARCH_EVENT';
 export const EDIT_USERPHOTO = 'EDIT_USERPRHOTO';
 export const GET_USERSKILLSET = 'GET_USERSKILLSET'
+export const USER_FORGOTPASSWORD = 'USER_FORGOTPASSWORD'
 
 //actions for organization
 export const ADD_EVENT = 'ADD_EVENT';
