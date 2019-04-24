@@ -30,6 +30,9 @@ export const GET_VOLUNTEER = 'GET_VOLUNTEER';
 export const SEARCH_VOLUNTEER = 'SEARCH_VOLUNTEER';
 export const SIGN_IN_ORG = 'SIGN_IN_ORG';
 export const GET_APPLICANT = 'GET_APPLICANT'
+export const DEL_ORGANIZATION = 'DEL_ORGANIZATION'
+export const DEL_SKILLSET = 'DEL_SKILLSET'
+export const GET_ORGANIZATION = 'GET_ORGANIZATION'
 
 //actions for admin
 export const GET_USER = 'GET_USER';
