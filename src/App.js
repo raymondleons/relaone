@@ -114,8 +114,7 @@ class App extends Component {
             <Route path="/organization/event-photo/edit/:event_id" exact component={EventPhotoEditPage}/> 
             <Route path="/organization/volunteer" exact component={VoluteerRegistered}/>    
             <Route path="/organization/volunteer/accepted" exact component={VolunteerAccepted} />  
-            <Route path="/organization/volunteer/rejected" exact component={VolunteerRejected}/>  
-            <Route path="/organization/event-photo/edit/:event_id" exact component={EventPhotoEditPage}/>         
+            <Route path="/organization/volunteer/rejected" exact component={VolunteerRejected}/>          
             <Route path="/login-org" exact component={LoginOrganization}/>
             <Route path="/organization/volunteer-list" exact component={VolunteerListPage}/>
             <Route path="/organization/volunteer/detail/:volunteer_id" exact component={VolunteerDetailPage}/>

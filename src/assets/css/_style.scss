@@ -45,6 +45,7 @@ body {
     .profile-name {
         padding-top: 15px;
         padding-left: 20px;
+        padding-right: 20px;
     }
 
     .find-volunteer-div {
@@ -88,6 +89,7 @@ body {
     .profile-name {
         padding-top: 15px;
         padding-left: 15px;
+        padding-right: 15px;
     }
     
     .find-volunteer-div {
@@ -129,6 +131,7 @@ body {
     .profile-name {
         padding-top: 15px;
         padding-left: 15px;
+        padding-right: 15px;
     }
     
     .find-volunteer-div {
@@ -168,6 +171,7 @@ body {
     .profile-name {
         padding-top: 15px;
         padding-left: 0px;
+        padding-right: 10px;
     }
     
     .find-volunteer-div {
@@ -322,7 +326,6 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #F9F2FA;
     padding-top: 50px;
     padding-bottom: 20px;
  }
@@ -364,9 +367,6 @@ body {
     font-weight: bold;
 }
 
-.update-organization-profile {
-    background-color: #F9F2FA;
-}
 
 .edit-profile-button {
     margin-left: 20px
@@ -429,9 +429,6 @@ body {
     width: 170px;
 }
 
-.register-success {
-    background-color: #F9F2FA;
-}
 
 .register-success-content {
     background-color: white;
@@ -660,6 +657,18 @@ body {
 .volunteer-picture {
     width: 80px;
     height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center !important;
+}
+
+.volunteer-avatar {
+    width: 250px;
+    height: 250px;
     object-fit: cover;
     border-radius: 50%;
     margin-top: 10px;
