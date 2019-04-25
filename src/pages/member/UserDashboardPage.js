@@ -32,8 +32,8 @@ export default class DashboardPage extends Component {
             <UserSideBar />
           </Col>
           <Col sm="12" md="8">
-          <Articles />
             <Events />
+            <Articles />
           </Col>
         </Row>
       </Container>      

@@ -5,7 +5,7 @@ import Dotdotdot from 'react-dotdotdot';
 import { getArticle} from '../../actions/memberActions' ;
 import { Link as Links } from 'react-router-dom';
 
-class ArticleList extends Component {
+class UserDashboardArticle extends Component {
 
     componentDidMount(){
     this.props.getArticle();
@@ -17,15 +17,21 @@ class ArticleList extends Component {
     })
   }
 
+  onChange = (e) => {
+    this.setState({
+        [e.target.name]: e.target.value
+    })
+  }
 
+  onSubmit = (e) => {
+    e.preventDefault();
+    this.props.searchArticle(this.state.search)
+  }
+  
 
   render() {
-    let initArticles = []
-    let articles = []
-    if (this.props.articles){
-      initArticles = this.props.articles
-      articles = initArticles.slice(0,3)
-    }     
+      const articles = this.props.articles; 
+
       const displayArticle = 
       articles.length ? (
         articles.map(article => {
@@ -37,15 +43,15 @@ class ArticleList extends Component {
                         </Col>
                         <Col md="8">
                             <CardBody>
-                                <CardTitle><h4><Links to={'/article/detail/' + article._id}>{article.title}</Links></h4></CardTitle>
-                                <CardText><Dotdotdot clamp={3}>{article.description}</Dotdotdot></CardText>
+                                <CardTitle><h4><Links to={'/user/article/detail/' + article._id}>{article.title}</Links></h4></CardTitle>
+                                <div><Dotdotdot clamp={3}>{article.description}</Dotdotdot></div>
                                 <CardText className="text-muted">Created by {article.createdBy.name}</CardText>
                             </CardBody>
                         </Col>
                     </Row>
                 </Card>
               )
-          })
+          }) 
       ) : (
           <div>
             <Spinner type="grow" color="primary" />
@@ -60,9 +66,13 @@ class ArticleList extends Component {
             <h3 className="bold-text">Article</h3>
         </div>
         <div>
+        {articles.length} article(s) found
             {displayArticle}
         </div>
-        <Links to='/user/article'>Show All Articles</Links>
+        <div className='text-right'>
+        <Links to='/user/event' >Show All Articles</Links>
+        </div >
+       
       </div>
     )
   }
@@ -80,6 +90,6 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArticleList);
+export default connect(mapStateToProps, mapDispatchToProps)(UserDashboardArticle);
 
 

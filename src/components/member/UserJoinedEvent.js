@@ -13,14 +13,6 @@ class UserJoinedEvent extends Component {
   }
 
   render() {
-    // let memberFilter = (member) =>{
-    //   let x = member.filter(members => members.idMember === this.props.id)
-    //   let status = ''
-    //   if (x[0].status){
-    //     status =x[0].status
-    //   }
-    //   return <p>{status}</p>
-    // }
 
     let formatDeadLine = (deadline) =>{
       Moment.locale('en');

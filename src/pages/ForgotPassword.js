@@ -5,6 +5,7 @@ import lock from '../assets/images/lock.png';
 import '../assets/css/_style.scss'
 import { forgotPassword } from '../actions/organizationActions';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 class ForgotPassword extends Component {
 
@@ -30,7 +31,7 @@ class ForgotPassword extends Component {
         <Container>
             <Row>
                 <div className="logo-center">
-                    <img src={bluelogo} alt="RelaOne Logo"></img>
+                <Link to="/"><img src={bluelogo} alt="RelaOne Logo"></img></Link>
                 </div>
             </Row>
             <Row>
@@ -41,8 +42,14 @@ class ForgotPassword extends Component {
                   <img src={lock} alt="check your email" className="icon-success"></img>
                   <h3>Forgot your password?</h3>
                   <p>Enter your email address below and we will get you back on track.</p>
-                  <Input onChange={this.onChange} name="email" type="email" placeholder="user@example.com"></Input> 
-                  <Button className="forgetpassword-button" color="primary">Send</Button>
+                  <Row>
+                    <Col md="10">
+                      <Input onChange={this.onChange} name="email" type="email" placeholder="user@example.com"></Input>                     
+                    </Col>
+                    <Col md="2">
+                      <Button className="forgetpassword-button" color="primary">Send</Button>                    
+                    </Col>
+                  </Row>
                 </div>
                 </Form>
               </Col>

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Col, Row, Card, CardImg, CardBody, CardTitle, CardSubtitle, Button, Spinner} from 'reactstrap'
 import {Link} from 'react-router-dom'
 import '../../assets/css/_style.scss'
+import Moment from 'moment'
 import { getEvent} from '../../actions/memberActions' ;
 import { connect } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -25,17 +26,20 @@ class UserEvent extends Component {
   
 
   render() {
-    // console.log(this.props.events)
-    // const events = this.props.events
+
+    let initDate = this.props.deadline
+    Moment.locale('en');
+    let Date = Moment(initDate).format('YYYY-MM-DD')
+
     let initEvents = []
     let events = []
     if (this.props.events){
       initEvents = this.props.events
-      events = initEvents.slice(0,6)
+      events = initEvents.slice(0,4)
     }    
    
-    const displayEvent = events.length ? (
-      events.map(({_id, photo, title, location, organization, deadline, skillSet}, i) => {
+    const displayEvent = events.length ? ( 
+      events.map(({_id, photo, title, location, organization, deadline}, i) => {
         return (
           <Col sm={6} key={_id}>
             <Card className="mbot card-height">
@@ -44,37 +48,30 @@ class UserEvent extends Component {
               </Link>
               <CardBody className="px-1 py-1">
                 <CardTitle><Link to={'/user/event/details/' + _id}>{title}</Link></CardTitle>
-                  <hr />
-                  {/* <div>{Object.keys(organization).map((organizationName,photo) => (
-                      <div key={organization._id}>
-                          <p>{organization[organizationName]}</p>
-                          <p>{organization[photo]}</p>
-                      </div>))}
-                  </div> */}
-                 
+                  <hr className="hr-margin-0"/>
                   <div className="d-flex align-items-center">
                     <div className="logoevent">
                       <CardImg className="imgg" src={organization.photo} alt="No Photos" />
                     </div>
                     <CardSubtitle className="p-2">{organization.organizationName}</CardSubtitle>
                     </div>
-                  <hr />
-                  <Row>
+                  <hr className="hr-margin-0"/>
+                  <Row className="py-2">
                     <Col sm={6}>
-                      <CardSubtitle><FontAwesomeIcon icon='calendar-alt' className="fa-1x mr-2"/>{deadline}</CardSubtitle>
+                      <CardSubtitle><FontAwesomeIcon icon='calendar-alt' className="fa-1x mr-2"/>{Date}</CardSubtitle>
                     </Col>
                     <Col sm={6}>
                       <CardSubtitle><FontAwesomeIcon icon='map-marker-alt' className="fa-1x mr-2"/>{location}</CardSubtitle>
-                      <Link to={'/user/event/details/' + _id}>Details...</Link>
                     </Col>
                 </Row>
+                <Link to={'/user/event/details/' + _id}>
                   <Button block 
                   color="primary" 
-                  className="my-3" 
                   value={_id}
                   onClick={this.handleJoin}>
-                  Join Now
+                  Details
                   </Button>
+                  </Link>
               </CardBody>
             </Card>
           </Col>
@@ -92,11 +89,16 @@ class UserEvent extends Component {
       <div className="article-list">
         <div className="content-title">
           <h3 className="bold-text">Event</h3>
+          
         </div>
+        {events.length} event(s) found
         <Row className="pt-3">
           {displayEvent}
         </Row>
-        <Link to='/user/event'>Show All Events</Link>
+        <div className='text-right'>
+        <Link to='/user/event' >Show All Events</Link>
+        </div >
+       
       </div>  
     )
   }

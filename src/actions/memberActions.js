@@ -32,10 +32,9 @@ export const forgotPassword = (email) => {
           }
       })
           .then(res => {
-              console.log(res)
-              // dispatch({
-              // type: USER_FORGOTPASSWORD
-              // });
+              dispatch({
+              type: USER_FORGOTPASSWORD
+              });
               let message = "Please check your email"
               toast.success(message)
               history.push('/log-in');
@@ -120,11 +119,14 @@ export const editUserProfile = (fullname, username, email, idCard, birthDate, ad
               emergencyContact: res.data.data.emergencyContact,
               skillSet : res.data.data.skillSet
               })
+              let message = res.data.message
+              toast.success(message)
               history.push('/user/update-profile/success');
             }
           )
           .catch(err => 
             console.log(err))
+            toast.error("Error. Please check your input.")
   }
 }
 
@@ -203,10 +205,13 @@ export const signIn = (username, password) => {
           token: res.data.token,
           role: res.data.data.role
         });
+        let message = res.data.message
+        toast.success(message)
         history.push('/user/dashboard');
       })
       .catch(err => {
         console.log(err);
+        toast.error("Invalid username/password")
       });
   };
 };
@@ -229,10 +234,13 @@ export const signup = (fullname, username, email, password) => {
           email,
           password
         });
+        let message = res.data.message
+        toast.success(message)
         history.push('/register/success');
       }) 
       .catch(err => {
         console.log(err);
+        toast.error("Error. Please check your input.")
       });
   };
 };
@@ -300,10 +308,13 @@ export const editUserPhoto = (formdata) => {
               type: EDIT_USERPHOTO,
               photo: res.data.data.photo
               })
+              let message = res.data.message
+              toast.success(message)
               history.push('/user/profile');
             }
           )
           .catch(err => console.log(err))
+          toast.error("Error. Please check your input.")
   }
 }
 

@@ -21,11 +21,6 @@ class FormUpdateProfile extends Component {
     constructor(props) {
         super(props);
         
-        // let skillsets = []
-
-        // if (this.props.skillsets) {
-        //     skillsets = this.props.skillsets
-        // }
         let userProfile = {}
         if (this.props.userProfile) {
           userProfile = this.props.userProfile
@@ -66,31 +61,6 @@ class FormUpdateProfile extends Component {
       }
     
       
-    
-      // componentWillReceiveProps(props){
-      //   this.setState({
-      //       fullname : props.fullname,
-      //       username : props.username,
-      //       email : props.email,
-      //       idCard : props.idCard,
-      //       birthDate : props.birthDate,
-      //       address : props.address,
-      //       phoneNumber : props.phoneNumber,
-      //       bio : props.bio,
-      //       _id : props._id,
-      //       emergencyContact : props.emergencyContact,
-      //       skillSet : props.skillSet,
-      //       confirmed : props.confirmed
-
-      // })
-      // }
-      // onChangeNum = (e) => {
-      //   let num = e.target.value;
-      //   let str = num.toString();
-      //   this.setState({
-      //     [e.target.name]: str
-      //   })
-      // }
     
       onChange = (e) => {
         console.log(e.target.value)
@@ -134,7 +104,6 @@ class FormUpdateProfile extends Component {
             this.state.relationship,
             this.state.addr,
             this.state.phone,
-            // this.state.emergencyContact,,
             this.state.skillSet
             )
     }
@@ -145,8 +114,7 @@ class FormUpdateProfile extends Component {
     let initbirthDate = this.state.birthDate
     Moment.locale('en');
     let DOB = Moment(initbirthDate).format('YYYY-MM-DD')
-  
-    //menampilkan checked skillset
+
     const skillsets = this.props.skillsets  
       for (let i=0; i<skillsets.length; i++){ 
         for (let j=0; j<this.state.skillSet.length; j++){

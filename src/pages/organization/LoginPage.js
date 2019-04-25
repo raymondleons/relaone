@@ -105,7 +105,8 @@ onSubmit = (e) => {
                     </FormText>
                     <Button color="primary button-right mt-3 ">Login</Button>
                     <FormText className=" clear text-center mtop">
-                      Don't have an account? <Link to='/organization/register'>Register here.</Link>
+                      Don't have an account? <Link to='/organization/register'>Register here </Link>
+                      or <Link to='/login'>Login as User</Link>
                     </FormText>
                   </Form>
                 </Row>

@@ -81,7 +81,7 @@ onSubmit = e => {
                         type="text" 
                         name="username" 
                         id="username" 
-                        placeholder="Type here .." />
+                        placeholder="Your Username" />
                     </FormGroup>
                     <FormGroup>
                       <Label >Password</Label>
@@ -92,13 +92,14 @@ onSubmit = e => {
                         type="password" 
                         name="password" 
                         id="password" 
-                        placeholder="Type here .." />
+                        placeholder="Your Password" />
                     </FormGroup>
                     <FormText ><Link to='/user/forgot-password'>Forgot password?</Link>
                     </FormText>
                     <Button color="primary button-right mt-3 ">Login</Button>
                     <FormText className=" clear text-center mtop">
-                      Don't have an account? <Link to='/register'>Register here.</Link>
+                      Don't have an account? <Link to='/register'>Register here </Link>
+                      or <Link to='/login-org'>Login as Organization</Link>
                     </FormText>
                   </Form>
                 </Row>

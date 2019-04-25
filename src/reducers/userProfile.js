@@ -1,4 +1,4 @@
-import {USERSIGN_IN, GET_PROFILE, GET_USERPROFILE, EDIT_USERPROFILE, EDIT_USERPHOTO } from '../actions/type';
+import {USERSIGN_IN, GET_PROFILE, GET_USERPROFILE, EDIT_USERPROFILE, EDIT_USERPHOTO, USER_FORGOTPASSWORD } from '../actions/type';
 
 const initialState={
     fullname: '',
@@ -79,6 +79,10 @@ const userProfile=(state=initialState, action) => {
                 ...state,
                 token: action.token,
                 role: action.role
+            }
+            case USER_FORGOTPASSWORD:
+            return {
+                ...state
             }
         default:
             return state;

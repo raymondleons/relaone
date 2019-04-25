@@ -80,7 +80,7 @@ class NavBar extends Component {
                 </NavItem>
             } else if (role === "member") {
                 return <NavItem className="navitem">
-                    <Links to="/dashboard">Dashboard</Links>
+                    <Links to="/user/dashboard">Dashboard</Links>
                 </NavItem>
             } else {
                 return <div></div>

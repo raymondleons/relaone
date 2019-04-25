@@ -1,4 +1,4 @@
-import { GET_PROFILE, EDIT_PROFILE, EDIT_PROFILE_PHOTO, SIGN_IN_ORG } from '../actions/type';
+import { FORGOT_PASSWORD, GET_PROFILE, EDIT_PROFILE, EDIT_PROFILE_PHOTO, SIGN_IN_ORG } from '../actions/type';
 
 const initialState={
     organizationName: '',
@@ -44,6 +44,10 @@ const orgProfile=(state=initialState, action) => {
             return {
                 ...state,
                 photo: action.photo
+            }
+        case FORGOT_PASSWORD:
+            return {
+                ...state
             }
         default:
             return state;
