@@ -14,7 +14,10 @@ import { ADD_EVENT,
         SEARCH_VOLUNTEER,
         SIGN_IN_ORG,
         SIGN_UP,
-        GET_APPLICANT } from './type';
+        GET_APPLICANT,
+        FORGOT_PASSWORD,
+        ACCEPT_VOLUNTEER,
+        REJECT_VOLUNTEER } from './type';
 import history from '../history';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -24,6 +27,33 @@ toast.configure({
 )
 
 const url = "https://relaonebinar.herokuapp.com/api";
+
+export const forgotPassword = (email) => {
+    return dispatch => {
+        axios ({
+            url: `${url}/organization/forgetpassword`,
+            method: 'post',
+            data: {
+                email         
+            }
+        })
+            .then(res => {
+                console.log(res)
+                dispatch({
+                type: FORGOT_PASSWORD
+                });
+                let message = "Please check your email"
+                toast.success(message)
+                history.push('/');
+              }
+            )
+            .catch(err => {
+                console.log(err)
+                toast.error("Error. Please check your input.")
+            })
+    }
+}
+
 
 export const signInOrganization = (username, password) => {
     return dispatch => {
@@ -432,5 +462,57 @@ export const signIn = (username, password) => {
     }
 }
 
+    export const rejectApplicant = (id, idmember) => {
+        return dispatch => {
+        axios ({
+            url: 'https://relaonebinar.herokuapp.com/api/organization/reject',
+            method: 'put',
+            headers: { 
+                'x-access-token': localStorage.getItem('token')
+            },
+            data: {
+                "id" : id,
+                "idmember" : idmember
+            }
+        })
+        .then(res => {
+            console.log(res)
+            dispatch ({
+                type: REJECT_VOLUNTEER
+            })
+            history.push('/organization/event');
+            toast.success('Success')
+        })
+        .catch(err => {
+            console.log(err);
+        });
+        }
+    }
 
 
+    export const acceptApplicant = (id, idmember) => {
+        return dispatch => {
+          axios ({
+            url: 'https://relaonebinar.herokuapp.com/api/organization/accept',
+            method: 'put',
+            headers: { 
+                'x-access-token': localStorage.getItem('token')
+            },
+            data: {
+                "id" : id,
+                "idmember" : idmember
+            }
+        })
+          .then(res => {
+            console.log(res)
+            dispatch ({
+                type: ACCEPT_VOLUNTEER
+            })
+            history.push('/organization/event');
+            toast.success('Success')
+          })
+          .catch(err => {
+            console.log(err);
+          });
+        }
+      }

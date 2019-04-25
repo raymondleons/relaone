@@ -4,8 +4,19 @@ import Header from '../../layout/Header'
 import UserProfileBadge from '../../layout/UserProfileBadge'
 import UserJoinedEvent from '../../components/member/UserJoinedEvent'
 import UserSideBar from '../../layout/UserSideBar'
+import history from '../../history'
 
 export default class UserJoinedEventPage extends Component {
+  
+  componentDidMount(){
+    let role = localStorage.getItem('role')
+    if (role !== 'member') {
+      history.push('/log-in')
+    }
+    window.scrollTo(0, 0);
+    document.title = "RelaOne | Joined Events";
+  }
+  
   render() {
     return (
       <div>

@@ -5,12 +5,18 @@ import Header from '../../layout/Header'
 import UserProfileBadge from '../../layout/UserProfileBadge'
 import FormUpdateProfile from '../../components/member/UserProfileUpdate'
 import UserSideBar from '../../layout/UserSideBar';
+import history from '../../history'
 
 export default class UpdateProfile extends Component {
 
-  ComponentDidMount = (
-    document.title = "Users - Update Profile"
-  )
+  componentDidMount(){
+    let role = localStorage.getItem('role')
+    if (role !== 'member') {
+      history.push('/log-in')
+    }
+    window.scrollTo(0, 0);
+    document.title = "RelaOne | Update Profile";
+  }
 
   render() {
     return (

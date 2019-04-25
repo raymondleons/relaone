@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import '../../assets/css/_style.scss'
 import { connect } from 'react-redux';
-import { getUserProfile, editUserProfile } from '../../actions/memberActions';
+import { withRouter } from 'react-router-dom';
+import { getUserProfile, editUserProfile, getUserSkillset } from '../../actions/memberActions';
 import Moment from 'moment'
 
 
 class FormUpdateProfile extends Component {
+
+  componentWillMount(){
+        this.props.getUserProfile();
+        this.props.getUserSkillset();
+      } 
 
     ComponentDidMount = (
         document.title = "Update Profile - Users"
@@ -14,54 +20,79 @@ class FormUpdateProfile extends Component {
  
     constructor(props) {
         super(props);
+        
+        let userProfile = {}
+        if (this.props.userProfile) {
+          userProfile = this.props.userProfile
+        }
+
+        let initSkillSet = this.props.skillSet
+        let skills = []
+         if (initSkillSet.length === 0) {
+             skills = []
+         } else {initSkillSet.map(skill => 
+             skills = [...skills, skill._id]
+         )} 
+        
+  
         this.state = {
-          fullname : props.fullname,
+          fullname : userProfile.fullname,
           username : props.username,
           email : props.email,
           idCard : props.idCard,
-          birthDate : props.birthDate,
+          // birthDate : props.birthDate,
           address : props.address,
           phoneNumber : props.phoneNumber,
           bio : props.bio,
           _id : props._id,
-          emergencyContact : props.emergencyContact,
-          skillSet : props.skillSet,
+          emergencyContact : {
+            name : props.emergencyContact.name,
+            address: props.emergencyContact.address,
+            phoneNumber: props.emergencyContact.phoneNumber,
+            relationship: props.emergencyContact.relationship
+          },
+          name:props.emergencyContact.name,
+          addr:props.emergencyContact.address,
+          phone: props.emergencyContact.phoneNumber,
+          relationship:props.emergencyContact.relationship,
+          skillSet : skills,
           confirmed : props.confirmed
         }
       }
     
-      componentWillMount(){
-        this.props.getUserProfile();
-      }
-    
-      componentWillReceiveProps(props){
-        this.setState({
-            fullname : props.fullname,
-            username : props.username,
-            email : props.email,
-            idCard : props.idCard,
-            birthDate : props.birthDate,
-            address : props.address,
-            phoneNumber : props.phoneNumber,
-            bio : props.bio,
-            _id : props._id,
-            emergencyContact : props.emergencyContact,
-            skillSet : props.skillSet,
-            confirmed : props.confirmed
-
-      })
-      }
+      
     
       onChange = (e) => {
+        console.log(e.target.value)
         this.setState({
             [e.target.name]: e.target.value
         })
       }
+
+      handleCheck = (e) => {
+        const id = (e.target.value)
+        const skillsets = this.props.skillsets
+        
+        const skills = skillsets.filter(skill => skill._id === id)
+        
+        skills[0].status = !(skills[0].status)
+        
+        if (skills[0].status === true) {
+            this.setState({
+                skillSet: [...this.state.skillSet, skills[0]._id]
+            })
+        } else {
+            this.setState({
+                skillSet: this.state.skillSet.filter(x => x !== skills[0]._id)
+            })
+        }
+    }
     
       onSubmit = (e) => {
         e.preventDefault();
+
         this.props.editUserProfile(
-            this.state.fullame, 
+            this.state.fullname, 
             this.state.username, 
             this.state.email,   
             this.state.idCard,
@@ -69,21 +100,43 @@ class FormUpdateProfile extends Component {
             this.state.address,
             this.state.phoneNumber, 
             this.state.bio,
-            this.state._id,
-            this.state.confirmed,
-            this.state.emergencyContact,
+            this.state.name,
+            this.state.relationship,
+            this.state.addr,
+            this.state.phone,
             this.state.skillSet
             )
     }
     
 
   render() {
-  
+    console.log(this.state)
     let initbirthDate = this.state.birthDate
     Moment.locale('en');
     let DOB = Moment(initbirthDate).format('YYYY-MM-DD')
+  
 
-    return (
+    const skillsets = this.props.skillsets  
+      for (let i=0; i<skillsets.length; i++){ 
+        for (let j=0; j<this.state.skillSet.length; j++){
+          if (skillsets[i]._id === this.state.skillSet[j]){
+            skillsets[i].status=true
+          }
+        }
+      }
+
+      const displaySkillset = skillsets.length ? (
+        skillsets.map(skillset => {
+          return (
+              <div key={skillset._id}><label><input onChange={this.handleCheck} defaultChecked={skillset.status} type="checkbox" name="skillSet" key={skillset._id} value={skillset._id}/> {skillset.name}</label><br></br></div>
+          )
+        })
+      ) : (
+          <div>Loading skill-set list</div>
+      );
+  
+    
+      return (
       <div className="form-update-profile">
         <div>
             <h3 className="title"><b>Update Profile</b></h3>
@@ -98,7 +151,7 @@ class FormUpdateProfile extends Component {
                 onChange={this.onChange}
                 className="form-control" 
                 type="text" 
-                name="name" 
+                name="fullname" 
                 id="exampleName" 
                  />
             </FormGroup>
@@ -108,7 +161,7 @@ class FormUpdateProfile extends Component {
                 defaultValue={this.state.idCard} 
                 onChange={this.onChange}
                 type="text"
-                name="idcard" 
+                name="idCard" 
                 id="exampleName" 
               />
             </FormGroup>
@@ -118,7 +171,7 @@ class FormUpdateProfile extends Component {
                 defaultValue={this.state.username} 
                 onChange={this.onChange}
                 type="text"
-                name="name" 
+                name="username" 
                 id="exampleName" 
               />
             </FormGroup>
@@ -148,6 +201,7 @@ class FormUpdateProfile extends Component {
                 defaultValue={this.state.phoneNumber} 
                 onChange={this.onChange}
                 type="text" 
+                name="phoneNumber"
                 id="examplePhone" 
                />
             </FormGroup>
@@ -157,7 +211,7 @@ class FormUpdateProfile extends Component {
                 defaultValue={this.state.bio} 
                 onChange={this.onChange}
                 type="text" 
-                name="phone" 
+                name="bio" 
                 id="examplePhone" 
            />
             </FormGroup>
@@ -167,27 +221,49 @@ class FormUpdateProfile extends Component {
                 defaultValue={this.state.address} 
                 onChange={this.onChange}
                 type="text" 
-                name="addresse" 
+                name="address" 
                 id="exampleAddress" 
            />
             </FormGroup>
-            {/* <FormGroup>
-                <Label for="exampleFile">Sertificate</Label>
+            <FormGroup>
+                <Label for="exampleAddress">Name :</Label>
                 <Input 
-                type="file" 
-                name="file" 
-                id="exampleFile" />
-                <FormText color="muted">
-                    Please upload your sertificate scan.
-                </FormText>
+                defaultValue={this.state.emergencyContact.name} 
+                onChange={this.onChange}
+                type="text" 
+                name="name" 
+                id="exampleAddress" 
+           />
+           <Label for="exampleAddress">Relationship</Label>
+                <Input 
+                defaultValue={this.state.emergencyContact.relationship} 
+                onChange={this.onChange}
+                type="text" 
+                name="relationship" 
+                id="exampleAddress" 
+           />
+           <Label for="exampleAddress">Address</Label>
+                <Input 
+                defaultValue={this.state.emergencyContact.address} 
+                onChange={this.onChange}
+                type="text" 
+                name="addr" 
+                id="exampleAddress" 
+           />
+           <Label for="exampleAddress">Phone</Label>
+                <Input 
+                defaultValue={this.state.emergencyContact.phoneNumber} 
+                onChange={this.onChange}
+                type="text" 
+                name="phone" 
+                id="exampleAddress" 
+           />
             </FormGroup>
             <FormGroup>
-                <Label for="exampleFile">Photo</Label>
-                <Input type="file" name="file" id="exampleFile" />
-                <FormText color="muted">
-                    Please upload your organization photo or logo.
-                </FormText>
-            </FormGroup> */}
+                <Label for="exampleSkillSet">Skill Set</Label><br></br>
+                {displaySkillset}
+            </FormGroup>
+           
             <Button color="primary">Save</Button>
         </Form>
       </div>
@@ -199,6 +275,8 @@ class FormUpdateProfile extends Component {
 const mapStateToProps = state =>{
  
     return {
+        skillsets: state.skillset.skillsets,
+        userProfile : state.userProfile,
         fullname : state.userProfile.fullname,
         username : state.userProfile.username,
         email : state.userProfile.email,
@@ -218,9 +296,8 @@ const mapStateToProps = state =>{
   const mapDispatchToProps = dispatch => {
     
     return {
-      
-      getUserProfile: () => { dispatch(getUserProfile()) },
-      
+      getUserSkillset: () => { dispatch(getUserSkillset()) },
+      getUserProfile: () => { dispatch(getUserProfile()) }, 
       editUserProfile: (
         fullname,
         username,
@@ -229,15 +306,14 @@ const mapStateToProps = state =>{
          idCard, 
          address, 
          bio, 
-         birthDate, _id, emergencyContact, confirmed, skillSet
+         birthDate, _id, name, relationship, addr, phone, confirmed, skillSet
          ) => { dispatch(editUserProfile(fullname, username, email, phoneNumber, idCard, address, bio,
-          birthDate, _id, emergencyContact, confirmed, skillSet
+          birthDate, _id, name, relationship, addr, phone, confirmed, skillSet
           ))}
          
     }
   }
 
-  export default connect(mapStateToProps, mapDispatchToProps)(FormUpdateProfile);
+  export default withRouter(connect(mapStateToProps, mapDispatchToProps)(FormUpdateProfile));
 
 
-  

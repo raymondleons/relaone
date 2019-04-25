@@ -6,8 +6,19 @@ import UserProfileBadge from '../../layout/UserProfileBadge'
 import UserSideBar from '../../layout/UserSideBar'
 import Articles from '../../components/member/UserDashboardArticle'
 import Events from '../../components/member/UserDashboardEvent'
+import history from '../../history'
 
 export default class DashboardPage extends Component {
+
+  componentDidMount(){
+    let role = localStorage.getItem('role')
+    if (role !== 'member') {
+      history.push('/log-in')
+    }
+    window.scrollTo(0, 0);
+    document.title = "RelaOne | Dashboard";
+  }
+
   render() {
     return (
       <div className="create-event">
@@ -21,8 +32,8 @@ export default class DashboardPage extends Component {
             <UserSideBar />
           </Col>
           <Col sm="12" md="8">
-          <Articles />
             <Events />
+            <Articles />
           </Col>
         </Row>
       </Container>      

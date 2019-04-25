@@ -4,10 +4,10 @@ const initState = {
   },
   role: ""
 };
+
 const authReducer = (state = initState, action) => {
   switch (action.type) {
     case "SIGN_IN":
-      console.log(action.response);
       localStorage.setItem("token", action.response.data.token);
       localStorage.setItem("role", action.response.data.role);
       return {

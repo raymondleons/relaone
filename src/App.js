@@ -31,8 +31,10 @@ import UserRegister from './components/member/UserRegister'
 import UserDashboardPage from './pages/member/UserDashboardPage'
 import UserJoinedEventPage from './pages/member/UserJoinedEventPage'
 import UserPhotoUpdate from './pages/member/UserPhotoUpdatePage'
+import UserForgotPassword from './pages/member/UserForgotPassword'
 import OrganizationRegister from './components/organization/OrganizationRegister'
 import Login from './pages/LoginPage'
+import LoginRoot from './pages/LoginRoot'
 import VerifiedAccount from './pages/VerifiedAccount'
 import OrganizationProfilePage from './pages/OrganizationProfilePage'
 import RegisterRoot from './pages/RegisterRoot'
@@ -51,7 +53,6 @@ import LoginOrganization from './pages/organization/LoginPage'
 import VolunteerListPage from './pages/VolunteerListPage'
 import VolunteerDetailPage from './pages/VolunteerDetailPage'
 import LoginContoh from './pages/Login'
-
 import SignInAdmin from './pages/admin/SignInAdmin'
 import AdminPage from './pages/admin/'
 import User from './pages/admin/user/User'
@@ -110,7 +111,9 @@ class App extends Component {
             <Route path='/user/register' component={UserRegister} exact />
             <Route path='/user/dashboard' component={UserDashboardPage} exact />  
             <Route path='/user/photo/update' component={UserPhotoUpdate} exact />  
+            <Route path='/user/forgot-password' component={UserForgotPassword} exact />
             <Route path='/login' component={Login} exact />
+            <Route path="/log-in" exact component={LoginRoot} />
             <Route path="/account-verified" exact component={VerifiedAccount}/>
             <Route path="/organization/profile" exact component={OrganizationProfilePage} />
             <Route path='/register' component={RegisterRoot} exact />

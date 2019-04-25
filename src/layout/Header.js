@@ -18,7 +18,7 @@ class Header extends Component {
             <Links to="/"><img className="header-logo" src={bluelogo} alt='RelaOne logo'></img></Links>
             </div>
             <div>
-            <Links to="/login"><Button onClick={this.handleSignOut} className="logout" outline color="primary">Log Out</Button></Links>
+            <Links to="/"><Button onClick={this.handleSignOut} className="logout" outline color="primary">Log Out</Button></Links>
             </div>
         </div>
         

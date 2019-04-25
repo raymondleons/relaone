@@ -5,8 +5,19 @@ import Header from '../../layout/Header'
 import UserProfileBadge from '../../layout/UserProfileBadge'
 import UserSideBar from '../../layout/UserSideBar'
 import UserEventDetails from '../../components/member/UserEventDetails'
+import history from '../../history'
 
 export default class UserEventDetailsPage extends Component {
+  
+  componentDidMount(){
+    let role = localStorage.getItem('role')
+    if (role !== 'member') {
+      history.push('/log-in')
+    }
+    window.scrollTo(0, 0);
+    document.title = "RelaOne | Event Details";
+  }
+  
   render() {
     return (
       <div className="create-event">

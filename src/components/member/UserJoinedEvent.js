@@ -13,36 +13,36 @@ class UserJoinedEvent extends Component {
   }
 
   render() {
-    
-    let formatDeadline = (deadline) => {
+
+    let formatDeadLine = (deadline) =>{
       Moment.locale('en');
-      let formatedDeadline = Moment(deadline).format('YYYY-MM-DD');
-      return <p>{formatedDeadline}</p>
+      let formatedDeadLine = Moment(deadline).format('YYYY-MM-DD')
+      return <p>{formatedDeadLine}</p>
     }
+    
+    
 
     let events = this.props.events
 
-    // let memberFilter = (member) => {
-    //   let x = member.filter(members => members.idMember === this.props.id);
-    //   let status = '';
-    //   if (x[0].status) {
-    //     status = x[0].status
-    //   };
-    //   return <p>{status}</p>
-    // }
+    let memberFilter = (member) => {
+      let x = member.filter(members => members.idMember === this.props.id);
+      let status = '';
+      if (x[0].status) {
+        status = x[0].status
+      };
+      return <p>{status}</p>
+    }
     
       const displayEvent = events.length ? (
           events.map(({_id, deadline, title, location, quota, quotaMax, organization, member}, i) => {
             return(
               <tr>
-               <td key={_id}>{formatDeadline(deadline)}</td> 
+                <td key={_id}>{formatDeadLine(deadline)}</td> 
                 <td key={_id}><Link to={'/user/event/details/' + _id}>{title}</Link></td>
                 <td key={_id}>{organization.organizationName}</td>
                 <td key={_id}>{location}</td>
                 <td key={_id}>{quota}/{quotaMax}</td>
-                <td>
-                  {/* {memberFilter(member)} */}
-                </td>
+                <td>{memberFilter(member)}</td>
               </tr>
             )
           })
@@ -54,15 +54,8 @@ class UserJoinedEvent extends Component {
         </tr>
       );
 
-
-
-
-
-
-
-
     return (
-      <div>
+      <div className="article-list">
         <div className="event-count">
           <h4>{this.props.events.length}</h4>
           <p>Event Joined</p>
