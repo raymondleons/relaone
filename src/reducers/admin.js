@@ -1,7 +1,8 @@
 import { 
     SIGNIN_ADMIN,
     GET_PROFILE_ADMIN,
-    EDIT_PROFILE_ADMIN } from '../actions/type';
+    EDIT_PROFILE_ADMIN,
+    EDIT_PROFILE } from '../actions/type';
 
 const initialState={
     fullname: '',
@@ -9,6 +10,10 @@ const initialState={
     confirmed: false,
     username: '',
     email: '',
+    idCard: '',
+    phoneNumber: '',
+    address: '',
+    bio: '',
     token:'',
     role:''
 }
@@ -39,6 +44,17 @@ const admin=(state=initialState, action) => {
                 username: action.username,
                 email: action.email,
                 phoneNumber: action.phoneNumber
+            }
+            case EDIT_PROFILE:
+            return {
+                ...state,
+                fullname: action.fullname,
+                idCard: action.idCard,
+                username: action.username,
+                email: action.email,
+                phoneNumber: action.phoneNumber,
+                address: action.address,
+                bio: action.bio
             }
         default:
             return state;

@@ -17,7 +17,8 @@ import {
     DEL_SKILLSET,
     GET_PROFILE_ADMIN,
     SIGNIN_ADMIN,
-    EDIT_PROFILE} from './type'
+    EDIT_PROFILE,
+    GET_PROFILE} from './type'
 import history from '../history';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -60,7 +61,7 @@ export const getUser = () => {
     return dispatch => {
         axios.get('https://relaonebinar.herokuapp.com/api/admin/member',
         {
-            headers: { "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYWM0Y2IxNzg5YWNlMDAxNzEyZjgzZiIsInVzZXJuYW1lIjoiYWRtaW5rdSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTU1NDc5NTc1N30.KJwVq7ZV3pDYe723nY9S5fqT8GQM4SAlWPvJ4EcpDTM"}
+          headers: { "x-access-token": localStorage.getItem('token')}
         })
         .then(res => {
             dispatch ({
@@ -71,32 +72,58 @@ export const getUser = () => {
     }
 }
 
-const editProfileUser = (organizationName, username, email, phoneNumber) => {
+export const getProfile = () => {
+  return dispatch => {
+      axios.get(`${url}/admin/member`,
+      {
+          headers: { "x-access-token": localStorage.getItem('token')}
+      })
+      .then(res => {
+          dispatch ({
+              type: GET_PROFILE,
+              fullname: res.data.data.fullname,
+              idCard: res.data.data.idCard,
+              username: res.data.data.username,
+              email: res.data.data.email,
+              phoneNumber: res.data.data.phoneNumber,
+              address: res.data.data.address,
+              bio: res.data.data.bio
+          })
+      })
+  }
+}
+
+export const editProfileUser = (fullname, username, email, idCard, phoneNumber, address, bio) => {
     return dispatch => {
-        console.log(organizationName, username, email, phoneNumber)
+        console.log(fullname, username, email, idCard, phoneNumber, address, bio)
         axios ({
-            url: `${url}/organization/profile`,
+            url: `${url}/admin/member`,
             method: 'put',
             headers: { 
                 'x-access-token': localStorage.getItem('token')
             },
             data: {
-                organizationName, 
-                username, 
-                email, 
-                phoneNumber
+                fullname,
+                username,
+                email,
+                idCard,
+                phoneNumber,
+                address,
+                bio
             }
         })
             .then(res => {
                 dispatch({
                 type: EDIT_PROFILE,
-                organizationName: res.data.data.organizationName,
-                confirmed: res.data.data.confirmed,
+                fullname: res.data.data.fullname,
+                idCard: res.data.data.idCard,
                 username: res.data.data.username,
                 email: res.data.data.email,
-                phoneNumber: res.data.data.phoneNumber
+                phoneNumber: res.data.data.phoneNumber,
+                address: res.data.data.address,
+                bio: res.data.data.bio
                 });
-                history.push('/organization/update-profile/success');
+                history.push('/admin/users');
               }
             )
             .catch(err => {

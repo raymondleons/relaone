@@ -54,6 +54,13 @@ import LoginContoh from './pages/Login'
 
 import SignInAdmin from './pages/admin/SignInAdmin'
 import AdminPage from './pages/admin/'
+import User from './pages/admin/user/User'
+import Article from './pages/admin/article/Article'
+import Organization from './pages/admin/organization/Organization'
+import Event from './pages/admin/event/Event'
+import SkillSet from './pages/admin/skillset/SkillSet'
+import EditProfile from './pages/admin/user/EditProfile'
+import CreateNewUser from './pages/admin/user/CreateNewUser'
 
 class App extends Component {
   render() {
@@ -119,7 +126,14 @@ class App extends Component {
             <Route path="/contohlogin" exact component={LoginContoh}/>   
             <Route path="/login-admin" exact component={SignInAdmin}/>
             <Route path="/admin" exact component={AdminPage}/>
-
+            <Route path="/admin/users" exact component={User}/>
+            <Route path="/admin/article" exact component={Article}/>
+            <Route exact path="/admin/users/create" component={CreateNewUser}/>
+            <Route exact path="/admin/article" component={Article}/>
+            <Route exact path="/admin/organization" component={Organization}/>
+            <Route exact path="/admin/event" component={Event}/>
+            <Route exact path="/admin/skill-sett" component={SkillSet}/>
+            <Route exact path="/admin/users/edit/:user_id" component={EditProfile}/>
         </Router>
         </Provider>
     );
