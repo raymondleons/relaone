@@ -79,8 +79,7 @@ export const getUserSkillset = () => {
 
 export const editUserProfile = (fullname, username, email, idCard, birthDate, address, phoneNumber, bio, name, relationship, addr, phone, skillSet) => {
   return dispatch => {
-    // console.log(fullname, username, email, idCard, birthDate, address, phoneNumber, bio, emergencyContact, skillSet)
-      axios ({
+    axios ({
           url: 'https://relaonebinar.herokuapp.com/api/member/profile',
           method: 'put',
           headers: { 
@@ -126,7 +125,6 @@ export const editUserProfile = (fullname, username, email, idCard, birthDate, ad
           )
           .catch(err => 
             console.log(err))
-            toast.error("Error. Please check your input.")
   }
 }
 
