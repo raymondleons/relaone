@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, FormGroup, Input, Button } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import '../assets/css/_style.scss'
 
 
