@@ -20,7 +20,7 @@ class Navbar extends Component {
                             <span className="navbar-toggler-bar bar3"></span>
                         </button>
                     </div>
-                    <a className="navbar-brand" href="#pablo">Dashboard</a>
+                    <a className="navbar-brand" style={{paddingLeft:"250px"}} href="/admin">Dashboard</a>
                 </div>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-bar navbar-kebab"></span>
@@ -29,7 +29,7 @@ class Navbar extends Component {
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navigation">      
                     <ul className="navbar-nav">
-                        <p className="navbar-title">Hi,{this.props.name}</p>
+                        <p className="navbar-title" style={{color:"black"}}>Hi, Admin</p>
                     </ul>
                 </div>
             </div>

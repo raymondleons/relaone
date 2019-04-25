@@ -31,12 +31,12 @@ class Article extends Component {
         return(
           <tr>
             <td>{i +1}</td>
-            <td key={_id} >{title}</td>
+            <td key={_id} ><Link to={'/admin/event/detail/' + _id}>{title}</Link></td>
             <td key={_id}>{location}</td>
             <td key={_id}>{quotaMax}</td>
             <td key={_id}>
                         <Button color="link" className="event-action">
-                        <Link to={'/admin/users/edit/' + _id}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></Link>
+                        <Link to={'/admin/event/edit/' + _id}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></Link>
 
                         </Button>
                         <Button color="link" className="event-action" onClick={() => this.delete(_id)}> 

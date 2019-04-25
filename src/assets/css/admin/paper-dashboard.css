@@ -3097,7 +3097,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
   border: 1px solid #66615B;
 }
 
-.navbar .navbar-collapse .nav-item a {
+.navbar .navbar-collapses .nav-item a {
   font-size: 14px;
 }
 
@@ -3538,7 +3538,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
   .footer:not(.footer-big) nav ul li:first-child {
     margin-left: 0;
   }
-  body>.navbar-collapse.collapse {
+  body>.navbar-collapses.collapse {
     display: none !important;
   }
 }
@@ -5787,7 +5787,7 @@ License - nucleoapp.com/license/
     padding-right: 15px;
     padding-left: 15px;
   }
-  .navbar .navbar-collapse .input-group {
+  .navbar .navbar-collapses .input-group {
     margin: 0;
     margin-top: 5px;
   }
@@ -5887,7 +5887,7 @@ License - nucleoapp.com/license/
     -ms-transform: translate3d(-260px, 0, 0);
     transform: translate3d(-260px, 0, 0);
   }
-  .nav-open .menu-on-right .navbar-collapse,
+  .nav-open .menu-on-right .navbar-collapses,
   .nav-open .menu-on-right .sidebar {
     -webkit-transform: translate3d(0px, 0, 0);
     -moz-transform: translate3d(0px, 0, 0);
@@ -6273,7 +6273,7 @@ License - nucleoapp.com/license/
 }
 
 @media screen and (min-width: 992px) {
-  .navbar-collapse {
+  .navbar-collapses {
     background: none !important;
   }
   .navbar .navbar-toggle {

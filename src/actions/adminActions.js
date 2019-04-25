@@ -22,8 +22,11 @@ import {
     GET_PROFILE,
     DEL_USER_ADMIN,
     ADD_ARTICLE,
+    GET_USERSKILLSET,
     ADD_ORGANIZATION,
     ADD_SKILLSET,
+    GET_USERPROFILE,
+    EDIT_USERPROFILE,
     ADD_EVENT} from './type'
 import history from '../history';
 import { toast } from 'react-toastify';
@@ -62,7 +65,48 @@ export const signInAdmin = (username, password) => {
             })
     }
   }
+
+  export const getUserSkillset = () => {
+    return dispatch => {
+        axios.get('https://relaonebinar.herokuapp.com/api/admin/skillset',
+        {
+            headers: { "x-access-token": localStorage.getItem('token')}
+        })
+        .then(res => {
+            dispatch ({
+                type: GET_USERSKILLSET,
+                payload: res.data.data
+            })
+        })
+    }
+  }
   
+  export const getUserProfile = () => {
+  return dispatch => {
+      axios.get(`${url}/admin/member`,
+      {
+        headers: { "x-access-token": localStorage.getItem('token')}
+      })
+      .then(res => {
+          dispatch ({
+          type: GET_USERPROFILE,
+          photo : res.data.data.photo,
+          fullname : res.data.data.fullname,
+          username : res.data.data.username,
+          email : res.data.data.email,
+          idCard : res.data.data.idCard,
+          birthDate : res.data.data.birthDate,
+          address : res.data.data.address,
+          phoneNumber : res.data.data.phoneNumber,
+          bio : res.data.data.bio,
+          emergencyContact: res.data.data.emergencyContact,
+          skillSet: res.data.data.skillSet,
+          id : res.data.data._id
+          })
+      })
+  }
+}
+
 export const getUser = () => {
     return dispatch => {
         axios.get('https://relaonebinar.herokuapp.com/api/admin/member',
@@ -648,3 +692,54 @@ export const addArticle = (title, description, deadline, location, quotaMax, ski
             })
     }
   }
+
+  export const editUserProfile = (fullname, username, email, idCard, birthDate, address, phoneNumber, bio, name, relationship, addr, phone, skillSet) => {
+  return dispatch => {
+    axios ({
+          url: `${url}/admin/member`,
+          method: 'put',
+          headers: { 
+              'x-access-token': localStorage.getItem('token')
+          },
+          data: {
+            fullname : fullname,
+            username : username,
+            email : email, 
+            idCard : idCard, 
+            birthDate : birthDate,
+            address : address, 
+            phoneNumber : phoneNumber, 
+            bio : bio,
+            emergencyContact : {
+              name : name,
+              relationship : relationship,
+              address : addr,
+              phoneNumber : phone
+            },
+            skillSet : skillSet
+          }
+      })
+          .then(res => {
+            console.log(res)
+              dispatch({
+              type: EDIT_USERPROFILE,
+              fullname : res.data.data.fullname,
+              username : res.data.data.username,
+              email : res.data.data.email,
+              idCard : res.data.data.idCard,
+              birthDate : res.data.data.birthDate,
+              address : res.data.data.address,
+              phoneNumber : res.data.data.phoneNumber,
+              bio : res.data.data.bio,
+              emergencyContact: res.data.data.emergencyContact,
+              skillSet : res.data.data.skillSet
+              })
+              let message = res.data.message
+              toast.success(message)
+              history.push('/user/update-profile/success');
+            }
+          )
+          .catch(err => 
+            console.log(err))
+  }
+}

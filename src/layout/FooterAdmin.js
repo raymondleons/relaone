@@ -12,7 +12,7 @@ export default class Footer extends Component {
                             <a href="#" target="_blank">About</a>
                         </li>
                         <li>
-                            <a href="#" target="_blank">Term</a>
+                            <a href="/terms" target="_blank">Term</a>
                         </li>
                         <li>
                             <a href="#" target="_blank">Contact</a>

@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import Sidebar from "../../../layout/sidebar/ArticleSidebar";
+import Sidebar from "../../../layout/sidebar/EventSidebar";
 import { BrowserRouter as Router, Route, withRouter} from "react-router-dom";
 import Navbar from '../../../layout/navbar/Navbar'
 import Footer from '../../../layout/FooterAdmin'
 import { connect } from 'react-redux';
-import { getArticle } from '../../../actions/adminActions' ;
+import { getEvent } from '../../../actions/adminActions' ;
 
-class ArticleDetail extends Component {
+class EventDetail extends Component {
 
   componentDidMount(){
-    this.props.getArticle();
+    this.props.getEvent();
   }
 
   render() {
@@ -71,8 +71,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getArticle: () => { dispatch(getArticle()) }
+    getEvent: () => { dispatch(getEvent()) }
   }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ArticleDetail));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EventDetail));

@@ -28,7 +28,7 @@ class Navbar extends Component {
                             <span className="navbar-toggler-bar bar3"></span>
                         </button>
                     </div>
-                    <a className="navbar-brand" href="#pablo">Organization</a>
+                    <a className="navbar-brand" style={{paddingLeft:"250px"}} href="/admin">Organization</a>
                 </div>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-bar navbar-kebab"></span>

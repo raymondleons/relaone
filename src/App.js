@@ -69,6 +69,7 @@ import CreateOrganizationNew from './pages/admin/organization/CreateOrganization
 import CreateEventNew from './pages/admin/event/CreateEventNew'
 import CreateSkillNew from './pages/admin/skillset/CreateSkillSetNew'
 import CreateAdminNew from './pages/admin/CreateAdminNew'
+import EventDetail from './pages/admin/event/EventDetail'
 
 class App extends Component {
   render() {
@@ -151,6 +152,7 @@ class App extends Component {
             <Route exact path="/admin/event/create" component={CreateEventNew}/>
             <Route exact path="/admin/skill-sett/create" component={CreateSkillNew}/>
             <Route exact path="/admin/list-admin/create" component={CreateAdminNew}/>
+            <Route path='/user/event/detail/:event_id' component={EventDetail} exact />
         </Router>
         </Provider>
     );
