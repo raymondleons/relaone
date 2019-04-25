@@ -35,7 +35,7 @@ class Organization extends Component {
             <td key={_id}>{username}</td>
             <td key={_id}>
                         <Button color="link" className="event-action">
-                        <Link to={'/admin/users/edit/' + _id}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></Link>
+                        <Link to={'/admin/organization/edit/' + _id}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></Link>
 
                         </Button>
                         <Button color="link" className="event-action" onClick={() => this.delete(_id)}> 
@@ -88,9 +88,13 @@ class Organization extends Component {
                     {displayOrganization}
                     </tbody>
                     </table>
+                    <div className="event-action">
+                          <Button color="primary"><Link to="/admin/organization/create" className="create-event-button">Create Organization</Link></Button>
+                      </div>
                 </div>
-              </div>
                 </div>
+                </div>
+                
             </div>
     </div>
                   </div>

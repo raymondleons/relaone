@@ -64,6 +64,10 @@ import CreateNewUser from './pages/admin/user/CreateNewUser'
 import Admin from './pages/admin/User'
 import ArticleDetail from './pages/admin/articles-admin/ArticleDetail'
 import CreateArticleNew from './pages/admin/articles-admin/CreateArticleNew'
+import CreateOrganizationNew from './pages/admin/organization/CreateOrganizationNew'
+import CreateEventNew from './pages/admin/event/CreateEventNew'
+import CreateSkillNew from './pages/admin/skillset/CreateSkillSetNew'
+import CreateAdminNew from './pages/admin/CreateAdminNew'
 
 class App extends Component {
   render() {
@@ -140,6 +144,10 @@ class App extends Component {
             <Route exact path="/admin/list-admin" component={Admin}/>
             <Route path="/admin/article/detail/:article_id" exact component={ArticleDetail}/>
             <Route exact path="/admin/article/create" component={CreateArticleNew}/>
+            <Route exact path="/admin/organization/create" component={CreateOrganizationNew}/>
+            <Route exact path="/admin/event/create" component={CreateEventNew}/>
+            <Route exact path="/admin/skill-sett/create" component={CreateSkillNew}/>
+            <Route exact path="/admin/list-admin/create" component={CreateAdminNew}/>
         </Router>
         </Provider>
     );

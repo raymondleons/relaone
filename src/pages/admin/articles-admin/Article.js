@@ -68,29 +68,29 @@ class User extends Component {
                 <h5 className="card-title">List Articles</h5>
                 <div class="card-body">
                 <div class="table-responsive">
-                <table class="table">
-                    <thead class=" text-primary">
-                      <th>
-                        No
+                  <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                          No
+                        </th>
+                        <th>
+                          Name
+                        </th>
+                        <th>
+                            Author
                       </th>
-                      <th>
-                        Name
-                      </th>
-                      <th>
-                          Author
-                     </th>
 
-                      <th className="right">
-                        Action
-                      </th>
-                    </thead>
-                    <tbody>
-                    {displayAdmin}
-                    </tbody>
-                    </table>
-                <div className="event-action">
-            <Button color="primary"><Link to="/admin/article/create" className="create-event-button">Create Article</Link></Button>
-        </div>
+                        <th className="right">
+                          Action
+                        </th>
+                      </thead>
+                      <tbody>
+                      {displayAdmin}
+                      </tbody>
+                      </table>
+                              <div className="event-action">
+                          <Button color="primary"><Link to="/admin/article/create" className="create-event-button">Create Article</Link></Button>
+                      </div>
                 </div>
               </div>
                 </div>

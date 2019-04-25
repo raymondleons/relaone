@@ -21,7 +21,10 @@ import {
     EDIT_PROFILE,
     GET_PROFILE,
     DEL_USER_ADMIN,
-    ADD_ARTICLE} from './type'
+    ADD_ARTICLE,
+    ADD_ORGANIZATION,
+    ADD_SKILLSET,
+    ADD_EVENT} from './type'
 import history from '../history';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -493,6 +496,150 @@ export const addArticle = (title, description, deadline, location, quotaMax, ski
                 });
                 toast.success("Your event is successfully created")
                 history.push('/admin/users');
+              }
+            )
+            .catch(err => {
+                console.log(err)
+                toast.error("Error. Please check your input.")
+            })
+    }
+  }
+
+  export const getSkillset = () => {
+    return dispatch => {
+        axios.get(`${url}/admin/skillset`,
+        {
+            headers: { "x-access-token": localStorage.getItem('token')}
+        })
+        .then(res => {
+            dispatch ({
+                type: GET_SKILLSET,
+                payload: res.data.data
+            })
+        })
+    }
+}
+
+  export const addOrganization = (organizationName, username, email, phoneNumber, password) => {
+    return dispatch => {
+        axios ({
+            url: `${url}/admin/organization`,
+            method: 'post',
+            headers: {
+                'x-access-token': localStorage.getItem('token')
+            },
+            data: {
+                organizationName,
+                username,
+                email,
+                phoneNumber,
+                password
+
+            }
+        })
+            .then(res => {
+                dispatch({
+                type: ADD_ORGANIZATION,
+                payload: res.data.data
+                });
+                toast.success("Your event is successfully created")
+                history.push('/admin/organization');
+              }
+            )
+            .catch(err => {
+                console.log(err)
+                toast.error("Error. Please check your input.")
+            })
+    }
+  }
+
+  export const addEvent = (title, description, deadline, location, quotaMax, skillSet) => {
+    return dispatch => {
+        axios ({
+            url: `${url}/admin/event`,
+            method: 'post',
+            headers: {
+                'x-access-token': localStorage.getItem('token')
+            },
+            data: {
+                title,
+                description,
+                deadline,
+                location,
+                quotaMax,
+                skillSet
+
+            }
+        })
+            .then(res => {
+                dispatch({
+                type: ADD_EVENT,
+                payload: res.data.data
+                });
+                toast.success("Your event is successfully created")
+                history.push('/admin/event');
+              }
+            )
+            .catch(err => {
+                console.log(err)
+                toast.error("Error. Please check your input.")
+            })
+    }
+  }
+
+  export const addSkillSet = (name) => {
+    return dispatch => {
+        axios ({
+            url: `${url}/admin/skillset`,
+            method: 'post',
+            headers: {
+                'x-access-token': localStorage.getItem('token')
+            },
+            data: {
+                name
+
+            }
+        })
+            .then(res => {
+                dispatch({
+                type: ADD_SKILLSET,
+                payload: res.data.data
+                });
+                toast.success("Your event is successfully created")
+                history.push('/admin/skill-sett');
+              }
+            )
+            .catch(err => {
+                console.log(err)
+                toast.error("Error. Please check your input.")
+            })
+    }
+  }
+
+  export const addAdmin = (name, username, email, password) => {
+    return dispatch => {
+        axios ({
+            url: `${url}/admin`,
+            method: 'post',
+            headers: {
+                'x-access-token': localStorage.getItem('token')
+            },
+            data: {
+                name,
+                username,
+                email,
+                password
+                
+
+            }
+        })
+            .then(res => {
+                dispatch({
+                type: ADD_SKILLSET,
+                payload: res.data.data
+                });
+                toast.success("Your event is successfully created")
+                history.push('/admin/list-admin');
               }
             )
             .catch(err => {

@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
-import Sidebar from "../../../layout/sidebar/ArticleSidebar";
+import Sidebar from "../../../layout/sidebar/OrganizationSidebar";
 import { BrowserRouter as Router, Route, withRouter} from "react-router-dom";
 import Navbar from '../../../layout/navbar/Navbar'
 import Footer from '../../../layout/FooterAdmin'
 import { connect } from 'react-redux';
-import { Button, Form, FormText, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import '../../../assets/css/_style.scss';
-import { addArticle } from '../../../actions/adminActions';
+import { addSkillSet } from '../../../actions/adminActions';
 
-class CreateArticleNew extends Component {
+class CreateOrganizationNew extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            title : "",
-            description : "",
-            photo: ""
+            name : ""
 
         }
     }
@@ -28,7 +26,7 @@ class CreateArticleNew extends Component {
 
         onSubmit = (e) => {
         e.preventDefault();
-        this.props.addArticle(this.state.title, this.state.description, this.state.photo);
+        this.props.addSkillSet(this.state.name);
         // this.setState({
         //     title : "",
         //     description : "",
@@ -67,23 +65,19 @@ class CreateArticleNew extends Component {
         <div className="col-md-12">
         <div className="card">
                 <div className="card-header">
-                <h5 className="card-title">Create Articles</h5>
+                <h5 className="card-title">Create Skill Set</h5>
         <Form onSubmit={this.onSubmit}>
             <FormGroup>
-                <Label for="exampleTitle">Article title</Label>
-                <Input required onChange={this.onChange} value={this.state.title} className="form-control" type="text" name="title" id="exampleTitle" placeholder="" />
+                <Label for="exampleTitle">Skill Set Name</Label>
+                <Input required onChange={this.onChange} value={this.state.name} className="form-control" type="text" name="name" id="exampleTitle" placeholder="" />
             </FormGroup>
-            <FormGroup>
-                <Label for="exampleDescripion">Description</Label>
-                <Input required onChange={this.onChange} value={this.state.description} type="textarea" name="description" id="exampleDescription" placeholder="" />
-            </FormGroup>
-            <FormGroup>
+            {/* <FormGroup>
                 <Label for="exampleFile">Photo</Label>
-                <Input type="file" name="photo" id="exampleFile" />
+                <Input type="file" name="file" id="exampleFile" />
                 <FormText color="muted">
                     Please upload photo or poster related to your event.
                 </FormText>
-            </FormGroup>
+            </FormGroup> */}
             <Button color="primary">Submit</Button>
         </Form>
       </div>
@@ -108,9 +102,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addArticle: (title, description, photo) => { dispatch(addArticle(title, description, photo))}
+        addSkillSet: (name) => { dispatch(addSkillSet(name))}
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateArticleNew);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateOrganizationNew);
 

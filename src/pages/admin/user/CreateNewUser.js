@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, withRouter} from "react-router-dom";
 import Navbar from '../../../layout/navbar/Navbar'
 import Footer from '../../../layout/FooterAdmin'
 import { connect } from 'react-redux';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Form, FormText, FormGroup, Label, Input } from 'reactstrap';
 import '../../../assets/css/_style.scss';
 import { addUser } from '../../../actions/adminActions';
 
@@ -87,13 +87,13 @@ class CreateArticleNew extends Component {
                 <Label for="exampleTitle">Password</Label>
                 <Input required onChange={this.onChange} value={this.state.password} className="form-control" type="password" name="password" id="exampleTitle" placeholder="" />
             </FormGroup>
-            {/* <FormGroup>
+            <FormGroup>
                 <Label for="exampleFile">Photo</Label>
                 <Input type="file" name="file" id="exampleFile" />
                 <FormText color="muted">
                     Please upload photo or poster related to your event.
                 </FormText>
-            </FormGroup> */}
+            </FormGroup>
             <Button color="primary">Submit</Button>
         </Form>
       </div>

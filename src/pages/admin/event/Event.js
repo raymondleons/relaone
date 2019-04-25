@@ -91,6 +91,9 @@ class Article extends Component {
                     {displayEvent}
                     </tbody>
                     </table>
+                    <div className="event-action">
+                          <Button color="primary"><Link to="/admin/event/create" className="create-event-button">Create Event</Link></Button>
+                      </div>
                 </div>
               </div>
                 </div>

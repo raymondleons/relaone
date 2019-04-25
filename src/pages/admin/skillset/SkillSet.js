@@ -84,6 +84,9 @@ class User extends Component {
                     {displaySkillSet}
                     </tbody>
                     </table>
+                    <div className="event-action">
+                          <Button color="primary"><Link to="/admin/skill-sett/create" className="create-event-button">Create Skill Set</Link></Button>
+                      </div>
                 </div>
               </div>
                 </div>

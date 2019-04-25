@@ -92,6 +92,9 @@ class User extends Component {
                     {displayAdmin}
                     </tbody>
                     </table>
+                    <div className="event-action">
+                          <Button color="primary"><Link to="/admin/list-admin/create" className="create-event-button">Create Admin</Link></Button>
+                      </div>
                 </div>
               </div>
                 </div>
