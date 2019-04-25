@@ -1,37 +1,39 @@
 import React, { Component } from "react";
-import Sidebar from "../../../layout/sidebar/SkillSetSidebar";
+import Sidebar from "../../layout/sidebar/ListAdminSidebar";
 import { BrowserRouter as Router, Route, withRouter} from "react-router-dom";
-import Navbar from '../../../layout/navbar/SkillSetNavbar'
-import Footer from '../../../layout/FooterAdmin'
+import Navbar from '../../layout/navbar/Navbar'
+import Footer from '../../layout/FooterAdmin'
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import { Table, Button } from 'reactstrap';
 
 import {
-  getSkillSet,
-  delSkillSet } from '../../../actions/adminActions'
+  getUserAdmin,
+  delUserAdmin } from '../../actions/adminActions'
 
 class User extends Component {
 
   componentDidMount(){
-    this.props.getSkillSet();
+    this.props.getUserAdmin();
   }
 
   delete = (id) => {
-    this.props.delSkillSet(id)
+    this.props.delUserAdmin(id)
   }
 
 
 
   render() {
-    const skillsets = this.props.skillsets
+    const admins = this.props.admins
 
-    const displaySkillSet = skillsets.length ? (
-      skillsets.map(({_id, name}, i) => {
+    const displayAdmin = admins.length ? (
+      admins.map(({_id, name, username, email}, i) => {
         return(
           <tr>
             <td>{i +1}</td>
             <td key={_id}>{name}</td>
+            <td key={_id}>{username}</td>
+            <td key={_id}>{email}</td>
             <td key={_id}>
                         <Button color="link" className="event-action">
                         <Link to={'/admin/users/edit/' + _id}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></Link>
@@ -64,7 +66,7 @@ class User extends Component {
                   <div className="col-md-12">
             <div className="card">
                 <div className="card-header">
-                <h5 className="card-title">List Skill Sets</h5>
+                <h5 className="card-title">List Admin</h5>
                 <div class="card-body">
                 <div class="table-responsive">
                 <table class="table">
@@ -75,13 +77,19 @@ class User extends Component {
                       <th>
                         Name
                       </th>
+                      <th>
+                          Username
+                     </th>
+                     <th>
+                        Email
+                     </th>
 
                       <th className="right">
                         Action
                       </th>
                     </thead>
                     <tbody>
-                    {displaySkillSet}
+                    {displayAdmin}
                     </tbody>
                     </table>
                 </div>
@@ -106,14 +114,14 @@ class User extends Component {
 
 const mapStateToProps = state => {
   return {
-    skillsets: state.skillset.skillsets
+    admins: state.admin.admins
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-      getSkillSet: () => { dispatch(getSkillSet())},
-      delSkillSet: (id) => { dispatch(delSkillSet(id))}
+      getUserAdmin: () => { dispatch(getUserAdmin())},
+      delUserAdmin: (id) => { dispatch(delUserAdmin(id))}
   }
 }
 

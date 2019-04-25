@@ -61,6 +61,7 @@ import Event from './pages/admin/event/Event'
 import SkillSet from './pages/admin/skillset/SkillSet'
 import EditProfile from './pages/admin/user/EditProfile'
 import CreateNewUser from './pages/admin/user/CreateNewUser'
+import Admin from './pages/admin/User'
 
 class App extends Component {
   render() {
@@ -134,6 +135,7 @@ class App extends Component {
             <Route exact path="/admin/event" component={Event}/>
             <Route exact path="/admin/skill-sett" component={SkillSet}/>
             <Route exact path="/admin/users/edit/:user_id" component={EditProfile}/>
+            <Route exact path="/admin/list-admin" component={Admin}/>
         </Router>
         </Provider>
     );

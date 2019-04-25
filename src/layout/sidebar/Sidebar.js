@@ -60,6 +60,12 @@ export default class Sidebar extends Component {
                 <p>Skill Set</p>
               </a>
             </li>
+            <li>
+            <a href="/admin/list-admin">
+                <i className="nc-icon nc-circle-10"></i>
+                <p>List Admin</p>
+              </a>
+            </li>
             <li className="active-pro">
               <a href="#">
                 <i className="nc-icon nc-spaceship"></i>

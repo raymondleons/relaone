@@ -15,10 +15,12 @@ import {
     GET_ORGANIZATION_TOTAL,
     GET_SKILLSET,
     DEL_SKILLSET,
+    GET_USER_ADMIN,
     GET_PROFILE_ADMIN,
     SIGNIN_ADMIN,
     EDIT_PROFILE,
-    GET_PROFILE} from './type'
+    GET_PROFILE,
+    DEL_USER_ADMIN} from './type'
 import history from '../history';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -99,8 +101,7 @@ export const editProfileUser = (fullname, username, email, idCard, phoneNumber, 
         axios ({
             url: `${url}/admin/member`,
             method: 'put',
-            headers: { 
-                'x-access-token': localStorage.getItem('token')
+            headers: { "x-access-token": localStorage.getItem('token')
             },
             data: {
                 fullname,
@@ -134,6 +135,45 @@ export const editProfileUser = (fullname, username, email, idCard, phoneNumber, 
     }
   }
   
+  export const getUserAdmin = () => {
+    return dispatch => {
+      axios({
+        method: "get",
+        url:`${url}/admin/`,
+        headers: { "x-access-token": localStorage.getItem('token')}
+          })
+        .then(res => {
+          console.log(res)
+          dispatch({
+            type: GET_USER_ADMIN,
+            payload: res.data.data
+          });
+        })
+        .catch(err => console.log(err.response));
+    };
+  };
+
+export const delUserAdmin = (id) => {
+  return dispatch => {
+    axios({
+      method: "delete",
+      url: `${url}/admin/`,
+      headers: { "x-access-token": localStorage.getItem('token')},
+      data: {
+        id
+    }
+    })
+    .then(res => {
+      console.log(res)
+      dispatch ({
+          type: DEL_USER_ADMIN,
+          id
+      })
+  })
+  .catch(err => console.log(err))
+  };
+};
+  
   export const getProfileAdmin = () => {
     return dispatch => {
         axios.get(`${url}/admin/`,
@@ -148,6 +188,8 @@ export const editProfileUser = (fullname, username, email, idCard, phoneNumber, 
         })
     }
   }
+
+  
   
   export const getUserTotal = () => {
     return dispatch => {

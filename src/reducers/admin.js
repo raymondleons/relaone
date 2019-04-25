@@ -2,9 +2,11 @@ import {
     SIGNIN_ADMIN,
     GET_PROFILE_ADMIN,
     EDIT_PROFILE_ADMIN,
-    EDIT_PROFILE } from '../actions/type';
+    EDIT_PROFILE,
+    GET_USER_ADMIN } from '../actions/type';
 
 const initialState={
+    admins: [],
     fullname: '',
     name: '',
     confirmed: false,
@@ -56,6 +58,11 @@ const admin=(state=initialState, action) => {
                 address: action.address,
                 bio: action.bio
             }
+            case GET_USER_ADMIN:
+        return {
+            ...state,
+            admins: action.payload 
+        }
         default:
             return state;
     }

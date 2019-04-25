@@ -30,7 +30,7 @@ export default class Sidebar extends Component {
                 <p>Dashboard</p>
               </a>
             </li>
-            <li className="active">
+            <li>
               <a href="/admin/users">
                 <i className="nc-icon nc-single-02"></i>
                 <p>Users</p>
@@ -60,8 +60,8 @@ export default class Sidebar extends Component {
                 <p>Skill Set</p>
               </a>
             </li>
-            <li>
-            <a href="/admin/list-admin">
+            <li className="active">
+              <a href="/admin/list-admin">
                 <i className="nc-icon nc-circle-10"></i>
                 <p>List Admin</p>
               </a>
