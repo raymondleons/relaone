@@ -2,13 +2,7 @@ import React, { Component } from 'react';
 import { Table, FormGroup, Label, CustomInput, Button } from 'reactstrap';
 import '../assets/css/_style.scss';
 import { connect } from 'react-redux';
-import { getEvent, getApplicant } from '../actions/organizationActions';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck, faTimes  } from '@fortawesome/free-solid-svg-icons'
-
-library.add(faCheck, faTimes);
-
+import { getEvent, getApplicant, acceptApplicant, rejectApplicant } from '../actions/organizationActions';
 
 class VolunteerDashboard extends Component {
 
@@ -30,11 +24,18 @@ class VolunteerDashboard extends Component {
   }
 
   onClick = (e) => {
-    console.log(this.state)
+    let id = this.state.id;
+    let idmember = e.target.value;
+    this.props.acceptApplicant(id, idmember)
+  }
+
+  onClicked = (e) => {
+    let id = this.state.id;
+    let idmember = e.target.value;
+    this.props.rejectApplicant(id, idmember)
   }
 
   render() {
-    console.log(this.props.applicants)
     let events = this.props.events
     const displayEvent = events.length ? (
       events.map(event => {
@@ -46,29 +47,41 @@ class VolunteerDashboard extends Component {
       <option value="">No Event</option>
     )
 
-    let applicants = this.props.applicants;
+    let applicants = []
+    if (this.props.applicants) {
+      applicants = this.props.applicants
+    };
 
     const displayApplicant = applicants.length ? (
       applicants.map(applicant => {
         let status = applicant.status
-        // let id = applicant._id
-        console.log(applicant._id)
+        let idMember = ''
+        if (applicant.idMember) {
+          idMember = applicant.idMember
+        }
+
+        let fullname = ''
+        if (idMember.fullname) {
+          fullname = idMember.fullname
+        }
+
         const action = status === "Waiting" ? (
-          <div><Button key="asdf" color="link" onClick={this.onClick}><FontAwesomeIcon icon='check'/></Button><Button color="link"><FontAwesomeIcon style={{marginLeft:'5px'}} icon='times'/></Button></div>
+          <div><Button value={idMember._id} color="link" onClick={this.onClick}> accept</Button>
+          <Button color="link" value={idMember._id} onClick={this.onClicked}> reject</Button></div>
         ) : (
           <p></p>
         )
 
         return (
           <tr key={applicant._id}>
-            <td>{applicant.idMember.fullname}</td>
+            <td>{fullname}</td>
             <td>{applicant.status}</td>
             <td>{action}</td>
           </tr>
         )
       })
     ) : (
-      <tr> No applicant yet </tr>
+      <tr><td>No applicant yet</td></tr>
     )
 
     return (
@@ -121,7 +134,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getEvent: () => { dispatch(getEvent()) },
-    getApplicant: (id) => { dispatch(getApplicant(id)) }
+    getApplicant: (id) => { dispatch(getApplicant(id)) },
+    acceptApplicant: (id, idmember) => { dispatch(acceptApplicant(id, idmember)) },
+    rejectApplicant: (id, idmember) => { dispatch(rejectApplicant(id, idmember))}
   }
 }
 

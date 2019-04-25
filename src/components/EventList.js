@@ -17,7 +17,6 @@ class EventList extends Component {
         this.props.delEvent(id)
     }
 
-
   render() {
       const events = this.props.events
       

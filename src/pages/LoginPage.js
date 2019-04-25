@@ -5,7 +5,6 @@ import '../assets/css/_style2.scss';
 import Img from '../assets/images/image1.png'
 import Logo from '../assets/images/blue-logo.png'
 import { signIn } from "../actions/memberActions";
-import axios from 'axios'
 import { connect } from "react-redux";
 import { getRole } from "../actions/mainActions";
 
