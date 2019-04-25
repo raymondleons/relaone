@@ -10,21 +10,22 @@ import { getRole } from "../../actions/mainActions";
 import history from '../../history'
 
 
-class LoginPage extends React.Component {
+class SignInAdmin extends React.Component {
 
   componentDidMount(){
     let role = localStorage.getItem('role')
     if ( role === 'organization' ) {
       history.push('/organization/event')
     } else if (role === 'member') {
-      history.push('/')
+      history.push('/users/dashboard')
     } else if (role === 'admin') {
-      history.push('/')
+      history.push('/admin')
     }
 
     window.scrollTo(0, 0);
     document.title= "Login Admin - RelaOne"
 }
+
 
 constructor(props) {
   super(props)
@@ -137,5 +138,5 @@ export default withRouter(
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(LoginPage)
+  )(SignInAdmin)
 );
