@@ -20,7 +20,8 @@ import {
     SIGNIN_ADMIN,
     EDIT_PROFILE,
     GET_PROFILE,
-    DEL_USER_ADMIN} from './type'
+    DEL_USER_ADMIN,
+    ADD_ARTICLE} from './type'
 import history from '../history';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -232,21 +233,51 @@ export const delUserAdmin = (id) => {
   
   export const getArticle = () => {
     return dispatch => {
-      axios({
-        method: "get",
-        url:`${url}/admin/article`,
-        headers: { "x-access-token": localStorage.getItem('token')}
-          })
-        .then(res => {
-          console.log(res)
-          dispatch({
-            type: GET_ARTICLE,
-            payload: res.data.data
-          });
+        axios.get(`${url}/admin/article`,
+        {
+            headers: { "x-access-token": localStorage.getItem('token')}
         })
-        .catch(err => console.log(err.response));
-    };
-  };
+        .then(res => {
+            dispatch ({
+                type: GET_ARTICLE,
+                payload: res.data.data
+            })
+        })
+    }
+}
+
+export const addArticle = (title, description, deadline, location, quotaMax, skillSet) => {
+  return dispatch => {
+      axios ({
+          url: `${url}/admin/article`,
+          method: 'post',
+          headers: {
+              'x-access-token': localStorage.getItem('token')
+          },
+          data: {
+              title,
+              description,
+              deadline,
+              location,
+              quotaMax,
+              skillSet
+          }
+      })
+          .then(res => {
+              dispatch({
+              type: ADD_ARTICLE,
+              payload: res.data.data
+              });
+              toast.success("Your event is successfully created")
+              history.push('/admin/article');
+            }
+          )
+          .catch(err => {
+              console.log(err)
+              toast.error("Error. Please check your input.")
+          })
+  }
+}
   
   export const delArticle = (id) => {
     return dispatch => {
@@ -324,6 +355,7 @@ export const delUserAdmin = (id) => {
     .catch(err => console.log(err))
     };
   };
+  
   
   export const getEvent = () => {
     return dispatch => {
@@ -460,7 +492,7 @@ export const delUserAdmin = (id) => {
                 payload: res.data.data
                 });
                 toast.success("Your event is successfully created")
-                history.push('/users/');
+                history.push('/admin/users');
               }
             )
             .catch(err => {

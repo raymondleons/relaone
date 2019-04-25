@@ -6,18 +6,15 @@ import Footer from '../../../layout/FooterAdmin'
 import { connect } from 'react-redux';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import '../../../assets/css/_style.scss';
-import { addUser } from '../../../actions/adminActions';
+import { addArticle } from '../../../actions/adminActions';
 
 class CreateArticleNew extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            fullname : "",
-            username : "",
-            password : "",
-            email: ""
-          
+            title : "",
+            description : "",
 
         }
     }
@@ -30,7 +27,7 @@ class CreateArticleNew extends Component {
 
         onSubmit = (e) => {
         e.preventDefault();
-        this.props.addUser(this.state.fullname, this.state.username, this.state.password, this.state.email);
+        this.props.addArticle(this.state.title, this.state.description);
         // this.setState({
         //     title : "",
         //     description : "",
@@ -69,23 +66,15 @@ class CreateArticleNew extends Component {
         <div className="col-md-12">
         <div className="card">
                 <div className="card-header">
-                <h5 className="card-title">Create User</h5>
+                <h5 className="card-title">Create Articles</h5>
         <Form onSubmit={this.onSubmit}>
-        <FormGroup>
-                <Label for="exampleTitle">Fullname</Label>
-                <Input required onChange={this.onChange} value={this.state.fullname} className="form-control" type="text" name="fullname" id="exampleTitle" placeholder="" />
+            <FormGroup>
+                <Label for="exampleTitle">Article title</Label>
+                <Input required onChange={this.onChange} value={this.state.title} className="form-control" type="text" name="title" id="exampleTitle" placeholder="" />
             </FormGroup>
             <FormGroup>
-                <Label for="exampleTitle">Email</Label>
-                <Input required onChange={this.onChange} value={this.state.email} className="form-control" type="text" name="email" id="exampleTitle" placeholder="" />
-            </FormGroup>
-            <FormGroup>
-                <Label for="exampleTitle">Username</Label>
-                <Input required onChange={this.onChange} value={this.state.username} className="form-control" type="text" name="username" id="exampleTitle" placeholder="" />
-            </FormGroup>
-            <FormGroup>
-                <Label for="exampleTitle">Password</Label>
-                <Input required onChange={this.onChange} value={this.state.password} className="form-control" type="password" name="password" id="exampleTitle" placeholder="" />
+                <Label for="exampleDescripion">Description</Label>
+                <Input required onChange={this.onChange} value={this.state.description} type="textarea" name="description" id="exampleDescription" placeholder="" />
             </FormGroup>
             {/* <FormGroup>
                 <Label for="exampleFile">Photo</Label>
@@ -118,7 +107,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addUser: (fullname, username, password, email) => { dispatch(addUser(fullname, username, password, email))}
+        addArticle: (title, description, deadline, location, quotaMax, skillSet) => { dispatch(addArticle(title, description))}
     }
 }
 

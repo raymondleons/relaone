@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Sidebar from "../../../layout/sidebar/ArticleSidebar";
 import { BrowserRouter as Router, Route, withRouter} from "react-router-dom";
-import Navbar from '../../../layout/navbar/ArticleNavbar'
+import Navbar from '../../../layout/navbar/Navbar'
 import Footer from '../../../layout/FooterAdmin'
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
@@ -11,7 +11,7 @@ import {
   getArticle,
   delArticle } from '../../../actions/adminActions'
 
-class Article extends Component {
+class User extends Component {
 
   componentDidMount(){
     this.props.getArticle();
@@ -26,12 +26,12 @@ class Article extends Component {
   render() {
     const articles = this.props.articles
 
-    const displayArticle = articles.length ? (
-      articles.map(({_id, title, createdBy, createdAt, address}, i) => {
+    const displayAdmin = articles.length ? (
+      articles.map(({_id, title, createdBy}, i) => {
         return(
           <tr>
             <td>{i +1}</td>
-            <td key={_id} >{title}</td>
+            <td key={_id}><Link to={'/admin/article/detail/' + _id}>{title}</Link></td>
             <td key={_id}>{createdBy.name}</td>
             <td key={_id}>
                         <Button color="link" className="event-action">
@@ -65,29 +65,32 @@ class Article extends Component {
                   <div className="col-md-12">
             <div className="card">
                 <div className="card-header">
-                <h5 className="card-title">List Article</h5>
+                <h5 className="card-title">List Articles</h5>
                 <div class="card-body">
                 <div class="table-responsive">
                 <table class="table">
                     <thead class=" text-primary">
                       <th>
-                        No.
-                      </th>
-                      <th style={{textAlign:"center"}}>
-                        Title
+                        No
                       </th>
                       <th>
-                        Author
+                        Name
                       </th>
+                      <th>
+                          Author
+                     </th>
 
                       <th className="right">
                         Action
                       </th>
                     </thead>
                     <tbody>
-                    {displayArticle}
+                    {displayAdmin}
                     </tbody>
                     </table>
+                <div className="event-action">
+            <Button color="primary"><Link to="/admin/article/create" className="create-event-button">Create Article</Link></Button>
+        </div>
                 </div>
               </div>
                 </div>
@@ -110,16 +113,16 @@ class Article extends Component {
 
 const mapStateToProps = state => {
   return {
-      articles: state.article.articles
+    articles: state.article.articles
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    getArticle: () => { dispatch(getArticle())},
+      getArticle: () => { dispatch(getArticle())},
       delArticle: (id) => { dispatch(delArticle(id))}
   }
 }
 
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Article));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(User));

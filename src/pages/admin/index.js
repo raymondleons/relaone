@@ -25,17 +25,12 @@ import Content from '../../components/admin/Content'
 class AdminPage extends Component {
     
     componentDidMount(){
-        let role = localStorage.getItem('role')
-        if ( role === 'organization' ) {
-          history.push('/organization/event')
-        } else if (role === 'member') {
-          history.push('/users/dashboard')
-        } else if (role === 'admin') {
-          history.push('/admin')
-        }
-    
-        window.scrollTo(0, 0);
-        document.title= "Dashboard Admin - RelaOne"
+      let role = localStorage.getItem('role')
+      if (role !== 'admin') {
+        history.push('/login-admin')
+      }
+      window.scrollTo(0, 0);
+      document.title = "Event";
     }
 
 

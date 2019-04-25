@@ -55,13 +55,15 @@ import LoginContoh from './pages/Login'
 import SignInAdmin from './pages/admin/SignInAdmin'
 import AdminPage from './pages/admin/'
 import User from './pages/admin/user/User'
-import Article from './pages/admin/article/Article'
+import Article from './pages/admin/articles-admin/Article'
 import Organization from './pages/admin/organization/Organization'
 import Event from './pages/admin/event/Event'
 import SkillSet from './pages/admin/skillset/SkillSet'
 import EditProfile from './pages/admin/user/EditProfile'
 import CreateNewUser from './pages/admin/user/CreateNewUser'
 import Admin from './pages/admin/User'
+import ArticleDetail from './pages/admin/articles-admin/ArticleDetail'
+import CreateArticleNew from './pages/admin/articles-admin/CreateArticleNew'
 
 class App extends Component {
   render() {
@@ -136,6 +138,8 @@ class App extends Component {
             <Route exact path="/admin/skill-sett" component={SkillSet}/>
             <Route exact path="/admin/users/edit/:user_id" component={EditProfile}/>
             <Route exact path="/admin/list-admin" component={Admin}/>
+            <Route path="/admin/article/detail/:article_id" exact component={ArticleDetail}/>
+            <Route exact path="/admin/article/create" component={CreateArticleNew}/>
         </Router>
         </Provider>
     );
