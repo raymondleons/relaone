@@ -1,7 +1,6 @@
-import axios from 'axios';
+
 import Swal from 'sweetalert2'
 
-const url = "https://relaonebinar.herokuapp.com/api";
 
 export const getRole = () => {
   return {

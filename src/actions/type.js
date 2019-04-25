@@ -3,8 +3,10 @@ export const SIGN_UP = 'SIGN_UP';
 
 //actions for user
 export const USERSIGN_IN = 'USERSIGN_IN';
+export const ADD_ARTICLE = 'DEL_ARTICLE';
 export const DEL_ARTICLE = 'DEL_ARTICLE';
 export const GET_ARTICLE = 'GET_ARTICLE';
+export const GET_ARTICLE_TOTAL = 'GET_ARTICLE_TOTAL'
 export const GET_USEREVENT = 'GET_USEREVENT';
 export const GET_USERJOINEDEVENT = 'GET_USERJOINEDEVENT';
 export const USER_JOINEVENT = 'USER_JOINEVENT';
@@ -31,9 +33,22 @@ export const SEARCH_VOLUNTEER = 'SEARCH_VOLUNTEER';
 export const SIGN_IN_ORG = 'SIGN_IN_ORG';
 export const GET_APPLICANT = 'GET_APPLICANT';
 export const FORGOT_PASSWORD = 'FORGOT_PASSWORD';
+export const ACCEPT_VOLUNTEER = 'ACCEPT_VOLUNTEER';
+export const REJECT_VOLUNTEER = 'REJECT_VOLUNTEER';
+export const DEL_ORGANIZATION = 'DEL_ORGANIZATION'
+export const DEL_SKILLSET = 'DEL_SKILLSET'
+export const GET_ORGANIZATION = 'GET_ORGANIZATION'
 
 //actions for admin
 export const GET_USER = 'GET_USER';
-export const SIGN_IN_ADMIN = 'SIGN_IN_ADMIN';
+export const DEL_USER = 'DEL_USER'
+export const ADD_USER = 'ADD_USER'
+export const GET_USER_TOTAL = 'GET_USER_TOTAL'
+export const GET_EVENT_TOTAL = 'GET_EVENT_TOTAL'
+export const GET_ORGANIZATION_TOTAL = 'GET_ORGANIZATION_TOTAL'
+export const SIGNIN_ADMIN = 'SIGNIN_ADMIN'
+export const GET_PROFILE_ADMIN = 'GET_PROFILE_ADMIN'
+export const EDIT_PROFILE_ADMIN = 'EDIT_PROFILE_ADMIN'
+
 
 

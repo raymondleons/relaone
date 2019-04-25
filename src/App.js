@@ -54,6 +54,7 @@ import VolunteerListPage from './pages/VolunteerListPage'
 import VolunteerDetailPage from './pages/VolunteerDetailPage'
 import LoginContoh from './pages/Login'
 import SignInAdmin from './pages/admin/SignInAdmin'
+import DashboardAdmin from './pages/admin/Dashboard'
 
 class App extends Component {
   render() {
@@ -120,7 +121,8 @@ class App extends Component {
             <Route path="/organization/volunteer-list" exact component={VolunteerListPage}/>
             <Route path="/organization/volunteer/detail/:volunteer_id" exact component={VolunteerDetailPage}/>
             <Route path="/contohlogin" exact component={LoginContoh}/>   
-            <Route path="/login-admin" exact component={SignInAdmin}/>  
+            <Route path="/login-admin" exact component={SignInAdmin}/>
+            <Route path="/admin" exact component={DashboardAdmin}/>
           </div>
         </Router>
         </Provider>

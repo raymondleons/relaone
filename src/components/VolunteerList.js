@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, Form, FormGroup, Input, Spinner, Row, Col, Card, CardImg, CardBody, CardTitle, CardText} from 'reactstrap';
+import { Button, Form, FormGroup, Input, Spinner, Row, Col, Card, CardImg, CardBody, CardTitle } from 'reactstrap';
 import Dotdotdot from 'react-dotdotdot';
 import { getVolunteer, searchVolunteer } from '../actions/organizationActions' ;
 import { Link as Links } from 'react-router-dom';

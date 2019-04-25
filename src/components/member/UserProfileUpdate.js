@@ -40,7 +40,7 @@ class FormUpdateProfile extends Component {
           username : props.username,
           email : props.email,
           idCard : props.idCard,
-          birthDate : props.birthDate,
+          // birthDate : props.birthDate,
           address : props.address,
           phoneNumber : props.phoneNumber,
           bio : props.bio,
@@ -114,6 +114,7 @@ class FormUpdateProfile extends Component {
     let initbirthDate = this.state.birthDate
     Moment.locale('en');
     let DOB = Moment(initbirthDate).format('YYYY-MM-DD')
+  
 
     const skillsets = this.props.skillsets  
       for (let i=0; i<skillsets.length; i++){ 
@@ -316,4 +317,3 @@ const mapStateToProps = state =>{
   export default withRouter(connect(mapStateToProps, mapDispatchToProps)(FormUpdateProfile));
 
 
-  
