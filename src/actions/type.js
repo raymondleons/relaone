@@ -1,7 +1,8 @@
 //actions for more than 1 role
-export const SIGN_UP = 'SIGN_UP;'
+export const SIGN_UP = 'SIGN_UP';
 
 //actions for user
+export const USERSIGN_IN = 'USERSIGN_IN';
 export const ADD_ARTICLE = 'DEL_ARTICLE';
 export const DEL_ARTICLE = 'DEL_ARTICLE';
 export const GET_ARTICLE = 'GET_ARTICLE';
@@ -15,6 +16,7 @@ export const SEARCH_ARTICLE = 'SEARCH_ARTICLE';
 export const SEARCH_EVENT = 'SEARCH_EVENT';
 export const EDIT_USERPHOTO = 'EDIT_USERPRHOTO';
 export const GET_USERSKILLSET = 'GET_USERSKILLSET'
+export const USER_FORGOTPASSWORD = 'USER_FORGOTPASSWORD'
 
 //actions for organization
 export const ADD_EVENT = 'ADD_EVENT';
@@ -30,6 +32,7 @@ export const GET_VOLUNTEER = 'GET_VOLUNTEER';
 export const SEARCH_VOLUNTEER = 'SEARCH_VOLUNTEER';
 export const SIGN_IN_ORG = 'SIGN_IN_ORG';
 export const GET_APPLICANT = 'GET_APPLICANT';
+export const FORGOT_PASSWORD = 'FORGOT_PASSWORD';
 export const ACCEPT_VOLUNTEER = 'ACCEPT_VOLUNTEER';
 export const REJECT_VOLUNTEER = 'REJECT_VOLUNTEER';
 export const DEL_ORGANIZATION = 'DEL_ORGANIZATION'

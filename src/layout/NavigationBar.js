@@ -33,7 +33,7 @@ class NavigationBar extends Component {
         const logButton = (token !== null) ? (
             <Links to="/"><Button onClick={this.handleSignOut} className="login-button bold-text" color="warning">Log Out</Button></Links>
         ) : (
-            <Links to="/login"><Button className="login-button bold-text" color="warning">Login</Button></Links>
+            <Links to="/log-in"><Button className="login-button bold-text" color="warning">Login</Button></Links>
         )
 
         return (

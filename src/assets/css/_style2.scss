@@ -110,15 +110,14 @@ float: right;
  {
    margin-top: 70px;
  }
-
+ .hr-margin-0{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
  .logoevent
  {
    width:70px;
    height:60px;
-   
-   border:1px solid black;
-   
-  
  }
 //  .imgg{
   
@@ -150,9 +149,7 @@ float: right;
 .fa-map-marker-alt{
   color:#0065ff;
 }
-.card-height{
-  max-height: 380px;
-}
+
 .para{
   font-size: 12px;
 }

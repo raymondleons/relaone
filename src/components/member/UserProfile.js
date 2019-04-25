@@ -7,9 +7,9 @@ import {Link} from 'react-router-dom'
 import Moment from 'moment'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserEdit } from '@fortawesome/free-solid-svg-icons'
+import { faUserEdit, faImage } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faUserEdit);
+library.add(faUserEdit, faImage);
 
  class userProfile extends Component {
 
@@ -18,7 +18,7 @@ library.add(faUserEdit);
       }
 
   render() {
-
+    console.log(this.props.birthDate)
     let initbirthDate = this.props.birthDate
     Moment.locale('en');
     let DOB = Moment(initbirthDate).format('YYYY-MM-DD')
@@ -52,8 +52,9 @@ library.add(faUserEdit);
         </div>
         <Card className="no-border">
           <Row>
-            <Col sm={6}>
+            <Col sm={6} className="text-right">
               <CardImg className="heigth" src={this.props.photo} alt="user photo"></CardImg>
+              <Link to='/user/photo/update'><FontAwesomeIcon icon='image' className=" fa-1x"/> Edit Photo</Link>
             </Col>
             <Col sm={6}>
               <CardText className="font-weight-bold">Fullname</CardText>
@@ -82,8 +83,11 @@ library.add(faUserEdit);
           <hr />
           <Row>
             <Col sm={6}>
-            <CardText className="font-weight-bold">Bio</CardText>
-            <CardText>{this.props.bio}</CardText>
+            <CardText className="font-weight-bold">Emergency Contact</CardText>
+            <CardText>Name: {this.props.emergencyContact.name}</CardText>
+            <CardText>Relationship: {this.props.emergencyContact.relationship}</CardText>
+            <CardText>Address: {this.props.emergencyContact.address}</CardText>
+            <CardText>Phone: {this.props.emergencyContact.phoneNumber}</CardText>
             <CardText className="font-weight-bold">Skill Set</CardText>
             <ul>
               {displaySkillset}
@@ -91,11 +95,8 @@ library.add(faUserEdit);
            
             </Col>
             <Col sm={6}>
-            <CardText className="font-weight-bold">Emergency Contact</CardText>
-            <CardText>Name: {this.props.emergencyContact.name}</CardText>
-            <CardText>Relationship: {this.props.emergencyContact.relationship}</CardText>
-            <CardText>Address: {this.props.emergencyContact.address}</CardText>
-            <CardText>Phone: {this.props.emergencyContact.phoneNumber}</CardText>
+            <CardText className="font-weight-bold">Bio</CardText>
+            <CardText className="text-justify">{this.props.bio}</CardText>
             </Col>
           </Row>
         </Card>

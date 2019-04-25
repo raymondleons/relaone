@@ -1,4 +1,4 @@
-import { GET_SKILLSET, GET_USERSKILLSET } from '../actions/type';
+import { GET_SKILLSET, GET_USERSKILLSET} from '../actions/type';
 
 const initialState={
     skillsets: []
@@ -14,7 +14,7 @@ const article=(state=initialState, action) => {
         case GET_USERSKILLSET:
         return {
             ...state,
-            skillsets: action.payload
+            skillsets: action.payload 
         }
         default:
             return state;

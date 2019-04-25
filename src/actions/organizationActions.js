@@ -15,6 +15,7 @@ import { ADD_EVENT,
         SIGN_IN_ORG,
         SIGN_UP,
         GET_APPLICANT,
+        FORGOT_PASSWORD,
         ACCEPT_VOLUNTEER,
         REJECT_VOLUNTEER } from './type';
 import history from '../history';
@@ -26,6 +27,33 @@ toast.configure({
 )
 
 const url = "https://relaonebinar.herokuapp.com/api";
+
+export const forgotPassword = (email) => {
+    return dispatch => {
+        axios ({
+            url: `${url}/organization/forgetpassword`,
+            method: 'post',
+            data: {
+                email         
+            }
+        })
+            .then(res => {
+                console.log(res)
+                dispatch({
+                type: FORGOT_PASSWORD
+                });
+                let message = "Please check your email"
+                toast.success(message)
+                history.push('/');
+              }
+            )
+            .catch(err => {
+                console.log(err)
+                toast.error("Error. Please check your input.")
+            })
+    }
+}
+
 
 export const signInOrganization = (username, password) => {
     return dispatch => {

@@ -23,8 +23,7 @@ const event=(state=initialState, action) => {
         }
         case USER_JOINEVENT:
         return {
-            ...state,
-            events: action.payload
+            ...state
         }
         case GET_USERJOINEDEVENT:
         return {
