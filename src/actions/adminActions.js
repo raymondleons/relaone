@@ -326,26 +326,26 @@ export const addArticle = (title, description, deadline, location, quotaMax, ski
   }
 }
   
-  export const delArticle = (id) => {
-    return dispatch => {
-      axios({
-        method: "delete",
-        url: `${url}/admin/article/`,
-        headers: { "x-access-token": localStorage.getItem('token')},
-        data: {
-          id
-      }
-      })
-      .then(res => {
-        console.log(res)
-        dispatch ({
-            type: DEL_ARTICLE,
-            id
-        })
+export const delArticle = (id) => {
+  return dispatch => {
+    axios({
+      method: "delete",
+      url: `${url}/admin/article/`,
+      headers: { "x-access-token": localStorage.getItem('token')},
+      data: {
+        id
+    }
     })
-    .catch(err => console.log(err))
-    };
+    .then(res => {
+      console.log(res)
+      dispatch ({
+          type: DEL_ARTICLE,
+          id
+      })
+  })
+  .catch(err => console.log(err))
   };
+};
   
   export const getOrganization = () => {
     return dispatch => {

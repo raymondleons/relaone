@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Sidebar from "../../../layout/sidebar/ArticleSidebar";
 import { BrowserRouter as Router, Route, withRouter} from "react-router-dom";
-import Navbar from '../../../layout/navbar/Navbar'
+import Navbar from '../../../layout/navbar/ArticleNavbar'
 import Footer from '../../../layout/FooterAdmin'
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';

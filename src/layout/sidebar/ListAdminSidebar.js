@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import { Link } from "react-scroll";
+import { Link as Links} from 'react-router-dom';
+import {
+  Button } from 'reactstrap';
 
 // CSS
 import '../../assets/css/admin/bootstrap.min.css'
@@ -8,8 +12,33 @@ import '../../assets/css/admin/demo/demo.css'
 // Img
 import Logo from '../../assets/css/admin/img/logo-small.png'
 
-export default class Sidebar extends Component {
+class ListAdminSidebar extends Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+        isOpen: false
+    };
+    }
+    toggle() {
+    this.setState({
+        isOpen: !this.state.isOpen
+    });
+    }  
+
+    handleSignOut = () =>{
+        localStorage.clear()
+      }
+
   render() {
+    let token = localStorage.getItem('token');
+        
+        const logButton = (token !== null) ? (
+            <Links to="/"><Button onClick={this.handleSignOut} className="login-button bold-text" color="warning">Log Out</Button></Links>
+        ) : (
+            <Links to="/log-in"><Button className="login-button bold-text" color="warning">Login</Button></Links>
+        )
     return (
       <div className="sidebar" data-color="white" data-active-color="danger">
         <div className="logo">
@@ -78,3 +107,5 @@ export default class Sidebar extends Component {
     )
   }
 }
+
+export default ListAdminSidebar;

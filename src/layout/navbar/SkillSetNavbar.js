@@ -37,7 +37,7 @@ class Navbar extends Component {
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navigation">      
                     <ul className="navbar-nav">
-                        <p className="navbar-title">Hi, Admin</p>
+                        <p className="navbar-title" style={{color:"black"}}>Hi, Admin</p>
                     </ul>
                 </div>
             </div>
