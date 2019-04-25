@@ -3,6 +3,7 @@ import { Table, FormGroup, Label, CustomInput, Button } from 'reactstrap';
 import '../assets/css/_style.scss';
 import { connect } from 'react-redux';
 import { getEvent, getApplicant, acceptApplicant, rejectApplicant } from '../actions/organizationActions';
+import { Link } from 'react-router-dom'
 
 class VolunteerDashboard extends Component {
 
@@ -74,7 +75,7 @@ class VolunteerDashboard extends Component {
 
         return (
           <tr key={applicant._id}>
-            <td>{fullname}</td>
+            <td><Link to={'/organization/volunteer/detail/' + idMember._id}>{fullname}</Link></td>
             <td>{applicant.status}</td>
             <td>{action}</td>
           </tr>
