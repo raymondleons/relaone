@@ -42,7 +42,7 @@ class AdminPage extends Component {
           <div className="admin-grid">
             <Sidebar />
               <div className="main-panel">
-                <Route exact path="/admin" component={Dashboard} />
+                <Dashboard/>
                 <div className="content">
                   <DashboardPage/> 
                   <div className="row">
