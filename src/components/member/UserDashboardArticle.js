@@ -70,7 +70,7 @@ class UserDashboardArticle extends Component {
             {displayArticle}
         </div>
         <div className='text-right'>
-        <Links to='/user/event' >Show All Articles</Links>
+        <Links to='/user/article' >Show All Articles</Links>
         </div >
        
       </div>
