@@ -3043,7 +3043,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 }
 
 .navbar.navbar-transparent {
-  background-color: transparent !important;
+  background-color: white !important;
   box-shadow: none;
   border-bottom: 1px solid #ddd;
 }
