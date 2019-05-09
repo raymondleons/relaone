@@ -22,7 +22,7 @@ class ProfileBadge extends Component {
     return (
         <div className="profile-badge">
           <Row>
-            <Col xs="3" sm="3" md="4">
+            <Col xs="3" sm="3" md="4" className="">
               <img className="organization-picture" src={this.props.photo} alt={this.props.fullname}></img>
             </Col>
             <Col xs="9" sm="9" md="8">

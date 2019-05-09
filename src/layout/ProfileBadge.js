@@ -22,10 +22,10 @@ class ProfileBadge extends Component {
     return (
         <div className="profile-badge">
           <Row>
-            <Col xs="3" sm="3" md="4">
+            <Col xs="4" sm="4" md="4">
               <img className="organization-picture" src={this.props.photo} alt={this.props.organizationName}></img>
             </Col>
-            <Col xs="9" sm="9" md="8">
+            <Col xs="8" sm="8" md="8">
               <div className="profile-name"><b><Link to='/organization/profile' exact="true">{this.props.organizationName}</Link></b><br></br>{verifiedFunction}</div>
             </Col>
           </Row>

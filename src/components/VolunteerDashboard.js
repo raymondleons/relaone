@@ -82,7 +82,11 @@ class VolunteerDashboard extends Component {
         )
       })
     ) : (
-      <tr><td>No applicant yet</td></tr>
+      <tr>
+        <td>No applicant yet</td>
+        <td></td>
+        <td></td>
+        </tr>
     )
 
     return (
