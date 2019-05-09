@@ -96,10 +96,7 @@ class ListAdminSidebar extends Component {
               </a>
             </li>
             <li className="active-pro">
-              <a href="#">
-                <i className="nc-icon nc-spaceship"></i>
-                <p>Logout</p>
-              </a>
+              {logButton}
             </li>
           </ul>
         </div>
